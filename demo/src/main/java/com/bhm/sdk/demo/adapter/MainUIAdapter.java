@@ -3,7 +3,7 @@ package com.bhm.sdk.demo.adapter;
 import android.support.annotation.Nullable;
 import android.widget.TextView;
 
-import com.bhm.sdk.demo.R;
+import com.bhm.sdk.rxlibrary.demo.R;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
 

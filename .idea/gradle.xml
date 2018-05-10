@@ -9,6 +9,7 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/BHMLibrary" />
+            <option value="$PROJECT_DIR$/RxJava" />
             <option value="$PROJECT_DIR$/RxLibrary" />
             <option value="$PROJECT_DIR$/demo" />
           </set>

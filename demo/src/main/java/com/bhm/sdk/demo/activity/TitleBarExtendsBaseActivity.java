@@ -6,7 +6,7 @@ import android.widget.Toast;
 
 import com.bhm.sdk.bhmlibrary.base.TitleBarActivity;
 import com.bhm.sdk.bhmlibrary.views.TitleBar;
-import com.bhm.sdk.demo.R;
+import com.bhm.sdk.rxlibrary.demo.R;
 
 /**
  * Created by bhm on 2018/5/7.

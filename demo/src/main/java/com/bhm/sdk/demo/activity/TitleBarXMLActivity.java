@@ -6,8 +6,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Toast;
 
-import com.bhm.sdk.demo.R;
 import com.bhm.sdk.bhmlibrary.views.TitleBar;
+import com.bhm.sdk.rxlibrary.demo.R;
 
 /**
  * Created by bhm on 2018/5/7.

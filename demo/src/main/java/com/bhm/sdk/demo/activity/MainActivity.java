@@ -8,8 +8,8 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
-import com.bhm.sdk.demo.R;
 import com.bhm.sdk.demo.adapter.MainUIAdapter;
+import com.bhm.sdk.rxlibrary.demo.R;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 
 import java.util.ArrayList;
@@ -41,8 +41,12 @@ public class MainActivity extends AppCompatActivity {
 
     private List<String> getItems(){
         List<String> list = new ArrayList<>();
-        list.add("标题栏TitleBar(XML集成)");
-        list.add("标题栏TitleBar(BaseActivity集成)");
+        list.add("RxJava2+Retrofit2,Get请求");
+        list.add("RxJava2+Retrofit2,post请求");
+        list.add("RxJava2+Retrofit2,文件下载");
+        list.add("RxJava2+Retrofit2,文件上传");
+        list.add("");
+        list.add("RxBus");
         return list;
     }
 
@@ -64,6 +68,8 @@ public class MainActivity extends AppCompatActivity {
             case 1:
                 intent.setClass(this, TitleBarExtendsBaseActivity.class);
                 break;
+            default:
+                return;
         }
         startActivity(intent);
     }
