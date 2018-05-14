@@ -1,1 +1,1 @@
-include ':demo', ':RxLibrary', ':BHMLibrary', ':RxJava'
+include ':demo',':RxJava'
