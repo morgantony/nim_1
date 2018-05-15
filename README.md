@@ -21,9 +21,72 @@ RxLibrary工程：<br>1.rxjava2 + retrofit2的封装，常用的请求（Get,Pos
 
 一、rxjava2 + retrofit2的使用
 -------  
+    强烈建议参考demo，MianActivity包含了常用的用法及用法介绍。
+    <br>第一步，继承RxBaseActivity或者RxBaseFragment,添加内存管理的机制，同时获取rxManager对象，rxManager是管理观察者的类，当取消请求、中断请求等可调用对应的方法。注意：如果项目BaseActivity继承了别的Activity，则需在BaseActivity中添加RxAppCompatActivity的代码，并且生成RxManager对象，Fragment同理哦。
+    <br>第二步，使用。</br>
 
+        RxBuilder builder = RxBuilder.newBuilder(this)
+                //.setLoadingDialog(RxLoadingDialog.getDefaultDialog())
+                .setLoadingDialog(new MyLoadingDialog())
+                .setDialogAttribute(true, false, false)
+                //.setHttpTimeOut()
+                .setIsLogOutPut(false)//默认是true
+                .setIsDefaultToast(true, rxManager)
+                .bindRx();
+        builder.createApi(HttpApi.class, Host)
+                .getData("Bearer aedfc1246d0b4c3f046be2d50b34d6ff", "1")
+                .compose(bindToLifecycle())//管理生命周期
+                .compose(RxManager.rxSchedulerHelper())//发布事件io线程
+                .subscribe(new RxObserver<Object>(builder) {//Object可以替换成实体类，无需再解析
+                    //根据业务需要，可继承RxObserver重写类，对onFail和onSuccess进行解析，根据resultCode进行处理
+                    @Override
+                    public void onStart(Disposable disposable) {
+
+                    }
+
+                    @Override
+                    public void onSuccess(Object response) {
+                        Log.i("onSuccess-------> ", response.toString());
+                    }
+
+                    @Override
+                    public void onDone() {
+
+                    }
+
+                    @Override
+                    public void onFail(Throwable t) {
+
+                    }
+                });
 <br>
 
+    HttpApi是一个接口，getData是HttpApi中的方法。</br>
+    Host 为域名。</br>                         
+### 以下介绍下HttpApi中常用注解的使用：</br>
+        1.get请求：方法前添加@GET("url"),参数 @Query、@QueryMap
+        <br>例（url和域名拼接好后组成完整链接，当然我们不需要自己拼接，Retrofit会处理）</br>
+        @GET("福利/10/1")
+        Observable<Object> getData(@Header("token") String token, @Query("type")  String type);     
+        2.post请求：方法前添加@FormUrlEncoded和@POST("url")
+          Observable<Object> getDataPost(@Field("once") boolean once_no);
+        3.文件上传：方法前添加@Multipart和@POST("url")
+            Observable<Object> upload(
+            @Header("token") String token,
+            @Part("filename") RequestBody description,
+            @Part("id") RequestBody id,
+            @Part MultipartBody.Part file);
+           其中RequestBody的生成：
+           RequestBody.create(MediaType.parse("text/plain"),"id"
+           MultipartBody.Part的生成：
+           RequestBody requestBody = RequestBody.create(MediaType.parse("image/jpeg; charset=UTF-8"),file);
+           MultipartBody.Part part= MultipartBody.Part.createFormData("file", file.getName(), requestBody);
+        4.文件下载：方法前添加@Streaming和@GET
+        @Streaming
+        @GET
+        Observable<ResponseBody> downLoad(@Url String url);
+        其中@GET后不需指定url，参数@Url指定了完整的url，所以也不需域名Host的指定。
+        
 二、RxBus的使用
 -------  
 
