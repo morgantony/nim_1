@@ -1,5 +1,6 @@
 package com.bhm.sdk.demo.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
@@ -8,10 +9,14 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
+import com.bhm.sdk.bhmlibrary.views.TitleBar;
 import com.bhm.sdk.demo.adapter.MainUIAdapter;
+import com.bhm.sdk.demo.listener.Entity;
 import com.bhm.sdk.demo.listener.HttpApi;
 import com.bhm.sdk.demo.tools.MyLoadingDialog;
 import com.bhm.sdk.rxlibrary.demo.R;
+import com.bhm.sdk.rxlibrary.rxbus.RxBus;
+import com.bhm.sdk.rxlibrary.rxbus.Subscribe;
 import com.bhm.sdk.rxlibrary.rxjava.RxBaseActivity;
 import com.bhm.sdk.rxlibrary.rxjava.RxBuilder;
 import com.bhm.sdk.rxlibrary.rxjava.RxDownLoadListener;
@@ -39,17 +44,20 @@ public class MainActivity extends RxBaseActivity {
 
     protected RecyclerView main_recycle_view;
     private MainUIAdapter adapter;
+    private TitleBar titleBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        RxBus.get().register(this);
         initView();
         initListener();
     }
 
     private void initView() {
         main_recycle_view = (RecyclerView) findViewById(R.id.main_recycle_view);
+        titleBar = (TitleBar) findViewById(R.id.titleBar);
         LinearLayoutManager ms = new LinearLayoutManager(this);
         ms.setOrientation(LinearLayoutManager.VERTICAL);
         main_recycle_view.setLayoutManager(ms);
@@ -93,8 +101,24 @@ public class MainActivity extends RxBaseActivity {
             case 3:
                 downLoadFile();//下载文件
                 break;
+            case 5:
+                startActivity(new Intent(this, RxBusActivity.class));
             default:
                 return;
+        }
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        RxBus.get().unRegister(this);
+    }
+
+    @Subscribe(code = 1111)
+    public void rxBusEvent(Entity entity){
+        if(null != entity){
+            Toast.makeText(this, "RxBus改变了MainActivity的标题", Toast.LENGTH_SHORT).show();
+            titleBar.setTitleText(entity.getMsg());
         }
     }
 
