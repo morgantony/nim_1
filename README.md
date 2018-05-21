@@ -104,6 +104,6 @@ RxLibrary工程：<br>1.rxjava2 + retrofit2的封装，常用的请求（Get,Pos
         }
     }
        
-    threadMode：MAIN，NEW_THREAD，CURRENT_THREAD（默认）
+    threadMode：MAIN，NEW_THREAD，CURRENT_THREAD（默认）.
 ### 4.在任意一个地方发送
       RxBus.get().send(1111, entity);
