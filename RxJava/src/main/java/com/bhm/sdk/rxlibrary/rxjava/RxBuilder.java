@@ -82,6 +82,24 @@ public class RxBuilder {
                 .createApi(cla, host);
     }
 
+    /** 上传请求
+     * @param cla
+     * @param host 请求地址
+     * @param listener
+     * @return
+     */
+    public <T> T createApi(Class<T> cla, String host, RxUpLoadListener listener){
+        if(isShowDialog && null != dialog){
+            dialog.showLoading(rxManager, activity, cancelable);
+        }
+        return new RetrofitCreateHelper(activity)
+                .setHttpTimeOut(readTimeOut, connectTimeOut)
+                .setOkHttpClient(okHttpClient)
+                .setIsLogOutPut(isLogOutPut)
+                .setUpLoadListener(listener)
+                .createApi(cla, host);
+    }
+
     /** 下载请求
      * @param cla
      * @param host 请求地址

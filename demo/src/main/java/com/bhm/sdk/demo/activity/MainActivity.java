@@ -22,6 +22,7 @@ import com.bhm.sdk.rxlibrary.rxjava.RxBuilder;
 import com.bhm.sdk.rxlibrary.rxjava.RxDownLoadListener;
 import com.bhm.sdk.rxlibrary.rxjava.RxManager;
 import com.bhm.sdk.rxlibrary.rxjava.RxObserver;
+import com.bhm.sdk.rxlibrary.rxjava.RxUpLoadListener;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 
 import java.io.File;
@@ -71,8 +72,9 @@ public class MainActivity extends RxBaseActivity {
         List<String> list = new ArrayList<>();
         list.add("RxJava2+Retrofit2,Get请求");
         list.add("RxJava2+Retrofit2,post请求");
-        list.add("RxJava2+Retrofit2,文件下载");
         list.add("RxJava2+Retrofit2,文件上传");
+        list.add("RxJava2+Retrofit2,文件上传（带进度）");
+        list.add("RxJava2+Retrofit2,文件下载（带进度）");
         list.add("");
         list.add("RxBus");
         return list;
@@ -99,9 +101,12 @@ public class MainActivity extends RxBaseActivity {
                 upLoadFile();//上传文件
                 break;
             case 3:
+                upLoadFile1();//上传文件（待进度）
+                break;
+            case 4:
                 downLoadFile();//下载文件
                 break;
-            case 5:
+            case 6:
                 startActivity(new Intent(this, RxBusActivity.class));
             default:
                 return;
@@ -124,11 +129,11 @@ public class MainActivity extends RxBaseActivity {
 
     private void doGet() {
         RxBuilder builder = RxBuilder.newBuilder(this)
-//                .setLoadingDialog(RxLoadingDialog.getDefaultDialog())
+                //.setLoadingDialog(RxLoadingDialog.getDefaultDialog())
                 .setLoadingDialog(new MyLoadingDialog())
                 .setDialogAttribute(true, false, false)
-//                .setHttpTimeOut()
-//                .setIsLogOutPut(false)//默认是true
+                //.setHttpTimeOut()
+                .setIsLogOutPut(false)//默认是true
                 .setIsDefaultToast(true, rxManager)
                 .bindRx();
         builder.createApi(HttpApi.class, "http://gank.io/api/data/")
@@ -240,6 +245,29 @@ public class MainActivity extends RxBaseActivity {
                 });
     }
 
+    private void upLoadFile1() {
+        File file = new File("filePath");
+        RequestBody requestBody = RequestBody.create(MediaType.parse("image/jpeg; charset=UTF-8"),file);
+        MultipartBody.Part part= MultipartBody.Part.createFormData("file", file.getName(), requestBody);
+
+        RxBuilder builder = RxBuilder.newBuilder(this)
+//                .setLoadingDialog(RxLoadingDialog.getDefaultDialog())
+                .setLoadingDialog(new MyLoadingDialog())
+                .setDialogAttribute(true, false, false)
+//                .setHttpTimeOut()
+//                .setIsLogOutPut(false)//默认是true
+                .setIsDefaultToast(true, rxManager)
+                .bindRx();
+        builder.createApi(HttpApi.class, "http://gank.io/api/data/", rxUpLoadListener)
+                .upload("Bearer aedfc1246d0b4c3f046be2d50b34d6ff",
+                        RequestBody.create(MediaType.parse("text/plain"), "filename"),
+                        RequestBody.create(MediaType.parse("text/plain"),"id"),
+                        part)
+                .compose(bindToLifecycle())//管理生命周期
+                .compose(RxManager.rxSchedulerHelper())//发布事件io线程
+                .subscribe();
+    }
+
     private void downLoadFile(){
         RxBuilder builder = RxBuilder.newBuilder(this)
 //                .setLoadingDialog(RxLoadingDialog.getDefaultDialog())
@@ -288,6 +316,28 @@ public class MainActivity extends RxBaseActivity {
                 });
         rxManager.subscribe(disposable);
     }
+
+    private RxUpLoadListener rxUpLoadListener = new RxUpLoadListener() {
+        @Override
+        public void onStartUpload() {
+
+        }
+
+        @Override
+        public void onProgress(long bytesWritten, long contentLength) {
+
+        }
+
+        @Override
+        public void onFinishUpload() {
+
+        }
+
+        @Override
+        public void onFail(String errorInfo) {
+
+        }
+    };
 
     private RxDownLoadListener rxDownLoadListener = new RxDownLoadListener() {
         @Override

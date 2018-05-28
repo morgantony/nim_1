@@ -14,14 +14,14 @@ import okio.Source;
  * Created by bhm on 2018/5/11.
  */
 
-public class CSResponseBody extends ResponseBody {
+public class DownLoadResponseBody extends ResponseBody {
 
     private ResponseBody responseBody;
     private RxDownLoadListener downloadListener;
     // BufferedSource 是okio库中的输入流，这里就当作inputStream来使用。
     private BufferedSource bufferedSource;
 
-    public CSResponseBody(ResponseBody responseBody, RxDownLoadListener downloadListener) {
+    public DownLoadResponseBody(ResponseBody responseBody, RxDownLoadListener downloadListener) {
         this.responseBody = responseBody;
         this.downloadListener = downloadListener;
     }

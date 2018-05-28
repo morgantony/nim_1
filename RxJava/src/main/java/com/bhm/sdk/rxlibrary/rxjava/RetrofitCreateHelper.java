@@ -49,6 +49,7 @@ public class RetrofitCreateHelper {
     private OkHttpClient okHttpClient;
     private boolean isLogOutPut = true;
     private RxDownLoadListener downLoadListener;
+    private RxUpLoadListener upLoadListener;
     private StringBuilder mMessage = new StringBuilder();
 
     /**
@@ -113,6 +114,7 @@ public class RetrofitCreateHelper {
                 .addInterceptor(interceptor)//打印日志
                 .addInterceptor(cacheInterceptor)
                 .addInterceptor(downInterceptor)
+                .addInterceptor(upInterceptor)
                 .addNetworkInterceptor(cacheInterceptor)//设置Cache拦截器
                 .cache(HttpCache.getCache(activity))
                 .connectTimeout(TIMEOUT_CONNECTION, TimeUnit.SECONDS)//time out
@@ -238,7 +240,27 @@ public class RetrofitCreateHelper {
                 return response;
             }
             return response.newBuilder().body(
-                    new CSResponseBody(response.body(), downLoadListener)).build();
+                    new DownLoadResponseBody(response.body(), downLoadListener)).build();
+        }
+    };
+
+    /**
+     * 下载进度拦截器
+     */
+    private Interceptor upInterceptor = new Interceptor() {
+        @Override
+        public Response intercept(Chain chain) throws IOException {
+            Request request = chain.request();
+            if(null == request.body() || null == upLoadListener){
+                return chain.proceed(request);
+            }
+
+            Request build = request.newBuilder()
+                    .method(request.method(),
+                            new UpLoadRequestBody(request.body(),
+                                    upLoadListener))
+                    .build();
+            return chain.proceed(build);
         }
     };
 
@@ -292,6 +314,15 @@ public class RetrofitCreateHelper {
      */
     public RetrofitCreateHelper setDownLoadListener(RxDownLoadListener downLoadListener){
         this.downLoadListener = downLoadListener;
+        return this;
+    }
+
+    /** 设置上传监听
+     * @param upLoadListener
+     * @return
+     */
+    public RetrofitCreateHelper setUpLoadListener(RxUpLoadListener upLoadListener){
+        this.upLoadListener = upLoadListener;
         return this;
     }
 
