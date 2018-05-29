@@ -22,7 +22,6 @@ import com.bhm.sdk.demo.tools.Utils;
 import com.bhm.sdk.rxlibrary.demo.R;
 import com.bhm.sdk.rxlibrary.rxbus.RxBus;
 import com.bhm.sdk.rxlibrary.rxbus.Subscribe;
-import com.bhm.sdk.rxlibrary.rxjava.BaseResponse;
 import com.bhm.sdk.rxlibrary.rxjava.CallBack;
 import com.bhm.sdk.rxlibrary.rxjava.RxBaseActivity;
 import com.bhm.sdk.rxlibrary.rxjava.RxBuilder;
@@ -173,8 +172,6 @@ public class MainActivity extends RxBaseActivity {
                 .createApi(HttpApi.class, "http://news-at.zhihu.com")
                 .getData("Bearer aedfc1246d0b4c3f046be2d50b34d6ff", "1");
         builder.setCallBack(observable, new CallBack<DoGetEntity>() {
-            //Object可以替换成实体类，无需再解析
-            //根据业务需要，可继承RxObserver重写类，对onFail和onSuccess进行解析，根据resultCode进行处理
             @Override
             public void onStart(Disposable disposable) {
 
@@ -207,19 +204,17 @@ public class MainActivity extends RxBaseActivity {
                 .setIsLogOutPut(true)//默认是false
                 .setIsDefaultToast(true, rxManager)
                 .bindRx();
-        Observable<BaseResponse> observable = builder
+        Observable<DoGetEntity> observable = builder
                 .createApi(HttpApi.class, "Https://api.douban.com/")
                 .getDataPost(true);
-        builder.setCallBack(observable, new CallBack<BaseResponse>() {
-            //Object可以替换成实体类，无需再解析
-            //根据业务需要，可继承RxObserver重写类，对onFail和onSuccess进行解析，根据resultCode进行处理
+        builder.setCallBack(observable, new CallBack<DoGetEntity>() {
             @Override
             public void onStart(Disposable disposable) {
 
             }
 
             @Override
-            public void onSuccess(BaseResponse response) {
+            public void onSuccess(DoGetEntity response) {
                 Log.i("MainActivity--> ", response.toString());
                 Toast.makeText(MainActivity.this, response.toString(), Toast.LENGTH_SHORT).show();
             }
@@ -255,8 +250,6 @@ public class MainActivity extends RxBaseActivity {
                         RequestBody.create(MediaType.parse("text/plain"), "9"),
                         part);
         builder.setCallBack(observable, new CallBack<UpLoadEntity>() {
-            //Object可以替换成实体类，无需再解析
-            //根据业务需要，可继承RxObserver重写类，对onFail和onSuccess进行解析，根据resultCode进行处理
             @Override
             public void onStart(Disposable disposable) {
                 rxUpLoadListener.onStartUpload();
@@ -347,7 +340,7 @@ public class MainActivity extends RxBaseActivity {
 
         @Override
         public void onFinishUpload() {
-            Toast.makeText(MainActivity.this, "onFinishDownload", Toast.LENGTH_SHORT).show();
+            Toast.makeText(MainActivity.this, "onFinishUpload", Toast.LENGTH_SHORT).show();
         }
 
         @Override

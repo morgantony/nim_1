@@ -2,7 +2,6 @@ package com.bhm.sdk.demo.http;
 
 import com.bhm.sdk.demo.entity.DoGetEntity;
 import com.bhm.sdk.demo.entity.UpLoadEntity;
-import com.bhm.sdk.rxlibrary.rxjava.BaseResponse;
 
 import io.reactivex.Observable;
 import okhttp3.MultipartBody;
@@ -31,7 +30,7 @@ public interface HttpApi {
 
     @FormUrlEncoded
     @POST("v2/movie/in_theaters")
-    Observable<BaseResponse> getDataPost(@Field("once") boolean once_no);
+    Observable<DoGetEntity> getDataPost(@Field("once") boolean once_no);
 
     /*上传文件*/
     @Multipart
