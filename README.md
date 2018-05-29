@@ -37,8 +37,6 @@ RxLibrary工程：<br>1.rxjava2 + retrofit2的封装，常用的请求（Get,Pos
                 .createApi(HttpApi.class, "http://news-at.zhihu.com")
                 .getData("Bearer aedfc1246d0b4c3f046be2d50b34d6ff", "1");
         builder.setCallBack(observable, new CallBack<DoGetEntity>() {
-            //Object可以替换成实体类，无需再解析
-            //根据业务需要，可继承RxObserver重写类，对onFail和onSuccess进行解析，根据resultCode进行处理
             @Override
             public void onStart(Disposable disposable) {
 
