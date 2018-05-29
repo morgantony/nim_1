@@ -1,9 +1,9 @@
-package com.bhm.sdk.demo.listener;
+package com.bhm.sdk.demo.tools;
 
 import java.io.Serializable;
 
 /**
- * Created by Administrator on 2018/5/11.
+ * Created by bhm on 2018/5/11.
  */
 
 public class Entity implements Serializable{

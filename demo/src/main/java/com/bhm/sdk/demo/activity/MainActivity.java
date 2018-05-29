@@ -1,5 +1,6 @@
 package com.bhm.sdk.demo.activity;
 
+import android.Manifest;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.widget.DividerItemDecoration;
@@ -7,29 +8,35 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.bhm.sdk.bhmlibrary.views.TitleBar;
 import com.bhm.sdk.demo.adapter.MainUIAdapter;
-import com.bhm.sdk.demo.listener.Entity;
-import com.bhm.sdk.demo.listener.HttpApi;
+import com.bhm.sdk.demo.entity.DoGetEntity;
+import com.bhm.sdk.demo.entity.UpLoadEntity;
+import com.bhm.sdk.demo.http.HttpApi;
+import com.bhm.sdk.demo.tools.Entity;
 import com.bhm.sdk.demo.tools.MyLoadingDialog;
+import com.bhm.sdk.demo.tools.Utils;
 import com.bhm.sdk.rxlibrary.demo.R;
 import com.bhm.sdk.rxlibrary.rxbus.RxBus;
 import com.bhm.sdk.rxlibrary.rxbus.Subscribe;
+import com.bhm.sdk.rxlibrary.rxjava.BaseResponse;
+import com.bhm.sdk.rxlibrary.rxjava.CallBack;
 import com.bhm.sdk.rxlibrary.rxjava.RxBaseActivity;
 import com.bhm.sdk.rxlibrary.rxjava.RxBuilder;
 import com.bhm.sdk.rxlibrary.rxjava.RxDownLoadListener;
-import com.bhm.sdk.rxlibrary.rxjava.RxManager;
-import com.bhm.sdk.rxlibrary.rxjava.RxObserver;
 import com.bhm.sdk.rxlibrary.rxjava.RxUpLoadListener;
 import com.chad.library.adapter.base.BaseQuickAdapter;
+import com.tbruyelle.rxpermissions2.RxPermissions;
 
 import java.io.File;
 import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 
+import io.reactivex.Observable;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.annotations.NonNull;
 import io.reactivex.disposables.Disposable;
@@ -46,18 +53,22 @@ public class MainActivity extends RxBaseActivity {
     protected RecyclerView main_recycle_view;
     private MainUIAdapter adapter;
     private TitleBar titleBar;
+    private ProgressBar progressBarHorizontal;
+    private RxPermissions rxPermissions;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         RxBus.get().register(this);
+        rxPermissions = new RxPermissions(this);//权限申请
         initView();
         initListener();
     }
 
     private void initView() {
         main_recycle_view = (RecyclerView) findViewById(R.id.main_recycle_view);
+        progressBarHorizontal = (ProgressBar) findViewById(R.id.progressBarHorizontal);
         titleBar = (TitleBar) findViewById(R.id.titleBar);
         LinearLayoutManager ms = new LinearLayoutManager(this);
         ms.setOrientation(LinearLayoutManager.VERTICAL);
@@ -72,7 +83,6 @@ public class MainActivity extends RxBaseActivity {
         List<String> list = new ArrayList<>();
         list.add("RxJava2+Retrofit2,Get请求");
         list.add("RxJava2+Retrofit2,post请求");
-        list.add("RxJava2+Retrofit2,文件上传");
         list.add("RxJava2+Retrofit2,文件上传（带进度）");
         list.add("RxJava2+Retrofit2,文件下载（带进度）");
         list.add("");
@@ -98,15 +108,38 @@ public class MainActivity extends RxBaseActivity {
                 doPost();
                 break;
             case 2:
-                upLoadFile();//上传文件
+                rxPermissions
+                        .request(Manifest.permission.WRITE_EXTERNAL_STORAGE,
+                                Manifest.permission.READ_EXTERNAL_STORAGE)
+                        .subscribe(new Consumer<Boolean>() {
+                            @Override
+                            public void accept(Boolean aBoolean) throws Exception {
+                                if(!aBoolean){
+                                    Toast.makeText(MainActivity.this, "无法获取权限，请在设置中授权",
+                                            Toast.LENGTH_SHORT).show();
+                                }else{
+                                    upLoadFile();//上传文件
+                                }
+                            }
+                        });
                 break;
             case 3:
-                upLoadFile1();//上传文件（待进度）
+                rxPermissions
+                        .request(Manifest.permission.WRITE_EXTERNAL_STORAGE,
+                                Manifest.permission.READ_EXTERNAL_STORAGE)
+                        .subscribe(new Consumer<Boolean>() {
+                            @Override
+                            public void accept(Boolean aBoolean) throws Exception {
+                                if(!aBoolean){
+                                    Toast.makeText(MainActivity.this, "无法获取权限，请在设置中授权",
+                                            Toast.LENGTH_SHORT).show();
+                                }else{
+                                    downLoadFile();//下载文件
+                                }
+                            }
+                        });
                 break;
-            case 4:
-                downLoadFile();//下载文件
-                break;
-            case 6:
+            case 5:
                 startActivity(new Intent(this, RxBusActivity.class));
             default:
                 return;
@@ -133,139 +166,118 @@ public class MainActivity extends RxBaseActivity {
                 .setLoadingDialog(new MyLoadingDialog())
                 .setDialogAttribute(true, false, false)
                 //.setHttpTimeOut()
-                .setIsLogOutPut(false)//默认是true
+                .setIsLogOutPut(true)//默认是false
                 .setIsDefaultToast(true, rxManager)
                 .bindRx();
-        builder.createApi(HttpApi.class, "http://gank.io/api/data/")
-                .getData("Bearer aedfc1246d0b4c3f046be2d50b34d6ff", "1")
-                .compose(bindToLifecycle())//管理生命周期
-                .compose(RxManager.rxSchedulerHelper())//发布事件io线程
-                .subscribe(new RxObserver<Object>(builder) {//Object可以替换成实体类，无需再解析
-                    //根据业务需要，可继承RxObserver重写类，对onFail和onSuccess进行解析，根据resultCode进行处理
-                    @Override
-                    public void onStart(Disposable disposable) {
+        Observable<DoGetEntity> observable = builder
+                .createApi(HttpApi.class, "http://news-at.zhihu.com")
+                .getData("Bearer aedfc1246d0b4c3f046be2d50b34d6ff", "1");
+        builder.setCallBack(observable, new CallBack<DoGetEntity>() {
+            //Object可以替换成实体类，无需再解析
+            //根据业务需要，可继承RxObserver重写类，对onFail和onSuccess进行解析，根据resultCode进行处理
+            @Override
+            public void onStart(Disposable disposable) {
 
-                    }
+            }
 
-                    @Override
-                    public void onSuccess(Object response) {
-                        Log.i("onSuccess-------> ", response.toString());
-                    }
+            @Override
+            public void onSuccess(DoGetEntity response) {
+                Log.i("MainActivity--> ", response.getDate());
+                Toast.makeText(MainActivity.this, response.getDate(), Toast.LENGTH_SHORT).show();
+            }
 
-                    @Override
-                    public void onDone() {
+            @Override
+            public void onFail(Throwable e) {
 
-                    }
+            }
 
-                    @Override
-                    public void onFail(Throwable t) {
+            @Override
+            public void onComplete() {
 
-                    }
-                });
+            }
+        });
     }
 
     private void doPost() {
         RxBuilder builder = RxBuilder.newBuilder(this)
-//                .setLoadingDialog(RxLoadingDialog.getDefaultDialog())
+                //.setLoadingDialog(RxLoadingDialog.getDefaultDialog())
                 .setLoadingDialog(new MyLoadingDialog())
                 .setDialogAttribute(true, false, false)
-//                .setHttpTimeOut()
-//                .setIsLogOutPut(false)//默认是true
+                //.setHttpTimeOut()
+                .setIsLogOutPut(true)//默认是false
                 .setIsDefaultToast(true, rxManager)
                 .bindRx();
-        builder.createApi(HttpApi.class, "https://www.izaodao.com/Api/")
-                .getDataPost(true)
-                .compose(bindToLifecycle())//管理生命周期
-                .compose(RxManager.rxSchedulerHelper())//发布事件io线程
-                .subscribe(new RxObserver<Object>(builder) {//Object可以替换成实体类，无需再解析
-                    //根据业务需要，可继承RxObserver重写类，对onFail和onSuccess进行解析，根据resultCode进行处理
-                    @Override
-                    public void onStart(Disposable disposable) {
+        Observable<BaseResponse> observable = builder
+                .createApi(HttpApi.class, "Https://api.douban.com/")
+                .getDataPost(true);
+        builder.setCallBack(observable, new CallBack<BaseResponse>() {
+            //Object可以替换成实体类，无需再解析
+            //根据业务需要，可继承RxObserver重写类，对onFail和onSuccess进行解析，根据resultCode进行处理
+            @Override
+            public void onStart(Disposable disposable) {
 
-                    }
+            }
 
-                    @Override
-                    public void onSuccess(Object response) {
-                        Log.i("onSuccess-------> ", response.toString());
-                    }
+            @Override
+            public void onSuccess(BaseResponse response) {
+                Log.i("MainActivity--> ", response.toString());
+                Toast.makeText(MainActivity.this, response.toString(), Toast.LENGTH_SHORT).show();
+            }
 
-                    @Override
-                    public void onDone() {
+            @Override
+            public void onFail(Throwable e) {
 
-                    }
+            }
 
-                    @Override
-                    public void onFail(Throwable t) {
+            @Override
+            public void onComplete() {
 
-                    }
-                });
+            }
+        });
     }
 
     private void upLoadFile() {
-        File file = new File("filePath");
+        File file = Utils.getFile();
         RequestBody requestBody = RequestBody.create(MediaType.parse("image/jpeg; charset=UTF-8"),file);
         MultipartBody.Part part= MultipartBody.Part.createFormData("file", file.getName(), requestBody);
 
         RxBuilder builder = RxBuilder.newBuilder(this)
-//                .setLoadingDialog(RxLoadingDialog.getDefaultDialog())
+                //.setLoadingDialog(RxLoadingDialog.getDefaultDialog())
                 .setLoadingDialog(new MyLoadingDialog())
-                .setDialogAttribute(true, false, false)
-//                .setHttpTimeOut()
-//                .setIsLogOutPut(false)//默认是true
+                .setDialogAttribute(false, false, false)
+                //.setHttpTimeOut()
+                .setIsLogOutPut(true)//默认是false
                 .setIsDefaultToast(true, rxManager)
                 .bindRx();
-        builder.createApi(HttpApi.class, "http://gank.io/api/data/")
-                .upload("Bearer aedfc1246d0b4c3f046be2d50b34d6ff",
-                        RequestBody.create(MediaType.parse("text/plain"), "filename"),
-                        RequestBody.create(MediaType.parse("text/plain"),"id"),
-                        part)
-                .compose(bindToLifecycle())//管理生命周期
-                .compose(RxManager.rxSchedulerHelper())//发布事件io线程
-                .subscribe(new RxObserver<Object>(builder) {//Object可以替换成实体类，无需再解析
-                    //根据业务需要，可继承RxObserver重写类，对onFail和onSuccess进行解析，根据resultCode进行处理
-                    @Override
-                    public void onStart(Disposable disposable) {
+        Observable<UpLoadEntity> observable = builder
+                .createApi(HttpApi.class, "http://cloudapi.dev-chexiu.cn/", rxUpLoadListener)
+                .upload("Bearer a7f998422ae0a9008a3bc5be1273946a",
+                        RequestBody.create(MediaType.parse("text/plain"), "9"),
+                        part);
+        builder.setCallBack(observable, new CallBack<UpLoadEntity>() {
+            //Object可以替换成实体类，无需再解析
+            //根据业务需要，可继承RxObserver重写类，对onFail和onSuccess进行解析，根据resultCode进行处理
+            @Override
+            public void onStart(Disposable disposable) {
+                rxUpLoadListener.onStartUpload();
+            }
 
-                    }
+            @Override
+            public void onSuccess(UpLoadEntity response) {
+                Log.i("MainActivity--> ", response.getMsg());
+                Toast.makeText(MainActivity.this, response.getMsg(), Toast.LENGTH_SHORT).show();
+            }
 
-                    @Override
-                    public void onSuccess(Object response) {
-                        Log.d("onSuccess-------> ", response.toString());
-                    }
+            @Override
+            public void onFail(Throwable e) {
+                rxUpLoadListener.onFail(e.getMessage());
+            }
 
-                    @Override
-                    public void onDone() {
-
-                    }
-
-                    @Override
-                    public void onFail(Throwable t) {
-
-                    }
-                });
-    }
-
-    private void upLoadFile1() {
-        File file = new File("filePath");
-        RequestBody requestBody = RequestBody.create(MediaType.parse("image/jpeg; charset=UTF-8"),file);
-        MultipartBody.Part part= MultipartBody.Part.createFormData("file", file.getName(), requestBody);
-
-        RxBuilder builder = RxBuilder.newBuilder(this)
-//                .setLoadingDialog(RxLoadingDialog.getDefaultDialog())
-                .setLoadingDialog(new MyLoadingDialog())
-                .setDialogAttribute(true, false, false)
-//                .setHttpTimeOut()
-//                .setIsLogOutPut(false)//默认是true
-                .setIsDefaultToast(true, rxManager)
-                .bindRx();
-        builder.createApi(HttpApi.class, "http://gank.io/api/data/", rxUpLoadListener)
-                .upload("Bearer aedfc1246d0b4c3f046be2d50b34d6ff",
-                        RequestBody.create(MediaType.parse("text/plain"), "filename"),
-                        RequestBody.create(MediaType.parse("text/plain"),"id"),
-                        part)
-                .compose(bindToLifecycle())//管理生命周期
-                .compose(RxManager.rxSchedulerHelper())//发布事件io线程
-                .subscribe();
+            @Override
+            public void onComplete() {
+                rxUpLoadListener.onFinishUpload();
+            }
+        });
     }
 
     private void downLoadFile(){
@@ -274,11 +286,13 @@ public class MainActivity extends RxBaseActivity {
                 .setLoadingDialog(new MyLoadingDialog())
                 .setDialogAttribute(false, false, false)
 //                .setHttpTimeOut()
-//                .setIsLogOutPut(false)//默认是true
+                .setIsLogOutPut(true)//默认是false
                 .setIsDefaultToast(true, rxManager)
                 .bindRx();
-        Disposable disposable = builder.createApi(HttpApi.class, "http://gank.io/api/data/", rxDownLoadListener)
-                .downLoad("下载文件的url")
+        Disposable disposable = builder
+                //域名随便填写,但必须以“/”为结尾
+                .createApi(HttpApi.class, "http://dldir1.qq.com/weixin/", rxDownLoadListener)
+                .downLoad("http://dldir1.qq.com/weixin/android/weixin666android1300.apk")
                 .subscribeOn(Schedulers.io())
                 .unsubscribeOn(Schedulers.io())
                 .map(new Function<ResponseBody, InputStream>() {
@@ -287,17 +301,20 @@ public class MainActivity extends RxBaseActivity {
                         return responseBody.byteStream();
                     }
                 })
-                .observeOn(Schedulers.computation()) // 用于计算任务
+//                .observeOn(Schedulers.computation()) // 用于计算任务
+                // 由于writeFile注释掉了，所以onFinishDownload中的提示语必须在ui线程中，正常情况下使用Schedulers.computation()
+                .observeOn(AndroidSchedulers.mainThread())
                 .doOnNext(new Consumer<InputStream>() {
                     @Override
                     public void accept(InputStream inputStream){
                         //得到整个文件流
                         try {
                             rxDownLoadListener.onProgress(100);
-//                          writeFile(inputStream, filePath);
+//                          writeFile(inputStream, filePath);//注释掉
                             rxDownLoadListener.onFinishDownload();
                         }catch (Exception e){
                             rxDownLoadListener.onFail(e.getMessage());
+                            rxManager.removeObserver();
                         }
                     }
                 })
@@ -310,7 +327,7 @@ public class MainActivity extends RxBaseActivity {
                 }, new Consumer<Throwable>() {
                     @Override
                     public void accept(Throwable throwable) throws Exception {
-                        Toast.makeText(MainActivity.this, "下载失败，请重试", Toast.LENGTH_SHORT).show();
+                        rxDownLoadListener.onFail(throwable.getMessage());
                         rxManager.removeObserver();
                     }
                 });
@@ -320,44 +337,44 @@ public class MainActivity extends RxBaseActivity {
     private RxUpLoadListener rxUpLoadListener = new RxUpLoadListener() {
         @Override
         public void onStartUpload() {
-
+            progressBarHorizontal.setProgress(0);
         }
 
         @Override
         public void onProgress(long bytesWritten, long contentLength) {
-
+            progressBarHorizontal.setProgress((int) ((bytesWritten/contentLength) * 100));
         }
 
         @Override
         public void onFinishUpload() {
-
+            Toast.makeText(MainActivity.this, "onFinishDownload", Toast.LENGTH_SHORT).show();
         }
 
         @Override
         public void onFail(String errorInfo) {
-
+            Toast.makeText(MainActivity.this, errorInfo, Toast.LENGTH_SHORT).show();
         }
     };
 
     private RxDownLoadListener rxDownLoadListener = new RxDownLoadListener() {
         @Override
         public void onStartDownload() {
-
+            progressBarHorizontal.setProgress(0);
         }
 
         @Override
         public void onProgress(int progress) {
-
+            progressBarHorizontal.setProgress(progress);
         }
 
         @Override
         public void onFinishDownload() {
-
+            Toast.makeText(MainActivity.this, "onFinishDownload", Toast.LENGTH_SHORT).show();
         }
 
         @Override
         public void onFail(String errorInfo) {
-
+            Toast.makeText(MainActivity.this, errorInfo, Toast.LENGTH_SHORT).show();
         }
     };
 }

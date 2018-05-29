@@ -5,7 +5,7 @@ import android.support.annotation.Nullable;
 import android.view.View;
 
 import com.bhm.sdk.bhmlibrary.views.TitleBar;
-import com.bhm.sdk.demo.listener.Entity;
+import com.bhm.sdk.demo.tools.Entity;
 import com.bhm.sdk.rxlibrary.demo.R;
 import com.bhm.sdk.rxlibrary.rxbus.RxBus;
 import com.bhm.sdk.rxlibrary.rxjava.RxBaseActivity;

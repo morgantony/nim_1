@@ -1,4 +1,8 @@
-package com.bhm.sdk.demo.listener;
+package com.bhm.sdk.demo.http;
+
+import com.bhm.sdk.demo.entity.DoGetEntity;
+import com.bhm.sdk.demo.entity.UpLoadEntity;
+import com.bhm.sdk.rxlibrary.rxjava.BaseResponse;
 
 import io.reactivex.Observable;
 import okhttp3.MultipartBody;
@@ -21,21 +25,20 @@ import retrofit2.http.Url;
 
 public interface HttpApi {
 
-    @GET("福利/10/1")
-    Observable<Object> getData(@Header("token") String token,
-                               @Query("type")  String type);
+    @GET("/api/4/news/latest")
+    Observable<DoGetEntity> getData(@Header("token") String token,
+                                                    @Query("type")  String type);
 
     @FormUrlEncoded
-    @POST("AppFiftyToneGraph/videoLink")
-    Observable<Object> getDataPost(@Field("once") boolean once_no);
+    @POST("v2/movie/in_theaters")
+    Observable<BaseResponse> getDataPost(@Field("once") boolean once_no);
 
     /*上传文件*/
     @Multipart
-    @POST("upload/uploadFile.do")
-    Observable<Object> upload(
-            @Header("token") String token,
-            @Part("filename") RequestBody description,
-            @Part("id") RequestBody id,
+    @POST("common/update-avatar")
+    Observable<UpLoadEntity> upload(
+            @Header("Authorization") String token,
+            @Part("role_id") RequestBody role_id,
             @Part MultipartBody.Part file);
 
     /*下载*/

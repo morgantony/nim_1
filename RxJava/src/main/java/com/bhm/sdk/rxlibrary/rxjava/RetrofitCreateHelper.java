@@ -47,7 +47,7 @@ public class RetrofitCreateHelper {
     private int TIMEOUT_CONNECTION = 20;//连接超时
     private Activity activity;
     private OkHttpClient okHttpClient;
-    private boolean isLogOutPut = true;
+    private boolean isLogOutPut = false;
     private RxDownLoadListener downLoadListener;
     private RxUpLoadListener upLoadListener;
     private StringBuilder mMessage = new StringBuilder();
@@ -245,7 +245,7 @@ public class RetrofitCreateHelper {
     };
 
     /**
-     * 下载进度拦截器
+     * 上传进度拦截器
      */
     private Interceptor upInterceptor = new Interceptor() {
         @Override
