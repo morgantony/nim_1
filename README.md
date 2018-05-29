@@ -1,68 +1,69 @@
-RxLibrary工程：<br>1.rxjava2 + retrofit2的封装，常用的请求（Get,Post,文件上传，文件下载），简单便捷，支持自定义loading等属性。</br>2.RxBus的使用，用法完全与EvenBus一样。
+RxLibrary工程：<br>1.rxjava2 + retrofit2的封装，常用的请求（Get,Post,文件上传，文件下载），防止内存泄漏，简单便捷，支持自定义loading等属性。</br>2.RxBus的使用，用法完全与EvenBus一样。
 =
 效果图
 ------
->![image](https://github.com/buhuiming/RxLibrary/blob/master/screenShots/i.jpg)</br>
+>![image](https://github.com/buhuiming/RxLibrary/blob/master/screenShots/2.jpg)</br>
 
 <br>
 
 集成
 -------
-    compile 'com.bhm.sdk.rxlibrary:RxLibrary:2.3.2'
+    compile 'com.bhm.sdk.rxlibrary:RxLibrary:2.4.0'
 <br>或者
 
     <dependency>
       <groupId>com.bhm.sdk.rxlibrary</groupId>
       <artifactId>RxLibrary</artifactId>
-      <version>2.3.2</version>
+      <version>2.4.0</version>
       <type>pom</type>
     </dependency>
 
 
 一、rxjava2 + retrofit2的使用
 -------  
-    强烈建议参考demo，MianActivity包含了常用的用法及用法介绍。
-    <br>第一步，继承RxBaseActivity或者RxBaseFragment,添加内存管理的机制，同时获取rxManager对象，rxManager是管理观察者的类，当取消请求、中断请求等可调用对应的方法。注意：如果项目BaseActivity继承了别的Activity，则需在BaseActivity中添加RxAppCompatActivity的代码，并且生成RxManager对象，Fragment同理哦。
-    <br>第二步，使用。</br>
+### 强烈建议参考demo，MianActivity包含了常用的用法及用法介绍。
+### 第一步，继承RxBaseActivity或者RxBaseFragment,添加内存管理的机制，同时获取rxManager对象，rxManager是管理观察者的类，当取消请求、中断请求等可调用对应的方法。注意：如果项目BaseActivity继承了别的Activity，则需在BaseActivity中添加RxAppCompatActivity的代码，并且生成RxManager对象，解析的实体类必须继承BaseResponse类。Fragment同理哦。
+### 第二步，使用。
 
         RxBuilder builder = RxBuilder.newBuilder(this)
                 //.setLoadingDialog(RxLoadingDialog.getDefaultDialog())
                 .setLoadingDialog(new MyLoadingDialog())
                 .setDialogAttribute(true, false, false)
                 //.setHttpTimeOut()
-                .setIsLogOutPut(false)//默认是true
+                .setIsLogOutPut(true)//默认是false
                 .setIsDefaultToast(true, rxManager)
                 .bindRx();
-        builder.createApi(HttpApi.class, Host)
-                .getData("Bearer aedfc1246d0b4c3f046be2d50b34d6ff", "1")
-                .compose(bindToLifecycle())//管理生命周期
-                .compose(RxManager.rxSchedulerHelper())//发布事件io线程
-                .subscribe(new RxObserver<Object>(builder) {//Object可以替换成实体类，无需再解析
-                    //根据业务需要，可继承RxObserver重写类，对onFail和onSuccess进行解析，根据resultCode进行处理
-                    @Override
-                    public void onStart(Disposable disposable) {
+        Observable<DoGetEntity> observable = builder
+                .createApi(HttpApi.class, "http://news-at.zhihu.com")
+                .getData("Bearer aedfc1246d0b4c3f046be2d50b34d6ff", "1");
+        builder.setCallBack(observable, new CallBack<DoGetEntity>() {
+            //Object可以替换成实体类，无需再解析
+            //根据业务需要，可继承RxObserver重写类，对onFail和onSuccess进行解析，根据resultCode进行处理
+            @Override
+            public void onStart(Disposable disposable) {
 
-                    }
+            }
 
-                    @Override
-                    public void onSuccess(Object response) {
-                        Log.i("onSuccess-------> ", response.toString());
-                    }
+            @Override
+            public void onSuccess(DoGetEntity response) {
+                Log.i("MainActivity--> ", response.getDate());
+                Toast.makeText(MainActivity.this, response.getDate(), Toast.LENGTH_SHORT).show();
+            }
 
-                    @Override
-                    public void onDone() {
+            @Override
+            public void onFail(Throwable e) {
 
-                    }
+            }
 
-                    @Override
-                    public void onFail(Throwable t) {
+            @Override
+            public void onComplete() {
 
-                    }
-                });
+            }
+        });
 <br>
 
-    HttpApi是一个接口，getData是HttpApi中的方法。</br>
-    Host 为域名。</br>                         
+### HttpApi是一个接口，getData是HttpApi中的方法。</br>
+### Host 为域名。</br>                         
 ### 以下介绍下HttpApi中常用注解的使用：</br>
         1.get请求：方法前添加@GET("url"),参数 @Query、@QueryMap
         <br>例（url和域名拼接好后组成完整链接，当然我们不需要自己拼接，Retrofit会处理）</br>
