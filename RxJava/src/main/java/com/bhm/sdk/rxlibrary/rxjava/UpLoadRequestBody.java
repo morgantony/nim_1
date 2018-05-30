@@ -61,6 +61,9 @@ public class UpLoadRequestBody extends RequestBody {
         @Override
         public void write(Buffer source, long byteCount) throws IOException {
             super.write(source, byteCount);
+            if(bytesWritten == 0) {
+                mUploadListener.onStartUpload();
+            }
             bytesWritten += byteCount;
             mUploadListener.onProgress(bytesWritten, contentLength());
         }

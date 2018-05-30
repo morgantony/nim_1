@@ -4,7 +4,7 @@ package com.bhm.sdk.rxlibrary.rxjava;
  * Created by bhm on 2018/5/28.
  */
 
-public interface RxUpLoadListener {
+public interface RxUpLoadListener extends RxListener{
 
     void onStartUpload();
 

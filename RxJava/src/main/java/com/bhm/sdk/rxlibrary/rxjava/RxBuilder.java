@@ -10,6 +10,7 @@ import com.google.gson.JsonSyntaxException;
 import java.util.concurrent.TimeoutException;
 
 import io.reactivex.Observable;
+import io.reactivex.annotations.NonNull;
 import io.reactivex.disposables.Disposable;
 import io.reactivex.functions.Action;
 import io.reactivex.functions.Consumer;
@@ -22,43 +23,24 @@ import retrofit2.HttpException;
 
 public class RxBuilder {
 
-    private RxBaseActivity activity;
-    private boolean isShowDialog;
-    private boolean cancelable;
-    private boolean isCanceledOnTouchOutside;
-    private RxLoadingDialog dialog;
-    private boolean isDefaultToast;
-    private RxManager rxManager;
-    private int readTimeOut;
-    private int connectTimeOut;
-    private OkHttpClient okHttpClient;
-    private boolean isLogOutPut = false;
+    private Builder builder;
     private CallBack callBack;
+    private RxListener listener;
 
-    public RxBuilder(Builder builder){
-        this.activity = builder.activity;
-        this.isShowDialog = builder.isShowDialog;
-        this.cancelable = builder.cancelable;
-        this.isCanceledOnTouchOutside = builder.isCanceledOnTouchOutside;
-        this.dialog = builder.dialog;
-        this.isDefaultToast = builder.isDefaultToast;
-        this.rxManager = builder.rxManager;
-        this.readTimeOut = builder.readTimeOut;
-        this.connectTimeOut = builder.connectTimeOut;
-        this.okHttpClient = builder.okHttpClient;
-        this.isLogOutPut = builder.isLogOutPut;
+    public RxBuilder(@NonNull Builder builder){
+        this.builder = builder;
     }
 
     public Activity getActivity() {
-        return activity;
+        return builder.activity;
     }
 
     public boolean isShowDialog() {
-        return isShowDialog;
+        return builder.isShowDialog;
     }
 
     public boolean isCancelable() {
-        return cancelable;
+        return builder.cancelable;
     }
 
     public CallBack getCallBack() {
@@ -66,39 +48,43 @@ public class RxBuilder {
     }
 
     public boolean isLogOutPut() {
-        return isLogOutPut;
+        return builder.isLogOutPut;
     }
 
     public boolean isCanceledOnTouchOutside() {
-        return isCanceledOnTouchOutside;
+        return builder.isCanceledOnTouchOutside;
     }
 
     public RxLoadingDialog getDialog() {
-        return dialog;
+        return builder.dialog;
     }
 
     public boolean isDefaultToast() {
-        return isDefaultToast;
+        return builder.isDefaultToast;
     }
 
     public RxManager getRxManager() {
-        return rxManager;
+        return builder.rxManager;
     }
 
-    /** 一般请求
-     * @param cla
-     * @param host 请求地址
-     * @return
-     */
+    public int getReadTimeOut() {
+        return builder.readTimeOut;
+    }
+
+    public int getConnectTimeOut() {
+        return builder.connectTimeOut;
+    }
+
+    public OkHttpClient getOkHttpClient() {
+        return builder.okHttpClient;
+    }
+
+    public RxListener getListener() {
+        return listener;
+    }
+
     public <T> T createApi(Class<T> cla, String host){
-        if(isShowDialog && null != dialog){
-            dialog.showLoading(this);
-        }
-        return new RetrofitCreateHelper(activity)
-                .setHttpTimeOut(readTimeOut, connectTimeOut)
-                .setOkHttpClient(okHttpClient)
-                .setIsLogOutPut(isLogOutPut)
-                .createApi(cla, host);
+        return this.createApi(cla, host, null);
     }
 
     /** 上传请求
@@ -107,39 +93,18 @@ public class RxBuilder {
      * @param listener
      * @return
      */
-    public <T> T createApi(Class<T> cla, String host, RxUpLoadListener listener){
-        if(isShowDialog && null != dialog){
-            dialog.showLoading(this);
+    public <T> T createApi(Class<T> cla, String host, RxListener listener){
+        if(builder.isShowDialog && null != builder.dialog){
+            builder.dialog.showLoading(this);
         }
-        return new RetrofitCreateHelper(activity)
-                .setHttpTimeOut(readTimeOut, connectTimeOut)
-                .setOkHttpClient(okHttpClient)
-                .setIsLogOutPut(isLogOutPut)
-                .setUpLoadListener(listener)
-                .createApi(cla, host);
-    }
-
-    /** 下载请求
-     * @param cla
-     * @param host 请求地址
-     * @param listener
-     * @return
-     */
-    public <T> T createApi(Class<T> cla, String host, RxDownLoadListener listener){
-        if(isShowDialog && null != dialog){
-            dialog.showLoading(this);
-        }
-        return new RetrofitCreateHelper(activity)
-                .setHttpTimeOut(readTimeOut, connectTimeOut)
-                .setOkHttpClient(okHttpClient)
-                .setIsLogOutPut(isLogOutPut)
-                .setDownLoadListener(listener)
+        this.listener = listener;
+        return new RetrofitCreateHelper(this)
                 .createApi(cla, host);
     }
 
     public <T> Disposable setCallBack(Observable<T> observable, final CallBack<T> callBack){
         this.callBack = callBack;
-        return observable.compose(activity.bindToLifecycle())////管理生命周期
+        return observable.compose(builder.activity.bindToLifecycle())////管理生命周期
                 .compose(RxManager.rxSchedulerHelper())//发布事件io线程
                 .subscribe(getBaseConsumer(),
                         getThrowableConsumer(),
@@ -229,8 +194,8 @@ public class RxBuilder {
                 if(null != callBack){
                     callBack.onStart(disposable);
                 }
-                if(rxManager != null){
-                    rxManager.subscribe(disposable);
+                if(builder.rxManager != null){
+                    builder.rxManager.subscribe(disposable);
                 }
             }
         };

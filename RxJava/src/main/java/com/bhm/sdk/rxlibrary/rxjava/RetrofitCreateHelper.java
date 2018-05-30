@@ -1,7 +1,6 @@
 package com.bhm.sdk.rxlibrary.rxjava;
 
 
-import android.app.Activity;
 import android.content.Context;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
@@ -24,6 +23,7 @@ import javax.net.ssl.SSLSession;
 import javax.net.ssl.SSLSocketFactory;
 import javax.net.ssl.X509TrustManager;
 
+import io.reactivex.annotations.NonNull;
 import okhttp3.CacheControl;
 import okhttp3.Interceptor;
 import okhttp3.OkHttpClient;
@@ -45,48 +45,25 @@ public class RetrofitCreateHelper {
 
     private int TIMEOUT_READ = 30;//读取超时
     private int TIMEOUT_CONNECTION = 20;//连接超时
-    private Activity activity;
-    private OkHttpClient okHttpClient;
-    private boolean isLogOutPut = false;
-    private RxDownLoadListener downLoadListener;
-    private RxUpLoadListener upLoadListener;
     private StringBuilder mMessage = new StringBuilder();
+    private RxBuilder builder;
 
     /**
-     * @param activity
+     * @param builder
      */
-    public RetrofitCreateHelper(Activity activity){
-        this.activity = activity;
-    }
-
-    /**
-     * @param readTimeOut
-     * @param connectTimeOut
-     * @return
-     */
-    public RetrofitCreateHelper setHttpTimeOut(int readTimeOut, int connectTimeOut){
-        if(readTimeOut > 0){
-            TIMEOUT_READ = readTimeOut;
-        }
-        if(connectTimeOut > 0){
-            TIMEOUT_CONNECTION = connectTimeOut;
-        }
-        return this;
-    }
-
-    public RetrofitCreateHelper setOkHttpClient(OkHttpClient client){
-        this.okHttpClient = client;
-        return this;
-    }
-
-    public RetrofitCreateHelper setIsLogOutPut(boolean isLogOutPut){
-        this.isLogOutPut = isLogOutPut;
-        return this;
+    public RetrofitCreateHelper(@NonNull RxBuilder builder){
+        this.builder = builder;
     }
 
     private OkHttpClient getOkHttpClient(){
-        if(null != okHttpClient){
-            return okHttpClient;
+        if(null != builder.getOkHttpClient()){
+            return builder.getOkHttpClient();
+        }
+        if(builder.getReadTimeOut() > 0){
+            TIMEOUT_READ = builder.getReadTimeOut();
+        }
+        if(builder.getConnectTimeOut() > 0){
+            TIMEOUT_CONNECTION = builder.getConnectTimeOut();
         }
         return new OkHttpClient.Builder()
                 .sslSocketFactory(getUnsafeOkHttpClient(), new X509TrustManager() {
@@ -116,7 +93,7 @@ public class RetrofitCreateHelper {
                 .addInterceptor(downInterceptor)
                 .addInterceptor(upInterceptor)
                 .addNetworkInterceptor(cacheInterceptor)//设置Cache拦截器
-                .cache(HttpCache.getCache(activity))
+                .cache(HttpCache.getCache(builder.getActivity()))
                 .connectTimeout(TIMEOUT_CONNECTION, TimeUnit.SECONDS)//time out
                 .readTimeout(TIMEOUT_READ, TimeUnit.SECONDS)
                 .writeTimeout(TIMEOUT_READ, TimeUnit.SECONDS)
@@ -151,7 +128,7 @@ public class RetrofitCreateHelper {
             new HttpLoggingInterceptor.Logger() {
                 @Override
                 public void log(String message) {
-                    if(!isLogOutPut){
+                    if(!builder.isLogOutPut()){
                         return;
                     }
                     // 请求或者响应开始
@@ -196,12 +173,12 @@ public class RetrofitCreateHelper {
 //            String bodyString = buffer.clone().readString(charset);
 
             Request request = chain.request();
-            if (isNetworkConnected(activity)) {
+            if (isNetworkConnected(builder.getActivity())) {
                 // 有网络时, 缓存5s，根据实际情况设置
                 int maxAge = 5;
                 request = request.newBuilder()
                         .removeHeader("User-Agent")
-                        .header("User-Agent", getUserAgent(activity))
+                        .header("User-Agent", getUserAgent(builder.getActivity()))
                         .build();
 
                 Response response = chain.proceed(request);
@@ -216,7 +193,7 @@ public class RetrofitCreateHelper {
                 request = request.newBuilder()
                         .cacheControl(CacheControl.FORCE_CACHE)
                         .removeHeader("User-Agent")
-                        .header("User-Agent", getUserAgent(activity))
+                        .header("User-Agent", getUserAgent(builder.getActivity()))
                         .build();
 
                 Response response = chain.proceed(request);
@@ -236,11 +213,11 @@ public class RetrofitCreateHelper {
         @Override
         public Response intercept(Chain chain) throws IOException {
             Response response = chain.proceed(chain.request());
-            if(null == downLoadListener){
+            if(null == builder.getListener() || !(builder.getListener() instanceof RxDownLoadListener)){
                 return response;
             }
             return response.newBuilder().body(
-                    new DownLoadResponseBody(response.body(), downLoadListener)).build();
+                    new DownLoadResponseBody(response.body(), (RxDownLoadListener) builder.getListener())).build();
         }
     };
 
@@ -251,14 +228,15 @@ public class RetrofitCreateHelper {
         @Override
         public Response intercept(Chain chain) throws IOException {
             Request request = chain.request();
-            if(null == request.body() || null == upLoadListener){
+            if(null == request.body() || null == builder.getListener()
+                    || !(builder.getListener() instanceof RxUpLoadListener)){
                 return chain.proceed(request);
             }
 
             Request build = request.newBuilder()
                     .method(request.method(),
                             new UpLoadRequestBody(request.body(),
-                                    upLoadListener))
+                                    (RxUpLoadListener) builder.getListener()))
                     .build();
             return chain.proceed(build);
         }
@@ -306,24 +284,6 @@ public class RetrofitCreateHelper {
                 .registerTypeAdapter(Integer.class, new IntegerDefaultAdapter())
                 .registerTypeAdapter(int.class, new IntegerDefaultAdapter())
                 .create();
-    }
-
-    /** 设置下载监听
-     * @param downLoadListener
-     * @return
-     */
-    public RetrofitCreateHelper setDownLoadListener(RxDownLoadListener downLoadListener){
-        this.downLoadListener = downLoadListener;
-        return this;
-    }
-
-    /** 设置上传监听
-     * @param upLoadListener
-     * @return
-     */
-    public RetrofitCreateHelper setUpLoadListener(RxUpLoadListener upLoadListener){
-        this.upLoadListener = upLoadListener;
-        return this;
     }
 
     /**

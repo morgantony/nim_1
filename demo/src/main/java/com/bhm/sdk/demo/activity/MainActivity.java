@@ -27,6 +27,7 @@ import com.bhm.sdk.rxlibrary.rxjava.RxBaseActivity;
 import com.bhm.sdk.rxlibrary.rxjava.RxBuilder;
 import com.bhm.sdk.rxlibrary.rxjava.RxDownLoadListener;
 import com.bhm.sdk.rxlibrary.rxjava.RxUpLoadListener;
+import com.bhm.sdk.rxlibrary.utils.RxLoadingDialog;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.tbruyelle.rxpermissions2.RxPermissions;
 
@@ -161,11 +162,11 @@ public class MainActivity extends RxBaseActivity {
 
     private void doGet() {
         RxBuilder builder = RxBuilder.newBuilder(this)
-                //.setLoadingDialog(RxLoadingDialog.getDefaultDialog())
-                .setLoadingDialog(new MyLoadingDialog())
+                .setLoadingDialog(RxLoadingDialog.getDefaultDialog())
+//                .setLoadingDialog(new MyLoadingDialog())
                 .setDialogAttribute(true, false, false)
                 //.setHttpTimeOut()
-                .setIsLogOutPut(true)//默认是false
+//                .setIsLogOutPut(true)//默认是false
                 .setIsDefaultToast(true, rxManager)
                 .bindRx();
         Observable<DoGetEntity> observable = builder
@@ -197,7 +198,7 @@ public class MainActivity extends RxBaseActivity {
 
     private void doPost() {
         RxBuilder builder = RxBuilder.newBuilder(this)
-                //.setLoadingDialog(RxLoadingDialog.getDefaultDialog())
+//                .setLoadingDialog(RxLoadingDialog.getDefaultDialog())
                 .setLoadingDialog(new MyLoadingDialog())
                 .setDialogAttribute(true, false, false)
                 //.setHttpTimeOut()
@@ -237,8 +238,8 @@ public class MainActivity extends RxBaseActivity {
         MultipartBody.Part part= MultipartBody.Part.createFormData("file", file.getName(), requestBody);
 
         RxBuilder builder = RxBuilder.newBuilder(this)
-                //.setLoadingDialog(RxLoadingDialog.getDefaultDialog())
-                .setLoadingDialog(new MyLoadingDialog())
+                .setLoadingDialog(RxLoadingDialog.getDefaultDialog())
+//                .setLoadingDialog(new MyLoadingDialog())
                 .setDialogAttribute(false, false, false)
                 //.setHttpTimeOut()
                 .setIsLogOutPut(true)//默认是false
@@ -275,11 +276,11 @@ public class MainActivity extends RxBaseActivity {
 
     private void downLoadFile(){
         RxBuilder builder = RxBuilder.newBuilder(this)
-//                .setLoadingDialog(RxLoadingDialog.getDefaultDialog())
-                .setLoadingDialog(new MyLoadingDialog())
+                .setLoadingDialog(RxLoadingDialog.getDefaultDialog())
+//                .setLoadingDialog(new MyLoadingDialog())
                 .setDialogAttribute(false, false, false)
 //                .setHttpTimeOut()
-                .setIsLogOutPut(true)//默认是false
+//                .setIsLogOutPut(true)//默认是false
                 .setIsDefaultToast(true, rxManager)
                 .bindRx();
         Disposable disposable = builder
@@ -304,6 +305,10 @@ public class MainActivity extends RxBaseActivity {
                         try {
                             rxDownLoadListener.onProgress(100);
 //                          writeFile(inputStream, filePath);//注释掉
+                            if(null != inputStream){
+                                inputStream.close();
+                                System.gc();
+                            }
                             rxDownLoadListener.onFinishDownload();
                         }catch (Exception e){
                             rxDownLoadListener.onFail(e.getMessage());
