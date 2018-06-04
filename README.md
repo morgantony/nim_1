@@ -1,3 +1,6 @@
+[![API](https://img.shields.io/badge/API-15%2B-brightgreen.svg)](https://android-arsenal.com/api?level=15) [![License](https://img.shields.io/badge/license-Apache%202-green.svg)](https://www.apache.org/licenses/LICENSE-2.0)[ ![Download](https://api.bintray.com/packages/bikie/bhm-sdk/RxLibrary/images/download.svg) ](https://bintray.com/bikie/bhm-sdk/RxLibrary/_latestVersion)
+-----
+
 RxLibrary工程：<br>1.rxjava2 + retrofit2的封装，常用的请求（Get,Post,文件上传，文件下载），防止内存泄漏，简单便捷，支持自定义loading等属性。</br>2.RxBus的使用，用法完全与EvenBus一样。
 =
 效果图
