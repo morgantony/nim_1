@@ -6,6 +6,7 @@ import android.widget.Toast;
 
 import com.bhm.sdk.rxlibrary.utils.RxLoadingDialog;
 import com.google.gson.JsonSyntaxException;
+import com.trello.rxlifecycle2.components.support.RxAppCompatActivity;
 
 import java.util.concurrent.TimeoutException;
 
@@ -201,13 +202,13 @@ public class RxBuilder {
         };
     }
 
-    public static Builder newBuilder(RxBaseActivity activity) {
+    public static Builder newBuilder(RxAppCompatActivity activity) {
         return new Builder(activity);
     }
 
     public static final class Builder {
 
-        private RxBaseActivity activity;
+        private RxAppCompatActivity activity;
         private boolean isShowDialog;
         private boolean cancelable;
         private boolean isCanceledOnTouchOutside;
@@ -219,7 +220,7 @@ public class RxBuilder {
         private OkHttpClient okHttpClient;
         private boolean isLogOutPut = false;
 
-        public Builder(RxBaseActivity activity) {
+        public Builder(RxAppCompatActivity activity) {
             this.activity = activity;
         }
 
