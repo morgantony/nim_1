@@ -1,5 +1,6 @@
 package com.bhm.sdk.rxlibrary.utils;
 
+import android.app.Activity;
 import android.app.Dialog;
 import android.content.DialogInterface;
 import android.view.KeyEvent;
@@ -44,7 +45,7 @@ public class RxLoadingDialog {
                                 if(null != builder.getRxManager()) {
                                     builder.getRxManager().removeObserver();
                                 }
-                                dismissLoading();
+                                dismissLoading(builder.getActivity());
                                 return false;
                             }
                             if ((System.currentTimeMillis() - onBackPressed) > 1000) {
@@ -53,7 +54,7 @@ public class RxLoadingDialog {
                                 if(null != builder.getRxManager()) {
                                     builder.getRxManager().removeObserver();
                                 }
-                                dismissLoading();
+                                dismissLoading(builder.getActivity());
                             }
                         }
                         return false;
@@ -76,8 +77,9 @@ public class RxLoadingDialog {
         return dialog;
     }
 
-    public void dismissLoading(){
-        if(null != dialog && dialog.isShowing()) {
+    public void dismissLoading(Activity activity){
+        if(null != activity && !activity.isFinishing()
+                && null != dialog && dialog.isShowing()) {
             dialog.dismiss();
             dialog = null;
             System.gc();

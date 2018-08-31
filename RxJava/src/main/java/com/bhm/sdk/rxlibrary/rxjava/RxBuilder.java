@@ -121,7 +121,7 @@ public class RxBuilder {
                     getCallBack().onSuccess(t);
                 }
                 if(isShowDialog() && null !=getDialog()){
-                    getDialog().dismissLoading();
+                    getDialog().dismissLoading(getActivity());
                 }
             }
         };
@@ -141,7 +141,7 @@ public class RxBuilder {
                     getCallBack().onFail(e);
                 }
                 if(isShowDialog() && null != getDialog()){
-                    getDialog().dismissLoading();
+                    getDialog().dismissLoading(getActivity());
                 }
                 if(isDefaultToast()) {
                     if (e instanceof HttpException) {
@@ -178,7 +178,7 @@ public class RxBuilder {
                     callBack.onComplete();
                 }
                 if(isShowDialog() && null != getDialog()){
-                    getDialog().dismissLoading();
+                    getDialog().dismissLoading(getActivity());
                 }
             }
         };
