@@ -6,6 +6,8 @@ import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.util.Log;
 
+import com.bhm.sdk.rxlibrary.rxjava.callback.RxDownLoadCallBack;
+import com.bhm.sdk.rxlibrary.rxjava.callback.RxUpLoadCallBack;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
@@ -213,11 +215,11 @@ public class RetrofitCreateHelper {
         @Override
         public Response intercept(Chain chain) throws IOException {
             Response response = chain.proceed(chain.request());
-            if(null == builder.getListener() || !(builder.getListener() instanceof RxDownLoadListener)){
+            if(null == builder.getListener() || !(builder.getListener() instanceof RxDownLoadCallBack)){
                 return response;
             }
             return response.newBuilder().body(
-                    new DownLoadResponseBody(response.body(), (RxDownLoadListener) builder.getListener())).build();
+                    new DownLoadResponseBody(response.body(), (RxDownLoadCallBack) builder.getListener())).build();
         }
     };
 
@@ -229,14 +231,14 @@ public class RetrofitCreateHelper {
         public Response intercept(Chain chain) throws IOException {
             Request request = chain.request();
             if(null == request.body() || null == builder.getListener()
-                    || !(builder.getListener() instanceof RxUpLoadListener)){
+                    || !(builder.getListener() instanceof RxUpLoadCallBack)){
                 return chain.proceed(request);
             }
 
             Request build = request.newBuilder()
                     .method(request.method(),
                             new UpLoadRequestBody(request.body(),
-                                    (RxUpLoadListener) builder.getListener()))
+                                    (RxUpLoadCallBack) builder.getListener()))
                     .build();
             return chain.proceed(build);
         }

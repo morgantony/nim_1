@@ -22,11 +22,11 @@ import com.bhm.sdk.demo.tools.Utils;
 import com.bhm.sdk.rxlibrary.demo.R;
 import com.bhm.sdk.rxlibrary.rxbus.RxBus;
 import com.bhm.sdk.rxlibrary.rxbus.Subscribe;
-import com.bhm.sdk.rxlibrary.rxjava.CallBack;
+import com.bhm.sdk.rxlibrary.rxjava.callback.CallBack;
 import com.bhm.sdk.rxlibrary.rxjava.RxBaseActivity;
 import com.bhm.sdk.rxlibrary.rxjava.RxBuilder;
-import com.bhm.sdk.rxlibrary.rxjava.RxDownLoadListener;
-import com.bhm.sdk.rxlibrary.rxjava.RxUpLoadListener;
+import com.bhm.sdk.rxlibrary.rxjava.callback.RxDownLoadCallBack;
+import com.bhm.sdk.rxlibrary.rxjava.callback.RxUpLoadCallBack;
 import com.bhm.sdk.rxlibrary.utils.RxLoadingDialog;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.tbruyelle.rxpermissions2.RxPermissions;
@@ -174,24 +174,9 @@ public class MainActivity extends RxBaseActivity {
                 .getData("Bearer aedfc1246d0b4c3f046be2d50b34d6ff", "1");
         builder.setCallBack(observable, new CallBack<DoGetEntity>() {
             @Override
-            public void onStart(Disposable disposable) {
-
-            }
-
-            @Override
             public void onSuccess(DoGetEntity response) {
                 Log.i("MainActivity--> ", response.getDate());
                 Toast.makeText(MainActivity.this, response.getDate(), Toast.LENGTH_SHORT).show();
-            }
-
-            @Override
-            public void onFail(Throwable e) {
-
-            }
-
-            @Override
-            public void onComplete() {
-
             }
         });
     }
@@ -210,24 +195,9 @@ public class MainActivity extends RxBaseActivity {
                 .getDataPost(true);
         builder.setCallBack(observable, new CallBack<DoGetEntity>() {
             @Override
-            public void onStart(Disposable disposable) {
-
-            }
-
-            @Override
             public void onSuccess(DoGetEntity response) {
                 Log.i("MainActivity--> ", response.toString());
                 Toast.makeText(MainActivity.this, response.toString(), Toast.LENGTH_SHORT).show();
-            }
-
-            @Override
-            public void onFail(Throwable e) {
-
-            }
-
-            @Override
-            public void onComplete() {
-
             }
         });
     }
@@ -253,7 +223,7 @@ public class MainActivity extends RxBaseActivity {
         builder.setCallBack(observable, new CallBack<UpLoadEntity>() {
             @Override
             public void onStart(Disposable disposable) {
-                rxUpLoadListener.onStartUpload();
+                rxUpLoadListener.onStart();
             }
 
             @Override
@@ -269,7 +239,7 @@ public class MainActivity extends RxBaseActivity {
 
             @Override
             public void onComplete() {
-                rxUpLoadListener.onFinishUpload();
+                rxUpLoadListener.onFinish();
             }
         });
     }
@@ -303,13 +273,13 @@ public class MainActivity extends RxBaseActivity {
                     public void accept(InputStream inputStream){
                         //得到整个文件流
                         try {
-                            rxDownLoadListener.onProgress(100);
+                            rxDownLoadListener.onProgress(100, 100, 100);
 //                          writeFile(inputStream, filePath);//注释掉
                             if(null != inputStream){
                                 inputStream.close();
                                 System.gc();
                             }
-                            rxDownLoadListener.onFinishDownload();
+                            rxDownLoadListener.onFinish();
                         }catch (Exception e){
                             rxDownLoadListener.onFail(e.getMessage());
                             rxManager.removeObserver();
@@ -332,19 +302,19 @@ public class MainActivity extends RxBaseActivity {
         rxManager.subscribe(disposable);
     }
 
-    private RxUpLoadListener rxUpLoadListener = new RxUpLoadListener() {
+    private RxUpLoadCallBack rxUpLoadListener = new RxUpLoadCallBack() {
         @Override
-        public void onStartUpload() {
+        public void onStart() {
             progressBarHorizontal.setProgress(0);
         }
 
         @Override
-        public void onProgress(long bytesWritten, long contentLength) {
-            progressBarHorizontal.setProgress((int) ((bytesWritten/contentLength) * 100));
+        public void onProgress(int progress, long bytesWritten, long contentLength) {
+            progressBarHorizontal.setProgress(progress);
         }
 
         @Override
-        public void onFinishUpload() {
+        public void onFinish() {
             Toast.makeText(MainActivity.this, "onFinishUpload", Toast.LENGTH_SHORT).show();
         }
 
@@ -354,19 +324,19 @@ public class MainActivity extends RxBaseActivity {
         }
     };
 
-    private RxDownLoadListener rxDownLoadListener = new RxDownLoadListener() {
+    private RxDownLoadCallBack rxDownLoadListener = new RxDownLoadCallBack() {
         @Override
-        public void onStartDownload() {
+        public void onStart() {
             progressBarHorizontal.setProgress(0);
         }
 
         @Override
-        public void onProgress(int progress) {
+        public void onProgress(int progress, long bytesWritten, long contentLength) {
             progressBarHorizontal.setProgress(progress);
         }
 
         @Override
-        public void onFinishDownload() {
+        public void onFinish() {
             Toast.makeText(MainActivity.this, "onFinishDownload", Toast.LENGTH_SHORT).show();
         }
 

@@ -4,6 +4,8 @@ import android.app.Activity;
 import android.util.Log;
 import android.widget.Toast;
 
+import com.bhm.sdk.rxlibrary.rxjava.callback.CallBack;
+import com.bhm.sdk.rxlibrary.rxjava.callback.RxStreamCallBackImp;
 import com.bhm.sdk.rxlibrary.utils.RxLoadingDialog;
 import com.google.gson.JsonSyntaxException;
 import com.trello.rxlifecycle2.components.support.RxAppCompatActivity;
@@ -26,7 +28,7 @@ public class RxBuilder {
 
     private Builder builder;
     private CallBack callBack;
-    private RxListener listener;
+    private RxStreamCallBackImp listener;
 
     public RxBuilder(@NonNull Builder builder){
         this.builder = builder;
@@ -80,7 +82,7 @@ public class RxBuilder {
         return builder.okHttpClient;
     }
 
-    public RxListener getListener() {
+    public RxStreamCallBackImp getListener() {
         return listener;
     }
 
@@ -94,7 +96,7 @@ public class RxBuilder {
      * @param listener
      * @return
      */
-    public <T> T createApi(Class<T> cla, String host, RxListener listener){
+    public <T> T createApi(Class<T> cla, String host, RxStreamCallBackImp listener){
         if(builder.isShowDialog && null != builder.dialog){
             builder.dialog.showLoading(this);
         }

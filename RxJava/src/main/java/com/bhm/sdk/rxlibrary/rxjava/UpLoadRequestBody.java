@@ -1,5 +1,7 @@
 package com.bhm.sdk.rxlibrary.rxjava;
 
+import com.bhm.sdk.rxlibrary.rxjava.callback.RxUpLoadCallBack;
+
 import java.io.IOException;
 
 import okhttp3.MediaType;
@@ -16,10 +18,10 @@ import okio.Sink;
 
 public class UpLoadRequestBody extends RequestBody {
     private RequestBody mRequestBody;
-    private RxUpLoadListener mUploadListener;
+    private RxUpLoadCallBack mUploadListener;
     private CountingSink mCountingSink;
 
-    public UpLoadRequestBody(RequestBody requestBody, RxUpLoadListener uploadListener) {
+    public UpLoadRequestBody(RequestBody requestBody, RxUpLoadCallBack uploadListener) {
         mRequestBody = requestBody;
         mUploadListener = uploadListener;
     }
@@ -62,10 +64,11 @@ public class UpLoadRequestBody extends RequestBody {
         public void write(Buffer source, long byteCount) throws IOException {
             super.write(source, byteCount);
             if(bytesWritten == 0) {
-                mUploadListener.onStartUpload();
+                mUploadListener.onStart();
             }
             bytesWritten += byteCount;
-            mUploadListener.onProgress(bytesWritten, contentLength());
+            int progress = (int) (bytesWritten * 100 / contentLength());
+            mUploadListener.onProgress(progress, bytesWritten, contentLength());
         }
     }
 }

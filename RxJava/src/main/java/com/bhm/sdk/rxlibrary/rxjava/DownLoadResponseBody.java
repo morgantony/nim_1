@@ -1,5 +1,7 @@
 package com.bhm.sdk.rxlibrary.rxjava;
 
+import com.bhm.sdk.rxlibrary.rxjava.callback.RxDownLoadCallBack;
+
 import java.io.IOException;
 
 import okhttp3.MediaType;
@@ -17,11 +19,11 @@ import okio.Source;
 public class DownLoadResponseBody extends ResponseBody {
 
     private ResponseBody responseBody;
-    private RxDownLoadListener downloadListener;
+    private RxDownLoadCallBack downloadListener;
     // BufferedSource 是okio库中的输入流，这里就当作inputStream来使用。
     private BufferedSource bufferedSource;
 
-    public DownLoadResponseBody(ResponseBody responseBody, RxDownLoadListener downloadListener) {
+    public DownLoadResponseBody(ResponseBody responseBody, RxDownLoadCallBack downloadListener) {
         this.responseBody = responseBody;
         this.downloadListener = downloadListener;
     }
@@ -54,14 +56,14 @@ public class DownLoadResponseBody extends ResponseBody {
                 // read() returns the number of bytes read, or -1 if this source is exhausted.
                 if (null != downloadListener) {
                     if(totalBytesRead == 0 && bytesRead != -1) {
-                        downloadListener.onStartDownload();
+                        downloadListener.onStart();
                     }
                     totalBytesRead += bytesRead != -1 ? bytesRead : 0;
                     if (bytesRead != -1) {
                         int progress = (int) (totalBytesRead * 100 / responseBody.contentLength());
-                        downloadListener.onProgress(progress);
+                        downloadListener.onProgress(progress, bytesRead, responseBody.contentLength());
                         if(totalBytesRead == responseBody.contentLength()){
-                            downloadListener.onProgress(100);
+                            downloadListener.onProgress(100, bytesRead, responseBody.contentLength());
                         }
                     }
                 }
