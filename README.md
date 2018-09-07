@@ -13,7 +13,7 @@ RxLibrary工程：<br>1.rxjava2 + retrofit2的封装，常用的请求（Get,Pos
 -------
     maven { url "https://dl.bintray.com/bikie/bhm-sdk" } //根目录下build.gradle的allprojects-repositories节点下添加
 
-    compile 'com.bhm.sdk.rxlibrary:RxLibrary:2.4.3'
+    compile 'com.bhm.sdk.rxlibrary:RxLibrary:2.4.4'
 <br>或者
 
     <dependency>
