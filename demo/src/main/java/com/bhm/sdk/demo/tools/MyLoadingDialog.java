@@ -7,7 +7,6 @@ import android.view.ViewGroup;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
-import com.bhm.sdk.rxlibrary.demo.R;
 import com.bhm.sdk.rxlibrary.rxjava.RxBuilder;
 import com.bhm.sdk.rxlibrary.utils.RxLoadingDialog;
 
@@ -21,9 +20,9 @@ public class MyLoadingDialog extends RxLoadingDialog{
     public Dialog initDialog(RxBuilder builder) {
         LayoutInflater inflater = LayoutInflater.from(builder.getActivity());
         View v = inflater.inflate(com.bhm.sdk.rxlibrary.R.layout.layout_dialog_app_loading, null);// 得到加载view
-        ProgressBar pb_loading = v.findViewById(R.id.pb_loading);
+        ProgressBar pb_loading = (ProgressBar) v.findViewById(com.bhm.sdk.rxlibrary.R.id.pb_loading);
         pb_loading.setVisibility(View.GONE);
-        TextView textView = v.findViewById(R.id.dialog_text_loading);
+        TextView textView = (TextView) v.findViewById(com.bhm.sdk.rxlibrary.R.id.dialog_text_loading);
         textView.setText("测试我的Loading");
         Dialog dialog = new Dialog(builder.getActivity(), com.bhm.sdk.rxlibrary.R.style.loading_dialog);// 创建自定义样式dialog
         dialog.setCancelable(builder.isCancelable());// false不可以用“返回键”取消

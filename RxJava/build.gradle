@@ -2,7 +2,7 @@ apply plugin: 'com.android.library'
 apply plugin: 'com.novoda.bintray-release'
 
 android {
-    compileSdkVersion 26
+    compileSdkVersion 25
     buildToolsVersion "26.0.2"
 
     lintOptions {
@@ -11,9 +11,9 @@ android {
 
     defaultConfig {
         minSdkVersion 15
-        targetSdkVersion 26
+        targetSdkVersion 25
         versionCode 1
-        versionName "2.3.1"
+        versionName "2.4.5"
     }
     buildTypes {
         release {
@@ -40,6 +40,6 @@ dependencies {
 ext {
     PUBLISH_GROUP_ID = 'com.bhm.sdk.rxlibrary'
     PUBLISH_ARTIFACT_ID = 'RxLibrary'
-    PUBLISH_VERSION = '2.4.4'
+    PUBLISH_VERSION = '2.4.5'
 }
 apply from: 'https://raw.githubusercontent.com/blundell/release-android-library/master/android-release-aar.gradle'

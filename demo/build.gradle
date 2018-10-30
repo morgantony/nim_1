@@ -1,7 +1,7 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 26
+    compileSdkVersion 25
     buildToolsVersion "26.0.2"
 
     lintOptions {
@@ -11,7 +11,7 @@ android {
     defaultConfig {
         applicationId "com.bhm.sdk.rxlibrary.demo"
         minSdkVersion 16
-        targetSdkVersion 26
+        targetSdkVersion 25
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
@@ -31,8 +31,8 @@ dependencies {
     })
     testCompile 'junit:junit:4.12'
     compile project(path: ':RxJava')
-    compile 'com.android.support:appcompat-v7:26.0.0-alpha1'
-    compile 'com.android.support:recyclerview-v7:26.0.0-alpha1'
+    compile 'com.android.support:appcompat-v7:25.3.1'
+    compile 'com.android.support:recyclerview-v7:25.3.1'
     compile 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.34'
     compile 'com.bhm.sdk.bhmlibrary:BHMLibrary:1.2.3'
     //permissions
