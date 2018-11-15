@@ -1,6 +1,8 @@
 package com.bhm.sdk.demo.activity;
 
 import android.Manifest;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.widget.DividerItemDecoration;
@@ -17,14 +19,13 @@ import com.bhm.sdk.demo.entity.DoGetEntity;
 import com.bhm.sdk.demo.entity.UpLoadEntity;
 import com.bhm.sdk.demo.http.HttpApi;
 import com.bhm.sdk.demo.tools.Entity;
-import com.bhm.sdk.demo.tools.MyLoadingDialog;
 import com.bhm.sdk.demo.tools.Utils;
 import com.bhm.sdk.rxlibrary.demo.R;
 import com.bhm.sdk.rxlibrary.rxbus.RxBus;
 import com.bhm.sdk.rxlibrary.rxbus.Subscribe;
-import com.bhm.sdk.rxlibrary.rxjava.callback.CallBack;
 import com.bhm.sdk.rxlibrary.rxjava.RxBaseActivity;
 import com.bhm.sdk.rxlibrary.rxjava.RxBuilder;
+import com.bhm.sdk.rxlibrary.rxjava.callback.CallBack;
 import com.bhm.sdk.rxlibrary.rxjava.callback.RxDownLoadCallBack;
 import com.bhm.sdk.rxlibrary.rxjava.callback.RxUpLoadCallBack;
 import com.bhm.sdk.rxlibrary.utils.RxLoadingDialog;
@@ -161,14 +162,21 @@ public class MainActivity extends RxBaseActivity {
     }
 
     private void doGet() {
-        RxBuilder builder = RxBuilder.newBuilder(this)
+        /*单独使用配置*/
+        /*RxBuilder builder = RxBuilder.newBuilder(this)
                 .setLoadingDialog(RxLoadingDialog.getDefaultDialog())
 //                .setLoadingDialog(new MyLoadingDialog())
                 .setDialogAttribute(true, false, false)
-                //.setHttpTimeOut()
-//                .setIsLogOutPut(true)//默认是false
+                .setHttpTimeOut(20000, 20000)
+                .setIsLogOutPut(true)//默认是false
                 .setIsDefaultToast(true, rxManager)
+                .bindRx();*/
+
+        /*默认使用Application的配置*/
+        RxBuilder builder = RxBuilder.newBuilder(this)
+                .setRxManager(rxManager)
                 .bindRx();
+
         Observable<DoGetEntity> observable = builder
                 .createApi(HttpApi.class, "http://news-at.zhihu.com")
                 .getData("Bearer aedfc1246d0b4c3f046be2d50b34d6ff", "1");
@@ -183,12 +191,12 @@ public class MainActivity extends RxBaseActivity {
 
     private void doPost() {
         RxBuilder builder = RxBuilder.newBuilder(this)
-//                .setLoadingDialog(RxLoadingDialog.getDefaultDialog())
-                .setLoadingDialog(new MyLoadingDialog())
+                .setLoadingDialog(RxLoadingDialog.getDefaultDialog())
+//                .setLoadingDialog(new MyLoadingDialog())
                 .setDialogAttribute(true, false, false)
                 //.setHttpTimeOut()
-                .setIsLogOutPut(true)//默认是false
-                .setIsDefaultToast(true, rxManager)
+                .setIsLogOutPut(false)
+                .setIsDefaultToast(false, rxManager)
                 .bindRx();
         Observable<DoGetEntity> observable = builder
                 .createApi(HttpApi.class, "Https://api.douban.com/")
@@ -198,6 +206,19 @@ public class MainActivity extends RxBaseActivity {
             public void onSuccess(DoGetEntity response) {
                 Log.i("MainActivity--> ", response.toString());
                 Toast.makeText(MainActivity.this, response.toString(), Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onFail(Throwable e) {
+                super.onFail(e);
+                new AlertDialog.Builder(MainActivity.this)
+                        .setMessage(e.getMessage())
+                        .setNegativeButton("确定", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                dialog.dismiss();
+                            }
+                        }).show();
             }
         });
     }

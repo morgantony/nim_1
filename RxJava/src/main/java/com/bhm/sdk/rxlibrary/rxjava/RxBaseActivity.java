@@ -1,5 +1,6 @@
 package com.bhm.sdk.rxlibrary.rxjava;
 
+import com.bhm.sdk.rxlibrary.utils.RxLoadingDialog;
 import com.trello.rxlifecycle2.components.support.RxAppCompatActivity;
 
 /**
@@ -14,5 +15,6 @@ public class RxBaseActivity extends RxAppCompatActivity{
     protected void onDestroy() {
         super.onDestroy();
         rxManager.unSubscribe();
+        RxLoadingDialog.getDefaultDialog().cancelLoading(this);
     }
 }

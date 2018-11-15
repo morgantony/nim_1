@@ -211,16 +211,16 @@ public class RxBuilder {
     public static final class Builder {
 
         private RxAppCompatActivity activity;
-        private boolean isShowDialog;
-        private boolean cancelable;
-        private boolean isCanceledOnTouchOutside;
-        private RxLoadingDialog dialog;
-        private boolean isDefaultToast;
         private RxManager rxManager;
-        private int readTimeOut;
-        private int connectTimeOut;
-        private OkHttpClient okHttpClient;
-        private boolean isLogOutPut = false;
+        private boolean isShowDialog = RxConfig.isShowDialog();
+        private boolean cancelable = RxConfig.cancelable();
+        private boolean isCanceledOnTouchOutside = RxConfig.isCanceledOnTouchOutside();
+        private RxLoadingDialog dialog = RxConfig.getRxLoadingDialog();
+        private boolean isDefaultToast = RxConfig.isDefaultToast();
+        private int readTimeOut = RxConfig.getReadTimeOut();
+        private int connectTimeOut = RxConfig.getConnectTimeOut();
+        private OkHttpClient okHttpClient = RxConfig.getOkHttpClient();
+        private boolean isLogOutPut = RxConfig.isLogOutPut();
 
         public Builder(RxAppCompatActivity activity) {
             this.activity = activity;
@@ -240,6 +240,11 @@ public class RxBuilder {
 
         public Builder setIsDefaultToast(boolean isDefaultToast, RxManager rxManager){
             this.isDefaultToast = isDefaultToast;
+            this.rxManager = rxManager;
+            return this;
+        }
+
+        public Builder setRxManager(RxManager rxManager){
             this.rxManager = rxManager;
             return this;
         }

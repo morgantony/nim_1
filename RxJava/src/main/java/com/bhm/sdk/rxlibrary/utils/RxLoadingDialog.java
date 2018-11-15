@@ -18,7 +18,7 @@ import com.bhm.sdk.rxlibrary.rxjava.RxBuilder;
 public class RxLoadingDialog {
 
     private static Dialog dialog;
-    private static long onBackPressed = 0l;
+    private static long onBackPressed = 0L;
     private static RxLoadingDialog RxDialog;
 
     public static RxLoadingDialog getDefaultDialog(){
@@ -36,6 +36,7 @@ public class RxLoadingDialog {
         if (dialog == null || !dialog.isShowing()) {
             if (builder.getActivity() != null && !builder.getActivity().isFinishing()) {
                 dialog = initDialog(builder);
+                dialog.setOwnerActivity(builder.getActivity());
                 dialog.setOnKeyListener(new DialogInterface.OnKeyListener() {
                     @Override
                     public boolean onKey(DialogInterface dialogInterface, int i, KeyEvent keyEvent) {
@@ -80,6 +81,15 @@ public class RxLoadingDialog {
     public void dismissLoading(Activity activity){
         if(null != activity && !activity.isFinishing()
                 && null != dialog && dialog.isShowing()) {
+            dialog.dismiss();
+            dialog = null;
+            System.gc();
+        }
+    }
+
+    public void cancelLoading(Activity activity){
+        if(null != activity && null != dialog  && activity.equals
+                (dialog.getOwnerActivity()) && dialog.isShowing()) {
             dialog.dismiss();
             dialog = null;
             System.gc();
