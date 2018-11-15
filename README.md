@@ -13,13 +13,13 @@ RxLibrary工程：<br>1.rxjava2 + retrofit2的封装，常用的请求（Get,Pos
 -------
     maven { url "https://dl.bintray.com/bikie/bhm-sdk" } //根目录下build.gradle的allprojects-repositories节点下添加
 
-    compile 'com.bhm.sdk.rxlibrary:RxLibrary:2.4.5'
+    compile 'com.bhm.sdk.rxlibrary:RxLibrary:2.4.6'
 <br>或者
 
     <dependency>
       <groupId>com.bhm.sdk.rxlibrary</groupId>
       <artifactId>RxLibrary</artifactId>
-      <version>2.4.5</version>
+      <version>2.4.6</version>
       <type>pom</type>
     </dependency>
 
@@ -30,37 +30,49 @@ RxLibrary工程：<br>1.rxjava2 + retrofit2的封装，常用的请求（Get,Pos
 ### 第一步，继承RxBaseActivity或者RxBaseFragment（不继承的话，就必须父类是RxJava包下的RxAppCompatActivity）,添加内存管理的机制，同时获取或生成rxManager对象，rxManager是管理观察者的类，当取消请求、中断请求等可调用对应的方法。注意：如果项目BaseActivity继承了别的Activity，则需在BaseActivity中添加别的Activity代码再继承RxAppCompatActivity类，并且生成RxManager对象，解析的实体类必须继承BaseResponse类。Fragment同理哦。
 ### 第二步，使用。
 
-        RxBuilder builder = RxBuilder.newBuilder(this)
-                //.setLoadingDialog(RxLoadingDialog.getDefaultDialog())
-                .setLoadingDialog(new MyLoadingDialog())
+        public class DemoApplication extends Application{
+
+            @Override
+            public void onCreate() {
+                super.onCreate();
+                /*配置默认的Rx配置项*/
+                RxConfig.newBuilder()
+                        .setRxLoadingDialog(new MyLoadingDialog())
+                        .setDialogAttribute(true, false, false)
+                        .isDefaultToast(true)
+                        .isLogOutPut(true)
+                        .setReadTimeOut(30000)
+                        .setConnectTimeOut(30000)
+                        .setOkHttpClient(null)
+                        .build();
+            }
+        }
+
+
+
+        /*单独使用配置*/
+        /*RxBuilder builder = RxBuilder.newBuilder(this)
+                .setLoadingDialog(RxLoadingDialog.getDefaultDialog())
+        //                .setLoadingDialog(new MyLoadingDialog())
                 .setDialogAttribute(true, false, false)
-                //.setHttpTimeOut()
+                .setHttpTimeOut(20000, 20000)
                 .setIsLogOutPut(true)//默认是false
                 .setIsDefaultToast(true, rxManager)
+                .bindRx();*/
+
+        /*默认使用Application的配置*/
+        RxBuilder builder = RxBuilder.newBuilder(this)
+                .setRxManager(rxManager)
                 .bindRx();
+
         Observable<DoGetEntity> observable = builder
                 .createApi(HttpApi.class, "http://news-at.zhihu.com")
                 .getData("Bearer aedfc1246d0b4c3f046be2d50b34d6ff", "1");
         builder.setCallBack(observable, new CallBack<DoGetEntity>() {
             @Override
-            public void onStart(Disposable disposable) {
-
-            }
-
-            @Override
             public void onSuccess(DoGetEntity response) {
                 Log.i("MainActivity--> ", response.getDate());
                 Toast.makeText(MainActivity.this, response.getDate(), Toast.LENGTH_SHORT).show();
-            }
-
-            @Override
-            public void onFail(Throwable e) {
-
-            }
-
-            @Override
-            public void onComplete() {
-
             }
         });
 <br>
