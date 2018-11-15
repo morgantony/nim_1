@@ -13,7 +13,7 @@ android {
         minSdkVersion 15
         targetSdkVersion 25
         versionCode 1
-        versionName "2.4.5"
+        versionName "2.4.6"
     }
     buildTypes {
         release {
@@ -40,6 +40,6 @@ dependencies {
 ext {
     PUBLISH_GROUP_ID = 'com.bhm.sdk.rxlibrary'
     PUBLISH_ARTIFACT_ID = 'RxLibrary'
-    PUBLISH_VERSION = '2.4.5'
+    PUBLISH_VERSION = '2.4.6'
 }
 apply from: 'https://raw.githubusercontent.com/blundell/release-android-library/master/android-release-aar.gradle'
