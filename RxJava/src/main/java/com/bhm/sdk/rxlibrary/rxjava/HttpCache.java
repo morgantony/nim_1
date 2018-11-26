@@ -39,7 +39,7 @@ public class HttpCache {
         } else {
             userAgent = System.getProperty("http.agent");
         }
-        StringBuffer sb = new StringBuffer();
+        StringBuilder sb = new StringBuilder();
         for (int i = 0, length = userAgent.length(); i < length; i++) {
             char c = userAgent.charAt(i);
             if (c <= '\u001f' || c >= '\u007f') {

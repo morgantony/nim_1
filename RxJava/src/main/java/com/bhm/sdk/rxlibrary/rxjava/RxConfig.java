@@ -19,6 +19,9 @@ public class RxConfig {
     private static int connectTimeOut;
     private static OkHttpClient okHttpClient;
     private static boolean isLogOutPut = false;
+    private static String filePath;
+    private static String fileName;
+    private static boolean isDeleteOldFile;
 
     public RxConfig(Builder builder){
         dialog = builder.dialog;
@@ -30,6 +33,8 @@ public class RxConfig {
         connectTimeOut = builder.connectTimeOut;
         okHttpClient = builder.okHttpClient;
         isLogOutPut = builder.isLogOutPut;
+        filePath = builder.filePath;
+        fileName = builder.fileName;
     }
 
     public static RxConfig.Builder newBuilder() {
@@ -46,6 +51,8 @@ public class RxConfig {
         private int connectTimeOut;
         private OkHttpClient okHttpClient;
         private boolean isLogOutPut = false;
+        private String filePath;
+        private String fileName;
 
         public Builder setRxLoadingDialog(RxLoadingDialog setDialog){
             dialog = setDialog;
@@ -81,6 +88,13 @@ public class RxConfig {
 
         public Builder isLogOutPut(boolean logOutPut){
             isLogOutPut = logOutPut;
+            return this;
+        }
+
+        public Builder setDownLoadFileAtr(String mFilePath, String mFileName, boolean mIsDeleteOldFile){
+            filePath = mFilePath;
+            fileName = mFileName;
+            isDeleteOldFile = mIsDeleteOldFile;
             return this;
         }
 
@@ -123,5 +137,17 @@ public class RxConfig {
 
     public static boolean isLogOutPut(){
         return isLogOutPut;
+    }
+
+    public static String getFilePath(){
+        return filePath;
+    }
+
+    public static String getFileName(){
+        return fileName;
+    }
+
+    public static boolean isDeleteOldFile(){
+        return isDeleteOldFile;
     }
 }

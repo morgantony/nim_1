@@ -5,6 +5,7 @@ import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Environment;
 import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -33,17 +34,12 @@ import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.tbruyelle.rxpermissions2.RxPermissions;
 
 import java.io.File;
-import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 
 import io.reactivex.Observable;
-import io.reactivex.android.schedulers.AndroidSchedulers;
-import io.reactivex.annotations.NonNull;
 import io.reactivex.disposables.Disposable;
 import io.reactivex.functions.Consumer;
-import io.reactivex.functions.Function;
-import io.reactivex.schedulers.Schedulers;
 import okhttp3.MediaType;
 import okhttp3.MultipartBody;
 import okhttp3.RequestBody;
@@ -266,60 +262,23 @@ public class MainActivity extends RxBaseActivity {
     }
 
     private void downLoadFile(){
+        String filePath = Environment.getExternalStorageDirectory().getAbsolutePath()
+                + File.separator + "RxLibrary/";
+        String fileName = "demo.apk";
         RxBuilder builder = RxBuilder.newBuilder(this)
                 .setLoadingDialog(RxLoadingDialog.getDefaultDialog())
 //                .setLoadingDialog(new MyLoadingDialog())
                 .setDialogAttribute(false, false, false)
+                .setDownLoadFileAtr(filePath, fileName, true)
 //                .setHttpTimeOut()
 //                .setIsLogOutPut(true)//默认是false
                 .setIsDefaultToast(true, rxManager)
                 .bindRx();
-        Disposable disposable = builder
+        Observable<ResponseBody> observable = builder
                 //域名随便填写,但必须以“/”为结尾
                 .createApi(HttpApi.class, "http://dldir1.qq.com/weixin/", rxDownLoadListener)
-                .downLoad("http://dldir1.qq.com/weixin/android/weixin666android1300.apk")
-                .subscribeOn(Schedulers.io())
-                .unsubscribeOn(Schedulers.io())
-                .map(new Function<ResponseBody, InputStream>() {
-                    @Override
-                    public InputStream apply(@NonNull ResponseBody responseBody) throws Exception {
-                        return responseBody.byteStream();
-                    }
-                })
-//                .observeOn(Schedulers.computation()) // 用于计算任务
-                // 由于writeFile注释掉了，所以onFinishDownload中的提示语必须在ui线程中，正常情况下使用Schedulers.computation()
-                .observeOn(AndroidSchedulers.mainThread())
-                .doOnNext(new Consumer<InputStream>() {
-                    @Override
-                    public void accept(InputStream inputStream){
-                        //得到整个文件流
-                        try {
-                            rxDownLoadListener.onProgress(100, 100, 100);
-//                          writeFile(inputStream, filePath);//注释掉
-                            if(null != inputStream){
-                                inputStream.close();
-                                System.gc();
-                            }
-                            rxDownLoadListener.onFinish();
-                        }catch (Exception e){
-                            rxDownLoadListener.onFail(e.getMessage());
-                            rxManager.removeObserver();
-                        }
-                    }
-                })
-                .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(new Consumer<InputStream>() {
-                    @Override
-                    public void accept(InputStream inputStream) throws Exception {
-
-                    }
-                }, new Consumer<Throwable>() {
-                    @Override
-                    public void accept(Throwable throwable) throws Exception {
-                        rxDownLoadListener.onFail(throwable.getMessage());
-                        rxManager.removeObserver();
-                    }
-                });
+                .downLoad("http://dldir1.qq.com/weixin/android/weixin666android1300.apk");
+        Disposable disposable = builder.beginDownLoad(observable);
         rxManager.subscribe(disposable);
     }
 

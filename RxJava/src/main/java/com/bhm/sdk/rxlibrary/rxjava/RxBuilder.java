@@ -1,23 +1,30 @@
 package com.bhm.sdk.rxlibrary.rxjava;
 
 import android.app.Activity;
+import android.text.TextUtils;
 import android.util.Log;
 import android.widget.Toast;
 
 import com.bhm.sdk.rxlibrary.rxjava.callback.CallBack;
 import com.bhm.sdk.rxlibrary.rxjava.callback.RxStreamCallBackImp;
 import com.bhm.sdk.rxlibrary.utils.RxLoadingDialog;
+import com.bhm.sdk.rxlibrary.utils.RxUtils;
 import com.google.gson.JsonSyntaxException;
 import com.trello.rxlifecycle2.components.support.RxAppCompatActivity;
 
+import java.io.InputStream;
 import java.util.concurrent.TimeoutException;
 
 import io.reactivex.Observable;
+import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.annotations.NonNull;
 import io.reactivex.disposables.Disposable;
 import io.reactivex.functions.Action;
 import io.reactivex.functions.Consumer;
+import io.reactivex.functions.Function;
+import io.reactivex.schedulers.Schedulers;
 import okhttp3.OkHttpClient;
+import okhttp3.ResponseBody;
 import retrofit2.HttpException;
 
 /**
@@ -204,6 +211,78 @@ public class RxBuilder {
         };
     }
 
+    public Disposable beginDownLoad(@android.support.annotation.NonNull Observable<ResponseBody> observable){
+        return observable.subscribeOn(Schedulers.io())
+                .unsubscribeOn(Schedulers.io())
+                .map(new Function<ResponseBody, InputStream>() {
+                    @Override
+                    public InputStream apply(@NonNull ResponseBody responseBody) throws Exception {
+                        return responseBody.byteStream();
+                    }
+                })
+                .observeOn(Schedulers.computation()) // 用于计算任务
+                .doOnNext(new Consumer<InputStream>() {
+                    @Override
+                    public void accept(InputStream inputStream){
+                        //得到整个文件流
+                        try {
+                            builder.activity.runOnUiThread(new Runnable() {
+                                @Override
+                                public void run() {
+                                    if(null != listener) {
+                                        listener.onProgress(100, 100, 100);
+                                    }
+                                }
+                            });
+                            if(!TextUtils.isEmpty(builder.filePath) && !TextUtils.isEmpty(builder.fileName)) {
+                                RxUtils.writeFile(inputStream, builder.filePath, builder.fileName, builder.isDeleteOldFile);
+                            }
+                            if(null != inputStream){
+                                inputStream.close();
+                                System.gc();
+                            }
+                            builder.activity.runOnUiThread(new Runnable() {
+                                @Override
+                                public void run() {
+                                    if(null != listener) {
+                                        listener.onFinish();
+                                    }
+                                }
+                            });
+                        }catch (final Exception e){
+                            builder.activity.runOnUiThread(new Runnable() {
+                                @Override
+                                public void run() {
+                                    if(null != listener) {
+                                        listener.onFail(e.getMessage());
+                                    }
+                                }
+                            });
+                            if(builder.rxManager != null) {
+                                builder.rxManager.removeObserver();
+                            }
+                        }
+                    }
+                })
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new Consumer<InputStream>() {
+                    @Override
+                    public void accept(InputStream inputStream) throws Exception {
+
+                    }
+                }, new Consumer<Throwable>() {
+                    @Override
+                    public void accept(Throwable throwable) throws Exception {
+                        if(null != listener) {
+                            listener.onFail(throwable.getMessage());
+                        }
+                        if(builder.rxManager != null) {
+                            builder.rxManager.removeObserver();
+                        }
+                    }
+                });
+    }
+
     public static Builder newBuilder(RxAppCompatActivity activity) {
         return new Builder(activity);
     }
@@ -221,6 +300,9 @@ public class RxBuilder {
         private int connectTimeOut = RxConfig.getConnectTimeOut();
         private OkHttpClient okHttpClient = RxConfig.getOkHttpClient();
         private boolean isLogOutPut = RxConfig.isLogOutPut();
+        private String filePath = RxConfig.getFilePath();
+        private String fileName = RxConfig.getFileName();
+        private boolean isDeleteOldFile = RxConfig.isDeleteOldFile();
 
         public Builder(RxAppCompatActivity activity) {
             this.activity = activity;
@@ -262,6 +344,13 @@ public class RxBuilder {
 
         public Builder setIsLogOutPut(boolean isLogOutPut){
             this.isLogOutPut = isLogOutPut;
+            return this;
+        }
+
+        public Builder setDownLoadFileAtr(String mFilePath, String mFileName, boolean mIsDeleteOldFile){
+            filePath = mFilePath;
+            fileName = mFileName;
+            isDeleteOldFile = mIsDeleteOldFile;
             return this;
         }
 

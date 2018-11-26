@@ -19,7 +19,6 @@ import okio.Sink;
 public class UpLoadRequestBody extends RequestBody {
     private RequestBody mRequestBody;
     private RxUpLoadCallBack mUploadListener;
-    private CountingSink mCountingSink;
 
     public UpLoadRequestBody(RequestBody requestBody, RxUpLoadCallBack uploadListener) {
         mRequestBody = requestBody;
@@ -45,7 +44,7 @@ public class UpLoadRequestBody extends RequestBody {
     public void writeTo(BufferedSink sink) throws IOException {
         BufferedSink bufferedSink;
 
-        mCountingSink = new CountingSink(sink);
+        CountingSink mCountingSink = new CountingSink(sink);
         bufferedSink = Okio.buffer(mCountingSink);
 
         mRequestBody.writeTo(bufferedSink);
