@@ -108,7 +108,11 @@ public class RxBuilder {
     }
 
     public <T> T createApi(Class<T> cla, String host){
-        return this.createApi(cla, host, null);
+        if(builder.isShowDialog && null != builder.dialog){
+            builder.dialog.showLoading(this);
+        }
+        return new RetrofitCreateHelper(this)
+                .createApi(cla, host);
     }
 
     /** 上传请求
@@ -118,6 +122,9 @@ public class RxBuilder {
      * @return
      */
     public <T> T createApi(Class<T> cla, String host, RxStreamCallBackImp listener){
+        if(null == listener){
+            throw new NullPointerException("RxStreamCallBackImp(listener) can not be null!");
+        }
         if(builder.isShowDialog && null != builder.dialog){
             builder.dialog.showLoading(this);
         }

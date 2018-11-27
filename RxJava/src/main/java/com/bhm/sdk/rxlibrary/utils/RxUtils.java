@@ -55,7 +55,7 @@ public class RxUtils {
      */
     private static synchronized File checkFile(RxBuilder rxBuilder) throws IOException{
         if(TextUtils.isEmpty(rxBuilder.getFilePath()) || TextUtils.isEmpty(rxBuilder.getFileName())){
-            throw new IOException("filePath or filePath is null!");
+            throw new IOException("filePath or fileName is null!");
         }
         File fileDir = new File(rxBuilder.getFilePath());
         if(!fileDir.exists()){

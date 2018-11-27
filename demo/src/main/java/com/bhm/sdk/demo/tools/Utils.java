@@ -12,6 +12,6 @@ public class Utils {
 
     public static File getFile(){
         return new File(Environment.getExternalStorageDirectory().getAbsolutePath()
-                + File.separator + "1122.jpg");
+                + File.separator + "RxLibrary/1122.jpg");
     }
 }

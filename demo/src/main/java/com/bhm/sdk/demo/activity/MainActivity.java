@@ -249,8 +249,8 @@ public class MainActivity extends RxBaseActivity {
                 .setIsDefaultToast(true, rxManager)
                 .bindRx();
         Observable<UpLoadEntity> observable = builder
-                .createApi(HttpApi.class, "http://cloudapi.dev-chexiu.cn/", rxUpLoadListener)
-                .upload("Bearer a7f998422ae0a9008a3bc5be1273946a",
+                .createApi(HttpApi.class, "http://cloudapi.dev-chexiu.cn/", rxUpLoadListener)//rxUpLoadListener不能为空
+                .upload("Bearer cb44912505ee7e91a92e3b96b38eca1a",
                         RequestBody.create(MediaType.parse("text/plain"), "9"),
                         part);
         builder.setCallBack(observable, new CallBack<UpLoadEntity>() {
@@ -285,6 +285,7 @@ public class MainActivity extends RxBaseActivity {
      *              赋值0，否则，新文件会从writtenLength开始下载导致文件不完整。
      *
      * 注：调用的函数downLoad,第一个参数为@Header("RANGE") String range，传递参数格式为："bytes=" + writtenLength + "-"
+     *     rxDownLoadListener不能为空
      */
     private void downLoadFile(){
         String filePath = Environment.getExternalStorageDirectory().getAbsolutePath()
@@ -314,6 +315,7 @@ public class MainActivity extends RxBaseActivity {
         @Override
         public void onProgress(int progress, long bytesWritten, long contentLength) {
             progressBarHorizontal.setProgress(progress);
+            Log.e("upLoad---- > ","progress : " + progress + "bytesWritten : " + bytesWritten + "contentLength : " + contentLength);
         }
 
         @Override

@@ -1,5 +1,6 @@
 package com.bhm.sdk.rxlibrary.rxjava;
 
+import com.bhm.sdk.rxlibrary.rxjava.callback.RxDownLoadCallBack;
 import com.bhm.sdk.rxlibrary.utils.RxUtils;
 
 import java.io.IOException;
@@ -55,7 +56,8 @@ public class DownLoadResponseBody extends ResponseBody {
             public long read(Buffer sink, long byteCount) throws IOException {
                 final long bytesRead = super.read(sink, byteCount);
                 // read() returns the number of bytes read, or -1 if this source is exhausted.
-                if (null != rxBuilder && null != rxBuilder.getListener()) {
+                if (null != rxBuilder && null != rxBuilder.getListener() &&
+                        rxBuilder.getListener() instanceof RxDownLoadCallBack) {
                     if(totalBytesRead == 0 && bytesRead != -1) {
                         RxUtils.deleteFile(rxBuilder, totalBytes);
                         rxBuilder.getActivity().runOnUiThread(new Runnable() {

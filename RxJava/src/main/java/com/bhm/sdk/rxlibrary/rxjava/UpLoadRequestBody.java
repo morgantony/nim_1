@@ -1,6 +1,7 @@
 package com.bhm.sdk.rxlibrary.rxjava;
 
 import com.bhm.sdk.rxlibrary.rxjava.callback.RxUpLoadCallBack;
+import com.bhm.sdk.rxlibrary.utils.RxUtils;
 
 import java.io.IOException;
 
@@ -18,11 +19,11 @@ import okio.Sink;
 
 public class UpLoadRequestBody extends RequestBody {
     private RequestBody mRequestBody;
-    private RxUpLoadCallBack mUploadListener;
+    private RxBuilder rxBuilder;
 
-    public UpLoadRequestBody(RequestBody requestBody, RxUpLoadCallBack uploadListener) {
-        mRequestBody = requestBody;
-        mUploadListener = uploadListener;
+    public UpLoadRequestBody(RequestBody requestBody, RxBuilder builder) {
+        this.mRequestBody = requestBody;
+        this.rxBuilder = builder;
     }
 
     @Override
@@ -62,12 +63,30 @@ public class UpLoadRequestBody extends RequestBody {
         @Override
         public void write(Buffer source, long byteCount) throws IOException {
             super.write(source, byteCount);
-            if(bytesWritten == 0) {
-                mUploadListener.onStart();
+            if (null != rxBuilder && null != rxBuilder.getListener() &&
+                    rxBuilder.getListener() instanceof RxUpLoadCallBack) {
+                if (bytesWritten == 0) {
+                    rxBuilder.getActivity().runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                            rxBuilder.getListener().onStart();
+                            RxUtils.Logger(rxBuilder, "upLoad-- > ", "begin upLoad");
+                        }
+                    });
+                }
+                bytesWritten += byteCount;
+                final int progress = (int) (bytesWritten * 100 / contentLength());
+                rxBuilder.getActivity().runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        try {
+                            rxBuilder.getListener().onProgress(progress, bytesWritten, contentLength());
+                        } catch (IOException e) {
+                            rxBuilder.getListener().onFail(e.getMessage());
+                        }
+                    }
+                });
             }
-            bytesWritten += byteCount;
-            int progress = (int) (bytesWritten * 100 / contentLength());
-            mUploadListener.onProgress(progress, bytesWritten, contentLength());
         }
     }
 }
