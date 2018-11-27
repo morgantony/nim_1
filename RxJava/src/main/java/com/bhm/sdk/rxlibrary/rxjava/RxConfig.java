@@ -21,7 +21,8 @@ public class RxConfig {
     private static boolean isLogOutPut = false;
     private static String filePath;
     private static String fileName;
-    private static boolean isDeleteOldFile;
+    private static long writtenLength;
+    private static boolean isAppendWrite;
 
     public RxConfig(Builder builder){
         dialog = builder.dialog;
@@ -35,6 +36,8 @@ public class RxConfig {
         isLogOutPut = builder.isLogOutPut;
         filePath = builder.filePath;
         fileName = builder.fileName;
+        writtenLength = builder.writtenLength;
+        isAppendWrite = builder.isAppendWrite;
     }
 
     public static RxConfig.Builder newBuilder() {
@@ -53,6 +56,8 @@ public class RxConfig {
         private boolean isLogOutPut = false;
         private String filePath;
         private String fileName;
+        private long writtenLength;
+        private boolean isAppendWrite;
 
         public Builder setRxLoadingDialog(RxLoadingDialog setDialog){
             dialog = setDialog;
@@ -91,10 +96,11 @@ public class RxConfig {
             return this;
         }
 
-        public Builder setDownLoadFileAtr(String mFilePath, String mFileName, boolean mIsDeleteOldFile){
+        public Builder setDownLoadFileAtr(String mFilePath, String mFileName, boolean mIsAppendWrite, long mWrittenLength){
             filePath = mFilePath;
             fileName = mFileName;
-            isDeleteOldFile = mIsDeleteOldFile;
+            writtenLength = mWrittenLength;
+            isAppendWrite = mIsAppendWrite;
             return this;
         }
 
@@ -147,7 +153,10 @@ public class RxConfig {
         return fileName;
     }
 
-    public static boolean isDeleteOldFile(){
-        return isDeleteOldFile;
+    public static long writtenLength(){
+        return writtenLength;
+    }
+    public static boolean isAppendWrite(){
+        return isAppendWrite;
     }
 }

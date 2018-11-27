@@ -8,7 +8,6 @@ import android.widget.Toast;
 import com.bhm.sdk.rxlibrary.rxjava.callback.CallBack;
 import com.bhm.sdk.rxlibrary.rxjava.callback.RxStreamCallBackImp;
 import com.bhm.sdk.rxlibrary.utils.RxLoadingDialog;
-import com.bhm.sdk.rxlibrary.utils.RxUtils;
 import com.google.gson.JsonSyntaxException;
 import com.trello.rxlifecycle2.components.support.RxAppCompatActivity;
 
@@ -91,6 +90,22 @@ public class RxBuilder {
 
     public RxStreamCallBackImp getListener() {
         return listener;
+    }
+
+    public String getFilePath(){
+        return builder.filePath;
+    }
+
+    public String getFileName(){
+        return builder.fileName;
+    }
+
+    public long writtenLength(){
+        return builder.writtenLength;
+    }
+
+    public boolean isAppendWrite(){
+        return builder.appendWrite;
     }
 
     public <T> T createApi(Class<T> cla, String host){
@@ -235,7 +250,9 @@ public class RxBuilder {
                                 }
                             });
                             if(!TextUtils.isEmpty(builder.filePath) && !TextUtils.isEmpty(builder.fileName)) {
-                                RxUtils.writeFile(inputStream, builder.filePath, builder.fileName, builder.isDeleteOldFile);
+                                //这里不能支持断点下载，放在DownLoadResponseBody写文件，因为这里的inputStream是下载完的
+                                //整个文件的流；而DownLoadResponseBody中sink.inputStream()，是读取的每一份流，追加写。
+//                                RxUtils.writeFile(inputStream, builder.filePath, builder.fileName, builder.isDeleteOldFile);
                             }
                             if(null != inputStream){
                                 inputStream.close();
@@ -246,6 +263,9 @@ public class RxBuilder {
                                 public void run() {
                                     if(null != listener) {
                                         listener.onFinish();
+                                        if(null != builder.dialog && builder.isShowDialog) {
+                                            builder.dialog.dismissLoading(builder.activity);
+                                        }
                                     }
                                 }
                             });
@@ -255,6 +275,9 @@ public class RxBuilder {
                                 public void run() {
                                     if(null != listener) {
                                         listener.onFail(e.getMessage());
+                                        if(null != builder.dialog && builder.isShowDialog) {
+                                            builder.dialog.dismissLoading(builder.activity);
+                                        }
                                     }
                                 }
                             });
@@ -275,6 +298,9 @@ public class RxBuilder {
                     public void accept(Throwable throwable) throws Exception {
                         if(null != listener) {
                             listener.onFail(throwable.getMessage());
+                            if(null != builder.dialog && builder.isShowDialog) {
+                                builder.dialog.dismissLoading(builder.activity);
+                            }
                         }
                         if(builder.rxManager != null) {
                             builder.rxManager.removeObserver();
@@ -302,7 +328,8 @@ public class RxBuilder {
         private boolean isLogOutPut = RxConfig.isLogOutPut();
         private String filePath = RxConfig.getFilePath();
         private String fileName = RxConfig.getFileName();
-        private boolean isDeleteOldFile = RxConfig.isDeleteOldFile();
+        private long writtenLength = RxConfig.writtenLength();
+        private boolean appendWrite = RxConfig.isAppendWrite();
 
         public Builder(RxAppCompatActivity activity) {
             this.activity = activity;
@@ -347,10 +374,11 @@ public class RxBuilder {
             return this;
         }
 
-        public Builder setDownLoadFileAtr(String mFilePath, String mFileName, boolean mIsDeleteOldFile){
+        public Builder setDownLoadFileAtr(String mFilePath, String mFileName, boolean mAppendWrite, long mWrittenLength){
             filePath = mFilePath;
             fileName = mFileName;
-            isDeleteOldFile = mIsDeleteOldFile;
+            appendWrite = mAppendWrite;
+            writtenLength = mWrittenLength;
             return this;
         }
 

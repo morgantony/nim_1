@@ -46,6 +46,15 @@ public class RxManager {
     }
 
     /**
+     * 取消一个请求
+     */
+    public void removeObserver(Disposable disposable){//中断监听 取消请求
+        if(null != disposable) {
+            mCompositeDisposable.remove(disposable);
+        }
+    }
+
+    /**
      * 统一线程处理
      * <p>
      * 发布事件io线程，接收事件主线程

@@ -52,6 +52,8 @@ public class MainActivity extends RxBaseActivity {
     private TitleBar titleBar;
     private ProgressBar progressBarHorizontal;
     private RxPermissions rxPermissions;
+    private Disposable cDisposable;
+    private long writtenLength;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -82,6 +84,8 @@ public class MainActivity extends RxBaseActivity {
         list.add("RxJava2+Retrofit2,post请求");
         list.add("RxJava2+Retrofit2,文件上传（带进度）");
         list.add("RxJava2+Retrofit2,文件下载（带进度）");
+        list.add("暂停/取消下载");
+        list.add("继续下载");
         list.add("");
         list.add("RxBus");
         return list;
@@ -121,23 +125,15 @@ public class MainActivity extends RxBaseActivity {
                         });
                 break;
             case 3:
-                rxPermissions
-                        .request(Manifest.permission.WRITE_EXTERNAL_STORAGE,
-                                Manifest.permission.READ_EXTERNAL_STORAGE)
-                        .subscribe(new Consumer<Boolean>() {
-                            @Override
-                            public void accept(Boolean aBoolean) throws Exception {
-                                if(!aBoolean){
-                                    Toast.makeText(MainActivity.this, "无法获取权限，请在设置中授权",
-                                            Toast.LENGTH_SHORT).show();
-                                }else{
-                                    downLoadFile();//下载文件
-                                }
-                            }
-                        });
+                writtenLength = 0;
+                downLoad();
                 break;
             case 5:
+                downLoad();
+            case 6:
                 startActivity(new Intent(this, RxBusActivity.class));
+            case 7:
+                rxManager.removeObserver(cDisposable);
             default:
                 return;
         }
@@ -155,6 +151,23 @@ public class MainActivity extends RxBaseActivity {
             Toast.makeText(this, "RxBus改变了MainActivity的标题", Toast.LENGTH_SHORT).show();
             titleBar.setTitleText(entity.getMsg());
         }
+    }
+
+    private void downLoad(){
+        rxPermissions
+                .request(Manifest.permission.WRITE_EXTERNAL_STORAGE,
+                        Manifest.permission.READ_EXTERNAL_STORAGE)
+                .subscribe(new Consumer<Boolean>() {
+                    @Override
+                    public void accept(Boolean aBoolean) throws Exception {
+                        if(!aBoolean){
+                            Toast.makeText(MainActivity.this, "无法获取权限，请在设置中授权",
+                                    Toast.LENGTH_SHORT).show();
+                        }else{
+                            downLoadFile();//下载文件
+                        }
+                    }
+                });
     }
 
     private void doGet() {
@@ -261,25 +274,31 @@ public class MainActivity extends RxBaseActivity {
         });
     }
 
+    /**
+     * setDialogAttribute参数：1.filePath：文件下载路径， 2.fileName：文件名
+     *              3.mAppendWrite：是否支持暂停下载。true,支持，同时需要记录writtenLength
+     *              false，每次都重新开始下载，并且会删除原文件。（注：文件下载完后，再下载都会删除原文件重新下载，与此参数无关）
+     *              4.writtenLength：当mAppendWrite=true,需要记录已下载的部分，当mAppendWrite=false,writtenLength需
+     *              赋值0，否则，新文件会从writtenLength开始下载导致文件不完整。
+     *
+     * 注：调用的函数downLoad,第一个参数为@Header("RANGE") String range，传递参数格式为："bytes=" + writtenLength + "-"
+     */
     private void downLoadFile(){
         String filePath = Environment.getExternalStorageDirectory().getAbsolutePath()
                 + File.separator + "RxLibrary/";
         String fileName = "demo.apk";
         RxBuilder builder = RxBuilder.newBuilder(this)
                 .setLoadingDialog(RxLoadingDialog.getDefaultDialog())
-//                .setLoadingDialog(new MyLoadingDialog())
                 .setDialogAttribute(false, false, false)
-                .setDownLoadFileAtr(filePath, fileName, true)
-//                .setHttpTimeOut()
-//                .setIsLogOutPut(true)//默认是false
+                .setDownLoadFileAtr(filePath, fileName, true, writtenLength)
                 .setIsDefaultToast(true, rxManager)
                 .bindRx();
         Observable<ResponseBody> observable = builder
                 //域名随便填写,但必须以“/”为结尾
                 .createApi(HttpApi.class, "http://dldir1.qq.com/weixin/", rxDownLoadListener)
-                .downLoad("http://dldir1.qq.com/weixin/android/weixin666android1300.apk");
-        Disposable disposable = builder.beginDownLoad(observable);
-        rxManager.subscribe(disposable);
+                .downLoad("bytes=" + writtenLength + "-", "http://dldir1.qq.com/weixin/android/weixin666android1300.apk");
+        cDisposable = builder.beginDownLoad(observable);
+        rxManager.subscribe(cDisposable);
     }
 
     private RxUpLoadCallBack rxUpLoadListener = new RxUpLoadCallBack() {
@@ -313,6 +332,7 @@ public class MainActivity extends RxBaseActivity {
         @Override
         public void onProgress(int progress, long bytesWritten, long contentLength) {
             progressBarHorizontal.setProgress(progress);
+            writtenLength += bytesWritten;
         }
 
         @Override

@@ -43,5 +43,5 @@ public interface HttpApi {
     /*下载*/
     @Streaming
     @GET
-    Observable<ResponseBody> downLoad(@Url String url);
+    Observable<ResponseBody> downLoad(@Header("RANGE") String range, @Url String url);
 }
