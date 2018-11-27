@@ -334,6 +334,7 @@ public class MainActivity extends RxBaseActivity {
         @Override
         public void onStart() {
             progressBarHorizontal.setProgress(0);
+            titleBar.setTitleText("改变标题");
         }
 
         @Override

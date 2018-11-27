@@ -5,6 +5,9 @@ import com.bhm.sdk.rxlibrary.utils.RxUtils;
 
 import java.io.IOException;
 
+import io.reactivex.Observable;
+import io.reactivex.android.schedulers.AndroidSchedulers;
+import io.reactivex.functions.Consumer;
 import okhttp3.MediaType;
 import okhttp3.ResponseBody;
 import okio.Buffer;
@@ -60,35 +63,41 @@ public class DownLoadResponseBody extends ResponseBody {
                         rxBuilder.getListener() instanceof RxDownLoadCallBack) {
                     if(totalBytesRead == 0 && bytesRead != -1) {
                         RxUtils.deleteFile(rxBuilder, totalBytes);
-                        rxBuilder.getActivity().runOnUiThread(new Runnable() {
-                            @Override
-                            public void run() {
-                                rxBuilder.getListener().onStart();
-                                RxUtils.Logger(rxBuilder, "DownLoad-- > ", "begin downLoad");
-                            }
-                        });
+                        Observable.just(bytesRead)
+                                .observeOn(AndroidSchedulers.mainThread())
+                                .subscribe(new Consumer<Long>() {
+                                    @Override
+                                    public void accept(Long aLong) throws Exception {
+                                        rxBuilder.getListener().onStart();
+                                        RxUtils.Logger(rxBuilder, "DownLoad-- > ", "begin downLoad");
+                                    }
+                                });
                     }
                     totalBytesRead += bytesRead != -1 ? bytesRead : 0;
                     if (bytesRead != -1) {
                         final int progress = (int) (totalBytesRead * 100 / totalBytes);
-                        rxBuilder.getActivity().runOnUiThread(new Runnable() {
-                            @Override
-                            public void run() {
-                                rxBuilder.getListener().onProgress(progress, bytesRead, totalBytes);
-                            }
-                        });
-                        if(totalBytesRead == totalBytes){
-                            rxBuilder.getActivity().runOnUiThread(new Runnable() {
-                                @Override
-                                public void run() {
-                                    rxBuilder.getListener().onProgress(100, bytesRead, totalBytes);
-                                    rxBuilder.getListener().onFinish();
-                                    RxUtils.Logger(rxBuilder, "DownLoad-- > ", "finish downLoad");
-                                    if(null != rxBuilder.getDialog() && rxBuilder.isShowDialog()) {
-                                        rxBuilder.getDialog().dismissLoading(rxBuilder.getActivity());
+                        Observable.just(bytesRead)
+                                .observeOn(AndroidSchedulers.mainThread())
+                                .subscribe(new Consumer<Long>() {
+                                    @Override
+                                    public void accept(Long aLong) throws Exception {
+                                        rxBuilder.getListener().onProgress(progress, bytesRead, totalBytes);
                                     }
-                                }
-                            });
+                                });
+                        if(totalBytesRead == totalBytes){
+                            Observable.just(bytesRead)
+                                    .observeOn(AndroidSchedulers.mainThread())
+                                    .subscribe(new Consumer<Long>() {
+                                        @Override
+                                        public void accept(Long aLong) throws Exception {
+                                            rxBuilder.getListener().onProgress(100, bytesRead, totalBytes);
+                                            rxBuilder.getListener().onFinish();
+                                            RxUtils.Logger(rxBuilder, "DownLoad-- > ", "finish downLoad");
+                                            if(null != rxBuilder.getDialog() && rxBuilder.isShowDialog()) {
+                                                rxBuilder.getDialog().dismissLoading(rxBuilder.getActivity());
+                                            }
+                                        }
+                                    });
                         }
                     }
                     RxUtils.writeFile(sink.inputStream(), rxBuilder);

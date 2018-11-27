@@ -5,6 +5,9 @@ import com.bhm.sdk.rxlibrary.utils.RxUtils;
 
 import java.io.IOException;
 
+import io.reactivex.Observable;
+import io.reactivex.android.schedulers.AndroidSchedulers;
+import io.reactivex.functions.Consumer;
 import okhttp3.MediaType;
 import okhttp3.RequestBody;
 import okio.Buffer;
@@ -66,26 +69,27 @@ public class UpLoadRequestBody extends RequestBody {
             if (null != rxBuilder && null != rxBuilder.getListener() &&
                     rxBuilder.getListener() instanceof RxUpLoadCallBack) {
                 if (bytesWritten == 0) {
-                    rxBuilder.getActivity().runOnUiThread(new Runnable() {
-                        @Override
-                        public void run() {
-                            rxBuilder.getListener().onStart();
-                            RxUtils.Logger(rxBuilder, "upLoad-- > ", "begin upLoad");
-                        }
-                    });
+                    Observable.just(bytesWritten)
+                            .observeOn(AndroidSchedulers.mainThread())
+                            .subscribe(new Consumer<Long>() {
+                                @Override
+                                public void accept(Long aLong) throws Exception {
+                                    rxBuilder.getListener().onStart();
+                                    RxUtils.Logger(rxBuilder, "upLoad-- > ", "begin upLoad");
+                                }
+                            });
                 }
                 bytesWritten += byteCount;
                 final int progress = (int) (bytesWritten * 100 / contentLength());
-                rxBuilder.getActivity().runOnUiThread(new Runnable() {
-                    @Override
-                    public void run() {
-                        try {
-                            rxBuilder.getListener().onProgress(progress, bytesWritten, contentLength());
-                        } catch (IOException e) {
-                            rxBuilder.getListener().onFail(e.getMessage());
-                        }
-                    }
-                });
+
+                Observable.just(bytesWritten)
+                        .observeOn(AndroidSchedulers.mainThread())
+                        .subscribe(new Consumer<Long>() {
+                            @Override
+                            public void accept(Long aLong) throws Exception {
+                                rxBuilder.getListener().onProgress(progress, bytesWritten, contentLength());
+                            }
+                        });
             }
         }
     }
