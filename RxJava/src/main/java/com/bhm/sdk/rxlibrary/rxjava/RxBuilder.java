@@ -1,13 +1,12 @@
 package com.bhm.sdk.rxlibrary.rxjava;
 
 import android.app.Activity;
-import android.text.TextUtils;
-import android.util.Log;
 import android.widget.Toast;
 
 import com.bhm.sdk.rxlibrary.rxjava.callback.CallBack;
 import com.bhm.sdk.rxlibrary.rxjava.callback.RxStreamCallBackImp;
 import com.bhm.sdk.rxlibrary.utils.RxLoadingDialog;
+import com.bhm.sdk.rxlibrary.utils.RxUtils;
 import com.google.gson.JsonSyntaxException;
 import com.trello.rxlifecycle2.components.support.RxAppCompatActivity;
 
@@ -158,9 +157,7 @@ public class RxBuilder {
                 if(null == e){
                     return;
                 }
-                if(isLogOutPut()) {
-                    Log.e("ThrowableConsumer-> ", e.getMessage());//抛异常
-                }
+                RxUtils.Logger(RxBuilder.this, "ThrowableConsumer-> ", e.getMessage());//抛异常
                 if(null != getCallBack()){
                     getCallBack().onFail(e);
                 }
@@ -233,58 +230,6 @@ public class RxBuilder {
                     @Override
                     public InputStream apply(@NonNull ResponseBody responseBody) throws Exception {
                         return responseBody.byteStream();
-                    }
-                })
-                .observeOn(Schedulers.computation()) // 用于计算任务
-                .doOnNext(new Consumer<InputStream>() {
-                    @Override
-                    public void accept(InputStream inputStream){
-                        //得到整个文件流
-                        try {
-                            builder.activity.runOnUiThread(new Runnable() {
-                                @Override
-                                public void run() {
-                                    if(null != listener) {
-                                        listener.onProgress(100, 100, 100);
-                                    }
-                                }
-                            });
-                            if(!TextUtils.isEmpty(builder.filePath) && !TextUtils.isEmpty(builder.fileName)) {
-                                //这里不能支持断点下载，放在DownLoadResponseBody写文件，因为这里的inputStream是下载完的
-                                //整个文件的流；而DownLoadResponseBody中sink.inputStream()，是读取的每一份流，追加写。
-//                                RxUtils.writeFile(inputStream, builder.filePath, builder.fileName, builder.isDeleteOldFile);
-                            }
-                            if(null != inputStream){
-                                inputStream.close();
-                                System.gc();
-                            }
-                            builder.activity.runOnUiThread(new Runnable() {
-                                @Override
-                                public void run() {
-                                    if(null != listener) {
-                                        listener.onFinish();
-                                        if(null != builder.dialog && builder.isShowDialog) {
-                                            builder.dialog.dismissLoading(builder.activity);
-                                        }
-                                    }
-                                }
-                            });
-                        }catch (final Exception e){
-                            builder.activity.runOnUiThread(new Runnable() {
-                                @Override
-                                public void run() {
-                                    if(null != listener) {
-                                        listener.onFail(e.getMessage());
-                                        if(null != builder.dialog && builder.isShowDialog) {
-                                            builder.dialog.dismissLoading(builder.activity);
-                                        }
-                                    }
-                                }
-                            });
-                            if(builder.rxManager != null) {
-                                builder.rxManager.removeObserver();
-                            }
-                        }
                     }
                 })
                 .observeOn(AndroidSchedulers.mainThread())

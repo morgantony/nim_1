@@ -1,6 +1,7 @@
 package com.bhm.sdk.rxlibrary.utils;
 
 import android.text.TextUtils;
+import android.util.Log;
 
 import com.bhm.sdk.rxlibrary.rxjava.RxBuilder;
 
@@ -67,5 +68,11 @@ public class RxUtils {
             file = new File(rxBuilder.getFilePath() + "/" + rxBuilder.getFileName());
         }
         return file;
+    }
+
+    public static void Logger(RxBuilder rxBuilder, String tag, String msg){
+        if(rxBuilder.isLogOutPut()){
+            Log.e(tag, msg);
+        }
     }
 }

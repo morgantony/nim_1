@@ -53,19 +53,40 @@ public class DownLoadResponseBody extends ResponseBody {
 
             @Override
             public long read(Buffer sink, long byteCount) throws IOException {
-                long bytesRead = super.read(sink, byteCount);
+                final long bytesRead = super.read(sink, byteCount);
                 // read() returns the number of bytes read, or -1 if this source is exhausted.
                 if (null != rxBuilder && null != rxBuilder.getListener()) {
                     if(totalBytesRead == 0 && bytesRead != -1) {
                         RxUtils.deleteFile(rxBuilder, totalBytes);
-                        rxBuilder.getListener().onStart();
+                        rxBuilder.getActivity().runOnUiThread(new Runnable() {
+                            @Override
+                            public void run() {
+                                rxBuilder.getListener().onStart();
+                                RxUtils.Logger(rxBuilder, "DownLoad-- > ", "begin downLoad");
+                            }
+                        });
                     }
                     totalBytesRead += bytesRead != -1 ? bytesRead : 0;
                     if (bytesRead != -1) {
-                        int progress = (int) (totalBytesRead * 100 / totalBytes);
-                        rxBuilder.getListener().onProgress(progress, bytesRead, totalBytes);
+                        final int progress = (int) (totalBytesRead * 100 / totalBytes);
+                        rxBuilder.getActivity().runOnUiThread(new Runnable() {
+                            @Override
+                            public void run() {
+                                rxBuilder.getListener().onProgress(progress, bytesRead, totalBytes);
+                            }
+                        });
                         if(totalBytesRead == totalBytes){
-                            rxBuilder.getListener().onProgress(100, bytesRead, totalBytes);
+                            rxBuilder.getActivity().runOnUiThread(new Runnable() {
+                                @Override
+                                public void run() {
+                                    rxBuilder.getListener().onProgress(100, bytesRead, totalBytes);
+                                    rxBuilder.getListener().onFinish();
+                                    RxUtils.Logger(rxBuilder, "DownLoad-- > ", "finish downLoad");
+                                    if(null != rxBuilder.getDialog() && rxBuilder.isShowDialog()) {
+                                        rxBuilder.getDialog().dismissLoading(rxBuilder.getActivity());
+                                    }
+                                }
+                            });
                         }
                     }
                     RxUtils.writeFile(sink.inputStream(), rxBuilder);

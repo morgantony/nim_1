@@ -128,12 +128,15 @@ public class MainActivity extends RxBaseActivity {
                 writtenLength = 0;
                 downLoad();
                 break;
+            case 4:
+                rxManager.removeObserver(cDisposable);
+                break;
             case 5:
                 downLoad();
-            case 6:
-                startActivity(new Intent(this, RxBusActivity.class));
+                break;
             case 7:
-                rxManager.removeObserver(cDisposable);
+                startActivity(new Intent(this, RxBusActivity.class));
+                break;
             default:
                 return;
         }
@@ -291,6 +294,7 @@ public class MainActivity extends RxBaseActivity {
                 .setLoadingDialog(RxLoadingDialog.getDefaultDialog())
                 .setDialogAttribute(false, false, false)
                 .setDownLoadFileAtr(filePath, fileName, true, writtenLength)
+                .setIsLogOutPut(true)
                 .setIsDefaultToast(true, rxManager)
                 .bindRx();
         Observable<ResponseBody> observable = builder
