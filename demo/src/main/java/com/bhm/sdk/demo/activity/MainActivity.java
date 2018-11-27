@@ -53,7 +53,7 @@ public class MainActivity extends RxBaseActivity {
     private ProgressBar progressBarHorizontal;
     private RxPermissions rxPermissions;
     private Disposable cDisposable;
-    private long writtenLength;
+    private long downLoadLength;//已下载的长度
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -125,7 +125,7 @@ public class MainActivity extends RxBaseActivity {
                         });
                 break;
             case 3:
-                writtenLength = 0;
+                downLoadLength = 0;
                 downLoad();
                 break;
             case 4:
@@ -250,7 +250,7 @@ public class MainActivity extends RxBaseActivity {
                 .bindRx();
         Observable<UpLoadEntity> observable = builder
                 .createApi(HttpApi.class, "http://cloudapi.dev-chexiu.cn/", rxUpLoadListener)//rxUpLoadListener不能为空
-                .upload("Bearer cb44912505ee7e91a92e3b96b38eca1a",
+                .upload("Bearer 4dae7dd809147f82d168d520b2e56e2d",
                         RequestBody.create(MediaType.parse("text/plain"), "9"),
                         part);
         builder.setCallBack(observable, new CallBack<UpLoadEntity>() {
@@ -294,14 +294,14 @@ public class MainActivity extends RxBaseActivity {
         RxBuilder builder = RxBuilder.newBuilder(this)
                 .setLoadingDialog(RxLoadingDialog.getDefaultDialog())
                 .setDialogAttribute(false, false, false)
-                .setDownLoadFileAtr(filePath, fileName, true, writtenLength)
+                .setDownLoadFileAtr(filePath, fileName, true, downLoadLength)
                 .setIsLogOutPut(true)
                 .setIsDefaultToast(true, rxManager)
                 .bindRx();
         Observable<ResponseBody> observable = builder
                 //域名随便填写,但必须以“/”为结尾
                 .createApi(HttpApi.class, "http://dldir1.qq.com/weixin/", rxDownLoadListener)
-                .downLoad("bytes=" + writtenLength + "-", "http://dldir1.qq.com/weixin/android/weixin666android1300.apk");
+                .downLoad("bytes=" + downLoadLength + "-", "http://dldir1.qq.com/weixin/android/weixin666android1300.apk");
         cDisposable = builder.beginDownLoad(observable);
         rxManager.subscribe(cDisposable);
     }
@@ -315,7 +315,8 @@ public class MainActivity extends RxBaseActivity {
         @Override
         public void onProgress(int progress, long bytesWritten, long contentLength) {
             progressBarHorizontal.setProgress(progress);
-            Log.e("upLoad---- > ","progress : " + progress + "bytesWritten : " + bytesWritten + "contentLength : " + contentLength);
+            Log.e("upLoad---- > ","progress : " + progress + "，bytesWritten : "
+                    + bytesWritten + "，contentLength : " + contentLength);
         }
 
         @Override
@@ -338,7 +339,7 @@ public class MainActivity extends RxBaseActivity {
         @Override
         public void onProgress(int progress, long bytesWritten, long contentLength) {
             progressBarHorizontal.setProgress(progress);
-            writtenLength += bytesWritten;
+            downLoadLength += bytesWritten;
         }
 
         @Override
