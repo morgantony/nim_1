@@ -26,7 +26,8 @@ public class RxManager {
         if(null == list){
             list = new ArrayList<>();
         }
-        list.add(d);
+        if(!list.contains(d))
+            list.add(d);
     }
 
     /**

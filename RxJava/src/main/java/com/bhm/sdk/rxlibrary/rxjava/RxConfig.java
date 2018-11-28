@@ -64,6 +64,11 @@ public class RxConfig {
             return this;
         }
 
+        /** 不推荐使用，使用此方法，将取消默认的设置，包括但不限于日志，缓存，下载，上传，网络，SSL。
+         * @param setOkHttpClient
+         * @return
+         */
+        @Deprecated
         public Builder setOkHttpClient(OkHttpClient setOkHttpClient){
             okHttpClient = setOkHttpClient;
             return this;
@@ -156,6 +161,7 @@ public class RxConfig {
     public static long writtenLength(){
         return writtenLength;
     }
+
     public static boolean isAppendWrite(){
         return isAppendWrite;
     }

@@ -315,7 +315,11 @@ public class RxBuilder {
             this.connectTimeOut = connectTimeOut;
             return this;
         }
-
+        /** 不推荐使用，使用此方法，将取消默认的设置，包括但不限于日志，缓存，下载，上传，网络，SSL。
+         * @param okHttpClient
+         * @return
+         */
+        @Deprecated
         public Builder setOkHttpClient(OkHttpClient okHttpClient){
             this.okHttpClient = okHttpClient;
             return this;

@@ -47,7 +47,6 @@ public class UpLoadRequestBody extends RequestBody {
     @Override
     public void writeTo(BufferedSink sink) throws IOException {
         BufferedSink bufferedSink;
-
         CountingSink mCountingSink = new CountingSink(sink);
         bufferedSink = Okio.buffer(mCountingSink);
 
@@ -57,17 +56,21 @@ public class UpLoadRequestBody extends RequestBody {
 
     class CountingSink extends ForwardingSink {
 
-        private long bytesWritten = 0;
+        private long bytesWritten = 0L;
+        private long contentLength = 0L;
 
         public CountingSink(Sink delegate) {
             super(delegate);
         }
 
         @Override
-        public void write(Buffer source, long byteCount) throws IOException {
+        public void write(Buffer source, final long byteCount) throws IOException {
             super.write(source, byteCount);
             if (null != rxBuilder && null != rxBuilder.getListener() &&
                     rxBuilder.getListener() instanceof RxUpLoadCallBack) {
+                if(contentLength == 0L){
+                    contentLength = contentLength();
+                }
                 if (bytesWritten == 0) {
                     Observable.just(bytesWritten)
                             .observeOn(AndroidSchedulers.mainThread())
@@ -80,14 +83,15 @@ public class UpLoadRequestBody extends RequestBody {
                             });
                 }
                 bytesWritten += byteCount;
-                final int progress = (int) (bytesWritten * 100 / contentLength());
-
+                final int progress = (int) (bytesWritten * 100 / contentLength);
                 Observable.just(bytesWritten)
                         .observeOn(AndroidSchedulers.mainThread())
                         .subscribe(new Consumer<Long>() {
                             @Override
                             public void accept(Long aLong) throws Exception {
-                                rxBuilder.getListener().onProgress(progress, bytesWritten, contentLength());
+//                                rxBuilder.getListener().onProgress(progress, byteCount, contentLength);
+                                rxBuilder.getListener().onProgress(progress > 100 ?
+                                        100 : progress, byteCount, contentLength);
                             }
                         });
             }

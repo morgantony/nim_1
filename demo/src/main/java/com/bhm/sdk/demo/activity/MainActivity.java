@@ -52,7 +52,8 @@ public class MainActivity extends RxBaseActivity {
     private TitleBar titleBar;
     private ProgressBar progressBarHorizontal;
     private RxPermissions rxPermissions;
-    private Disposable cDisposable;
+    private Disposable down_Disposable;
+    private Disposable up_Disposable;
     private long downLoadLength;//已下载的长度
 
     @Override
@@ -83,6 +84,7 @@ public class MainActivity extends RxBaseActivity {
         list.add("RxJava2+Retrofit2,Get请求");
         list.add("RxJava2+Retrofit2,post请求");
         list.add("RxJava2+Retrofit2,文件上传（带进度）");
+        list.add("取消上传");
         list.add("RxJava2+Retrofit2,文件下载（带进度）");
         list.add("暂停/取消下载");
         list.add("继续下载");
@@ -109,32 +111,22 @@ public class MainActivity extends RxBaseActivity {
                 doPost();
                 break;
             case 2:
-                rxPermissions
-                        .request(Manifest.permission.WRITE_EXTERNAL_STORAGE,
-                                Manifest.permission.READ_EXTERNAL_STORAGE)
-                        .subscribe(new Consumer<Boolean>() {
-                            @Override
-                            public void accept(Boolean aBoolean) throws Exception {
-                                if(!aBoolean){
-                                    Toast.makeText(MainActivity.this, "无法获取权限，请在设置中授权",
-                                            Toast.LENGTH_SHORT).show();
-                                }else{
-                                    upLoadFile();//上传文件
-                                }
-                            }
-                        });
+                upLoad();
                 break;
             case 3:
+                rxManager.removeObserver(up_Disposable);
+                break;
+            case 4:
                 downLoadLength = 0;
                 downLoad();
                 break;
-            case 4:
-                rxManager.removeObserver(cDisposable);
-                break;
             case 5:
+                rxManager.removeObserver(down_Disposable);
+                break;
+            case 6:
                 downLoad();
                 break;
-            case 7:
+            case 8:
                 startActivity(new Intent(this, RxBusActivity.class));
                 break;
             default:
@@ -154,6 +146,23 @@ public class MainActivity extends RxBaseActivity {
             Toast.makeText(this, "RxBus改变了MainActivity的标题", Toast.LENGTH_SHORT).show();
             titleBar.setTitleText(entity.getMsg());
         }
+    }
+
+    private void upLoad(){
+        rxPermissions
+                .request(Manifest.permission.WRITE_EXTERNAL_STORAGE,
+                        Manifest.permission.READ_EXTERNAL_STORAGE)
+                .subscribe(new Consumer<Boolean>() {
+                    @Override
+                    public void accept(Boolean aBoolean) throws Exception {
+                        if(!aBoolean){
+                            Toast.makeText(MainActivity.this, "无法获取权限，请在设置中授权",
+                                    Toast.LENGTH_SHORT).show();
+                        }else{
+                            upLoadFile();//上传文件
+                        }
+                    }
+                });
     }
 
     private void downLoad(){
@@ -237,23 +246,21 @@ public class MainActivity extends RxBaseActivity {
 
     private void upLoadFile() {
         File file = Utils.getFile();
-        RequestBody requestBody = RequestBody.create(MediaType.parse("image/jpeg; charset=UTF-8"),file);
-        MultipartBody.Part part= MultipartBody.Part.createFormData("file", file.getName(), requestBody);
+        RequestBody requestBody = RequestBody.create(MediaType.parse("image/jpeg; charset=UTF-8"), file);
+        MultipartBody.Part part= MultipartBody.Part.createFormData("file", file.getName(), requestBody);//key(file)与服务器一致
 
         RxBuilder builder = RxBuilder.newBuilder(this)
                 .setLoadingDialog(RxLoadingDialog.getDefaultDialog())
-//                .setLoadingDialog(new MyLoadingDialog())
                 .setDialogAttribute(false, false, false)
-                //.setHttpTimeOut()
                 .setIsLogOutPut(true)//默认是false
                 .setIsDefaultToast(true, rxManager)
                 .bindRx();
         Observable<UpLoadEntity> observable = builder
                 .createApi(HttpApi.class, "http://cloudapi.dev-chexiu.cn/", rxUpLoadListener)//rxUpLoadListener不能为空
-                .upload("Bearer 4dae7dd809147f82d168d520b2e56e2d",
+                .upload("Bearer 56b3fe3eb59fc880ab1aa690dd822b47",
                         RequestBody.create(MediaType.parse("text/plain"), "9"),
                         part);
-        builder.setCallBack(observable, new CallBack<UpLoadEntity>() {
+        up_Disposable = builder.setCallBack(observable, new CallBack<UpLoadEntity>() {
             @Override
             public void onStart(Disposable disposable) {
                 rxUpLoadListener.onStart();
@@ -275,6 +282,7 @@ public class MainActivity extends RxBaseActivity {
                 rxUpLoadListener.onFinish();
             }
         });
+//        rxManager.subscribe(up_Disposable);setCallBack方法有rxManager.subscribe(disposable),无需重复，重复也没关系。
     }
 
     /**
@@ -302,8 +310,8 @@ public class MainActivity extends RxBaseActivity {
                 //域名随便填写,但必须以“/”为结尾
                 .createApi(HttpApi.class, "http://dldir1.qq.com/weixin/", rxDownLoadListener)
                 .downLoad("bytes=" + downLoadLength + "-", "http://dldir1.qq.com/weixin/android/weixin666android1300.apk");
-        cDisposable = builder.beginDownLoad(observable);
-        rxManager.subscribe(cDisposable);
+        down_Disposable = builder.beginDownLoad(observable);
+        rxManager.subscribe(down_Disposable);
     }
 
     private RxUpLoadCallBack rxUpLoadListener = new RxUpLoadCallBack() {

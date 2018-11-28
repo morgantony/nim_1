@@ -52,8 +52,9 @@ public class DownLoadResponseBody extends ResponseBody {
 
     private Source source(Source source) {
         return new ForwardingSource(source) {
-            long totalBytesRead = rxBuilder.writtenLength();
-            long totalBytes = rxBuilder.writtenLength() + responseBody.contentLength();
+            long totalBytesRead = rxBuilder == null ? 0L : rxBuilder.writtenLength();
+            long totalBytes = rxBuilder == null ? responseBody.contentLength() :
+                    rxBuilder.writtenLength() + responseBody.contentLength();
 
             @Override
             public long read(Buffer sink, long byteCount) throws IOException {
@@ -81,7 +82,8 @@ public class DownLoadResponseBody extends ResponseBody {
                                 .subscribe(new Consumer<Long>() {
                                     @Override
                                     public void accept(Long aLong) throws Exception {
-                                        rxBuilder.getListener().onProgress(progress, bytesRead, totalBytes);
+                                        rxBuilder.getListener().onProgress(progress > 100 ?
+                                                100 : progress, bytesRead, totalBytes);
                                     }
                                 });
                         if(totalBytesRead == totalBytes){
