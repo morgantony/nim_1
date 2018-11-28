@@ -5,7 +5,7 @@ RxLibrary工程：<br>1.rxjava2 + retrofit2的封装，常用的请求（Get,Pos
 =
 效果图
 ------
->![image](https://github.com/buhuiming/RxLibrary/blob/master/screenShots/2.jpg)</br>
+>![image](https://github.com/buhuiming/RxLibrary/blob/master/screenShots/2.png)</br>
 
 <br>
 
@@ -13,20 +13,20 @@ RxLibrary工程：<br>1.rxjava2 + retrofit2的封装，常用的请求（Get,Pos
 -------
     maven { url "https://dl.bintray.com/bikie/bhm-sdk" } //根目录下build.gradle的allprojects-repositories节点下添加
 
-    compile 'com.bhm.sdk.rxlibrary:RxLibrary:2.4.7'
+    compile 'com.bhm.sdk.rxlibrary:RxLibrary:2.5.0'
 <br>或者
 
     <dependency>
       <groupId>com.bhm.sdk.rxlibrary</groupId>
       <artifactId>RxLibrary</artifactId>
-      <version>2.4.7</version>
+      <version>2.5.0</version>
       <type>pom</type>
     </dependency>
 
 
 一、rxjava2 + retrofit2的使用
 -------  
-### 强烈建议参考demo，MianActivity包含了常用的用法及用法介绍。
+# 强烈建议参考demo，MianActivity包含了常用的用法及用法介绍。
 ### 第一步，继承RxBaseActivity或者RxBaseFragment（不继承的话，就必须父类是RxJava包下的RxAppCompatActivity）,添加内存管理的机制，同时获取或生成rxManager对象，rxManager是管理观察者的类，当取消请求、中断请求等可调用对应的方法。注意：如果项目BaseActivity继承了别的Activity，则需在BaseActivity中添加别的Activity代码再继承RxAppCompatActivity类，并且生成RxManager对象，解析的实体类必须继承BaseResponse类。Fragment同理哦。
 ### 第二步，使用。
 
