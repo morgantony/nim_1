@@ -179,6 +179,8 @@ public class RetrofitCreateHelper {
                 int maxAge = 5;
                 request = request.newBuilder()
                         .removeHeader("User-Agent")
+                        .removeHeader("Accept-Encoding")
+                        .header("Accept-Encoding", "identity")
                         .header("User-Agent", getUserAgent(builder.getActivity()))
                         .build();
 
@@ -194,6 +196,8 @@ public class RetrofitCreateHelper {
                 request = request.newBuilder()
                         .cacheControl(CacheControl.FORCE_CACHE)
                         .removeHeader("User-Agent")
+                        .removeHeader("Accept-Encoding")
+                        .header("Accept-Encoding", "identity")
                         .header("User-Agent", getUserAgent(builder.getActivity()))
                         .build();
 
