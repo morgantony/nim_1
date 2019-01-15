@@ -1,5 +1,8 @@
 package com.bhm.sdk.rxlibrary.rxjava;
 
+import android.annotation.SuppressLint;
+import android.support.annotation.NonNull;
+
 import com.bhm.sdk.rxlibrary.rxjava.callback.RxUpLoadCallBack;
 import com.bhm.sdk.rxlibrary.utils.RxUtils;
 
@@ -45,7 +48,7 @@ public class UpLoadRequestBody extends RequestBody {
     }
 
     @Override
-    public void writeTo(BufferedSink sink) throws IOException {
+    public void writeTo(@NonNull BufferedSink sink) throws IOException {
         BufferedSink bufferedSink;
         CountingSink mCountingSink = new CountingSink(sink);
         bufferedSink = Okio.buffer(mCountingSink);
@@ -59,12 +62,13 @@ public class UpLoadRequestBody extends RequestBody {
         private long bytesWritten = 0L;
         private long contentLength = 0L;
 
-        public CountingSink(Sink delegate) {
+        CountingSink(Sink delegate) {
             super(delegate);
         }
 
+        @SuppressLint("CheckResult")
         @Override
-        public void write(Buffer source, final long byteCount) throws IOException {
+        public void write(@NonNull Buffer source, final long byteCount) throws IOException {
             super.write(source, byteCount);
             if (null != rxBuilder && null != rxBuilder.getListener() &&
                     rxBuilder.getListener() instanceof RxUpLoadCallBack) {

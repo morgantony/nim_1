@@ -1,5 +1,8 @@
 package com.bhm.sdk.rxlibrary.rxjava;
 
+import android.annotation.SuppressLint;
+import android.support.annotation.NonNull;
+
 import com.bhm.sdk.rxlibrary.rxjava.callback.RxDownLoadCallBack;
 import com.bhm.sdk.rxlibrary.utils.RxUtils;
 
@@ -56,8 +59,9 @@ public class DownLoadResponseBody extends ResponseBody {
             long totalBytes = rxBuilder == null ? responseBody.contentLength() :
                     rxBuilder.writtenLength() + responseBody.contentLength();
 
+            @SuppressLint("CheckResult")
             @Override
-            public long read(Buffer sink, long byteCount) throws IOException {
+            public long read(@NonNull Buffer sink, long byteCount) throws IOException {
                 final long bytesRead = super.read(sink, byteCount);
                 // read() returns the number of bytes read, or -1 if this source is exhausted.
                 if (null != rxBuilder && null != rxBuilder.getListener() &&
