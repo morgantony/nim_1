@@ -286,6 +286,56 @@ public class MainActivity extends RxBaseActivity {
     }
 
     /**
+     * 多文件一起上传
+     */
+    private void upLoadFiles() {
+        List<File> files = Utils.getFiles();
+        final MultipartBody.Builder bodyBuilder = new MultipartBody.Builder();
+        bodyBuilder.setType(MultipartBody.FORM);
+        bodyBuilder.addFormDataPart("id", String.valueOf(100));
+        bodyBuilder.addFormDataPart("type", String.valueOf(1));
+
+        //"file"为服务器定义的key
+        for(File file : files) {
+            RequestBody requestBody = RequestBody.create(MediaType.parse("image/jpeg; charset=UTF-8"), file);
+            bodyBuilder.addFormDataPart("file", file.getName(), requestBody);
+        }
+        RxBuilder builder = RxBuilder.newBuilder(this)
+                .setLoadingDialog(RxLoadingDialog.getDefaultDialog())
+                .setDialogAttribute(false, false, false)
+                .setIsLogOutPut(true)//默认是false
+                .setIsDefaultToast(true, rxManager)
+                .bindRx();
+        Observable<UpLoadEntity> observable = builder
+                .createApi(HttpApi.class, "http://cloudapi.dev-chexiu.cn/", rxUpLoadListener)//rxUpLoadListener不能为空
+                .upload("Bearer 56b3fe3eb59fc880ab1aa690dd822b47",
+                        bodyBuilder.build());
+        up_Disposable = builder.setCallBack(observable, new CallBack<UpLoadEntity>() {
+            @Override
+            public void onStart(Disposable disposable) {
+                rxUpLoadListener.onStart();
+            }
+
+            @Override
+            public void onSuccess(UpLoadEntity response) {
+                Log.i("MainActivity--> ", response.getMsg());
+                Toast.makeText(MainActivity.this, response.getMsg(), Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onFail(Throwable e) {
+                rxUpLoadListener.onFail(e.getMessage());
+            }
+
+            @Override
+            public void onComplete() {
+                rxUpLoadListener.onFinish();
+            }
+        });
+//        rxManager.subscribe(up_Disposable);setCallBack方法有rxManager.subscribe(disposable),无需重复，重复也没关系。
+    }
+
+    /**
      * setDialogAttribute参数：1.filePath：文件下载路径， 2.fileName：文件名
      *              3.mAppendWrite：是否支持暂停下载。true,支持，同时需要记录writtenLength
      *              false，每次都重新开始下载，并且会删除原文件。（注：文件下载完后，再下载都会删除原文件重新下载，与此参数无关）

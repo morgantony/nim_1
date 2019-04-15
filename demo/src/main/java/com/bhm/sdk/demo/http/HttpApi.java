@@ -40,6 +40,13 @@ public interface HttpApi {
             @Part("role_id") RequestBody role_id,
             @Part MultipartBody.Part file);
 
+    /*上传文件*/
+//    @Multipart //不需要这个
+    @POST("common/update-avatar")
+    Observable<UpLoadEntity> upload(
+            @Header("Authorization") String token,
+            @Body MultipartBody body);//文件和字段一起
+
     /*下载*/
     @Streaming
     @GET
