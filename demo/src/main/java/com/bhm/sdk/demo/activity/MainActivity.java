@@ -1,6 +1,7 @@
 package com.bhm.sdk.demo.activity;
 
 import android.Manifest;
+import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -45,6 +46,7 @@ import okhttp3.MultipartBody;
 import okhttp3.RequestBody;
 import okhttp3.ResponseBody;
 
+@SuppressLint("CheckResult")
 public class MainActivity extends RxBaseActivity {
 
     protected RecyclerView main_recycle_view;

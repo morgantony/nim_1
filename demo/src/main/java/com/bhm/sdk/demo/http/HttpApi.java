@@ -7,6 +7,7 @@ import io.reactivex.Observable;
 import okhttp3.MultipartBody;
 import okhttp3.RequestBody;
 import okhttp3.ResponseBody;
+import retrofit2.http.Body;
 import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
@@ -26,7 +27,7 @@ public interface HttpApi {
 
     @GET("/api/4/news/latest")
     Observable<DoGetEntity> getData(@Header("token") String token,
-                                                    @Query("type")  String type);
+                                    @Query("type")  String type);
 
     @FormUrlEncoded
     @POST("v2/movie/in_theaters")

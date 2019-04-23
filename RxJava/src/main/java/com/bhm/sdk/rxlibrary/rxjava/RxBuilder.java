@@ -150,7 +150,7 @@ public class RxBuilder {
                 if(null != getCallBack()){
                     getCallBack().onSuccess(t);
                 }
-                if(isShowDialog() && null !=getDialog()){
+                if(isShowDialog() && null != getDialog()){
                     getDialog().dismissLoading(getActivity());
                 }
             }
@@ -202,8 +202,8 @@ public class RxBuilder {
         return new Action() {
             @Override
             public void run() throws Exception {
-                if(null != callBack){
-                    callBack.onComplete();
+                if(null != getCallBack()){
+                    getCallBack().onComplete();
                 }
                 if(isShowDialog() && null != getDialog()){
                     getDialog().dismissLoading(getActivity());
@@ -220,8 +220,8 @@ public class RxBuilder {
             @Override
             public void accept(Disposable disposable) throws Exception {
                 //做准备工作
-                if(null != callBack){
-                    callBack.onStart(disposable);
+                if(null != getCallBack()){
+                    getCallBack().onStart(disposable);
                 }
                 if(builder.rxManager != null){
                     builder.rxManager.subscribe(disposable);
