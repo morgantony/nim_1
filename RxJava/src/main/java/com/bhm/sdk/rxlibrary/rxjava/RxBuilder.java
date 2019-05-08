@@ -336,7 +336,7 @@ public class RxBuilder {
             appendWrite = mAppendWrite;
             writtenLength = mWrittenLength;
             return this;
-        }
+    }
 
         public RxBuilder bindRx(){
             return new RxBuilder(this);
