@@ -1,0 +1,1954 @@
+[
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\tooltip_frame_light.xml",
+        "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\889c310aee22ef7fd971c72a22b3d63f\\res\\drawable\\tooltip_frame_light.xml"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\flag_mc.png",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\library_country_picker\\build\\intermediates\\packaged_res\\debug\\drawable\\flag_mc.png"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\flag_um.png",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\library_country_picker\\build\\intermediates\\packaged_res\\debug\\drawable\\flag_um.png"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\nim_play_btn_select.xml",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\res\\drawable\\nim_play_btn_select.xml"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\nim_robot_link_view_selector.xml",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\uikit\\build\\intermediates\\packaged_res\\debug\\drawable\\nim_robot_link_view_selector.xml"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\message_plus_guess_selector.xml",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\res\\drawable\\message_plus_guess_selector.xml"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\flag_dm.png",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\library_country_picker\\build\\intermediates\\packaged_res\\debug\\drawable\\flag_dm.png"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\flag_hr.png",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\library_country_picker\\build\\intermediates\\packaged_res\\debug\\drawable\\flag_hr.png"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\nim_ic_menu_selector.xml",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\uikit\\build\\intermediates\\packaged_res\\debug\\drawable\\nim_ic_menu_selector.xml"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\flag_mn.png",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\library_country_picker\\build\\intermediates\\packaged_res\\debug\\drawable\\flag_mn.png"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\flag_se.png",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\library_country_picker\\build\\intermediates\\packaged_res\\debug\\drawable\\flag_se.png"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\nim_white_round_button_selector.xml",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\res\\drawable\\nim_white_round_button_selector.xml"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\flag_cg.png",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\library_country_picker\\build\\intermediates\\packaged_res\\debug\\drawable\\flag_cg.png"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\flag_tv.png",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\library_country_picker\\build\\intermediates\\packaged_res\\debug\\drawable\\flag_tv.png"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\jrmf_w_shape_unbind.xml",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\jrmfRpWalletlib\\build\\intermediates\\packaged_res\\debug\\drawable\\jrmf_w_shape_unbind.xml"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\nim_g_image_preview_white_btn_selecter.xml",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\uikit\\build\\intermediates\\packaged_res\\debug\\drawable\\nim_g_image_preview_white_btn_selecter.xml"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\flag_ni.png",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\library_country_picker\\build\\intermediates\\packaged_res\\debug\\drawable\\flag_ni.png"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\nim_audio_animation_list_left.xml",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\uikit\\build\\intermediates\\packaged_res\\debug\\drawable\\nim_audio_animation_list_left.xml"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\nim_gray_edit_text_bg.xml",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\uikit\\build\\intermediates\\packaged_res\\debug\\drawable\\nim_gray_edit_text_bg.xml"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\nim_selector_grid_camera_bg.xml",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\uikit\\build\\intermediates\\packaged_res\\debug\\drawable\\nim_selector_grid_camera_bg.xml"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\flag_an.png",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\library_country_picker\\build\\intermediates\\packaged_res\\debug\\drawable\\flag_an.png"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\flag_fj.png",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\library_country_picker\\build\\intermediates\\packaged_res\\debug\\drawable\\flag_fj.png"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\flag_la.png",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\library_country_picker\\build\\intermediates\\packaged_res\\debug\\drawable\\flag_la.png"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\flag_tk.png",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\library_country_picker\\build\\intermediates\\packaged_res\\debug\\drawable\\flag_tk.png"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_cab_background_internal_bg.xml",
+        "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\889c310aee22ef7fd971c72a22b3d63f\\res\\drawable\\abc_cab_background_internal_bg.xml"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\flag_cv.png",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\library_country_picker\\build\\intermediates\\packaged_res\\debug\\drawable\\flag_cv.png"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\flag_pm.png",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\library_country_picker\\build\\intermediates\\packaged_res\\debug\\drawable\\flag_pm.png"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\flag_my.png",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\library_country_picker\\build\\intermediates\\packaged_res\\debug\\drawable\\flag_my.png"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_dialog_material_background.xml",
+        "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\889c310aee22ef7fd971c72a22b3d63f\\res\\drawable\\abc_dialog_material_background.xml"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\flag_ac.png",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\library_country_picker\\build\\intermediates\\packaged_res\\debug\\drawable\\flag_ac.png"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\flag_mr.png",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\library_country_picker\\build\\intermediates\\packaged_res\\debug\\drawable\\flag_mr.png"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\flag_ne.png",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\library_country_picker\\build\\intermediates\\packaged_res\\debug\\drawable\\flag_ne.png"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\skin_global_bg.xml",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\res\\drawable\\skin_global_bg.xml"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\flag_ck.png",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\library_country_picker\\build\\intermediates\\packaged_res\\debug\\drawable\\flag_ck.png"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\flag_au.png",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\library_country_picker\\build\\intermediates\\packaged_res\\debug\\drawable\\flag_au.png"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\jrmf_rp_bg_white_round_stroke.xml",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\jrmfRpWalletlib\\build\\intermediates\\packaged_res\\debug\\drawable\\jrmf_rp_bg_white_round_stroke.xml"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\nim_section_choose_all_selector.xml",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\uikit\\build\\intermediates\\packaged_res\\debug\\drawable\\nim_section_choose_all_selector.xml"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\flag_hn.png",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\library_country_picker\\build\\intermediates\\packaged_res\\debug\\drawable\\flag_hn.png"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\flag_ls.png",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\library_country_picker\\build\\intermediates\\packaged_res\\debug\\drawable\\flag_ls.png"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\flag_si.png",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\library_country_picker\\build\\intermediates\\packaged_res\\debug\\drawable\\flag_si.png"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_item_background_holo_light.xml",
+        "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\889c310aee22ef7fd971c72a22b3d63f\\res\\drawable\\abc_item_background_holo_light.xml"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\effect_item_circle_selected.xml",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\faceunity\\build\\intermediates\\packaged_res\\debug\\drawable\\effect_item_circle_selected.xml"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\flag_sl.png",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\library_country_picker\\build\\intermediates\\packaged_res\\debug\\drawable\\flag_sl.png"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\notification_bg_low.xml",
+        "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-26.1.0.aar\\5e81b10a877567223ffb73844f58b1d0\\res\\drawable\\notification_bg_low.xml"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\flag_bw.png",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\library_country_picker\\build\\intermediates\\packaged_res\\debug\\drawable\\flag_bw.png"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\flag_bt.png",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\library_country_picker\\build\\intermediates\\packaged_res\\debug\\drawable\\flag_bt.png"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\actionbar_white_logo_space.xml",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\res\\drawable\\actionbar_white_logo_space.xml"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\flag_gl.png",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\library_country_picker\\build\\intermediates\\packaged_res\\debug\\drawable\\flag_gl.png"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\video_audio_mode_switch_bg.xml",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\avchatkit\\build\\intermediates\\packaged_res\\debug\\drawable\\video_audio_mode_switch_bg.xml"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\common_google_signin_btn_icon_light.xml",
+        "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-11.6.0.aar\\5e6e2a472a424eb60165958515bab92a\\res\\drawable\\common_google_signin_btn_icon_light.xml"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\flag_be.png",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\library_country_picker\\build\\intermediates\\packaged_res\\debug\\drawable\\flag_be.png"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\flag_es.png",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\library_country_picker\\build\\intermediates\\packaged_res\\debug\\drawable\\flag_es.png"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\flag_km.png",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\library_country_picker\\build\\intermediates\\packaged_res\\debug\\drawable\\flag_km.png"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_btn_radio_material.xml",
+        "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\889c310aee22ef7fd971c72a22b3d63f\\res\\drawable\\abc_btn_radio_material.xml"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\flag_tr.png",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\library_country_picker\\build\\intermediates\\packaged_res\\debug\\drawable\\flag_tr.png"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_btn_borderless_material.xml",
+        "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\889c310aee22ef7fd971c72a22b3d63f\\res\\drawable\\abc_btn_borderless_material.xml"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\flag_it.png",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\library_country_picker\\build\\intermediates\\packaged_res\\debug\\drawable\\flag_it.png"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\flag_qa.png",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\library_country_picker\\build\\intermediates\\packaged_res\\debug\\drawable\\flag_qa.png"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\flag_cz.png",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\library_country_picker\\build\\intermediates\\packaged_res\\debug\\drawable\\flag_cz.png"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\message_plus_snapchat_selector.xml",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\res\\drawable\\message_plus_snapchat_selector.xml"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\jrmf_w_selector_forget_pwd.xml",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\jrmfRpWalletlib\\build\\intermediates\\packaged_res\\debug\\drawable\\jrmf_w_selector_forget_pwd.xml"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\image_choose_selector.xml",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\uikit\\build\\intermediates\\packaged_res\\debug\\drawable\\image_choose_selector.xml"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\jrmf_w_selector_item.xml",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\jrmfRpWalletlib\\build\\intermediates\\packaged_res\\debug\\drawable\\jrmf_w_selector_item.xml"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\nim_shape_gradient_black.xml",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\uikit\\build\\intermediates\\packaged_res\\debug\\drawable\\nim_shape_gradient_black.xml"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\nim_chatroom_robot_link_view_selector.xml",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\uikit\\build\\intermediates\\packaged_res\\debug\\drawable\\nim_chatroom_robot_link_view_selector.xml"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\flag_co.png",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\library_country_picker\\build\\intermediates\\packaged_res\\debug\\drawable\\flag_co.png"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\flag_ie.png",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\library_country_picker\\build\\intermediates\\packaged_res\\debug\\drawable\\flag_ie.png"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\design_fab_background.xml",
+        "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\design-26.1.0.aar\\26636fe5363c1a84f5c625e35b100465\\res\\drawable\\design_fab_background.xml"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\flag_tz.png",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\library_country_picker\\build\\intermediates\\packaged_res\\debug\\drawable\\flag_tz.png"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\flag_cn.png",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\library_country_picker\\build\\intermediates\\packaged_res\\debug\\drawable\\flag_cn.png"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\flag_gs.png",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\library_country_picker\\build\\intermediates\\packaged_res\\debug\\drawable\\flag_gs.png"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\blur_level_item_unselected.xml",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\faceunity\\build\\intermediates\\packaged_res\\debug\\drawable\\blur_level_item_unselected.xml"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\avchat_video_record_selector.xml",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\avchatkit\\build\\intermediates\\packaged_res\\debug\\drawable\\avchat_video_record_selector.xml"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\flag_cd.png",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\library_country_picker\\build\\intermediates\\packaged_res\\debug\\drawable\\flag_cd.png"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\jrmf_rp_selector_common_btn.xml",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\jrmfRpWalletlib\\build\\intermediates\\packaged_res\\debug\\drawable\\jrmf_rp_selector_common_btn.xml"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\flag_mv.png",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\library_country_picker\\build\\intermediates\\packaged_res\\debug\\drawable\\flag_mv.png"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\flag_va.png",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\library_country_picker\\build\\intermediates\\packaged_res\\debug\\drawable\\flag_va.png"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\common_google_signin_btn_icon_light_normal.xml",
+        "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-11.6.0.aar\\5e6e2a472a424eb60165958515bab92a\\res\\drawable\\common_google_signin_btn_icon_light_normal.xml"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\flag_bi.png",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\library_country_picker\\build\\intermediates\\packaged_res\\debug\\drawable\\flag_bi.png"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\jrmf_rp_bg_red_click_round.xml",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\jrmfRpWalletlib\\build\\intermediates\\packaged_res\\debug\\drawable\\jrmf_rp_bg_red_click_round.xml"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\flag_gt.png",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\library_country_picker\\build\\intermediates\\packaged_res\\debug\\drawable\\flag_gt.png"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\jrmf_rp_selector_item.xml",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\jrmfRpWalletlib\\build\\intermediates\\packaged_res\\debug\\drawable\\jrmf_rp_selector_item.xml"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\flag_aq.png",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\library_country_picker\\build\\intermediates\\packaged_res\\debug\\drawable\\flag_aq.png"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\flag_sa.png",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\library_country_picker\\build\\intermediates\\packaged_res\\debug\\drawable\\flag_sa.png"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\multi_select_bg.xml",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\avchatkit\\build\\intermediates\\packaged_res\\debug\\drawable\\multi_select_bg.xml"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\flag_tn.png",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\library_country_picker\\build\\intermediates\\packaged_res\\debug\\drawable\\flag_tn.png"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\nim_team_create_btn_selector.xml",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\uikit\\build\\intermediates\\packaged_res\\debug\\drawable\\nim_team_create_btn_selector.xml"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\flag_sm.png",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\library_country_picker\\build\\intermediates\\packaged_res\\debug\\drawable\\flag_sm.png"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\avchat_refuse_bg_selector.xml",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\avchatkit\\build\\intermediates\\packaged_res\\debug\\drawable\\avchat_refuse_bg_selector.xml"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\jrmf_w_shape_normal_item_bg.xml",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\jrmfRpWalletlib\\build\\intermediates\\packaged_res\\debug\\drawable\\jrmf_w_shape_normal_item_bg.xml"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\flag_fm.png",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\library_country_picker\\build\\intermediates\\packaged_res\\debug\\drawable\\flag_fm.png"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\flag_gh.png",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\library_country_picker\\build\\intermediates\\packaged_res\\debug\\drawable\\flag_gh.png"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\nim_team_member_delete_selector.xml",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\uikit\\build\\intermediates\\packaged_res\\debug\\drawable\\nim_team_member_delete_selector.xml"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\common_google_signin_btn_icon_dark.xml",
+        "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-11.6.0.aar\\5e6e2a472a424eb60165958515bab92a\\res\\drawable\\common_google_signin_btn_icon_dark.xml"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\flag_eh.png",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\library_country_picker\\build\\intermediates\\packaged_res\\debug\\drawable\\flag_eh.png"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\flag_im.png",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\library_country_picker\\build\\intermediates\\packaged_res\\debug\\drawable\\flag_im.png"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\flag_np.png",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\library_country_picker\\build\\intermediates\\packaged_res\\debug\\drawable\\flag_np.png"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\flag_ru.png",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\library_country_picker\\build\\intermediates\\packaged_res\\debug\\drawable\\flag_ru.png"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\nim_sample_footer_loading_progress.xml",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\uikit\\build\\intermediates\\packaged_res\\debug\\drawable\\nim_sample_footer_loading_progress.xml"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\migration_back_btn_bg.xml",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\res\\drawable\\migration_back_btn_bg.xml"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\nim_bottom_divider_match_parent_selector.xml",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\uikit\\build\\intermediates\\packaged_res\\debug\\drawable\\nim_bottom_divider_match_parent_selector.xml"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_edit_text_material.xml",
+        "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\889c310aee22ef7fd971c72a22b3d63f\\res\\drawable\\abc_edit_text_material.xml"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\message_plus_file_selector.xml",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\res\\drawable\\message_plus_file_selector.xml"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\flag_wf.png",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\library_country_picker\\build\\intermediates\\packaged_res\\debug\\drawable\\flag_wf.png"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\jrmf_rp_shape_normal_blue_round_btn_bg.xml",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\jrmfRpWalletlib\\build\\intermediates\\packaged_res\\debug\\drawable\\jrmf_rp_shape_normal_blue_round_btn_bg.xml"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\flag_mk.png",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\library_country_picker\\build\\intermediates\\packaged_res\\debug\\drawable\\flag_mk.png"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\jrmf_rp_bg_red_round.xml",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\jrmfRpWalletlib\\build\\intermediates\\packaged_res\\debug\\drawable\\jrmf_rp_bg_red_round.xml"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\image_choose_selected.xml",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\uikit\\build\\intermediates\\packaged_res\\debug\\drawable\\image_choose_selected.xml"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\flag_sh.png",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\library_country_picker\\build\\intermediates\\packaged_res\\debug\\drawable\\flag_sh.png"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\nim_sticker_button_background_pressed_layer_list.xml",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\uikit\\build\\intermediates\\packaged_res\\debug\\drawable\\nim_sticker_button_background_pressed_layer_list.xml"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\flag_sb.png",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\library_country_picker\\build\\intermediates\\packaged_res\\debug\\drawable\\flag_sb.png"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\t_avchat_microphone_selector.xml",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\avchatkit\\build\\intermediates\\packaged_res\\debug\\drawable\\t_avchat_microphone_selector.xml"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\nim_message_button_bottom_send_selector.xml",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\rtskit\\build\\intermediates\\packaged_res\\debug\\drawable\\nim_message_button_bottom_send_selector.xml"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\nim_message_item_round_bg.xml",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\uikit\\build\\intermediates\\packaged_res\\debug\\drawable\\nim_message_item_round_bg.xml"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\leak_canary_toast_background.xml",
+        "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\leakcanary-android-1.6.1.aar\\bbda13a59d4f6f5e7ee5e56b62001bae\\res\\drawable\\leak_canary_toast_background.xml"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\flag_il.png",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\library_country_picker\\build\\intermediates\\packaged_res\\debug\\drawable\\flag_il.png"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\flag_mq.png",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\library_country_picker\\build\\intermediates\\packaged_res\\debug\\drawable\\flag_mq.png"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\common_google_signin_btn_icon_dark_normal.xml",
+        "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-11.6.0.aar\\5e6e2a472a424eb60165958515bab92a\\res\\drawable\\common_google_signin_btn_icon_dark_normal.xml"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\zero_blur_level_item_unselected.xml",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\faceunity\\build\\intermediates\\packaged_res\\debug\\drawable\\zero_blur_level_item_unselected.xml"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\nim_nim_action_bar_button_selector.xml",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\uikit\\build\\intermediates\\packaged_res\\debug\\drawable\\nim_nim_action_bar_button_selector.xml"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\flag_zw.png",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\library_country_picker\\build\\intermediates\\packaged_res\\debug\\drawable\\flag_zw.png"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\flag_tg.png",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\library_country_picker\\build\\intermediates\\packaged_res\\debug\\drawable\\flag_tg.png"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\flag_st.png",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\library_country_picker\\build\\intermediates\\packaged_res\\debug\\drawable\\flag_st.png"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\nim_portrait_mask_round.xml",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\uikit\\build\\intermediates\\packaged_res\\debug\\drawable\\nim_portrait_mask_round.xml"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\flag_ga.png",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\library_country_picker\\build\\intermediates\\packaged_res\\debug\\drawable\\flag_ga.png"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\flag_cc.png",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\library_country_picker\\build\\intermediates\\packaged_res\\debug\\drawable\\flag_cc.png"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\flag_lk.png",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\library_country_picker\\build\\intermediates\\packaged_res\\debug\\drawable\\flag_lk.png"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\flag_mo.png",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\library_country_picker\\build\\intermediates\\packaged_res\\debug\\drawable\\flag_mo.png"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\flag_kr.png",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\library_country_picker\\build\\intermediates\\packaged_res\\debug\\drawable\\flag_kr.png"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\flag_ee.png",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\library_country_picker\\build\\intermediates\\packaged_res\\debug\\drawable\\flag_ee.png"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\flag_ax.png",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\library_country_picker\\build\\intermediates\\packaged_res\\debug\\drawable\\flag_ax.png"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\flag_cu.png",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\library_country_picker\\build\\intermediates\\packaged_res\\debug\\drawable\\flag_cu.png"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_ic_arrow_drop_right_black_24dp.xml",
+        "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\889c310aee22ef7fd971c72a22b3d63f\\res\\drawable\\abc_ic_arrow_drop_right_black_24dp.xml"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\flag_lv.png",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\library_country_picker\\build\\intermediates\\packaged_res\\debug\\drawable\\flag_lv.png"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_btn_colored_material.xml",
+        "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\889c310aee22ef7fd971c72a22b3d63f\\res\\drawable\\abc_btn_colored_material.xml"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\common_google_signin_btn_text_dark.xml",
+        "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-11.6.0.aar\\5e6e2a472a424eb60165958515bab92a\\res\\drawable\\common_google_signin_btn_text_dark.xml"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\jrmf_rp_bg_gray_round.xml",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\jrmfRpWalletlib\\build\\intermediates\\packaged_res\\debug\\drawable\\jrmf_rp_bg_gray_round.xml"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\flag_vg.png",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\library_country_picker\\build\\intermediates\\packaged_res\\debug\\drawable\\flag_vg.png"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\t_avchat_speaker_selector.xml",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\avchatkit\\build\\intermediates\\packaged_res\\debug\\drawable\\t_avchat_speaker_selector.xml"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\flag_mm.png",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\library_country_picker\\build\\intermediates\\packaged_res\\debug\\drawable\\flag_mm.png"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\common_google_signin_btn_icon_dark_focused.xml",
+        "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-11.6.0.aar\\5e6e2a472a424eb60165958515bab92a\\res\\drawable\\common_google_signin_btn_icon_dark_focused.xml"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\flag_ec.png",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\library_country_picker\\build\\intermediates\\packaged_res\\debug\\drawable\\flag_ec.png"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\flag_nf.png",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\library_country_picker\\build\\intermediates\\packaged_res\\debug\\drawable\\flag_nf.png"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_ic_menu_overflow_material.xml",
+        "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\889c310aee22ef7fd971c72a22b3d63f\\res\\drawable\\abc_ic_menu_overflow_material.xml"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\nim_popup_menu_item_selector.xml",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\uikit\\build\\intermediates\\packaged_res\\debug\\drawable\\nim_popup_menu_item_selector.xml"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\flag_py.png",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\library_country_picker\\build\\intermediates\\packaged_res\\debug\\drawable\\flag_py.png"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\notification_bg.xml",
+        "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-26.1.0.aar\\5e81b10a877567223ffb73844f58b1d0\\res\\drawable\\notification_bg.xml"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\flag_sd.png",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\library_country_picker\\build\\intermediates\\packaged_res\\debug\\drawable\\flag_sd.png"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\avchat_audio_record_icon_selector.xml",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\avchatkit\\build\\intermediates\\packaged_res\\debug\\drawable\\avchat_audio_record_icon_selector.xml"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\notification_tile_bg.xml",
+        "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-26.1.0.aar\\5e81b10a877567223ffb73844f58b1d0\\res\\drawable\\notification_tile_bg.xml"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\nim_robot_link_view_press_round.xml",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\uikit\\build\\intermediates\\packaged_res\\debug\\drawable\\nim_robot_link_view_press_round.xml"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\nim_recent_contact_sticky_selecter.xml",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\uikit\\build\\intermediates\\packaged_res\\debug\\drawable\\nim_recent_contact_sticky_selecter.xml"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\flag_je.png",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\library_country_picker\\build\\intermediates\\packaged_res\\debug\\drawable\\flag_je.png"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\flag_az.png",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\library_country_picker\\build\\intermediates\\packaged_res\\debug\\drawable\\flag_az.png"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\btn_location_selector.xml",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\res\\drawable\\btn_location_selector.xml"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\flag_mf.png",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\library_country_picker\\build\\intermediates\\packaged_res\\debug\\drawable\\flag_mf.png"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\flag_ai.png",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\library_country_picker\\build\\intermediates\\packaged_res\\debug\\drawable\\flag_ai.png"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\flag_fx.png",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\library_country_picker\\build\\intermediates\\packaged_res\\debug\\drawable\\flag_fx.png"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\flag_tf.png",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\library_country_picker\\build\\intermediates\\packaged_res\\debug\\drawable\\flag_tf.png"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\flag_vn.png",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\library_country_picker\\build\\intermediates\\packaged_res\\debug\\drawable\\flag_vn.png"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_list_selector_holo_light.xml",
+        "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\889c310aee22ef7fd971c72a22b3d63f\\res\\drawable\\abc_list_selector_holo_light.xml"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\flag_pa.png",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\library_country_picker\\build\\intermediates\\packaged_res\\debug\\drawable\\flag_pa.png"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\flag_yu.png",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\library_country_picker\\build\\intermediates\\packaged_res\\debug\\drawable\\flag_yu.png"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_btn_default_mtrl_shape.xml",
+        "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\889c310aee22ef7fd971c72a22b3d63f\\res\\drawable\\abc_btn_default_mtrl_shape.xml"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\flag_dj.png",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\library_country_picker\\build\\intermediates\\packaged_res\\debug\\drawable\\flag_dj.png"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\multi_select_ok_bg.xml",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\avchatkit\\build\\intermediates\\packaged_res\\debug\\drawable\\multi_select_ok_bg.xml"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\flag_bz.png",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\library_country_picker\\build\\intermediates\\packaged_res\\debug\\drawable\\flag_bz.png"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\flag_eg.png",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\library_country_picker\\build\\intermediates\\packaged_res\\debug\\drawable\\flag_eg.png"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\flag_no.png",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\library_country_picker\\build\\intermediates\\packaged_res\\debug\\drawable\\flag_no.png"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\rp_open_holder_bg.xml",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\res-rp\\drawable\\rp_open_holder_bg.xml"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\flag_pt.png",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\library_country_picker\\build\\intermediates\\packaged_res\\debug\\drawable\\flag_pt.png"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\g_red_long_btn_selector.xml",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\res\\drawable\\g_red_long_btn_selector.xml"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\flag_pw.png",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\library_country_picker\\build\\intermediates\\packaged_res\\debug\\drawable\\flag_pw.png"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\nim_easy_edit_text_dialog_bg.xml",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\uikit\\build\\intermediates\\packaged_res\\debug\\drawable\\nim_easy_edit_text_dialog_bg.xml"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\avchat_speaker_icon_selector.xml",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\avchatkit\\build\\intermediates\\packaged_res\\debug\\drawable\\avchat_speaker_icon_selector.xml"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_ic_clear_material.xml",
+        "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\889c310aee22ef7fd971c72a22b3d63f\\res\\drawable\\abc_ic_clear_material.xml"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\t_avchat_voice_mute.xml",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\avchatkit\\build\\intermediates\\packaged_res\\debug\\drawable\\t_avchat_voice_mute.xml"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\flag_ky.png",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\library_country_picker\\build\\intermediates\\packaged_res\\debug\\drawable\\flag_ky.png"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\flag_bq.png",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\library_country_picker\\build\\intermediates\\packaged_res\\debug\\drawable\\flag_bq.png"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\jrmf_w_shape_click_round_btn_bg.xml",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\jrmfRpWalletlib\\build\\intermediates\\packaged_res\\debug\\drawable\\jrmf_w_shape_click_round_btn_bg.xml"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\nim_selector_widget_video_view_full_bg.xml",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\uikit\\build\\intermediates\\packaged_res\\debug\\drawable\\nim_selector_widget_video_view_full_bg.xml"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\nim_touch_bg.xml",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\uikit\\build\\intermediates\\packaged_res\\debug\\drawable\\nim_touch_bg.xml"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\flag_bb.png",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\library_country_picker\\build\\intermediates\\packaged_res\\debug\\drawable\\flag_bb.png"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_ratingbar_indicator_material.xml",
+        "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\889c310aee22ef7fd971c72a22b3d63f\\res\\drawable\\abc_ratingbar_indicator_material.xml"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\flag_iq.png",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\library_country_picker\\build\\intermediates\\packaged_res\\debug\\drawable\\flag_iq.png"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\avchat_logut_bg_selector.xml",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\avchatkit\\build\\intermediates\\packaged_res\\debug\\drawable\\avchat_logut_bg_selector.xml"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\flag_na.png",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\library_country_picker\\build\\intermediates\\packaged_res\\debug\\drawable\\flag_na.png"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\navigation_empty_icon.xml",
+        "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\design-26.1.0.aar\\26636fe5363c1a84f5c625e35b100465\\res\\drawable\\navigation_empty_icon.xml"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\effect_item_square_selected.xml",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\faceunity\\build\\intermediates\\packaged_res\\debug\\drawable\\effect_item_square_selected.xml"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\flag_io.png",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\library_country_picker\\build\\intermediates\\packaged_res\\debug\\drawable\\flag_io.png"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\flag_mt.png",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\library_country_picker\\build\\intermediates\\packaged_res\\debug\\drawable\\flag_mt.png"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\flag_sk.png",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\library_country_picker\\build\\intermediates\\packaged_res\\debug\\drawable\\flag_sk.png"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_item_background_holo_dark.xml",
+        "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\889c310aee22ef7fd971c72a22b3d63f\\res\\drawable\\abc_item_background_holo_dark.xml"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\nim_message_button_bottom_audio_selector.xml",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\uikit\\build\\intermediates\\packaged_res\\debug\\drawable\\nim_message_button_bottom_audio_selector.xml"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_btn_check_material.xml",
+        "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\889c310aee22ef7fd971c72a22b3d63f\\res\\drawable\\abc_btn_check_material.xml"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\jrmf_w_shape_normal_round_btn_bg.xml",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\jrmfRpWalletlib\\build\\intermediates\\packaged_res\\debug\\drawable\\jrmf_w_shape_normal_round_btn_bg.xml"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\nim_bg_edittext_rectangle.xml",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\uikit\\build\\intermediates\\packaged_res\\debug\\drawable\\nim_bg_edittext_rectangle.xml"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\flag_pk.png",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\library_country_picker\\build\\intermediates\\packaged_res\\debug\\drawable\\flag_pk.png"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\jrmf_rp_selector_blue_round_btn.xml",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\jrmfRpWalletlib\\build\\intermediates\\packaged_res\\debug\\drawable\\jrmf_rp_selector_blue_round_btn.xml"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\nim_message_unread_news_icon_selector.xml",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\uikit\\build\\intermediates\\packaged_res\\debug\\drawable\\nim_message_unread_news_icon_selector.xml"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\nim_list_item_selector.xml",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\rtskit\\build\\intermediates\\packaged_res\\debug\\drawable\\nim_list_item_selector.xml"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\nim_explosion.xml",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\uikit\\build\\intermediates\\packaged_res\\debug\\drawable\\nim_explosion.xml"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\nim_list_item_bg_selecter.xml",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\uikit\\build\\intermediates\\packaged_res\\debug\\drawable\\nim_list_item_bg_selecter.xml"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\flag_bl.png",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\library_country_picker\\build\\intermediates\\packaged_res\\debug\\drawable\\flag_bl.png"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\nim_contact_list_item_selecter.xml",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\uikit\\build\\intermediates\\packaged_res\\debug\\drawable\\nim_contact_list_item_selecter.xml"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\jrmf_rp_dialog_paytype_bg.xml",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\jrmfRpWalletlib\\build\\intermediates\\packaged_res\\debug\\drawable\\jrmf_rp_dialog_paytype_bg.xml"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\flag_mh.png",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\library_country_picker\\build\\intermediates\\packaged_res\\debug\\drawable\\flag_mh.png"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\flag_de.png",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\library_country_picker\\build\\intermediates\\packaged_res\\debug\\drawable\\flag_de.png"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\flag_vu.png",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\library_country_picker\\build\\intermediates\\packaged_res\\debug\\drawable\\flag_vu.png"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\flag_gq.png",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\library_country_picker\\build\\intermediates\\packaged_res\\debug\\drawable\\flag_gq.png"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_ratingbar_small_material.xml",
+        "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\889c310aee22ef7fd971c72a22b3d63f\\res\\drawable\\abc_ratingbar_small_material.xml"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\avchat_receive_bg_selector.xml",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\avchatkit\\build\\intermediates\\packaged_res\\debug\\drawable\\avchat_receive_bg_selector.xml"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\flag_ge.png",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\library_country_picker\\build\\intermediates\\packaged_res\\debug\\drawable\\flag_ge.png"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\nim_audio_animation_list_right.xml",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\uikit\\build\\intermediates\\packaged_res\\debug\\drawable\\nim_audio_animation_list_right.xml"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\flag_bg.png",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\library_country_picker\\build\\intermediates\\packaged_res\\debug\\drawable\\flag_bg.png"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_seekbar_tick_mark_material.xml",
+        "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\889c310aee22ef7fd971c72a22b3d63f\\res\\drawable\\abc_seekbar_tick_mark_material.xml"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\flag_bs.png",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\library_country_picker\\build\\intermediates\\packaged_res\\debug\\drawable\\flag_bs.png"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\flag_tw.png",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\library_country_picker\\build\\intermediates\\packaged_res\\debug\\drawable\\flag_tw.png"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\flag_vi.png",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\library_country_picker\\build\\intermediates\\packaged_res\\debug\\drawable\\flag_vi.png"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\flag_ma.png",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\library_country_picker\\build\\intermediates\\packaged_res\\debug\\drawable\\flag_ma.png"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\register_right_top_btn_selector.xml",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\res\\drawable\\register_right_top_btn_selector.xml"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\avchat_mute_bg.xml",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\avchatkit\\build\\intermediates\\packaged_res\\debug\\drawable\\avchat_mute_bg.xml"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\flag_pr.png",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\library_country_picker\\build\\intermediates\\packaged_res\\debug\\drawable\\flag_pr.png"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\t_avchat_camera_mute_selector.xml",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\avchatkit\\build\\intermediates\\packaged_res\\debug\\drawable\\t_avchat_camera_mute_selector.xml"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\nim_message_button_bottom_add_selector.xml",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\uikit\\build\\intermediates\\packaged_res\\debug\\drawable\\nim_message_button_bottom_add_selector.xml"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\nim_sticker_button_background_normal_layer_list.xml",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\uikit\\build\\intermediates\\packaged_res\\debug\\drawable\\nim_sticker_button_background_normal_layer_list.xml"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\flag_cx.png",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\library_country_picker\\build\\intermediates\\packaged_res\\debug\\drawable\\flag_cx.png"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\flag_om.png",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\library_country_picker\\build\\intermediates\\packaged_res\\debug\\drawable\\flag_om.png"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\tooltip_frame_dark.xml",
+        "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\889c310aee22ef7fd971c72a22b3d63f\\res\\drawable\\tooltip_frame_dark.xml"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\jrmf_w_selector_round_btn.xml",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\jrmfRpWalletlib\\build\\intermediates\\packaged_res\\debug\\drawable\\jrmf_w_selector_round_btn.xml"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\flag_td.png",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\library_country_picker\\build\\intermediates\\packaged_res\\debug\\drawable\\flag_td.png"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\message_plus_rp_selector.xml",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\res-rp\\drawable\\message_plus_rp_selector.xml"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\nim_message_button_bottom_emoji_selector.xml",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\uikit\\build\\intermediates\\packaged_res\\debug\\drawable\\nim_message_button_bottom_emoji_selector.xml"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\flag_as.png",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\library_country_picker\\build\\intermediates\\packaged_res\\debug\\drawable\\flag_as.png"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\t_avchat_switch_camera_selector.xml",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\avchatkit\\build\\intermediates\\packaged_res\\debug\\drawable\\t_avchat_switch_camera_selector.xml"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\flag_cl.png",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\library_country_picker\\build\\intermediates\\packaged_res\\debug\\drawable\\flag_cl.png"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\flag_pf.png",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\library_country_picker\\build\\intermediates\\packaged_res\\debug\\drawable\\flag_pf.png"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\flag_lt.png",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\library_country_picker\\build\\intermediates\\packaged_res\\debug\\drawable\\flag_lt.png"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\g_white_btn_selector.xml",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\res\\drawable\\g_white_btn_selector.xml"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\flag_ag.png",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\library_country_picker\\build\\intermediates\\packaged_res\\debug\\drawable\\flag_ag.png"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\flag_jo.png",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\library_country_picker\\build\\intermediates\\packaged_res\\debug\\drawable\\flag_jo.png"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\multi_select_switch_bg_selector.xml",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\avchatkit\\build\\intermediates\\packaged_res\\debug\\drawable\\multi_select_switch_bg_selector.xml"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\flag_gy.png",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\library_country_picker\\build\\intermediates\\packaged_res\\debug\\drawable\\flag_gy.png"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\background_tab.xml",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\res\\drawable\\background_tab.xml"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\nim_red_round_button_selector.xml",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\uikit\\build\\intermediates\\packaged_res\\debug\\drawable\\nim_red_round_button_selector.xml"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\flag_al.png",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\library_country_picker\\build\\intermediates\\packaged_res\\debug\\drawable\\flag_al.png"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\jrmf_rp_shape_click_blue_round_btn_bg.xml",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\jrmfRpWalletlib\\build\\intermediates\\packaged_res\\debug\\drawable\\jrmf_rp_shape_click_blue_round_btn_bg.xml"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\jrmf_b_selector_cursor.xml",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\jrmfRpWalletlib\\build\\intermediates\\packaged_res\\debug\\drawable\\jrmf_b_selector_cursor.xml"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\flag_tt.png",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\library_country_picker\\build\\intermediates\\packaged_res\\debug\\drawable\\flag_tt.png"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\flag_rw.png",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\library_country_picker\\build\\intermediates\\packaged_res\\debug\\drawable\\flag_rw.png"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\flag_jm.png",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\library_country_picker\\build\\intermediates\\packaged_res\\debug\\drawable\\flag_jm.png"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\common_google_signin_btn_text_light_focused.xml",
+        "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-11.6.0.aar\\5e6e2a472a424eb60165958515bab92a\\res\\drawable\\common_google_signin_btn_text_light_focused.xml"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\flag_nr.png",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\library_country_picker\\build\\intermediates\\packaged_res\\debug\\drawable\\flag_nr.png"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\flag_kh.png",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\library_country_picker\\build\\intermediates\\packaged_res\\debug\\drawable\\flag_kh.png"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\flag_uz.png",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\library_country_picker\\build\\intermediates\\packaged_res\\debug\\drawable\\flag_uz.png"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\nim_progress_bar_foreground.xml",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\uikit\\build\\intermediates\\packaged_res\\debug\\drawable\\nim_progress_bar_foreground.xml"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\t_avchat_camera_selector.xml",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\avchatkit\\build\\intermediates\\packaged_res\\debug\\drawable\\t_avchat_camera_selector.xml"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\flag_lu.png",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\library_country_picker\\build\\intermediates\\packaged_res\\debug\\drawable\\flag_lu.png"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\nim_video_play_icon_selector.xml",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\uikit\\build\\intermediates\\packaged_res\\debug\\drawable\\nim_video_play_icon_selector.xml"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\flag_dk.png",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\library_country_picker\\build\\intermediates\\packaged_res\\debug\\drawable\\flag_dk.png"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\flag_me.png",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\library_country_picker\\build\\intermediates\\packaged_res\\debug\\drawable\\flag_me.png"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\flag_mp.png",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\library_country_picker\\build\\intermediates\\packaged_res\\debug\\drawable\\flag_mp.png"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\jrmf_rp_shape_click_item_bg.xml",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\jrmfRpWalletlib\\build\\intermediates\\packaged_res\\debug\\drawable\\jrmf_rp_shape_click_item_bg.xml"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\common_google_signin_btn_icon_disabled.xml",
+        "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-11.6.0.aar\\5e6e2a472a424eb60165958515bab92a\\res\\drawable\\common_google_signin_btn_icon_disabled.xml"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\flag_dz.png",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\library_country_picker\\build\\intermediates\\packaged_res\\debug\\drawable\\flag_dz.png"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\nim_align_bottom_green_btn_selector.xml",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\uikit\\build\\intermediates\\packaged_res\\debug\\drawable\\nim_align_bottom_green_btn_selector.xml"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\nim_emoji_item_selector.xml",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\uikit\\build\\intermediates\\packaged_res\\debug\\drawable\\nim_emoji_item_selector.xml"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\flag_gn.png",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\library_country_picker\\build\\intermediates\\packaged_res\\debug\\drawable\\flag_gn.png"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\flag_br.png",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\library_country_picker\\build\\intermediates\\packaged_res\\debug\\drawable\\flag_br.png"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\flag_sg.png",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\library_country_picker\\build\\intermediates\\packaged_res\\debug\\drawable\\flag_sg.png"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_list_selector_holo_dark.xml",
+        "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\889c310aee22ef7fd971c72a22b3d63f\\res\\drawable\\abc_list_selector_holo_dark.xml"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\jrmf_w_shape_click_item_bg.xml",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\jrmfRpWalletlib\\build\\intermediates\\packaged_res\\debug\\drawable\\jrmf_w_shape_click_item_bg.xml"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\flag_aw.png",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\library_country_picker\\build\\intermediates\\packaged_res\\debug\\drawable\\flag_aw.png"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\actionbar_dark_logo.xml",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\res\\drawable\\actionbar_dark_logo.xml"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\blur_level_item_selected.xml",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\faceunity\\build\\intermediates\\packaged_res\\debug\\drawable\\blur_level_item_selected.xml"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\flag_ml.png",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\library_country_picker\\build\\intermediates\\packaged_res\\debug\\drawable\\flag_ml.png"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\flag_sy.png",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\library_country_picker\\build\\intermediates\\packaged_res\\debug\\drawable\\flag_sy.png"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\flag_ly.png",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\library_country_picker\\build\\intermediates\\packaged_res\\debug\\drawable\\flag_ly.png"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\design_bottom_navigation_item_background.xml",
+        "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\design-26.1.0.aar\\26636fe5363c1a84f5c625e35b100465\\res\\drawable\\design_bottom_navigation_item_background.xml"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\effect_item_circle_unselected.xml",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\faceunity\\build\\intermediates\\packaged_res\\debug\\drawable\\effect_item_circle_unselected.xml"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\flag_ws.png",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\library_country_picker\\build\\intermediates\\packaged_res\\debug\\drawable\\flag_ws.png"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_switch_thumb_material.xml",
+        "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\889c310aee22ef7fd971c72a22b3d63f\\res\\drawable\\abc_switch_thumb_material.xml"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\flag_ht.png",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\library_country_picker\\build\\intermediates\\packaged_res\\debug\\drawable\\flag_ht.png"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\flag_lc.png",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\library_country_picker\\build\\intermediates\\packaged_res\\debug\\drawable\\flag_lc.png"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\notification_icon_background.xml",
+        "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-26.1.0.aar\\5e81b10a877567223ffb73844f58b1d0\\res\\drawable\\notification_icon_background.xml"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\flag_ph.png",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\library_country_picker\\build\\intermediates\\packaged_res\\debug\\drawable\\flag_ph.png"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\flag_sr.png",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\library_country_picker\\build\\intermediates\\packaged_res\\debug\\drawable\\flag_sr.png"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\nim_message_item_left_selector.xml",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\uikit\\build\\intermediates\\packaged_res\\debug\\drawable\\nim_message_item_left_selector.xml"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_ic_ab_back_material.xml",
+        "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\889c310aee22ef7fd971c72a22b3d63f\\res\\drawable\\abc_ic_ab_back_material.xml"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\image_original_selector.xml",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\uikit\\build\\intermediates\\packaged_res\\debug\\drawable\\image_original_selector.xml"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\flag_sc.png",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\library_country_picker\\build\\intermediates\\packaged_res\\debug\\drawable\\flag_sc.png"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\nim_actionbar_black_bg.xml",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\uikit\\build\\intermediates\\packaged_res\\debug\\drawable\\nim_actionbar_black_bg.xml"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\flag_gr.png",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\library_country_picker\\build\\intermediates\\packaged_res\\debug\\drawable\\flag_gr.png"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_list_selector_background_transition_holo_dark.xml",
+        "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\889c310aee22ef7fd971c72a22b3d63f\\res\\drawable\\abc_list_selector_background_transition_holo_dark.xml"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\notification_delete_selector.xml",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\res\\drawable\\notification_delete_selector.xml"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\flag_rs.png",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\library_country_picker\\build\\intermediates\\packaged_res\\debug\\drawable\\flag_rs.png"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\blue_round_box_4.xml",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\uikit\\build\\intermediates\\packaged_res\\debug\\drawable\\blue_round_box_4.xml"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_spinner_textfield_background_material.xml",
+        "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\889c310aee22ef7fd971c72a22b3d63f\\res\\drawable\\abc_spinner_textfield_background_material.xml"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\flag_bn.png",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\library_country_picker\\build\\intermediates\\packaged_res\\debug\\drawable\\flag_bn.png"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\flag_gu.png",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\library_country_picker\\build\\intermediates\\packaged_res\\debug\\drawable\\flag_gu.png"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_tab_indicator_material.xml",
+        "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\889c310aee22ef7fd971c72a22b3d63f\\res\\drawable\\abc_tab_indicator_material.xml"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\design_snackbar_background.xml",
+        "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\design-26.1.0.aar\\26636fe5363c1a84f5c625e35b100465\\res\\drawable\\design_snackbar_background.xml"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\flag_fo.png",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\library_country_picker\\build\\intermediates\\packaged_res\\debug\\drawable\\flag_fo.png"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\flag_bv.png",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\library_country_picker\\build\\intermediates\\packaged_res\\debug\\drawable\\flag_bv.png"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\message_plus_audio_chat_selector.xml",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\res\\drawable\\message_plus_audio_chat_selector.xml"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\flag_ug.png",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\library_country_picker\\build\\intermediates\\packaged_res\\debug\\drawable\\flag_ug.png"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\nim_message_plus_location_selector.xml",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\uikit\\build\\intermediates\\packaged_res\\debug\\drawable\\nim_message_plus_location_selector.xml"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\flag_bj.png",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\library_country_picker\\build\\intermediates\\packaged_res\\debug\\drawable\\flag_bj.png"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\chat_room_back_arrow_selector.xml",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\res\\drawable\\chat_room_back_arrow_selector.xml"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\image_original_selected.xml",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\uikit\\build\\intermediates\\packaged_res\\debug\\drawable\\image_original_selected.xml"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\jrmf_rp_shape_cursor.xml",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\jrmfRpWalletlib\\build\\intermediates\\packaged_res\\debug\\drawable\\jrmf_rp_shape_cursor.xml"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\flag_gg.png",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\library_country_picker\\build\\intermediates\\packaged_res\\debug\\drawable\\flag_gg.png"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\nim_cameras_selector.xml",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\uikit\\build\\intermediates\\packaged_res\\debug\\drawable\\nim_cameras_selector.xml"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\splash_bg.xml",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\res\\drawable\\splash_bg.xml"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_ic_go_search_api_material.xml",
+        "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\889c310aee22ef7fd971c72a22b3d63f\\res\\drawable\\abc_ic_go_search_api_material.xml"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\flag_ae.png",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\library_country_picker\\build\\intermediates\\packaged_res\\debug\\drawable\\flag_ae.png"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\jrmf_w_selector_checked.xml",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\jrmfRpWalletlib\\build\\intermediates\\packaged_res\\debug\\drawable\\jrmf_w_selector_checked.xml"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\flag_lr.png",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\library_country_picker\\build\\intermediates\\packaged_res\\debug\\drawable\\flag_lr.png"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\t_avchat_disable_user_audio_selector.xml",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\avchatkit\\build\\intermediates\\packaged_res\\debug\\drawable\\t_avchat_disable_user_audio_selector.xml"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\flag_kw.png",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\library_country_picker\\build\\intermediates\\packaged_res\\debug\\drawable\\flag_kw.png"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\nim_message_plus_photo_selector.xml",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\uikit\\build\\intermediates\\packaged_res\\debug\\drawable\\nim_message_plus_photo_selector.xml"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\flag_nc.png",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\library_country_picker\\build\\intermediates\\packaged_res\\debug\\drawable\\flag_nc.png"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_vector_test.xml",
+        "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\889c310aee22ef7fd971c72a22b3d63f\\res\\drawable\\abc_vector_test.xml"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\nim_bg_edittext_rectangle_focused.xml",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\uikit\\build\\intermediates\\packaged_res\\debug\\drawable\\nim_bg_edittext_rectangle_focused.xml"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\jrmf_w_shape_round_white.xml",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\jrmfRpWalletlib\\build\\intermediates\\packaged_res\\debug\\drawable\\jrmf_w_shape_round_white.xml"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\image_preview_choose_selected.xml",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\uikit\\build\\intermediates\\packaged_res\\debug\\drawable\\image_preview_choose_selected.xml"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\flag_ro.png",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\library_country_picker\\build\\intermediates\\packaged_res\\debug\\drawable\\flag_ro.png"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\flag_xk.png",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\library_country_picker\\build\\intermediates\\packaged_res\\debug\\drawable\\flag_xk.png"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\red_packet_send_bg.xml",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\res-rp\\drawable\\red_packet_send_bg.xml"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\flag_is.png",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\library_country_picker\\build\\intermediates\\packaged_res\\debug\\drawable\\flag_is.png"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\nim_robot_link_view_round.xml",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\uikit\\build\\intermediates\\packaged_res\\debug\\drawable\\nim_robot_link_view_round.xml"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\flag_sn.png",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\library_country_picker\\build\\intermediates\\packaged_res\\debug\\drawable\\flag_sn.png"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\flag_ir.png",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\library_country_picker\\build\\intermediates\\packaged_res\\debug\\drawable\\flag_ir.png"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\t_avchat_hangup_selector.xml",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\avchatkit\\build\\intermediates\\packaged_res\\debug\\drawable\\t_avchat_hangup_selector.xml"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\jrmf_b_dialog_background.xml",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\jrmfRpWalletlib\\build\\intermediates\\packaged_res\\debug\\drawable\\jrmf_b_dialog_background.xml"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\jrmf_b_shape_round_white.xml",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\jrmfRpWalletlib\\build\\intermediates\\packaged_res\\debug\\drawable\\jrmf_b_shape_round_white.xml"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\common_google_signin_btn_text_light.xml",
+        "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-11.6.0.aar\\5e6e2a472a424eb60165958515bab92a\\res\\drawable\\common_google_signin_btn_text_light.xml"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\flag_do.png",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\library_country_picker\\build\\intermediates\\packaged_res\\debug\\drawable\\flag_do.png"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\flag_mw.png",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\library_country_picker\\build\\intermediates\\packaged_res\\debug\\drawable\\flag_mw.png"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\flag_et.png",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\library_country_picker\\build\\intermediates\\packaged_res\\debug\\drawable\\flag_et.png"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\nim_progress_bar_background.xml",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\uikit\\build\\intermediates\\packaged_res\\debug\\drawable\\nim_progress_bar_background.xml"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\nim_selector_capture_light.xml",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\uikit\\build\\intermediates\\packaged_res\\debug\\drawable\\nim_selector_capture_light.xml"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\flag_hm.png",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\library_country_picker\\build\\intermediates\\packaged_res\\debug\\drawable\\flag_hm.png"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\flag_ke.png",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\library_country_picker\\build\\intermediates\\packaged_res\\debug\\drawable\\flag_ke.png"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\flag_tm.png",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\library_country_picker\\build\\intermediates\\packaged_res\\debug\\drawable\\flag_tm.png"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\flag_ye.png",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\library_country_picker\\build\\intermediates\\packaged_res\\debug\\drawable\\flag_ye.png"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\image_preview_choose_selector.xml",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\uikit\\build\\intermediates\\packaged_res\\debug\\drawable\\image_preview_choose_selector.xml"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\nim_message_plus_video_selector.xml",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\uikit\\build\\intermediates\\packaged_res\\debug\\drawable\\nim_message_plus_video_selector.xml"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\flag_ci.png",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\library_country_picker\\build\\intermediates\\packaged_res\\debug\\drawable\\flag_ci.png"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\flag_ad.png",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\library_country_picker\\build\\intermediates\\packaged_res\\debug\\drawable\\flag_ad.png"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\flag_uy.png",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\library_country_picker\\build\\intermediates\\packaged_res\\debug\\drawable\\flag_uy.png"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\upsdk_update_all_button.xml",
+        "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\base-2.6.0.301.aar\\7226cfe4232c8a47687b868ad7081eac\\res\\drawable\\upsdk_update_all_button.xml"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\t_avchat_voice_normal.xml",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\avchatkit\\build\\intermediates\\packaged_res\\debug\\drawable\\t_avchat_voice_normal.xml"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\flag_us.png",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\library_country_picker\\build\\intermediates\\packaged_res\\debug\\drawable\\flag_us.png"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\flag_sz.png",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\library_country_picker\\build\\intermediates\\packaged_res\\debug\\drawable\\flag_sz.png"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\common_google_signin_btn_text_dark_normal.xml",
+        "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-11.6.0.aar\\5e6e2a472a424eb60165958515bab92a\\res\\drawable\\common_google_signin_btn_text_dark_normal.xml"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\t_avchat_microphone_mute_selector.xml",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\avchatkit\\build\\intermediates\\packaged_res\\debug\\drawable\\t_avchat_microphone_mute_selector.xml"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\flag_gb.png",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\library_country_picker\\build\\intermediates\\packaged_res\\debug\\drawable\\flag_gb.png"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\flag_ve.png",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\library_country_picker\\build\\intermediates\\packaged_res\\debug\\drawable\\flag_ve.png"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\nim_team_member_add_selector.xml",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\uikit\\build\\intermediates\\packaged_res\\debug\\drawable\\nim_team_member_add_selector.xml"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\nim_placeholder_video_impl.xml",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\uikit\\build\\intermediates\\packaged_res\\debug\\drawable\\nim_placeholder_video_impl.xml"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\flag_kg.png",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\library_country_picker\\build\\intermediates\\packaged_res\\debug\\drawable\\flag_kg.png"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\flag_fi.png",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\library_country_picker\\build\\intermediates\\packaged_res\\debug\\drawable\\flag_fi.png"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\flag_mz.png",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\library_country_picker\\build\\intermediates\\packaged_res\\debug\\drawable\\flag_mz.png"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\nim_picker_preview_btn_selector.xml",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\uikit\\build\\intermediates\\packaged_res\\debug\\drawable\\nim_picker_preview_btn_selector.xml"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\flag_bd.png",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\library_country_picker\\build\\intermediates\\packaged_res\\debug\\drawable\\flag_bd.png"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_textfield_search_material.xml",
+        "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\889c310aee22ef7fd971c72a22b3d63f\\res\\drawable\\abc_textfield_search_material.xml"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\flag_ch.png",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\library_country_picker\\build\\intermediates\\packaged_res\\debug\\drawable\\flag_ch.png"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\flag_gm.png",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\library_country_picker\\build\\intermediates\\packaged_res\\debug\\drawable\\flag_gm.png"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\nim_blue_edit_text_bg.xml",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\uikit\\build\\intermediates\\packaged_res\\debug\\drawable\\nim_blue_edit_text_bg.xml"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\flag_ua.png",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\library_country_picker\\build\\intermediates\\packaged_res\\debug\\drawable\\flag_ua.png"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\avchat_switch_camera_bg.xml",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\avchatkit\\build\\intermediates\\packaged_res\\debug\\drawable\\avchat_switch_camera_bg.xml"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\flag_md.png",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\library_country_picker\\build\\intermediates\\packaged_res\\debug\\drawable\\flag_md.png"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_ic_voice_search_api_material.xml",
+        "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\889c310aee22ef7fd971c72a22b3d63f\\res\\drawable\\abc_ic_voice_search_api_material.xml"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\flag_er.png",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\library_country_picker\\build\\intermediates\\packaged_res\\debug\\drawable\\flag_er.png"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\flag_li.png",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\library_country_picker\\build\\intermediates\\packaged_res\\debug\\drawable\\flag_li.png"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\flag_bf.png",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\library_country_picker\\build\\intermediates\\packaged_res\\debug\\drawable\\flag_bf.png"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\flag_pe.png",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\library_country_picker\\build\\intermediates\\packaged_res\\debug\\drawable\\flag_pe.png"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\nim_message_item_right_selector.xml",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\uikit\\build\\intermediates\\packaged_res\\debug\\drawable\\nim_message_item_right_selector.xml"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\zero_blur_level_item_selected.xml",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\faceunity\\build\\intermediates\\packaged_res\\debug\\drawable\\zero_blur_level_item_selected.xml"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\flag_bo.png",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\library_country_picker\\build\\intermediates\\packaged_res\\debug\\drawable\\flag_bo.png"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\nim_cancel_record_red_bg.xml",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\uikit\\build\\intermediates\\packaged_res\\debug\\drawable\\nim_cancel_record_red_bg.xml"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\avchat_mute_icon_selector.xml",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\avchatkit\\build\\intermediates\\packaged_res\\debug\\drawable\\avchat_mute_icon_selector.xml"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\register_tip_selector.xml",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\res\\drawable\\register_tip_selector.xml"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\flag_th.png",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\library_country_picker\\build\\intermediates\\packaged_res\\debug\\drawable\\flag_th.png"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\flag_fr.png",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\library_country_picker\\build\\intermediates\\packaged_res\\debug\\drawable\\flag_fr.png"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\t_avchat_speaker_mute_selector.xml",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\avchatkit\\build\\intermediates\\packaged_res\\debug\\drawable\\t_avchat_speaker_mute_selector.xml"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\flag_mx.png",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\library_country_picker\\build\\intermediates\\packaged_res\\debug\\drawable\\flag_mx.png"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\flag_ss.png",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\library_country_picker\\build\\intermediates\\packaged_res\\debug\\drawable\\flag_ss.png"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\nim_bg_edittext_rectangle_normal.xml",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\uikit\\build\\intermediates\\packaged_res\\debug\\drawable\\nim_bg_edittext_rectangle_normal.xml"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\flag_cw.png",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\library_country_picker\\build\\intermediates\\packaged_res\\debug\\drawable\\flag_cw.png"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\flag_pg.png",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\library_country_picker\\build\\intermediates\\packaged_res\\debug\\drawable\\flag_pg.png"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\flag_tl.png",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\library_country_picker\\build\\intermediates\\packaged_res\\debug\\drawable\\flag_tl.png"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\flag_hu.png",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\library_country_picker\\build\\intermediates\\packaged_res\\debug\\drawable\\flag_hu.png"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\flag_nu.png",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\library_country_picker\\build\\intermediates\\packaged_res\\debug\\drawable\\flag_nu.png"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_cab_background_top_material.xml",
+        "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\889c310aee22ef7fd971c72a22b3d63f\\res\\drawable\\abc_cab_background_top_material.xml"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\message_plus_tip_selector.xml",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\res\\drawable\\message_plus_tip_selector.xml"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\flag_jp.png",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\library_country_picker\\build\\intermediates\\packaged_res\\debug\\drawable\\flag_jp.png"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\blue_stroke_box_4.xml",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\uikit\\build\\intermediates\\packaged_res\\debug\\drawable\\blue_stroke_box_4.xml"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\flag_ao.png",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\library_country_picker\\build\\intermediates\\packaged_res\\debug\\drawable\\flag_ao.png"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\avchat_bottom_logout_selector.xml",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\avchatkit\\build\\intermediates\\packaged_res\\debug\\drawable\\avchat_bottom_logout_selector.xml"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\flag_gf.png",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\library_country_picker\\build\\intermediates\\packaged_res\\debug\\drawable\\flag_gf.png"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\flag_gi.png",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\library_country_picker\\build\\intermediates\\packaged_res\\debug\\drawable\\flag_gi.png"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\flag_pn.png",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\library_country_picker\\build\\intermediates\\packaged_res\\debug\\drawable\\flag_pn.png"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\flag_so.png",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\library_country_picker\\build\\intermediates\\packaged_res\\debug\\drawable\\flag_so.png"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\flag_in.png",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\library_country_picker\\build\\intermediates\\packaged_res\\debug\\drawable\\flag_in.png"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\message_plus_rts_selector.xml",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\res\\drawable\\message_plus_rts_selector.xml"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\flag_bh.png",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\library_country_picker\\build\\intermediates\\packaged_res\\debug\\drawable\\flag_bh.png"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\flag_kp.png",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\library_country_picker\\build\\intermediates\\packaged_res\\debug\\drawable\\flag_kp.png"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\common_google_signin_btn_text_light_normal.xml",
+        "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-11.6.0.aar\\5e6e2a472a424eb60165958515bab92a\\res\\drawable\\common_google_signin_btn_text_light_normal.xml"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\red_packet_rev_bg.xml",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\res-rp\\drawable\\red_packet_rev_bg.xml"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\nim_actionbar_nest_dark_logo.xml",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\rtskit\\build\\intermediates\\packaged_res\\debug\\drawable\\nim_actionbar_nest_dark_logo.xml"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\global_blue_round_box_4.xml",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\uikit\\build\\intermediates\\packaged_res\\debug\\drawable\\global_blue_round_box_4.xml"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_ratingbar_material.xml",
+        "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\889c310aee22ef7fd971c72a22b3d63f\\res\\drawable\\abc_ratingbar_material.xml"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\common_google_signin_btn_text_dark_focused.xml",
+        "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-11.6.0.aar\\5e6e2a472a424eb60165958515bab92a\\res\\drawable\\common_google_signin_btn_text_dark_focused.xml"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\flag_af.png",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\library_country_picker\\build\\intermediates\\packaged_res\\debug\\drawable\\flag_af.png"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\flag_id.png",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\library_country_picker\\build\\intermediates\\packaged_res\\debug\\drawable\\flag_id.png"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\nim_popup_menu_item_black_selector.xml",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\uikit\\build\\intermediates\\packaged_res\\debug\\drawable\\nim_popup_menu_item_black_selector.xml"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\flag_tc.png",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\library_country_picker\\build\\intermediates\\packaged_res\\debug\\drawable\\flag_tc.png"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\upsdk_third_download_bg.xml",
+        "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\base-2.6.0.301.aar\\7226cfe4232c8a47687b868ad7081eac\\res\\drawable\\upsdk_third_download_bg.xml"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\nim_progress_small_white.xml",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\uikit\\build\\intermediates\\packaged_res\\debug\\drawable\\nim_progress_small_white.xml"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\flag_to.png",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\library_country_picker\\build\\intermediates\\packaged_res\\debug\\drawable\\flag_to.png"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\message_plus_ack_selector.xml",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\res\\drawable\\message_plus_ack_selector.xml"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\flag_sv.png",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\library_country_picker\\build\\intermediates\\packaged_res\\debug\\drawable\\flag_sv.png"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\flag_mu.png",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\library_country_picker\\build\\intermediates\\packaged_res\\debug\\drawable\\flag_mu.png"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\jrmf_rp_shape_normal_item_bg.xml",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\jrmfRpWalletlib\\build\\intermediates\\packaged_res\\debug\\drawable\\jrmf_rp_shape_normal_item_bg.xml"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\flag_hk.png",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\library_country_picker\\build\\intermediates\\packaged_res\\debug\\drawable\\flag_hk.png"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\nim_chatroom_robot_link_view_round.xml",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\uikit\\build\\intermediates\\packaged_res\\debug\\drawable\\nim_chatroom_robot_link_view_round.xml"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\multi_select_text_color_selector.xml",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\avchatkit\\build\\intermediates\\packaged_res\\debug\\drawable\\multi_select_text_color_selector.xml"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_ic_search_api_material.xml",
+        "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\889c310aee22ef7fd971c72a22b3d63f\\res\\drawable\\abc_ic_search_api_material.xml"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\flag_ar.png",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\library_country_picker\\build\\intermediates\\packaged_res\\debug\\drawable\\flag_ar.png"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\flag_nl.png",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\library_country_picker\\build\\intermediates\\packaged_res\\debug\\drawable\\flag_nl.png"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\flag_ca.png",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\library_country_picker\\build\\intermediates\\packaged_res\\debug\\drawable\\flag_ca.png"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\avchat_mute_speaker_bg.xml",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\avchatkit\\build\\intermediates\\packaged_res\\debug\\drawable\\avchat_mute_speaker_bg.xml"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\flag_cm.png",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\library_country_picker\\build\\intermediates\\packaged_res\\debug\\drawable\\flag_cm.png"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\flag_kn.png",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\library_country_picker\\build\\intermediates\\packaged_res\\debug\\drawable\\flag_kn.png"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\flag_ms.png",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\library_country_picker\\build\\intermediates\\packaged_res\\debug\\drawable\\flag_ms.png"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\flag_sx.png",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\library_country_picker\\build\\intermediates\\packaged_res\\debug\\drawable\\flag_sx.png"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\multi_select_cancel_bg.xml",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\avchatkit\\build\\intermediates\\packaged_res\\debug\\drawable\\multi_select_cancel_bg.xml"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\flag_at.png",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\library_country_picker\\build\\intermediates\\packaged_res\\debug\\drawable\\flag_at.png"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\jrmf_rp_bg_white_round.xml",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\jrmfRpWalletlib\\build\\intermediates\\packaged_res\\debug\\drawable\\jrmf_rp_bg_white_round.xml"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\flag_cy.png",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\library_country_picker\\build\\intermediates\\packaged_res\\debug\\drawable\\flag_cy.png"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\flag_nz.png",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\library_country_picker\\build\\intermediates\\packaged_res\\debug\\drawable\\flag_nz.png"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\flag_kz.png",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\library_country_picker\\build\\intermediates\\packaged_res\\debug\\drawable\\flag_kz.png"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_seekbar_thumb_material.xml",
+        "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\889c310aee22ef7fd971c72a22b3d63f\\res\\drawable\\abc_seekbar_thumb_material.xml"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\nim_message_button_bottom_text_selector.xml",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\uikit\\build\\intermediates\\packaged_res\\debug\\drawable\\nim_message_button_bottom_text_selector.xml"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\common_google_signin_btn_icon_light_focused.xml",
+        "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-11.6.0.aar\\5e6e2a472a424eb60165958515bab92a\\res\\drawable\\common_google_signin_btn_icon_light_focused.xml"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\flag_ps.png",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\library_country_picker\\build\\intermediates\\packaged_res\\debug\\drawable\\flag_ps.png"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\flag_sj.png",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\library_country_picker\\build\\intermediates\\packaged_res\\debug\\drawable\\flag_sj.png"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\flag_bm.png",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\library_country_picker\\build\\intermediates\\packaged_res\\debug\\drawable\\flag_bm.png"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\nim_message_view_bottom.xml",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\uikit\\build\\intermediates\\packaged_res\\debug\\drawable\\nim_message_view_bottom.xml"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\avchat_audio_call_text_color_selector.xml",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\avchatkit\\build\\intermediates\\packaged_res\\debug\\drawable\\avchat_audio_call_text_color_selector.xml"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\nim_chatroom_robot_link_view_press_round.xml",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\uikit\\build\\intermediates\\packaged_res\\debug\\drawable\\nim_chatroom_robot_link_view_press_round.xml"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_seekbar_track_material.xml",
+        "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\889c310aee22ef7fd971c72a22b3d63f\\res\\drawable\\abc_seekbar_track_material.xml"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\jrmf_w_shape_default_avatar.xml",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\jrmfRpWalletlib\\build\\intermediates\\packaged_res\\debug\\drawable\\jrmf_w_shape_default_avatar.xml"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\flag_ba.png",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\library_country_picker\\build\\intermediates\\packaged_res\\debug\\drawable\\flag_ba.png"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\flag_ki.png",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\library_country_picker\\build\\intermediates\\packaged_res\\debug\\drawable\\flag_ki.png"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_list_selector_background_transition_holo_light.xml",
+        "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\889c310aee22ef7fd971c72a22b3d63f\\res\\drawable\\abc_list_selector_background_transition_holo_light.xml"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\flag_gd.png",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\library_country_picker\\build\\intermediates\\packaged_res\\debug\\drawable\\flag_gd.png"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\flag_zm.png",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\library_country_picker\\build\\intermediates\\packaged_res\\debug\\drawable\\flag_zm.png"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\flag_by.png",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\library_country_picker\\build\\intermediates\\packaged_res\\debug\\drawable\\flag_by.png"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\flag_lb.png",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\library_country_picker\\build\\intermediates\\packaged_res\\debug\\drawable\\flag_lb.png"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\jrmf_w_bg_gray_round.xml",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\jrmfRpWalletlib\\build\\intermediates\\packaged_res\\debug\\drawable\\jrmf_w_bg_gray_round.xml"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_text_cursor_material.xml",
+        "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\889c310aee22ef7fd971c72a22b3d63f\\res\\drawable\\abc_text_cursor_material.xml"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\nim_semitransparency_selector.xml",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\uikit\\build\\intermediates\\packaged_res\\debug\\drawable\\nim_semitransparency_selector.xml"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\flag_cr.png",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\library_country_picker\\build\\intermediates\\packaged_res\\debug\\drawable\\flag_cr.png"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\flag_gw.png",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\library_country_picker\\build\\intermediates\\packaged_res\\debug\\drawable\\flag_gw.png"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\flag_vc.png",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\library_country_picker\\build\\intermediates\\packaged_res\\debug\\drawable\\flag_vc.png"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\flag_mg.png",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\library_country_picker\\build\\intermediates\\packaged_res\\debug\\drawable\\flag_mg.png"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\nim_view_pager_indicator_selector.xml",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\uikit\\build\\intermediates\\packaged_res\\debug\\drawable\\nim_view_pager_indicator_selector.xml"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\design_password_eye.xml",
+        "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\design-26.1.0.aar\\26636fe5363c1a84f5c625e35b100465\\res\\drawable\\design_password_eye.xml"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\common_google_signin_btn_text_disabled.xml",
+        "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-11.6.0.aar\\5e6e2a472a424eb60165958515bab92a\\res\\drawable\\common_google_signin_btn_text_disabled.xml"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\message_plus_video_chat_selector.xml",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\res\\drawable\\message_plus_video_chat_selector.xml"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\jrmf_w_shape_code_bg.xml",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\jrmfRpWalletlib\\build\\intermediates\\packaged_res\\debug\\drawable\\jrmf_w_shape_code_bg.xml"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\flag_gp.png",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\library_country_picker\\build\\intermediates\\packaged_res\\debug\\drawable\\flag_gp.png"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\flag_za.png",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\library_country_picker\\build\\intermediates\\packaged_res\\debug\\drawable\\flag_za.png"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\flag_re.png",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\library_country_picker\\build\\intermediates\\packaged_res\\debug\\drawable\\flag_re.png"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\flag_tj.png",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\library_country_picker\\build\\intermediates\\packaged_res\\debug\\drawable\\flag_tj.png"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\flag_fk.png",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\library_country_picker\\build\\intermediates\\packaged_res\\debug\\drawable\\flag_fk.png"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\flag_yt.png",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\library_country_picker\\build\\intermediates\\packaged_res\\debug\\drawable\\flag_yt.png"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\nim_portrait_mask_square.xml",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\uikit\\build\\intermediates\\packaged_res\\debug\\drawable\\nim_portrait_mask_square.xml"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\flag_pl.png",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\library_country_picker\\build\\intermediates\\packaged_res\\debug\\drawable\\flag_pl.png"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\nim_placeholder_normal_impl.xml",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\uikit\\build\\intermediates\\packaged_res\\debug\\drawable\\nim_placeholder_normal_impl.xml"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\avchat_close_camera_bg.xml",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\avchatkit\\build\\intermediates\\packaged_res\\debug\\drawable\\avchat_close_camera_bg.xml"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\flag_am.png",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\library_country_picker\\build\\intermediates\\packaged_res\\debug\\drawable\\flag_am.png"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\jrmf_b_round_spinner_fade.xml",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\jrmfRpWalletlib\\build\\intermediates\\packaged_res\\debug\\drawable\\jrmf_b_round_spinner_fade.xml"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\flag_cf.png",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\library_country_picker\\build\\intermediates\\packaged_res\\debug\\drawable\\flag_cf.png"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable\\flag_ng.png",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\library_country_picker\\build\\intermediates\\packaged_res\\debug\\drawable\\flag_ng.png"
+    }
+]

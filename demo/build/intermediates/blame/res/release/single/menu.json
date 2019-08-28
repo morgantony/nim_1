@@ -1,0 +1,22 @@
+[
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\release\\menu\\global_search_menu.xml",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\res\\menu\\global_search_menu.xml"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\release\\menu\\notification_menu.xml",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\res\\menu\\notification_menu.xml"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\release\\menu\\nim_contacts_search_menu.xml",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\uikit\\build\\intermediates\\packaged_res\\release\\menu\\nim_contacts_search_menu.xml"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\release\\menu\\custom_notification_activity_menu.xml",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\res\\menu\\custom_notification_activity_menu.xml"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\release\\menu\\main_activity_menu.xml",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\res\\menu\\main_activity_menu.xml"
+    }
+]

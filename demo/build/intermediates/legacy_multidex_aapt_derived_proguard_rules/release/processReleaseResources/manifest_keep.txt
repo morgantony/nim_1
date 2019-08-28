@@ -1,0 +1,3 @@
+# view AndroidManifest.xml #generated:108
+-keep class com.netease.nim.weyouchats.NimApplication { <init>(...); }
+

@@ -1,0 +1,10 @@
+[
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\release\\xml\\provider_paths.xml",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\uikit\\build\\intermediates\\packaged_res\\release\\xml\\provider_paths.xml"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\release\\xml\\nrtc_setting_pref.xml",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\avchatkit\\build\\intermediates\\packaged_res\\release\\xml\\nrtc_setting_pref.xml"
+    }
+]

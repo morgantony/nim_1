@@ -1,0 +1,1050 @@
+# view AndroidManifest.xml #generated:909
+-keep class android.arch.lifecycle.ProcessLifecycleOwnerInitializer { <init>(...); }
+
+# view res/layout/activity_privatization_config.xml #generated:2
+# view res/layout/team_avchat_holder.xml #generated:2
+# view res/layout/team_avchat_item.xml #generated:3
+# view res/layout/team_avchat_item.xml #generated:54
+# view res/layout/team_avchat_surface_layout.xml #generated:2
+# view res/layout/team_avchat_surface_layout.xml #generated:30
+-keep class android.support.constraint.ConstraintLayout { <init>(...); }
+
+# view res/layout/design_bottom_navigation_item.xml #generated:26
+-keep class android.support.design.internal.BaselineLayout { <init>(...); }
+
+# view res/layout/design_navigation_item.xml #generated:17
+-keep class android.support.design.internal.NavigationMenuItemView { <init>(...); }
+
+# view res/layout/design_navigation_menu.xml #generated:17
+-keep class android.support.design.internal.NavigationMenuView { <init>(...); }
+
+# view res/layout/design_layout_snackbar_include.xml #generated:18
+-keep class android.support.design.internal.SnackbarContentLayout { <init>(...); }
+
+# view res/layout/about_layout.xml #generated:8
+# view res/layout/ack_msg_info_layout.xml #generated:7
+# view res/layout/activity_msg_migration.xml #generated:8
+# view res/layout/activity_privatization_config.xml #generated:8
+# view res/layout/activity_robot_profile.xml #generated:9
+# view res/layout/add_friend_activity.xml #generated:9
+# view res/layout/avchat_settings_layout.xml #generated:9
+# view res/layout/black_list_activity.xml #generated:8
+# view res/layout/file_browser_activity.xml #generated:8
+# view res/layout/global_search_detail.xml #generated:8
+# view res/layout/global_search_result.xml #generated:8
+# view res/layout/group_list_activity.xml #generated:8
+# view res/layout/js_bridge_activity.xml #generated:8
+# view res/layout/login_activity.xml #generated:10
+# view res/layout/main.xml #generated:8
+# view res/layout/map_view_amap_layout.xml #generated:8
+# view res/layout/map_view_amap_navigation_layout.xml #generated:8
+# view res/layout/message_history_activity.xml #generated:10
+# view res/layout/message_info_activity.xml #generated:8
+# view res/layout/message_search_activity.xml #generated:8
+# view res/layout/multiport_activity.xml #generated:8
+# view res/layout/nim_advanced_team_announce.xml #generated:9
+# view res/layout/nim_advanced_team_create_announce.xml #generated:9
+# view res/layout/nim_advanced_team_info_activity.xml #generated:8
+# view res/layout/nim_advanced_team_join_activity.xml #generated:8
+# view res/layout/nim_advanced_team_member_info_layout.xml #generated:10
+# view res/layout/nim_advanced_team_nickname_activity.xml #generated:11
+# view res/layout/nim_advanced_team_search_activity.xml #generated:9
+# view res/layout/nim_contacts_select.xml #generated:13
+# view res/layout/nim_crop_image_activity.xml #generated:7
+# view res/layout/nim_list_activity_layout.xml #generated:8
+# view res/layout/nim_mass_message_activity.xml #generated:8
+# view res/layout/nim_message_activity.xml #generated:9
+# view res/layout/nim_pick_image_activity.xml #generated:9
+# view res/layout/nim_picker_album_activity.xml #generated:8
+# view res/layout/nim_picker_image_preview_activity.xml #generated:63
+# view res/layout/nim_preview_image_from_camera_activity.xml #generated:9
+# view res/layout/nim_team_info_activity.xml #generated:8
+# view res/layout/nim_team_member_grid_layout.xml #generated:8
+# view res/layout/nim_team_member_list_layout.xml #generated:7
+# view res/layout/nim_team_message_activity.xml #generated:8
+# view res/layout/nim_team_name_activity.xml #generated:10
+# view res/layout/nim_watch_pic_video_menu_activity.xml #generated:8
+# view res/layout/nim_watch_picture_activity.xml #generated:13
+# view res/layout/nim_watch_video_activity.xml #generated:9
+# view res/layout/no_disturb_activity.xml #generated:9
+# view res/layout/rts_activity.xml #generated:155
+# view res/layout/send_ack_msg_layout.xml #generated:8
+# view res/layout/settings_activity.xml #generated:9
+# view res/layout/system_notification_message_activity.xml #generated:10
+# view res/layout/user_profile_activity.xml #generated:14
+# view res/layout/user_profile_birth_layout.xml #generated:9
+# view res/layout/user_profile_edittext_layout.xml #generated:9
+# view res/layout/user_profile_gender_layout.xml #generated:9
+# view res/layout/user_profile_set_activity.xml #generated:9
+-keep class android.support.design.widget.AppBarLayout { <init>(...); }
+
+# view res/layout/design_text_input_password_icon.xml #generated:18
+-keep class android.support.design.widget.CheckableImageButton { <init>(...); }
+
+# view res/layout/design_bottom_sheet_dialog.xml #generated:26
+-keep class android.support.design.widget.CoordinatorLayout { <init>(...); }
+
+# view res/layout/design_layout_snackbar.xml #generated:18
+# view sw600dp-v13\res/layout-sw600dp-v13/design_layout_snackbar.xml #generated:18
+-keep class android.support.design.widget.Snackbar$SnackbarLayout { <init>(...); }
+
+# view res/layout/ack_msg_info_layout.xml #generated:29
+# view res/layout/chat_room_fragment.xml #generated:56
+# view res/layout/jrmf_rp_activity_trade_history.xml #generated:97
+# view res/layout/jrmf_w_activity_trade_history.xml #generated:92
+# view res/layout/main.xml #generated:30
+# view res/layout/nim_emoji_layout.xml #generated:17
+# view res/layout/nim_message_activity_actions_layout.xml #generated:10
+# view res/layout/nim_watch_picture_activity.xml #generated:40
+-keep class android.support.v4.view.ViewPager { <init>(...); }
+
+# view res/layout/abc_alert_dialog_material.xml #generated:41
+-keep class android.support.v4.widget.NestedScrollView { <init>(...); }
+
+# view res/layout/abc_alert_dialog_button_bar_material.xml #generated:43
+# view res/layout/abc_alert_dialog_material.xml #generated:52
+# view res/layout/abc_alert_dialog_material.xml #generated:66
+# view res/layout/abc_alert_dialog_title_material.xml #generated:56
+# view res/layout/item_country.xml #generated:26
+# view res/layout/item_country_large_padding.xml #generated:26
+# view res/layout/team_avchat_holder.xml #generated:8
+-keep class android.support.v4.widget.Space { <init>(...); }
+
+# view res/layout/abc_select_dialog_material.xml #generated:23
+-keep class android.support.v7.app.AlertController$RecycleListView { <init>(...); }
+
+# view res/layout/abc_action_menu_item_layout.xml #generated:17
+-keep class android.support.v7.view.menu.ActionMenuItemView { <init>(...); }
+
+# view res/layout/abc_expanded_menu_layout.xml #generated:17
+-keep class android.support.v7.view.menu.ExpandedMenuView { <init>(...); }
+
+# view res/layout/abc_list_menu_item_layout.xml #generated:17
+# view res/layout/abc_popup_menu_item_layout.xml #generated:17
+-keep class android.support.v7.view.menu.ListMenuItemView { <init>(...); }
+
+# view res/layout/abc_screen_toolbar.xml #generated:27
+# view v26\res/layout-v26/abc_screen_toolbar.xml #generated:27
+-keep class android.support.v7.widget.ActionBarContainer { <init>(...); }
+
+# view res/layout/abc_action_mode_bar.xml #generated:19
+# view res/layout/abc_screen_toolbar.xml #generated:43
+# view v26\res/layout-v26/abc_screen_toolbar.xml #generated:44
+-keep class android.support.v7.widget.ActionBarContextView { <init>(...); }
+
+# view res/layout/abc_screen_toolbar.xml #generated:17
+# view v26\res/layout-v26/abc_screen_toolbar.xml #generated:17
+-keep class android.support.v7.widget.ActionBarOverlayLayout { <init>(...); }
+
+# view res/layout/abc_action_menu_layout.xml #generated:17
+-keep class android.support.v7.widget.ActionMenuView { <init>(...); }
+
+# view res/layout/abc_activity_chooser_view.xml #generated:19
+-keep class android.support.v7.widget.ActivityChooserView$InnerLayout { <init>(...); }
+
+# view res/layout/abc_alert_dialog_material.xml #generated:18
+-keep class android.support.v7.widget.AlertDialogLayout { <init>(...); }
+
+# view res/layout/abc_alert_dialog_button_bar_material.xml #generated:26
+-keep class android.support.v7.widget.ButtonBarLayout { <init>(...); }
+
+# view res/layout/abc_screen_content_include.xml #generated:19
+-keep class android.support.v7.widget.ContentFrameLayout { <init>(...); }
+
+# view res/layout/abc_alert_dialog_title_material.xml #generated:45
+-keep class android.support.v7.widget.DialogTitle { <init>(...); }
+
+# view res/layout/abc_screen_simple_overlay_action_mode.xml #generated:23
+-keep class android.support.v7.widget.FitWindowsFrameLayout { <init>(...); }
+
+# view res/layout/abc_dialog_title_material.xml #generated:22
+# view res/layout/abc_screen_simple.xml #generated:17
+-keep class android.support.v7.widget.FitWindowsLinearLayout { <init>(...); }
+
+# view res/layout/activity_pick.xml #generated:21
+# view res/layout/chat_rooms.xml #generated:14
+# view res/layout/dialog_country_picker.xml #generated:17
+# view res/layout/faceu_layout.xml #generated:104
+# view res/layout/faceu_layout.xml #generated:110
+# view res/layout/message_history_activity.xml #generated:38
+# view res/layout/nim_activity_image_grid.xml #generated:13
+# view res/layout/nim_activity_image_preview.xml #generated:26
+# view res/layout/nim_chat_room_message_fragment.xml #generated:30
+# view res/layout/nim_list_activity_layout.xml #generated:25
+# view res/layout/nim_message_fragment.xml #generated:30
+# view res/layout/nim_recent_contacts.xml #generated:8
+# view res/layout/nim_team_member_list_layout.xml #generated:24
+# view res/layout/nim_watch_pic_video_menu_activity.xml #generated:25
+# view res/layout/online_people_fragment.xml #generated:12
+# view res/layout/team_avchat_surface_layout.xml #generated:8
+-keep class android.support.v7.widget.RecyclerView { <init>(...); }
+
+# view res/layout/abc_search_view.xml #generated:75
+-keep class android.support.v7.widget.SearchView$SearchAutoComplete { <init>(...); }
+
+# view res/layout/abc_screen_toolbar.xml #generated:36
+# view res/layout/about_layout.xml #generated:15
+# view res/layout/ack_msg_info_layout.xml #generated:14
+# view res/layout/activity_msg_migration.xml #generated:16
+# view res/layout/activity_privatization_config.xml #generated:16
+# view res/layout/activity_robot_profile.xml #generated:16
+# view res/layout/add_friend_activity.xml #generated:16
+# view res/layout/avchat_settings_layout.xml #generated:16
+# view res/layout/black_list_activity.xml #generated:15
+# view res/layout/file_browser_activity.xml #generated:15
+# view res/layout/global_search_detail.xml #generated:15
+# view res/layout/global_search_result.xml #generated:15
+# view res/layout/group_list_activity.xml #generated:15
+# view res/layout/js_bridge_activity.xml #generated:15
+# view res/layout/login_activity.xml #generated:17
+# view res/layout/main.xml #generated:15
+# view res/layout/map_view_amap_layout.xml #generated:15
+# view res/layout/map_view_amap_navigation_layout.xml #generated:15
+# view res/layout/message_history_activity.xml #generated:17
+# view res/layout/message_info_activity.xml #generated:15
+# view res/layout/message_search_activity.xml #generated:15
+# view res/layout/multiport_activity.xml #generated:15
+# view res/layout/nim_advanced_team_announce.xml #generated:16
+# view res/layout/nim_advanced_team_create_announce.xml #generated:16
+# view res/layout/nim_advanced_team_info_activity.xml #generated:15
+# view res/layout/nim_advanced_team_join_activity.xml #generated:15
+# view res/layout/nim_advanced_team_member_info_layout.xml #generated:17
+# view res/layout/nim_advanced_team_nickname_activity.xml #generated:18
+# view res/layout/nim_advanced_team_search_activity.xml #generated:16
+# view res/layout/nim_contacts_select.xml #generated:20
+# view res/layout/nim_crop_image_activity.xml #generated:14
+# view res/layout/nim_list_activity_layout.xml #generated:15
+# view res/layout/nim_mass_message_activity.xml #generated:15
+# view res/layout/nim_message_activity.xml #generated:16
+# view res/layout/nim_pick_image_activity.xml #generated:16
+# view res/layout/nim_picker_album_activity.xml #generated:15
+# view res/layout/nim_picker_image_preview_activity.xml #generated:70
+# view res/layout/nim_preview_image_from_camera_activity.xml #generated:16
+# view res/layout/nim_team_info_activity.xml #generated:15
+# view res/layout/nim_team_member_grid_layout.xml #generated:15
+# view res/layout/nim_team_member_list_layout.xml #generated:14
+# view res/layout/nim_team_message_activity.xml #generated:15
+# view res/layout/nim_team_name_activity.xml #generated:17
+# view res/layout/nim_watch_pic_video_menu_activity.xml #generated:15
+# view res/layout/nim_watch_picture_activity.xml #generated:20
+# view res/layout/nim_watch_video_activity.xml #generated:16
+# view res/layout/no_disturb_activity.xml #generated:16
+# view res/layout/rts_activity.xml #generated:162
+# view res/layout/send_ack_msg_layout.xml #generated:15
+# view res/layout/settings_activity.xml #generated:16
+# view res/layout/system_notification_message_activity.xml #generated:17
+# view res/layout/user_profile_activity.xml #generated:21
+# view res/layout/user_profile_birth_layout.xml #generated:16
+# view res/layout/user_profile_edittext_layout.xml #generated:16
+# view res/layout/user_profile_gender_layout.xml #generated:16
+# view res/layout/user_profile_set_activity.xml #generated:16
+# view v26\res/layout-v26/abc_screen_toolbar.xml #generated:37
+-keep class android.support.v7.widget.Toolbar { <init>(...); }
+
+# view res/layout/abc_screen_simple.xml #generated:25
+# view res/layout/abc_screen_simple_overlay_action_mode.xml #generated:32
+-keep class android.support.v7.widget.ViewStubCompat { <init>(...); }
+
+# view AndroidManifest.xml #generated:851
+-keep class com.alipay.sdk.app.H5AuthActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:845
+-keep class com.alipay.sdk.app.H5PayActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:533
+-keep class com.amap.api.location.APSService { <init>(...); }
+
+# view res/layout/map_view_amap_layout.xml #generated:26
+# view res/layout/map_view_amap_navigation_layout.xml #generated:26
+-keep class com.amap.api.maps2d.MapView { <init>(...); }
+
+# view AndroidManifest.xml #generated:598
+-keep class com.crashlytics.android.CrashlyticsInitProvider { <init>(...); }
+
+# view AndroidManifest.xml #generated:890
+-keep class com.google.android.gms.common.api.GoogleApiActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:924
+-keep class com.google.android.gms.measurement.AppMeasurementInstallReferrerReceiver { <init>(...); }
+
+# view AndroidManifest.xml #generated:938
+-keep class com.google.android.gms.measurement.AppMeasurementJobService { <init>(...); }
+
+# view AndroidManifest.xml #generated:919
+-keep class com.google.android.gms.measurement.AppMeasurementReceiver { <init>(...); }
+
+# view AndroidManifest.xml #generated:934
+-keep class com.google.android.gms.measurement.AppMeasurementService { <init>(...); }
+
+# view AndroidManifest.xml #generated:944
+-keep class com.google.firebase.iid.FirebaseInstanceIdReceiver { <init>(...); }
+
+# view AndroidManifest.xml #generated:958
+-keep class com.google.firebase.iid.FirebaseInstanceIdService { <init>(...); }
+
+# view AndroidManifest.xml #generated:882
+-keep class com.google.firebase.messaging.FirebaseMessagingService { <init>(...); }
+
+# view AndroidManifest.xml #generated:966
+-keep class com.google.firebase.provider.FirebaseInitProvider { <init>(...); }
+
+# view AndroidManifest.xml #generated:976
+-keep class com.huawei.hms.activity.BridgeActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:524
+-keep class com.huawei.hms.support.api.push.PushEventReceiver { <init>(...); }
+
+# view AndroidManifest.xml #generated:500
+-keep class com.huawei.hms.update.provider.UpdateProvider { <init>(...); }
+
+# view res/layout/jrmf_w_header_receive_rp.xml #generated:9
+# view res/layout/jrmf_w_header_rp_detail.xml #generated:15
+# view res/layout/jrmf_w_header_send_rp.xml #generated:9
+-keep class com.jrmf360.normallib.base.view.CircleImageView { <init>(...); }
+
+# view res/layout/jrmf_w_activity_add_card_first.xml #generated:33
+# view res/layout/jrmf_w_activity_add_card_second.xml #generated:132
+# view res/layout/jrmf_w_activity_add_card_second.xml #generated:180
+# view res/layout/jrmf_w_activity_add_card_second.xml #generated:217
+# view res/layout/jrmf_w_activity_add_card_second.xml #generated:86
+# view res/layout/jrmf_w_activity_get_pwd.xml #generated:102
+# view res/layout/jrmf_w_activity_get_pwd.xml #generated:133
+# view res/layout/jrmf_w_activity_get_pwd.xml #generated:184
+# view res/layout/jrmf_w_activity_get_pwd.xml #generated:214
+# view res/layout/jrmf_w_activity_get_pwd.xml #generated:41
+# view res/layout/jrmf_w_activity_get_pwd.xml #generated:71
+# view res/layout/jrmf_w_activity_recharge.xml #generated:113
+# view res/layout/jrmf_w_activity_set_pay_pwd.xml #generated:33
+# view res/layout/jrmf_w_activity_set_pay_pwd.xml #generated:69
+# view res/layout/jrmf_w_activity_update_pwd.xml #generated:31
+# view res/layout/jrmf_w_fragment_getdeposit.xml #generated:184
+# view res/layout/jrmf_w_fragment_getdeposit.xml #generated:213
+-keep class com.jrmf360.normallib.base.view.ClearEditText { <init>(...); }
+
+# view res/layout/jrmf_rp_activity_trans_account.xml #generated:42
+-keep class com.jrmf360.normallib.base.view.RoundImageView { <init>(...); }
+
+# view res/layout/jrmf_w_activity_my_rp.xml #generated:10
+# view res/layout/jrmf_w_activity_rp_detail.xml #generated:11
+# view res/layout/jrmf_w_layout_titlebar.xml #generated:2
+-keep class com.jrmf360.normallib.base.view.TitleBar { <init>(...); }
+
+# view res/layout/jrmf_rp_activity_add_card.xml #generated:34
+# view res/layout/jrmf_rp_activity_add_card_first.xml #generated:38
+# view res/layout/jrmf_rp_activity_add_card_first.xml #generated:47
+# view res/layout/jrmf_rp_activity_add_card_first.xml #generated:56
+# view res/layout/jrmf_rp_activity_add_card_second.xml #generated:60
+# view res/layout/jrmf_rp_activity_certification.xml #generated:25
+# view res/layout/jrmf_rp_activity_certification.xml #generated:33
+# view res/layout/jrmf_rp_activity_setting_pswd.xml #generated:27
+# view res/layout/jrmf_rp_activity_setting_pswd.xml #generated:35
+-keep class com.jrmf360.normallib.base.view.floattextview.FloatingLabelTextView { <init>(...); }
+
+# view res/layout/jrmf_rp_activity_pay_type.xml #generated:143
+# view res/layout/jrmf_rp_activity_setting_pswd.xml #generated:61
+# view res/layout/jrmf_rp_activity_trans_pay.xml #generated:182
+# view res/layout/jrmf_w_activity_pwd_check.xml #generated:21
+# view res/layout/jrmf_w_dialog_input_pwd.xml #generated:42
+-keep class com.jrmf360.normallib.base.view.passwordview.GridPasswordView { <init>(...); }
+
+# view res/layout/jrmf_b_gridpasswordview.xml #generated:4
+-keep class com.jrmf360.normallib.base.view.passwordview.ImeDelBugFixedEditText { <init>(...); }
+
+# view AndroidManifest.xml #generated:820
+-keep class com.jrmf360.normallib.rp.ui.AddCardActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:821
+-keep class com.jrmf360.normallib.rp.ui.AddCardFirsstActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:822
+-keep class com.jrmf360.normallib.rp.ui.AddCardSecondActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:819
+-keep class com.jrmf360.normallib.rp.ui.BankCardListActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:811
+-keep class com.jrmf360.normallib.rp.ui.CertificationActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:812
+-keep class com.jrmf360.normallib.rp.ui.CheckAuthActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:813
+-keep class com.jrmf360.normallib.rp.ui.CheckUserInfoActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:814
+-keep class com.jrmf360.normallib.rp.ui.EnBrowserActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:809
+-keep class com.jrmf360.normallib.rp.ui.MyRpActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:793
+-keep class com.jrmf360.normallib.rp.ui.OpenRpActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:797
+-keep class com.jrmf360.normallib.rp.ui.PayTypeActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:810
+-keep class com.jrmf360.normallib.rp.ui.ResetPwdActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:808
+-keep class com.jrmf360.normallib.rp.ui.RpDetailActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:806
+-keep class com.jrmf360.normallib.rp.ui.SendGroupEnvelopesActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:807
+-keep class com.jrmf360.normallib.rp.ui.SendSingleEnvelopesActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:815
+-keep class com.jrmf360.normallib.rp.ui.SettingPswdActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:816
+-keep class com.jrmf360.normallib.rp.ui.TradeDetailActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:817
+-keep class com.jrmf360.normallib.rp.ui.TradeHistoryActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:818
+-keep class com.jrmf360.normallib.rp.ui.TransAccountActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:823
+-keep class com.jrmf360.normallib.rp.ui.TransDetailActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:801
+-keep class com.jrmf360.normallib.rp.ui.TransPayActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:824
+-keep class com.jrmf360.normallib.rp.ui.TransSuccActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:825
+-keep class com.jrmf360.normallib.rp.ui.WebViewActivity { <init>(...); }
+
+# view res/layout/jrmf_rp_activity_add_card.xml #generated:12
+# view res/layout/jrmf_rp_activity_add_card_first.xml #generated:11
+# view res/layout/jrmf_rp_activity_add_card_second.xml #generated:11
+# view res/layout/jrmf_rp_activity_bank_card_list.xml #generated:11
+# view res/layout/jrmf_rp_activity_certification.xml #generated:11
+# view res/layout/jrmf_rp_activity_check_auth.xml #generated:12
+# view res/layout/jrmf_rp_activity_check_userinfo.xml #generated:11
+# view res/layout/jrmf_rp_activity_en_browser.xml #generated:11
+# view res/layout/jrmf_rp_activity_my_rp.xml #generated:10
+# view res/layout/jrmf_rp_activity_reset_pwd.xml #generated:10
+# view res/layout/jrmf_rp_activity_rp_detail.xml #generated:9
+# view res/layout/jrmf_rp_activity_send_group_peak.xml #generated:12
+# view res/layout/jrmf_rp_activity_send_single_peak.xml #generated:12
+# view res/layout/jrmf_rp_activity_setting_pswd.xml #generated:13
+# view res/layout/jrmf_rp_activity_trade_detail.xml #generated:12
+# view res/layout/jrmf_rp_activity_trade_history.xml #generated:10
+# view res/layout/jrmf_rp_activity_trans_account.xml #generated:12
+# view res/layout/jrmf_rp_activity_trans_detail.xml #generated:10
+# view res/layout/jrmf_rp_activity_trans_succ.xml #generated:11
+# view res/layout/jrmf_rp_browsers.xml #generated:11
+-keep class com.jrmf360.normallib.rp.widget.ActionBarView { <init>(...); }
+
+# view res/layout/jrmf_rp_activity_open_rp.xml #generated:17
+# view res/layout/jrmf_rp_dialog_open_rp.xml #generated:16
+# view res/layout/jrmf_rp_header_receive_rp.xml #generated:9
+# view res/layout/jrmf_rp_header_rp_detail.xml #generated:15
+# view res/layout/jrmf_rp_header_send_rp.xml #generated:9
+-keep class com.jrmf360.normallib.rp.widget.CircleImageView { <init>(...); }
+
+# view res/layout/jrmf_rp_activity_check_auth.xml #generated:100
+# view res/layout/jrmf_rp_activity_check_auth.xml #generated:130
+# view res/layout/jrmf_rp_activity_check_auth.xml #generated:40
+# view res/layout/jrmf_rp_activity_check_auth.xml #generated:70
+# view res/layout/jrmf_rp_activity_check_userinfo.xml #generated:32
+# view res/layout/jrmf_rp_activity_check_userinfo.xml #generated:63
+# view res/layout/jrmf_rp_activity_reset_pwd.xml #generated:31
+# view res/layout/jrmf_rp_activity_reset_pwd.xml #generated:63
+# view res/layout/jrmf_rp_verification_code_dialog.xml #generated:48
+-keep class com.jrmf360.normallib.rp.widget.ClearEditText { <init>(...); }
+
+# view AndroidManifest.xml #generated:827
+-keep class com.jrmf360.normallib.wallet.ui.AccountInfoActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:833
+-keep class com.jrmf360.normallib.wallet.ui.AddCardFirstActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:832
+-keep class com.jrmf360.normallib.wallet.ui.AddCardSecondActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:831
+-keep class com.jrmf360.normallib.wallet.ui.BankSettingActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:834
+-keep class com.jrmf360.normallib.wallet.ui.GetDepositActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:841
+-keep class com.jrmf360.normallib.wallet.ui.GetPwdActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:835
+-keep class com.jrmf360.normallib.wallet.ui.IdentityAuthenActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:836
+-keep class com.jrmf360.normallib.wallet.ui.MyRpActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:826
+-keep class com.jrmf360.normallib.wallet.ui.MyWalletActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:842
+-keep class com.jrmf360.normallib.wallet.ui.PwdCheckActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:837
+-keep class com.jrmf360.normallib.wallet.ui.RechargeActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:840
+-keep class com.jrmf360.normallib.wallet.ui.RpDetailActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:829
+-keep class com.jrmf360.normallib.wallet.ui.SecureSettingActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:844
+-keep class com.jrmf360.normallib.wallet.ui.SetPayPwdActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:830
+-keep class com.jrmf360.normallib.wallet.ui.SupportBankCardActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:838
+-keep class com.jrmf360.normallib.wallet.ui.TradeDetailActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:828
+-keep class com.jrmf360.normallib.wallet.ui.TradeHistoryActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:843
+-keep class com.jrmf360.normallib.wallet.ui.UpdatePwdActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:839
+-keep class com.jrmf360.normallib.wallet.ui.WebViewActivity { <init>(...); }
+
+# view res/layout/jrmf_w_activity_getdeposit.xml #generated:69
+-keep class com.jrmf360.normallib.wallet.widget.MyViewPager { <init>(...); }
+
+# view res/layout/jrmf_w_activity_identity_authen.xml #generated:33
+# view res/layout/jrmf_w_activity_identity_authen.xml #generated:67
+-keep class com.jrmf360.normallib.wallet.widget.NoEmojiEditText { <init>(...); }
+
+# view res/layout/jrmf_w_fragment_getdeposit.xml #generated:9
+-keep class com.jrmf360.normallib.wallet.widget.VerticalScrollView { <init>(...); }
+
+# view res/layout/jrmf_w_dialog_select_sub_bank.xml #generated:62
+-keep class com.jrmf360.normallib.wallet.widget.WheelView { <init>(...); }
+
+# view res/layout/jrmf_rp_trans_tip_dialog.xml #generated:17
+-keep class com.jrmf360.rplib.widget.ClearEditText { <init>(...); }
+
+# view AndroidManifest.xml #generated:895
+-keep class com.meizu.cloud.pushsdk.NotificationService { <init>(...); }
+
+# view AndroidManifest.xml #generated:899
+-keep class com.meizu.cloud.pushsdk.SystemReceiver { <init>(...); }
+
+# view AndroidManifest.xml #generated:857
+-keep class com.netease.nim.avchatkit.activity.AVChatActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:869
+-keep class com.netease.nim.avchatkit.activity.AVChatSettingsActivity { <init>(...); }
+
+# view res/layout/avchat_settings_layout.xml #generated:25
+-keep class com.netease.nim.avchatkit.activity.AVChatSettingsFragment { <init>(...); }
+
+# view res/layout/avchat_audio_layout.xml #generated:43
+# view res/layout/avchat_video_center_layout.xml #generated:15
+# view res/layout/team_avchat_voice_mute_item.xml #generated:12
+-keep class com.netease.nim.avchatkit.common.imageview.HeadImageView { <init>(...); }
+
+# view AndroidManifest.xml #generated:873
+-keep class com.netease.nim.avchatkit.receiver.IncomingCallReceiver { <init>(...); }
+
+# view AndroidManifest.xml #generated:863
+-keep class com.netease.nim.avchatkit.teamavchat.activity.TeamAVChatActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:603
+-keep class com.netease.nim.rtskit.activity.RTSActivity { <init>(...); }
+
+# view res/layout/rts_activity.xml #generated:19
+-keep class com.netease.nim.rtskit.common.imageview.HeadImageView { <init>(...); }
+
+# view res/layout/rts_activity.xml #generated:146
+-keep class com.netease.nim.rtskit.doodle.DoodleView { <init>(...); }
+
+# view AndroidManifest.xml #generated:692
+-keep class com.netease.nim.uikit.business.ait.selector.AitContactSelectorActivity { <init>(...); }
+
+# view res/layout/chat_room_message_tab.xml #generated:9
+-keep class com.netease.nim.uikit.business.chatroom.fragment.ChatRoomMessageFragment { <init>(...); }
+
+# view AndroidManifest.xml #generated:685
+-keep class com.netease.nim.uikit.business.contact.selector.activity.ContactSelectActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:725
+-keep class com.netease.nim.uikit.business.session.activity.CaptureVideoActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:625
+-keep class com.netease.nim.uikit.business.session.activity.P2PMessageActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:631
+-keep class com.netease.nim.uikit.business.session.activity.TeamMessageActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:736
+-keep class com.netease.nim.uikit.business.session.activity.WatchMessagePictureActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:740
+-keep class com.netease.nim.uikit.business.session.activity.WatchPicAndVideoMenuActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:731
+-keep class com.netease.nim.uikit.business.session.activity.WatchVideoActivity { <init>(...); }
+
+# view res/layout/nim_chat_room_message_fragment.xml #generated:17
+# view res/layout/nim_message_activity_bottom_layout.xml #generated:10
+-keep class com.netease.nim.uikit.business.session.emoji.EmoticonPickerView { <init>(...); }
+
+# view res/layout/nim_message_fragment.xml #generated:15
+-keep class com.netease.nim.uikit.business.session.helper.MsgBkImageView { <init>(...); }
+
+# view res/layout/nim_message_item_robot.xml #generated:16
+-keep class com.netease.nim.uikit.business.session.viewholder.robot.RobotContentLinearLayout { <init>(...); }
+
+# view AndroidManifest.xml #generated:655
+-keep class com.netease.nim.uikit.business.team.activity.AdvancedTeamAnnounceActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:673
+-keep class com.netease.nim.uikit.business.team.activity.AdvancedTeamCreateAnnounceActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:643
+-keep class com.netease.nim.uikit.business.team.activity.AdvancedTeamInfoActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:649
+-keep class com.netease.nim.uikit.business.team.activity.AdvancedTeamMemberActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:661
+-keep class com.netease.nim.uikit.business.team.activity.AdvancedTeamMemberInfoActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:667
+-keep class com.netease.nim.uikit.business.team.activity.AdvancedTeamNicknameActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:637
+-keep class com.netease.nim.uikit.business.team.activity.NormalTeamInfoActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:679
+-keep class com.netease.nim.uikit.business.team.activity.TeamPropertySettingActivity { <init>(...); }
+
+# view res/layout/nim_advanced_team_create_layout.xml #generated:15
+# view res/layout/nim_advanced_team_info_activity.xml #generated:123
+# view res/layout/nim_team_info_activity.xml #generated:36
+# view res/layout/nim_team_member_grid_layout.xml #generated:39
+# view res/layout/unread_ack_msg_fragment.xml #generated:19
+-keep class com.netease.nim.uikit.business.team.ui.TeamInfoGridView { <init>(...); }
+
+# view AndroidManifest.xml #generated:789
+-keep class com.netease.nim.uikit.common.media.imagepicker.camera.CaptureActivity { <init>(...); }
+
+# view res/layout/nim_activity_camera.xml #generated:55
+-keep class com.netease.nim.uikit.common.media.imagepicker.camera.CircleProgressView { <init>(...); }
+
+# view AndroidManifest.xml #generated:760
+-keep class com.netease.nim.uikit.common.media.imagepicker.ui.ImageCropActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:755
+-keep class com.netease.nim.uikit.common.media.imagepicker.ui.ImageGridActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:766
+-keep class com.netease.nim.uikit.common.media.imagepicker.ui.ImagePreviewActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:770
+-keep class com.netease.nim.uikit.common.media.imagepicker.ui.ImagePreviewRetakeActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:774
+-keep class com.netease.nim.uikit.common.media.imagepicker.ui.ImageTakeActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:779
+-keep class com.netease.nim.uikit.common.media.imagepicker.video.GLVideoActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:784
+-keep class com.netease.nim.uikit.common.media.imagepicker.video.GLVideoConfirmActivity { <init>(...); }
+
+# view res/layout/nim_activity_gl_video.xml #generated:8
+-keep class com.netease.nim.uikit.common.media.imagepicker.video.GLVideoPlaceholder { <init>(...); }
+
+# view res/layout/nim_widget_video_view_default.xml #generated:12
+-keep class com.netease.nim.uikit.common.media.imagepicker.video.GLVideoView { <init>(...); }
+
+# view res/layout/nim_adapter_preview_item.xml #generated:11
+# view res/layout/nim_widget_video_view_default.xml #generated:56
+-keep class com.netease.nim.uikit.common.media.imagepicker.view.GLBusyIndicatorView { <init>(...); }
+
+# view res/layout/nim_activity_image_crop.xml #generated:15
+-keep class com.netease.nim.uikit.common.media.imagepicker.view.GlideCropImageView { <init>(...); }
+
+# view res/layout/nim_activity_image_preview.xml #generated:33
+-keep class com.netease.nim.uikit.common.media.imagepicker.view.SuperCheckBox { <init>(...); }
+
+# view res/layout/nim_activity_image_preview.xml #generated:12
+# view res/layout/nim_activity_image_preview_retake.xml #generated:13
+-keep class com.netease.nim.uikit.common.media.imagepicker.view.ViewPagerFixed { <init>(...); }
+
+# view AndroidManifest.xml #generated:745
+-keep class com.netease.nim.uikit.common.media.model.GenericFileProvider { <init>(...); }
+
+# view AndroidManifest.xml #generated:700
+-keep class com.netease.nim.uikit.common.media.picker.activity.CropImageActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:696
+-keep class com.netease.nim.uikit.common.media.picker.activity.PickImageActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:704
+-keep class com.netease.nim.uikit.common.media.picker.activity.PickerAlbumActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:708
+-keep class com.netease.nim.uikit.common.media.picker.activity.PickerAlbumPreviewActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:718
+-keep class com.netease.nim.uikit.common.media.picker.activity.PreviewImageFromCameraActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:712
+-keep class com.netease.nim.uikit.common.media.picker.activity.PreviewImageFromLocalActivity { <init>(...); }
+
+# view res/layout/chat_room_barrage.xml #generated:6
+-keep class com.netease.nim.uikit.common.ui.barrage.BarrageSurfaceView { <init>(...); }
+
+# view res/layout/ack_msg_info_layout.xml #generated:35
+# view res/layout/main.xml #generated:36
+-keep class com.netease.nim.uikit.common.ui.drop.DropCover { <init>(...); }
+
+# view res/layout/nim_recent_contact_list_item.xml #generated:102
+# view res/layout/tab_layout_main.xml #generated:26
+-keep class com.netease.nim.uikit.common.ui.drop.DropFake { <init>(...); }
+
+# view res/layout/nim_crop_image_activity.xml #generated:24
+-keep class com.netease.nim.uikit.common.ui.imageview.CropImageView { <init>(...); }
+
+# view res/layout/ack_msg_detail_item.xml #generated:12
+# view res/layout/activity_robot_profile.xml #generated:25
+# view res/layout/black_list_item.xml #generated:14
+# view res/layout/item_custom_notification.xml #generated:19
+# view res/layout/message_search_list_view_item.xml #generated:15
+# view res/layout/message_system_notification_view_item.xml #generated:19
+# view res/layout/nim_advanced_team_info_activity.xml #generated:48
+# view res/layout/nim_advanced_team_join_activity.xml #generated:24
+# view res/layout/nim_advanced_team_member_info_layout.xml #generated:35
+# view res/layout/nim_ait_contact_robot_item.xml #generated:7
+# view res/layout/nim_ait_contact_team_member_item.xml #generated:13
+# view res/layout/nim_contact_select_area_item.xml #generated:7
+# view res/layout/nim_contacts_item.xml #generated:15
+# view res/layout/nim_contacts_select_item.xml #generated:19
+# view res/layout/nim_message_item.xml #generated:23
+# view res/layout/nim_message_item.xml #generated:32
+# view res/layout/nim_new_message_tip_layout.xml #generated:13
+# view res/layout/nim_recent_contact_list_item.xml #generated:27
+# view res/layout/nim_robot_list_item.xml #generated:9
+# view res/layout/nim_team_member_item.xml #generated:12
+# view res/layout/nim_team_member_list_item.xml #generated:13
+# view res/layout/setting_item_base.xml #generated:17
+# view res/layout/user_profile_activity.xml #generated:38
+# view res/layout/user_profile_set_activity.xml #generated:43
+-keep class com.netease.nim.uikit.common.ui.imageview.HeadImageView { <init>(...); }
+
+# view res/layout/nim_message_item_location.xml #generated:6
+# view res/layout/nim_message_item_picture.xml #generated:6
+# view res/layout/nim_message_item_video.xml #generated:5
+# view res/layout/nim_message_robot_image.xml #generated:7
+-keep class com.netease.nim.uikit.common.ui.imageview.MsgThumbImageView { <init>(...); }
+
+# view res/layout/nim_image_layout_multi_touch.xml #generated:9
+# view res/layout/nim_preview_image_layout_multi_touch.xml #generated:10
+# view res/layout/nim_preview_image_layout_zoom_control.xml #generated:10
+# view res/layout/nim_watch_snapchat_activity.xml #generated:9
+-keep class com.netease.nim.uikit.common.ui.imageview.MultiTouchZoomableImageView { <init>(...); }
+
+# view res/layout/global_search_detail.xml #generated:37
+# view res/layout/message_search_activity.xml #generated:24
+-keep class com.netease.nim.uikit.common.ui.listview.AutoRefreshListView { <init>(...); }
+
+# view res/layout/system_notification_message_activity.xml #generated:37
+-keep class com.netease.nim.uikit.common.ui.listview.MessageListView { <init>(...); }
+
+# view res/layout/nim_contacts.xml #generated:48
+# view res/layout/nim_contacts_select.xml #generated:71
+-keep class com.netease.nim.uikit.common.ui.liv.LetterIndexView { <init>(...); }
+
+# view res/layout/nim_popup_menu_black_layout.xml #generated:8
+# view res/layout/nim_popup_menu_layout.xml #generated:9
+-keep class com.netease.nim.uikit.common.ui.popupmenu.PopupMenuListView { <init>(...); }
+
+# view res/layout/nim_pull_to_refresh_header_custom.xml #generated:11
+-keep class com.netease.nim.uikit.common.ui.ptr2.LoadingView { <init>(...); }
+
+# view res/layout/chat_rooms.xml #generated:9
+# view res/layout/online_people_fragment.xml #generated:7
+-keep class com.netease.nim.uikit.common.ui.ptr2.PullToRefreshLayout { <init>(...); }
+
+# view res/layout/add_friend_activity.xml #generated:27
+# view res/layout/login_activity.xml #generated:114
+# view res/layout/login_activity.xml #generated:129
+# view res/layout/login_activity.xml #generated:56
+# view res/layout/login_activity.xml #generated:70
+# view res/layout/login_activity.xml #generated:98
+# view res/layout/nim_advanced_team_search_activity.xml #generated:27
+# view res/layout/user_profile_edittext_layout.xml #generated:27
+-keep class com.netease.nim.uikit.common.ui.widget.ClearableEditTextWithIcon { <init>(...); }
+
+# view res/layout/nim_picker_image_preview_activity.xml #generated:10
+-keep class com.netease.nim.uikit.common.ui.widget.FixBugsViewPager { <init>(...); }
+
+# view res/layout/nim_adapter_image_list_camera.xml #generated:8
+# view res/layout/nim_adapter_image_list_item.xml #generated:8
+-keep class com.netease.nim.uikit.common.ui.widget.RatioImage { <init>(...); }
+
+# view res/layout/activity_privatization_config.xml #generated:75
+# view res/layout/nim_user_profile_toggle_item.xml #generated:18
+# view res/layout/no_disturb_footer.xml #generated:79
+# view res/layout/setting_item_base.xml #generated:68
+-keep class com.netease.nim.uikit.common.ui.widget.SwitchButton { <init>(...); }
+
+# view AndroidManifest.xml #generated:108
+-keep class com.netease.nim.weyouchats.NimApplication { <init>(...); }
+
+# view AndroidManifest.xml #generated:345
+-keep class com.netease.nim.weyouchats.chatroom.activity.ChatRoomActivity { <init>(...); }
+
+# view res/layout/chat_room_activity.xml #generated:7
+-keep class com.netease.nim.weyouchats.chatroom.fragment.ChatRoomFragment { <init>(...); }
+
+# view res/layout/chat_room_tab.xml #generated:10
+-keep class com.netease.nim.weyouchats.chatroom.fragment.ChatRoomListFragment { <init>(...); }
+
+# view res/layout/chat_room_master_tab.xml #generated:9
+-keep class com.netease.nim.weyouchats.chatroom.fragment.MasterFragment { <init>(...); }
+
+# view res/layout/chat_room_people_tab.xml #generated:9
+-keep class com.netease.nim.weyouchats.chatroom.fragment.OnlinePeopleFragment { <init>(...); }
+
+# view res/layout/master_fragment.xml #generated:16
+# view res/layout/online_people_item.xml #generated:16
+-keep class com.netease.nim.weyouchats.chatroom.widget.ChatRoomImageView { <init>(...); }
+
+# view res/layout/ack_msg_info_layout.xml #generated:22
+# view res/layout/chat_room_fragment.xml #generated:50
+# view res/layout/main.xml #generated:23
+-keep class com.netease.nim.weyouchats.common.ui.viewpager.PagerSlidingTabStrip { <init>(...); }
+
+# view AndroidManifest.xml #generated:204
+-keep class com.netease.nim.weyouchats.contact.activity.AddFriendActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:228
+-keep class com.netease.nim.weyouchats.contact.activity.BlackListActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:374
+-keep class com.netease.nim.weyouchats.contact.activity.RobotProfileActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:210
+-keep class com.netease.nim.weyouchats.contact.activity.UserProfileActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:222
+-keep class com.netease.nim.weyouchats.contact.activity.UserProfileEditItemActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:216
+-keep class com.netease.nim.weyouchats.contact.activity.UserProfileSettingActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:236
+-keep class com.netease.nim.weyouchats.file.browser.FileBrowserActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:350
+-keep class com.netease.nim.weyouchats.jsbridge.JsBridgeActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:317
+-keep class com.netease.nim.weyouchats.location.activity.LocationAmapActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:323
+-keep class com.netease.nim.weyouchats.location.activity.NavigationAmapActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:176
+-keep class com.netease.nim.weyouchats.login.LoginActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:185
+-keep class com.netease.nim.weyouchats.main.activity.AboutActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:249
+-keep class com.netease.nim.weyouchats.main.activity.CustomNotificationActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:287
+-keep class com.netease.nim.weyouchats.main.activity.GlobalSearchActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:293
+-keep class com.netease.nim.weyouchats.main.activity.GlobalSearchDetailActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:298
+-keep class com.netease.nim.weyouchats.main.activity.GlobalSearchDetailActivity2 { <init>(...); }
+
+# view AndroidManifest.xml #generated:158
+-keep class com.netease.nim.weyouchats.main.activity.MainActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:385
+-keep class com.netease.nim.weyouchats.main.activity.MsgMigrationActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:168
+-keep class com.netease.nim.weyouchats.main.activity.MultiportActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:198
+-keep class com.netease.nim.weyouchats.main.activity.NoDisturbActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:378
+-keep class com.netease.nim.weyouchats.main.activity.PrivatizationConfigActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:358
+-keep class com.netease.nim.weyouchats.main.activity.RobotListActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:192
+-keep class com.netease.nim.weyouchats.main.activity.SettingsActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:243
+-keep class com.netease.nim.weyouchats.main.activity.SystemMessageActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:279
+-keep class com.netease.nim.weyouchats.main.activity.TeamListActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:140
+-keep class com.netease.nim.weyouchats.main.activity.WelcomeActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:437
+-keep class com.netease.nim.weyouchats.receiver.CustomNotificationReceiver { <init>(...); }
+
+# view AndroidManifest.xml #generated:370
+-keep class com.netease.nim.weyouchats.session.activity.AckMsgInfoActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:311
+-keep class com.netease.nim.weyouchats.session.activity.FileDownloadActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:255
+-keep class com.netease.nim.weyouchats.session.activity.MessageHistoryActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:261
+-keep class com.netease.nim.weyouchats.session.activity.MessageInfoActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:364
+-keep class com.netease.nim.weyouchats.session.activity.SendAckMsgActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:305
+-keep class com.netease.nim.weyouchats.session.activity.WatchSnapChatPictureActivity { <init>(...); }
+
+# view res/layout/ack_msg_readed_layout.xml #generated:10
+-keep class com.netease.nim.weyouchats.session.fragment.ReadAckMsgFragment { <init>(...); }
+
+# view res/layout/ack_msg_unread_layout.xml #generated:8
+-keep class com.netease.nim.weyouchats.session.fragment.UnreadAckMsgFragment { <init>(...); }
+
+# view AndroidManifest.xml #generated:337
+-keep class com.netease.nim.weyouchats.session.search.DisplayMessageActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:331
+-keep class com.netease.nim.weyouchats.session.search.SearchMessageActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:273
+-keep class com.netease.nim.weyouchats.team.activity.AdvancedTeamJoinActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:267
+-keep class com.netease.nim.weyouchats.team.activity.AdvancedTeamSearchActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:429
+-keep class com.netease.nimlib.ipc.NIMContentProvider { <init>(...); }
+
+# view AndroidManifest.xml #generated:404
+-keep class com.netease.nimlib.job.NIMJobService { <init>(...); }
+
+# view AndroidManifest.xml #generated:536
+-keep class com.netease.nimlib.mixpush.fcm.FCMTokenService { <init>(...); }
+
+# view AndroidManifest.xml #generated:507
+-keep class com.netease.nimlib.mixpush.hw.HWPushReceiver { <init>(...); }
+
+# view AndroidManifest.xml #generated:484
+-keep class com.netease.nimlib.mixpush.mi.MiPushReceiver { <init>(...); }
+
+# view AndroidManifest.xml #generated:551
+-keep class com.netease.nimlib.mixpush.mz.MZPushReceiver { <init>(...); }
+
+# view AndroidManifest.xml #generated:590
+-keep class com.netease.nimlib.mixpush.vivo.VivoPushReceiver { <init>(...); }
+
+# view AndroidManifest.xml #generated:609
+-keep class com.netease.nimlib.receiver.RTSBroadcastReceiver { <init>(...); }
+
+# view res/layout/team_avchat_item.xml #generated:43
+-keep class com.netease.nimlib.sdk.avchat.video.AVChatTextureViewRenderer { <init>(...); }
+
+# view AndroidManifest.xml #generated:411
+-keep class com.netease.nimlib.service.NimReceiver { <init>(...); }
+
+# view AndroidManifest.xml #generated:394
+-keep class com.netease.nimlib.service.NimService { <init>(...); }
+
+# view AndroidManifest.xml #generated:399
+-keep class com.netease.nimlib.service.NimService$Aux { <init>(...); }
+
+# view AndroidManifest.xml #generated:422
+-keep class com.netease.nimlib.service.ResponseReceiver { <init>(...); }
+
+# view AndroidManifest.xml #generated:425
+-keep class com.netease.nimlib.service.ResponseService { <init>(...); }
+
+# view res/layout/activity_pick.xml #generated:25
+-keep class com.sahooz.library.SideBar { <init>(...); }
+
+# view AndroidManifest.xml #generated:577
+-keep class com.vivo.push.sdk.LinkProxyClientActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:573
+-keep class com.vivo.push.sdk.service.CommandClientService { <init>(...); }
+
+# view AndroidManifest.xml #generated:480
+-keep class com.xiaomi.mipush.sdk.MessageHandleService { <init>(...); }
+
+# view AndroidManifest.xml #generated:476
+-keep class com.xiaomi.mipush.sdk.PushMessageHandler { <init>(...); }
+
+# view AndroidManifest.xml #generated:447
+-keep class com.xiaomi.push.service.XMJobService { <init>(...); }
+
+# view AndroidManifest.xml #generated:453
+-keep class com.xiaomi.push.service.XMPushService { <init>(...); }
+
+# view AndroidManifest.xml #generated:466
+-keep class com.xiaomi.push.service.receivers.NetworkStatusReceiver { <init>(...); }
+
+# view AndroidManifest.xml #generated:458
+-keep class com.xiaomi.push.service.receivers.PingReceiver { <init>(...); }
+
+# view res/layout/nim_preview_image_from_local_activity.xml #generated:9
+-keep class im.yixin.ui.CustomViewPager { <init>(...); }
+
+# view res/layout/faceu_layout.xml #generated:225
+# view res/layout/faceu_layout.xml #generated:249
+# view res/layout/faceu_layout.xml #generated:353
+# view res/layout/faceu_layout.xml #generated:383
+# view res/layout/faceu_layout.xml #generated:414
+-keep class org.adw.library.widgets.discreteseekbar.DiscreteSeekBar { <init>(...); }
+
+# view res/layout/nim_adapter_preview_item.xml #generated:6
+-keep class uk.co.senab.photoview.PhotoView { <init>(...); }
+
+# onClick res/layout/faceu_layout.xml #generated:126
+# onClick res/layout/faceu_layout.xml #generated:137
+# onClick res/layout/faceu_layout.xml #generated:150
+# onClick res/layout/faceu_layout.xml #generated:163
+# onClick res/layout/faceu_layout.xml #generated:17
+# onClick res/layout/faceu_layout.xml #generated:176
+# onClick res/layout/faceu_layout.xml #generated:189
+# onClick res/layout/faceu_layout.xml #generated:202
+# onClick res/layout/faceu_layout.xml #generated:286
+# onClick res/layout/faceu_layout.xml #generated:299
+# onClick res/layout/faceu_layout.xml #generated:30
+# onClick res/layout/faceu_layout.xml #generated:312
+# onClick res/layout/faceu_layout.xml #generated:325
+# onClick res/layout/faceu_layout.xml #generated:43
+# onClick res/layout/faceu_layout.xml #generated:56
+# onClick res/layout/faceu_layout.xml #generated:69
+# onClick res/layout/faceu_layout.xml #generated:82
+# onClick res/layout/nim_crop_image_activity.xml #generated:38
+# onClick res/layout/nim_crop_image_activity.xml #generated:66
+# onClick res/layout/nim_team_info_divider_item.xml #generated:2
+-keepclassmembers class * { *** onClick(...); }
+

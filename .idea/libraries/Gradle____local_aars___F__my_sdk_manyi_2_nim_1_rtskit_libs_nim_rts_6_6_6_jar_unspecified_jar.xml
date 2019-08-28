@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="Gradle: __local_aars__:F.\my_sdk\manyi\2\nim_1\rtskit\libs\nim-rts-6.6.6.jar:unspecified@jar">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/rtskit/libs/nim-rts-6.6.6.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
