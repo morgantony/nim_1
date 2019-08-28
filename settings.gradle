@@ -1,1 +1,7 @@
-include ':RxJava',':demo'
+include ':uikit', ':library_country_picker'
+include ':demo' 
+include ':faceunity' 
+include ':jrmfRpWalletlib'
+include ':avchatkit'
+include ':rtskit'
+include ':library_country_picker'

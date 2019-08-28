@@ -8,8 +8,13 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
-            <option value="$PROJECT_DIR$/RxJava" />
+            <option value="$PROJECT_DIR$/avchatkit" />
             <option value="$PROJECT_DIR$/demo" />
+            <option value="$PROJECT_DIR$/faceunity" />
+            <option value="$PROJECT_DIR$/jrmfRpWalletlib" />
+            <option value="$PROJECT_DIR$/library_country_picker" />
+            <option value="$PROJECT_DIR$/rtskit" />
+            <option value="$PROJECT_DIR$/uikit" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />
