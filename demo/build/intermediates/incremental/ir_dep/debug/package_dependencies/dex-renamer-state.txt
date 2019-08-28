@@ -1,7 +1,0 @@
-#Wed Aug 28 16:16:25 CST 2019
-base.0=F\:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\transforms\\dexMerger\\debug\\10
-path.1=classes2.dex
-renamed.1=classes2.dex
-path.0=classes.dex
-renamed.0=classes.dex
-base.1=F\:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\transforms\\dexMerger\\debug\\10
