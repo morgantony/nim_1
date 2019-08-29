@@ -64,6 +64,7 @@ public class LoginActivity extends UI implements OnKeyListener {
 
     private TextView rightTopBtn;  // ActionBar完成按钮
     private TextView switchModeBtn;  // 注册/登录切换按钮
+    private TextView switchModeBtn1;  // 注册/登录切换按钮
 
     private ClearableEditTextWithIcon loginAccountEdit;
     private ClearableEditTextWithIcon loginPasswordEdit;
