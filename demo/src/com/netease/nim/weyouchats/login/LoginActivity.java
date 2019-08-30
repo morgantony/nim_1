@@ -1,34 +1,21 @@
 package com.netease.nim.weyouchats.login;
 
 import android.Manifest;
+import android.app.Activity;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
-import android.text.Editable;
-import android.text.InputFilter;
-import android.text.TextWatcher;
-import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
-import android.view.View.OnClickListener;
 import android.view.View.OnKeyListener;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.netease.nim.weyouchats.DemoPrivatizationConfig;
-import com.netease.nim.uikit.common.ToastHelper;
-
-import com.netease.nim.weyouchats.DemoCache;
-import com.netease.nim.weyouchats.R;
-import com.netease.nim.weyouchats.config.preference.Preferences;
-import com.netease.nim.weyouchats.config.preference.UserPreferences;
-import com.netease.nim.weyouchats.contact.ContactHttpClient;
-import com.netease.nim.weyouchats.main.activity.MainActivity;
 import com.netease.nim.uikit.api.NimUIKit;
-import com.netease.nim.uikit.api.wrapper.NimToolBarOptions;
-import com.netease.nim.uikit.common.activity.ToolBarOptions;
+import com.netease.nim.uikit.common.ToastHelper;
 import com.netease.nim.uikit.common.activity.UI;
 import com.netease.nim.uikit.common.ui.dialog.DialogMaker;
 import com.netease.nim.uikit.common.ui.dialog.EasyAlertDialogHelper;
@@ -41,22 +28,29 @@ import com.netease.nim.uikit.support.permission.MPermission;
 import com.netease.nim.uikit.support.permission.annotation.OnMPermissionDenied;
 import com.netease.nim.uikit.support.permission.annotation.OnMPermissionGranted;
 import com.netease.nim.uikit.support.permission.annotation.OnMPermissionNeverAskAgain;
+import com.netease.nim.weyouchats.DemoCache;
+import com.netease.nim.weyouchats.R;
+import com.netease.nim.weyouchats.common.util.countdown.CountdownUtils;
+import com.netease.nim.weyouchats.config.preference.Preferences;
+import com.netease.nim.weyouchats.config.preference.UserPreferences;
+import com.netease.nim.weyouchats.contact.ContactHttpClient;
+import com.netease.nim.weyouchats.main.activity.MainActivity;
 import com.netease.nimlib.sdk.AbortableFuture;
 import com.netease.nimlib.sdk.NIMClient;
 import com.netease.nimlib.sdk.RequestCallback;
-import com.netease.nimlib.sdk.RequestCallbackWrapper;
-import com.netease.nimlib.sdk.ResponseCode;
 import com.netease.nimlib.sdk.StatusBarNotificationConfig;
 import com.netease.nimlib.sdk.auth.AuthService;
 import com.netease.nimlib.sdk.auth.ClientType;
 import com.netease.nimlib.sdk.auth.LoginInfo;
+import com.sahooz.library.Country;
+import com.sahooz.library.PickActivity;
+
+import static com.netease.nim.weyouchats.common.util.CjsTitleKt.titleW;
 
 /**
  * 登录/注册界面
  * <p/>
  * Created by huangjun on 2015/2/1.
- *
- *
  */
 public class LoginActivity extends UI implements OnKeyListener {
 
@@ -64,18 +58,33 @@ public class LoginActivity extends UI implements OnKeyListener {
     private static final String KICK_OUT = "KICK_OUT";
     private final int BASIC_PERMISSION_REQUEST_CODE = 110;
 
-    private TextView rightTopBtn;  // ActionBar完成按钮
-    private TextView switchModeBtn;  // 注册/登录切换按钮
+//    private TextView rightTopBtn;  // ActionBar完成按钮
+//    private TextView switchModeBtn;  // 注册/登录切换按钮
 
-    private ClearableEditTextWithIcon loginAccountEdit;
-    private ClearableEditTextWithIcon loginPasswordEdit;
+//    private ClearableEditTextWithIcon loginAccountEdit;
+//    private ClearableEditTextWithIcon loginPasswordEdit;
 
-    private ClearableEditTextWithIcon registerAccountEdit;
-    private ClearableEditTextWithIcon registerNickNameEdit;
-    private ClearableEditTextWithIcon registerPasswordEdit;
+    private ClearableEditTextWithIcon edit_phone_account;   //手机号
+    private ClearableEditTextWithIcon edit_yanzhengma;    //验证码
+    private ClearableEditTextWithIcon edit_mima_account;    //密码
 
-    private View loginLayout;
-    private View registerLayout;
+
+    private TextView tv_huoquyanzhengma;   //获取验证码
+
+    private TextView register_login_tip;   //注册
+
+    private TextView tv_jump_login;   //跳转登录界面
+    private TextView tv_jump_register;   //跳转注册界面
+
+    private LinearLayout ll_yanzengma; //验证码一行
+
+    private LinearLayout ll_select_country_code; //选择国家编码
+
+    private TextView tv_country_picker; //区号textview
+
+    private CountdownUtils countdownUtils=null; //倒计时工具
+//    private View loginLayout;
+//    private View registerLayout;
 
     private AbortableFuture<LoginInfo> loginRequest;
     private boolean registerMode = false; // 注册模式
@@ -105,19 +114,19 @@ public class LoginActivity extends UI implements OnKeyListener {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.login_activity);
+        setContentView(R.layout.login_activity1);
 
-        ToolBarOptions options = new NimToolBarOptions();
-        options.isNeedNavigate = false;
-        options.logoId = R.drawable.actionbar_white_logo_space;
-        setToolBar(R.id.toolbar, options);
+//        ToolBarOptions options = new NimToolBarOptions();
+//        options.isNeedNavigate = false;
+//        options.logoId = R.drawable.actionbar_white_logo_space;
+//        setToolBar(R.id.toolbar, options);
 
         requestBasicPermission();
 
         onParseIntent();
-        initRightTopBtn();
-        setupLoginPanel();
-        setupRegisterPanel();
+//        initRightTopBtn();
+        setupLoginPanel();  //初始化界面
+//        setupRegisterPanel();
     }
 
     /**
@@ -184,82 +193,160 @@ public class LoginActivity extends UI implements OnKeyListener {
     /**
      * ActionBar 右上角按钮
      */
-    private void initRightTopBtn() {
-        rightTopBtn = addRegisterRightTopBtn(this, R.string.login);
-        rightTopBtn.setOnClickListener(new OnClickListener() {
-
-            @Override
-            public void onClick(View v) {
-                if (registerMode) {
-                    register();
-                } else {
-                   // fakeLoginTest(); // 假登录代码示例
-                    login();
-                }
-            }
-        });
-    }
+//    private void initRightTopBtn() {
+//        rightTopBtn = addRegisterRightTopBtn(this, R.string.login);
+//        rightTopBtn.setOnClickListener(v -> {
+//            if (registerMode) {
+//                register();
+//            } else {
+//               // fakeLoginTest(); // 假登录代码示例
+//                login();
+//            }
+//        });
+//    }
 
     /**
      * 登录面板
      */
     private void setupLoginPanel() {
-        loginAccountEdit = findView(R.id.edit_login_account);
-        loginPasswordEdit = findView(R.id.edit_login_password);
+        edit_phone_account = findView(R.id.edit_phone_account);
+        edit_yanzhengma = findView(R.id.edit_yanzhengma);
+        edit_mima_account = findView(R.id.edit_mima_account);
 
-        loginAccountEdit.setIconResource(R.drawable.user_account_icon);
-        loginPasswordEdit.setIconResource(R.drawable.user_pwd_lock_icon);
+        tv_huoquyanzhengma = findView(R.id.tv_huoquyanzhengma);
 
-        loginAccountEdit.setFilters(new InputFilter[]{new InputFilter.LengthFilter(32)});
-        loginPasswordEdit.setFilters(new InputFilter[]{new InputFilter.LengthFilter(32)});
-        loginAccountEdit.addTextChangedListener(textWatcher);
-        loginPasswordEdit.addTextChangedListener(textWatcher);
-        loginPasswordEdit.setOnKeyListener(this);
+        register_login_tip = findView(R.id.register_login_tip);
 
-        String account = Preferences.getUserAccount();
-        loginAccountEdit.setText(account);
+        tv_jump_login = findView(R.id.tv_jump_login);
+
+        tv_jump_register = findView(R.id.tv_jump_register);
+
+        ll_yanzengma = findView(R.id.ll_yanzengma);
+
+        ll_select_country_code = findView(R.id.ll_select_country_code);
+
+        tv_country_picker = findView(R.id.tv_country_picker);
+
+        //初始化布局，默认显示登录界面
+        ll_yanzengma.setVisibility(View.GONE);
+        register_login_tip.setText("登  录");
+        tv_jump_login.setText("忘记密码");
+        tv_jump_register.setText("注册");
+
+        //初始化倒计时
+        countdownUtils= new CountdownUtils(tv_huoquyanzhengma,"重新发送",60);
+
+        tv_jump_login.setOnClickListener(view -> {
+            if(tv_jump_login.getText().equals("忘记密码")){  //跳转忘记密码
+//                ll_yanzengma.setVisibility(View.VISIBLE);
+//                register_login_tip.setText("注  册");
+//                tv_jump_login.setText("已有账号?点击登录");
+//                tv_jump_register.setVisibility(View.GONE);
+            }else{                                        //跳转登录
+                ll_yanzengma.setVisibility(View.GONE);
+                tv_jump_register.setVisibility(View.VISIBLE);
+                register_login_tip.setText("登  录");
+                tv_jump_login.setText("忘记密码");
+                tv_jump_register.setText("注册");
+            }
+
+        });
+        //跳转注册
+        tv_jump_register.setOnClickListener(view->{
+            ll_yanzengma.setVisibility(View.VISIBLE);
+            register_login_tip.setText("注  册");
+            tv_jump_login.setText("已有账号?点击登录");
+            tv_jump_register.setVisibility(View.GONE);
+        });
+        //注册 or 登录
+        register_login_tip.setOnClickListener(view -> {
+            if(register_login_tip.getText().equals("注  册")){
+                register();
+            }else{
+                login();
+            }
+        });
+        //选择国家
+        ll_select_country_code.setOnClickListener(view -> {
+            startActivityForResult(new Intent(getApplicationContext(), PickActivity.class), 111);
+        });
+        //获取验证码
+        tv_huoquyanzhengma.setOnClickListener(view->{
+            yanZhengMa();
+        });
+//        String account = Preferences.getUserAccount();
+//        loginAccountEdit.setText(account);
+    }
+
+    private void yanZhengMa() {
+        DialogMaker.showProgressDialog(this, null, getString(R.string.sendcode), true, new DialogInterface.OnCancelListener() {
+            @Override
+            public void onCancel(DialogInterface dialog) {
+                if (loginRequest != null) {
+                    loginRequest.abort();
+                    onLoginDone();
+                }
+            }
+        }).setCanceledOnTouchOutside(false);
+
+        final String mobile = tv_country_picker.getText()+"-"+edit_phone_account.getEditableText().toString().toLowerCase();
+        final int password = 0;   //0 --注册 1--修改密码
+
+        ContactHttpClient.getInstance().sendCode(mobile,password, new ContactHttpClient.ContactHttpCallback<User>() {
+            @Override
+            public void onSuccess(User user) {
+                //验证码接受成功
+                tv_huoquyanzhengma.setText("");
+                countdownUtils.init();
+                countdownUtils.runTimer();
+                ToastHelper.showToast(LoginActivity.this, "验证码已发送");
+                DialogMaker.dismissProgressDialog();
+            }
+
+            @Override
+            public void onFailed(int code, String errorMsg) {
+                ToastHelper.showToast(LoginActivity.this, getString(R.string.sendcode_failed, String.valueOf(code), errorMsg));
+                DialogMaker.dismissProgressDialog();
+            }
+        });
     }
 
     /**
      * 注册面板
      */
-    private void setupRegisterPanel() {
-        loginLayout = findView(R.id.login_layout);
-        registerLayout = findView(R.id.register_layout);
-        switchModeBtn = findView(R.id.register_login_tip);
+//    private void setupRegisterPanel() {
+//        loginLayout = findView(R.id.login_layout);
+//        registerLayout = findView(R.id.register_layout);
+//        switchModeBtn = findView(R.id.register_login_tip);
+//
+//        switchModeBtn.setVisibility(DemoPrivatizationConfig.isPrivateDisable(this) ? View.VISIBLE : View.GONE);
+//
+//        switchModeBtn.setOnClickListener(v ->
+//                switchMode());
+//    }
 
-        switchModeBtn.setVisibility(DemoPrivatizationConfig.isPrivateDisable(this) ? View.VISIBLE : View.GONE);
-
-        switchModeBtn.setOnClickListener(new OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                switchMode();
-            }
-        });
-    }
-
-    private TextWatcher textWatcher = new TextWatcher() {
-        @Override
-        public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
-        }
-
-        @Override
-        public void onTextChanged(CharSequence s, int start, int before, int count) {
-
-        }
-
-        @Override
-        public void afterTextChanged(Editable s) {
-            if (registerMode) {
-                return;
-            }
-            // 登录模式  ，更新右上角按钮状态
-            boolean isEnable = loginAccountEdit.getText().length() > 0 &&
-                    loginPasswordEdit.getText().length() > 0;
-            updateRightTopBtn(rightTopBtn, isEnable);
-        }
-    };
+//    private TextWatcher textWatcher = new TextWatcher() {
+//        @Override
+//        public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+//
+//        }
+//
+//        @Override
+//        public void onTextChanged(CharSequence s, int start, int before, int count) {
+//
+//        }
+//
+//        @Override
+//        public void afterTextChanged(Editable s) {
+//            if (registerMode) {
+//                return;
+//            }
+//            // 登录模式  ，更新右上角按钮状态
+//            boolean isEnable = loginAccountEdit.getText().length() > 0 &&
+//                    loginPasswordEdit.getText().length() > 0;
+//            updateRightTopBtn(rightTopBtn, isEnable);
+//        }
+//    };
 
     private void updateRightTopBtn(TextView rightTopBtn, boolean isEnable) {
         rightTopBtn.setText(R.string.done);
@@ -283,10 +370,11 @@ public class LoginActivity extends UI implements OnKeyListener {
             }
         }).setCanceledOnTouchOutside(false);
 
-        final String account = loginAccountEdit.getEditableText().toString().toLowerCase();
-        final String token = tokenFromPassword(loginPasswordEdit.getEditableText().toString());
+        final String mobile = tv_country_picker.getText()+"-"+edit_phone_account.getEditableText().toString().toLowerCase();
+        final String password = edit_mima_account.getEditableText().toString().toLowerCase();
+//        final String token = tokenFromPassword(edit_mima_account.getEditableText().toString());
 
-        ContactHttpClient.getInstance().clientLogin(account,token, new ContactHttpClient.ContactHttpCallback<User>() {
+        ContactHttpClient.getInstance().clientLogin(mobile,password, new ContactHttpClient.ContactHttpCallback<User>() {
             @Override
             public void onSuccess(User user) {
                 loginRequest = NimUIKit.login(new LoginInfo(user.getAccid(), user.getToken()), new RequestCallback<LoginInfo>() {
@@ -404,24 +492,27 @@ public class LoginActivity extends UI implements OnKeyListener {
 
         DialogMaker.showProgressDialog(this, getString(R.string.registering), false);
 
-        // 注册流程
-        final String account = registerAccountEdit.getText().toString();
-        final String nickName = registerNickNameEdit.getText().toString();
-        final String password = registerPasswordEdit.getText().toString();
+        // 注册流程            String nick = registerNickNameEdit.getText().toString().trim();
+        final String account = edit_phone_account.getText().toString();
+        final String nickName = edit_yanzhengma.getText().toString();
+        final String password = edit_mima_account.getText().toString();
 
         ContactHttpClient.getInstance().register(account, nickName, password, new ContactHttpClient.ContactHttpCallback<Void>() {
             @Override
             public void onSuccess(Void aVoid) {
                 ToastHelper.showToast(LoginActivity.this, R.string.register_success);
-                switchMode();  // 切换回登录
-                loginAccountEdit.setText(account);
-                loginPasswordEdit.setText(password);
-
-                registerAccountEdit.setText("");
-                registerNickNameEdit.setText("");
-                registerPasswordEdit.setText("");
+//                switchMode();  // 切换回登录
+//                loginAccountEdit.setText(account);
+//                loginPasswordEdit.setText(password);
+//
+//                registerAccountEdit.setText("");
+//                registerNickNameEdit.setText("");
+//                registerPasswordEdit.setText("");
 
                 DialogMaker.dismissProgressDialog();
+                //注册成功直接登录
+                login();
+
             }
 
             @Override
@@ -438,21 +529,21 @@ public class LoginActivity extends UI implements OnKeyListener {
         }
 
         // 帐号检查
-        String account = registerAccountEdit.getText().toString().trim();
-        if (account.length() <= 0 || account.length() > 20) {
+        String account = edit_phone_account.getText().toString().trim();
+        if (account.length() <= 0) {
             ToastHelper.showToast(this, R.string.register_account_tip);
             return false;
         }
 
-        // 昵称检查
-        String nick = registerNickNameEdit.getText().toString().trim();
-        if (nick.length() <= 0 || nick.length() > 10) {
+        // 验证码检查
+        String nick = edit_yanzhengma.getText().toString().trim();
+        if (nick.length() <= 0) {
             ToastHelper.showToast(this, R.string.register_nick_name_tip);
             return false;
         }
 
         // 密码检查
-        String password = registerPasswordEdit.getText().toString().trim();
+        String password = edit_mima_account.getText().toString().trim();
         if (password.length() < 6 || password.length() > 20) {
             ToastHelper.showToast(this, R.string.register_password_tip);
             return false;
@@ -461,44 +552,56 @@ public class LoginActivity extends UI implements OnKeyListener {
         return true;
     }
 
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if(requestCode == 111 && resultCode == Activity.RESULT_OK) {
+            Country country = Country.fromJson(data.getStringExtra("country"));
+            if(country!=null){
+                tv_country_picker.setText("+" + country.code);
+            }
+        }
+    }
+
     /**
      * ***************************************** 注册/登录切换 **************************************
      */
-    private void switchMode() {
-        registerMode = !registerMode;
-
-        if (registerMode && !registerPanelInited) {
-            registerAccountEdit = findView(R.id.edit_register_account);
-            registerNickNameEdit = findView(R.id.edit_register_nickname);
-            registerPasswordEdit = findView(R.id.edit_register_password);
-
-            registerAccountEdit.setIconResource(R.drawable.user_account_icon);
-            registerNickNameEdit.setIconResource(R.drawable.nick_name_icon);
-            registerPasswordEdit.setIconResource(R.drawable.user_pwd_lock_icon);
-
-            registerAccountEdit.setFilters(new InputFilter[]{new InputFilter.LengthFilter(20)});
-            registerNickNameEdit.setFilters(new InputFilter[]{new InputFilter.LengthFilter(10)});
-            registerPasswordEdit.setFilters(new InputFilter[]{new InputFilter.LengthFilter(20)});
-
-            registerAccountEdit.addTextChangedListener(textWatcher);
-            registerNickNameEdit.addTextChangedListener(textWatcher);
-            registerPasswordEdit.addTextChangedListener(textWatcher);
-
-            registerPanelInited = true;
-        }
-
-        setTitle(registerMode ? R.string.register : R.string.login);
-        loginLayout.setVisibility(registerMode ? View.GONE : View.VISIBLE);
-        registerLayout.setVisibility(registerMode ? View.VISIBLE : View.GONE);
-        switchModeBtn.setText(registerMode ? R.string.login_has_account : R.string.register);
-        if (registerMode) {
-            rightTopBtn.setEnabled(true);
-        } else {
-            boolean isEnable = loginAccountEdit.getText().length() > 0
-                    && loginPasswordEdit.getText().length() > 0;
-            rightTopBtn.setEnabled(isEnable);
-        }
-    }
+//    private void switchMode() {
+//        registerMode = !registerMode;
+//
+//        if (registerMode && !registerPanelInited) {
+//            registerAccountEdit = findView(R.id.edit_register_account);   //手机号
+//            registerNickNameEdit = findView(R.id.edit_yanzhengma_account);  //验证码
+//            registerPasswordEdit = findView(R.id.edit_mima_account);    //密码
+//
+//            //设置icon
+////            registerAccountEdit.setIconResource(R.drawable.user_account_icon);
+////            registerNickNameEdit.setIconResource(R.drawable.nick_name_icon);
+////            registerPasswordEdit.setIconResource(R.drawable.user_pwd_lock_icon);
+//
+////            registerAccountEdit.setFilters(new InputFilter[]{new InputFilter.LengthFilter(11)});
+//            registerNickNameEdit.setFilters(new InputFilter[]{new InputFilter.LengthFilter(10)});
+//            registerPasswordEdit.setFilters(new InputFilter[]{new InputFilter.LengthFilter(20)});
+//
+//            registerAccountEdit.addTextChangedListener(textWatcher);
+//            registerNickNameEdit.addTextChangedListener(textWatcher);
+//            registerPasswordEdit.addTextChangedListener(textWatcher);
+//
+//            registerPanelInited = true;
+//        }
+//
+////        setTitle(registerMode ? R.string.register : R.string.login);
+//        loginLayout.setVisibility(registerMode ? View.GONE : View.VISIBLE);
+//        registerLayout.setVisibility(registerMode ? View.VISIBLE : View.GONE);
+//        switchModeBtn.setText(registerMode ? R.string.login_has_account : R.string.register);
+//        if (registerMode) {
+//            rightTopBtn.setEnabled(true);
+//        } else {
+//            boolean isEnable = loginAccountEdit.getText().length() > 0
+//                    && loginPasswordEdit.getText().length() > 0;
+//            rightTopBtn.setEnabled(isEnable);
+//        }
+//    }
 
     public TextView addRegisterRightTopBtn(UI activity, int strResId) {
         String text = activity.getResources().getString(strResId);
@@ -512,47 +615,47 @@ public class LoginActivity extends UI implements OnKeyListener {
     /**
      * *********** 假登录示例：假登录后，可以查看该用户数据，但向云信发送数据会失败；随后手动登录后可以发数据 **************
      */
-    private void fakeLoginTest() {
-        // 获取账号、密码；账号用于假登录，密码在手动登录时需要
-        final String account = loginAccountEdit.getEditableText().toString().toLowerCase();
-        final String token = tokenFromPassword(loginPasswordEdit.getEditableText().toString());
-
-        // 执行假登录
-        boolean res = NIMClient.getService(AuthService.class).openLocalCache(account); // SDK会将DB打开，支持查询。
-        Log.i("test", "fake login " + (res ? "success" : "failed"));
-
-        if (!res) {
-            return;
-        }
-
-        // Demo缓存当前假登录的账号
-        DemoCache.setAccount(account);
-
-        // 初始化消息提醒配置
-        initNotificationConfig();
-
-        // 设置uikit
-        NimUIKit.loginSuccess(account);
-
-        // 进入主界面，此时可以查询数据（最近联系人列表、本地消息历史、群资料等都可以查询，但当云信服务器发起请求会返回408超时）
-        MainActivity.start(LoginActivity.this, null);
-
-        // 演示15s后手动登录，登录成功后，可以正常收发数据
-        getHandler().postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                loginRequest = NIMClient.getService(AuthService.class).login(new LoginInfo(account, token));
-                loginRequest.setCallback(new RequestCallbackWrapper() {
-                    @Override
-                    public void onResult(int code, Object result, Throwable exception) {
-                        Log.i("test", "real login, code=" + code);
-                        if (code == ResponseCode.RES_SUCCESS) {
-                            saveLoginInfo(account, token);
-                            finish();
-                        }
-                    }
-                });
-            }
-        }, 15 * 1000);
-    }
+//    private void fakeLoginTest() {
+//        // 获取账号、密码；账号用于假登录，密码在手动登录时需要
+//        final String account = loginAccountEdit.getEditableText().toString().toLowerCase();
+//        final String token = tokenFromPassword(loginPasswordEdit.getEditableText().toString());
+//
+//        // 执行假登录
+//        boolean res = NIMClient.getService(AuthService.class).openLocalCache(account); // SDK会将DB打开，支持查询。
+//        Log.i("test", "fake login " + (res ? "success" : "failed"));
+//
+//        if (!res) {
+//            return;
+//        }
+//
+//        // Demo缓存当前假登录的账号
+//        DemoCache.setAccount(account);
+//
+//        // 初始化消息提醒配置
+//        initNotificationConfig();
+//
+//        // 设置uikit
+//        NimUIKit.loginSuccess(account);
+//
+//        // 进入主界面，此时可以查询数据（最近联系人列表、本地消息历史、群资料等都可以查询，但当云信服务器发起请求会返回408超时）
+//        MainActivity.start(LoginActivity.this, null);
+//
+//        // 演示15s后手动登录，登录成功后，可以正常收发数据
+//        getHandler().postDelayed(new Runnable() {
+//            @Override
+//            public void run() {
+//                loginRequest = NIMClient.getService(AuthService.class).login(new LoginInfo(account, token));
+//                loginRequest.setCallback(new RequestCallbackWrapper() {
+//                    @Override
+//                    public void onResult(int code, Object result, Throwable exception) {
+//                        Log.i("test", "real login, code=" + code);
+//                        if (code == ResponseCode.RES_SUCCESS) {
+//                            saveLoginInfo(account, token);
+//                            finish();
+//                        }
+//                    }
+//                });
+//            }
+//        }, 15 * 1000);
+//    }
 }

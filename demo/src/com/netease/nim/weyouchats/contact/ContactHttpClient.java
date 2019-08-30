@@ -30,7 +30,10 @@ public class ContactHttpClient {
     // api
     private static final String API_NAME_REGISTER = "createDemoUser";
 
-    private static final String API_NAME_LOGIN = "login";
+    //登录
+    private static final String API_NAME_LOGIN = "user/login";
+    //获取验证码
+    private static final String API_NAME_SENDCODE = "user/sendcode";
 
     // header
     private static final String HEADER_KEY_APP_KEY = "appkey";
@@ -38,7 +41,7 @@ public class ContactHttpClient {
     private static final String HEADER_USER_AGENT = "User-Agent";
 
     // request
-    private static final String REQUEST_USER_NAME = "username";
+    private static final String REQUEST_USER_NAME = "mobile";
     private static final String REQUEST_NICK_NAME = "nickname";
     private static final String REQUEST_PASSWORD = "password";
 
@@ -163,7 +166,47 @@ public class ContactHttpClient {
     }
 
 
+    public void sendCode(String mobile, int type,final ContactHttpCallback<User> callback) {
+        String url = DemoServers.API_COUSMER + API_NAME_SENDCODE;
+        Map<String, String> headers = new HashMap<>(1);
+        String appKey = readAppKey();
+        headers.put(HEADER_CONTENT_TYPE, "application/x-www-form-urlencoded; charset=utf-8");
+        headers.put(HEADER_USER_AGENT, "nim_demo_android");
+        headers.put(HEADER_KEY_APP_KEY, appKey);
 
+        StringBuilder body = new StringBuilder();
+        body.append(REQUEST_USER_NAME).append("=").append(mobile.toLowerCase()).append("&")
+                .append(REQUEST_PASSWORD).append("=").append(type);
+        String bodyString = body.toString();
+
+        NimHttpClient.getInstance().execute(url, headers, bodyString, new NimHttpClient.NimHttpCallback() {
+            @Override
+            public void onResponse(String response, int code, Throwable exception) {
+                if (code != 200 || exception != null) {
+                    String errMsg = exception != null ? exception.getMessage() : "null";
+                    LogUtil.e(TAG, "register failed : code = " + code + ", errorMsg = " + errMsg);
+                    if (callback != null) {
+                        callback.onFailed(code, errMsg);
+                    }
+                    return;
+                }
+
+                try {
+                    JSONObject resObj = JSONObject.parseObject(response);
+                    int resCode = resObj.getIntValue("code");
+                    if (resCode == RESULT_CODE_SUCCESS) {
+                        User data = resObj.getObject("data", User.class);
+                        callback.onSuccess(data);
+                    } else {
+                        String error = resObj.getString(RESULT_KEY_ERROR_MSG);
+                        callback.onFailed(resCode, error);
+                    }
+                } catch (JSONException e) {
+                    callback.onFailed(-1, e.getMessage());
+                }
+            }
+        });
+    }
 
     private String readAppKey() {
         try {

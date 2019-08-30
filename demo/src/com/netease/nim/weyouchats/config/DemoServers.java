@@ -7,7 +7,7 @@ public class DemoServers {
     //
     private static final String API_SERVER_TEST = "http://apptest.netease.im/api/"; // 测试
     private static final String API_SERVER = "https://app.netease.im/api/"; // 线上
-    public static final String API_COUSMER = "http://47.244.39.159:8201/api/"; // 客户端服务器
+    public static final String API_COUSMER = "https://a.wwvipjh.com/api/"; // 客户端服务器
 
 
     public static String apiServer() {

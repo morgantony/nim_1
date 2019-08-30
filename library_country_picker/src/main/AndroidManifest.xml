@@ -2,4 +2,7 @@
 
     package="com.sahooz.library">
 
+    <application>
+        <activity android:name=".PickActivity" />
+    </application>
 </manifest>
