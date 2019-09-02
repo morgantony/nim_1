@@ -138,6 +138,7 @@ dependencies {
     releaseImplementation 'com.squareup.leakcanary:leakcanary-android-no-op:1.6.1'
     compile project(path: ':library_country_picker')
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation 'com.ashokvarma.android:bottom-navigation-bar:2.1.0'
 }
 
 

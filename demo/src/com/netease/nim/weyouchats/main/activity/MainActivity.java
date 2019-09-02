@@ -6,22 +6,29 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
+import android.support.v4.app.FragmentManager;
 import android.support.v4.view.ViewPager;
 import android.text.TextUtils;
-import android.view.Menu;
-import android.view.MenuInflater;
-import android.view.MenuItem;
 
-import com.netease.nim.uikit.common.ToastHelper;
-
+import com.ashokvarma.bottomnavigation.BottomNavigationBar;
+import com.ashokvarma.bottomnavigation.BottomNavigationItem;
 import com.netease.nim.avchatkit.AVChatProfile;
 import com.netease.nim.avchatkit.activity.AVChatActivity;
 import com.netease.nim.avchatkit.constant.AVChatExtras;
+import com.netease.nim.uikit.api.model.main.LoginSyncDataStatusObserver;
+import com.netease.nim.uikit.business.contact.selector.activity.ContactSelectActivity;
+import com.netease.nim.uikit.common.ToastHelper;
+import com.netease.nim.uikit.common.activity.UI;
+import com.netease.nim.uikit.common.ui.dialog.DialogMaker;
+import com.netease.nim.uikit.common.ui.drop.DropCover;
+import com.netease.nim.uikit.common.ui.drop.DropManager;
+import com.netease.nim.uikit.support.permission.MPermission;
+import com.netease.nim.uikit.support.permission.annotation.OnMPermissionDenied;
+import com.netease.nim.uikit.support.permission.annotation.OnMPermissionGranted;
+import com.netease.nim.uikit.support.permission.annotation.OnMPermissionNeverAskAgain;
 import com.netease.nim.weyouchats.R;
 import com.netease.nim.weyouchats.common.ui.viewpager.FadeInOutPageTransformer;
-import com.netease.nim.weyouchats.common.ui.viewpager.PagerSlidingTabStrip;
 import com.netease.nim.weyouchats.config.preference.Preferences;
-import com.netease.nim.weyouchats.contact.activity.AddFriendActivity;
 import com.netease.nim.weyouchats.login.LoginActivity;
 import com.netease.nim.weyouchats.login.LogoutHelper;
 import com.netease.nim.weyouchats.main.adapter.MainTabPagerAdapter;
@@ -31,19 +38,6 @@ import com.netease.nim.weyouchats.main.reminder.ReminderItem;
 import com.netease.nim.weyouchats.main.reminder.ReminderManager;
 import com.netease.nim.weyouchats.session.SessionHelper;
 import com.netease.nim.weyouchats.team.TeamCreateHelper;
-import com.netease.nim.weyouchats.team.activity.AdvancedTeamSearchActivity;
-import com.netease.nim.uikit.api.NimUIKit;
-import com.netease.nim.uikit.api.model.main.LoginSyncDataStatusObserver;
-import com.netease.nim.uikit.business.contact.selector.activity.ContactSelectActivity;
-import com.netease.nim.uikit.business.team.helper.TeamHelper;
-import com.netease.nim.uikit.common.activity.UI;
-import com.netease.nim.uikit.common.ui.dialog.DialogMaker;
-import com.netease.nim.uikit.common.ui.drop.DropCover;
-import com.netease.nim.uikit.common.ui.drop.DropManager;
-import com.netease.nim.uikit.support.permission.MPermission;
-import com.netease.nim.uikit.support.permission.annotation.OnMPermissionDenied;
-import com.netease.nim.uikit.support.permission.annotation.OnMPermissionGranted;
-import com.netease.nim.uikit.support.permission.annotation.OnMPermissionNeverAskAgain;
 import com.netease.nimlib.sdk.NIMClient;
 import com.netease.nimlib.sdk.NimIntent;
 import com.netease.nimlib.sdk.Observer;
@@ -60,7 +54,7 @@ import java.util.ArrayList;
  * 主界面
  * Created by huangjun on 2015/3/25.
  */
-public class MainActivity extends UI implements ViewPager.OnPageChangeListener, ReminderManager.UnreadNumChangedCallback {
+public class MainActivity extends UI implements ReminderManager.UnreadNumChangedCallback,  ViewPager.OnPageChangeListener, BottomNavigationBar.OnTabSelectedListener {
 
     private static final String EXTRA_APP_QUIT = "APP_QUIT";
     private static final int REQUEST_CODE_NORMAL = 1;
@@ -77,11 +71,14 @@ public class MainActivity extends UI implements ViewPager.OnPageChangeListener, 
     };
 
 
-    private PagerSlidingTabStrip tabs;
+//    private PagerSlidingTabStrip tabs;
     private ViewPager pager;
     private int scrollState;
     private MainTabPagerAdapter adapter;
 
+    private BottomNavigationBar bottomNavigationBar;
+    private FragmentManager fm;
+//    private TextBadgeItem badgeItem;
 
     private boolean isFirstIn;
     private Observer<Integer> sysMsgUnreadCountChangedObserver = new Observer<Integer>() {
@@ -118,8 +115,8 @@ public class MainActivity extends UI implements ViewPager.OnPageChangeListener, 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
-        setToolBar(R.id.toolbar, R.string.app_name, R.drawable.actionbar_dark_logo);
-        setTitle(R.string.app_name);
+//        setToolBar(R.id.toolbar, R.string.app_name, R.drawable.actionbar_dark_logo);
+//        setTitle(R.string.app_name);
         isFirstIn = true;
 
         //不保留后台活动，从厂商推送进聊天页面，会无法退出聊天页面
@@ -133,12 +130,48 @@ public class MainActivity extends UI implements ViewPager.OnPageChangeListener, 
         observerSyncDataComplete();
         findViews();
         setupPager();
-        setupTabs();
+//        setupTabs();
+        initView();
         registerMsgUnreadInfoObserver(true);
         registerSystemMessageObservers(true);
         requestSystemMessageUnreadCount();
         initUnreadCover();
         requestBasicPermission();
+    }
+
+    private void initView(){
+        bottomNavigationBar = findViewById(R.id.bottom_nav_bar);
+        fm = getSupportFragmentManager();
+
+        /**
+         * 导航基础设置 包括按钮选中效果 导航栏背景色等
+         */
+        bottomNavigationBar.setTabSelectedListener(this)
+                .setMode(BottomNavigationBar.MODE_FIXED)
+                .setBackgroundStyle(BottomNavigationBar.BACKGROUND_STYLE_STATIC)
+                .setActiveColor("#1ba4f3")//选中颜色
+                .setInActiveColor("#939799")//未选中颜色
+                .setBarBackgroundColor("#f5f9fa");//导航栏背景色
+//        badgeItem = new TextBadgeItem()
+//                .setBorderWidth(2)//Badge的Border(边界)宽度
+//                .setBorderColor(Color.BLUE)//Badge的Border颜色
+//                .setBackgroundColor(Color.RED)
+//                .setTextColor(Color.BLACK)//文本颜色
+//                .setGravity(Gravity.RIGHT| Gravity.TOP)//位置，默认右上角
+//                .setAnimationDuration(2000)
+//                .setHideOnSelect(true)//当选中状态时消失，非选中状态显示
+//                .setText("99");
+
+        /**
+         *添加导航按钮
+         */
+        bottomNavigationBar.addItem(new BottomNavigationItem(R.drawable.img_xiaoxi, "消息"))
+                .addItem(new BottomNavigationItem(R.drawable.img_people, "联系人"))
+                .addItem(new BottomNavigationItem(R.drawable.img_pyq, "圈子"))//.setInActiveColor("#ffff00")
+                .addItem(new BottomNavigationItem(R.drawable.img_my, "我的"))//.setBadgeItem(badgeItem)添加小红点数据
+                .initialise();//initialise 一定要放在 所有设置的最后一项
+        //设置默认导航栏
+        onTabSelected(0);
     }
 
     private boolean parseIntent() {
@@ -197,7 +230,7 @@ public class MainActivity extends UI implements ViewPager.OnPageChangeListener, 
     }
 
     private void findViews() {
-        tabs = findView(R.id.tabs);
+//        tabs = findView(R.id.tabs);
         pager = findView(R.id.main_tab_pager);
     }
 
@@ -209,7 +242,7 @@ public class MainActivity extends UI implements ViewPager.OnPageChangeListener, 
         pager.setOnPageChangeListener(this);
     }
 
-    private void setupTabs() {
+    /*private void setupTabs() {
         tabs.setOnCustomTabListener(new PagerSlidingTabStrip.OnCustomTabListener() {
             @Override
             public int getTabLayoutResId(int position) {
@@ -224,7 +257,7 @@ public class MainActivity extends UI implements ViewPager.OnPageChangeListener, 
         tabs.setViewPager(pager);
         tabs.setOnTabClickListener(adapter);
         tabs.setOnTabDoubleTapListener(adapter);
-    }
+    }*/
 
 
     /**
@@ -321,7 +354,7 @@ public class MainActivity extends UI implements ViewPager.OnPageChangeListener, 
     }
 
 
-    @Override
+    /*@Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.main_activity_menu, menu);
@@ -356,7 +389,7 @@ public class MainActivity extends UI implements ViewPager.OnPageChangeListener, 
                 break;
         }
         return super.onOptionsItemSelected(item);
-    }
+    }*/
 
     @Override
     protected void onNewIntent(Intent intent) {
@@ -426,20 +459,21 @@ public class MainActivity extends UI implements ViewPager.OnPageChangeListener, 
 
     @Override
     public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
-        tabs.onPageScrolled(position, positionOffset, positionOffsetPixels);
+//        tabs.onPageScrolled(position, positionOffset, positionOffsetPixels);
         adapter.onPageScrolled(position);
     }
 
     @Override
     public void onPageSelected(int position) {
-        tabs.onPageSelected(position);
+//        tabs.onPageSelected(position);
         selectPage();
         enableMsgNotification(false);
+        bottomNavigationBar.selectTab(position, false);
     }
 
     @Override
     public void onPageScrollStateChanged(int state) {
-        tabs.onPageScrollStateChanged(state);
+//        tabs.onPageScrollStateChanged(state);
         scrollState = state;
         selectPage();
     }
@@ -447,10 +481,10 @@ public class MainActivity extends UI implements ViewPager.OnPageChangeListener, 
     //未读消息数量观察者实现
     @Override
     public void onUnreadNumChanged(ReminderItem item) {
-        MainTab tab = MainTab.fromReminderId(item.getId());
-        if (tab != null) {
-            tabs.updateTab(tab.tabIndex, item);
-        }
+//        MainTab tab = MainTab.fromReminderId(item.getId());
+//        if (tab != null) {
+//            tabs.updateTab(tab.tabIndex, item);
+//        }
     }
 
     @Override
@@ -482,6 +516,21 @@ public class MainActivity extends UI implements ViewPager.OnPageChangeListener, 
     @Override
     protected boolean displayHomeAsUpEnabled() {
         return false;
+    }
+
+    @Override
+    public void onTabSelected(int position) {
+        pager.setCurrentItem(position);
+    }
+
+    @Override
+    public void onTabUnselected(int position) {
+
+    }
+
+    @Override
+    public void onTabReselected(int position) {
+
     }
 
 }
