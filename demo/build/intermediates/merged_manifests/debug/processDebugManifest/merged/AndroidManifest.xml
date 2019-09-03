@@ -6,7 +6,7 @@
     android:versionName="6.6.6" >
 
     <uses-sdk
-        android:minSdkVersion="14"
+        android:minSdkVersion="16"
         android:targetSdkVersion="26" />
 
     <!-- 加入应用需要的权限 -->
@@ -388,6 +388,18 @@
             android:name="com.netease.nim.weyouchats.main.activity.MsgMigrationActivity"
             android:configChanges="orientation"
             android:label="@string/local_db_migration"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="adjustUnspecified|stateHidden" />
+        <activity
+            android:name="com.netease.nim.weyouchats.main.activity.QRActivity"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="adjustUnspecified|stateHidden" />
+        <activity
+            android:name="com.netease.nim.weyouchats.main.activity.EditUserInfoActivity"
+            android:configChanges="orientation"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar"
             android:windowSoftInputMode="adjustUnspecified|stateHidden" />

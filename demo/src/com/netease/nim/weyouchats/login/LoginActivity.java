@@ -14,6 +14,7 @@ import android.view.View.OnKeyListener;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.google.gson.Gson;
 import com.netease.nim.uikit.api.NimUIKit;
 import com.netease.nim.uikit.common.ToastHelper;
 import com.netease.nim.uikit.common.activity.UI;
@@ -44,8 +45,6 @@ import com.netease.nimlib.sdk.auth.ClientType;
 import com.netease.nimlib.sdk.auth.LoginInfo;
 import com.sahooz.library.Country;
 import com.sahooz.library.PickActivity;
-
-import static com.netease.nim.weyouchats.common.util.CjsTitleKt.titleW;
 
 /**
  * 登录/注册界面
@@ -383,7 +382,7 @@ public class LoginActivity extends UI implements OnKeyListener {
                         LogUtil.i(TAG, "login success");
                         onLoginDone();
                         DemoCache.setAccount(user.getAccid());
-                        saveLoginInfo(user.getAccid(), user.getToken());
+                        saveLoginInfo(user);
                         // 初始化消息提醒配置
                         initNotificationConfig();
                         // 进入主界面
@@ -447,9 +446,10 @@ public class LoginActivity extends UI implements OnKeyListener {
         DialogMaker.dismissProgressDialog();
     }
 
-    private void saveLoginInfo(final String account, final String token) {
-        Preferences.saveUserAccount(account);
-        Preferences.saveUserToken(token);
+    private void saveLoginInfo(User user) {
+        Preferences.saveUserInfo(new Gson().toJson(user));
+        Preferences.saveUserAccount(user.getAccid());
+        Preferences.saveUserToken(user.getToken());
     }
 
     //DEMO中使用 username 作为 NIM 的account ，md5(password) 作为 token

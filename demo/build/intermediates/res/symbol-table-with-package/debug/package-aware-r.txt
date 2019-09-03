@@ -86,6 +86,7 @@ attr autoSizeMinTextSize
 attr autoSizePresetSizes
 attr autoSizeStepGranularity
 attr autoSizeTextType
+attr backGroundColor
 attr backgroud
 attr background
 attr backgroundSplit
@@ -178,9 +179,14 @@ attr dialogTheme
 attr discreteSeekBarStyle
 attr displayOptions
 attr divider
+attr dividerColor
+attr dividerHeight
 attr dividerHorizontal
 attr dividerPadding
 attr dividerVertical
+attr drawableRightHintResource
+attr drawableRightPaddingLeft
+attr drawableRightResource
 attr drawableSize
 attr drawerArrowStyle
 attr dropDownListViewStyle
@@ -251,6 +257,7 @@ attr hintAnimationEnabled
 attr hintEnabled
 attr hintText
 attr hintTextAppearance
+attr hintTextColor
 attr homeAsUpIndicator
 attr homeLayout
 attr icon
@@ -264,7 +271,9 @@ attr indeterminateProgressStyle
 attr initialActivityCount
 attr insetForeground
 attr isBackFinish
+attr isLeftViewShow
 attr isLightTheme
+attr isRightViewShow
 attr itemBackground
 attr itemIconTint
 attr itemPadding
@@ -330,6 +339,12 @@ attr layout_scrollFlags
 attr layout_scrollInterpolator
 attr leak_canary_plus_color
 attr leftIcon
+attr leftText
+attr leftTextColor
+attr leftTextSize
+attr leftTextViewPaddingLeft
+attr leftViewBackgroundResource
+attr leftViewMarginLeft
 attr left_ball_color
 attr letterColor
 attr letterSize
@@ -350,6 +365,7 @@ attr maxActionInlineWidth
 attr maxButtonHeight
 attr measureWithLargestChild
 attr menu
+attr minTextSize
 attr multiChoiceItemLayout
 attr navigationContentDescription
 attr navigationIcon
@@ -400,6 +416,12 @@ attr reverseLayout
 attr ri_ratio_height
 attr ri_ratio_width
 attr ri_standard
+attr rightText
+attr rightTextColor
+attr rightTextSize
+attr rightTextViewPaddingRight
+attr rightViewBackgroundResource
+attr rightViewMarginRight
 attr right_ball_color
 attr ringColor
 attr rippleColor
@@ -483,6 +505,7 @@ attr tickMarkTintMode
 attr tint
 attr tintMode
 attr title
+attr titleBarHeight
 attr titleEnabled
 attr titleMargin
 attr titleMarginBottom
@@ -490,8 +513,10 @@ attr titleMarginEnd
 attr titleMarginStart
 attr titleMarginTop
 attr titleMargins
+attr titleText
 attr titleTextAppearance
 attr titleTextColor
+attr titleTextSize
 attr titleTextStyle
 attr title_color
 attr title_size
@@ -672,12 +697,14 @@ color color_black_b3000000
 color color_black_ff333333
 color color_black_ff666666
 color color_black_ff999999
+color color_blue
 color color_blue_0888ff
 color color_blue_3a9efb
 color color_c2364b
 color color_c9c9c9
 color color_cccccc
 color color_d5d5d5
+color color_divider
 color color_ededed
 color color_eeeeee
 color color_f0f6fa
@@ -704,6 +731,7 @@ color color_grey_999999
 color color_grey_ababab
 color color_grey_d0d0d0
 color color_grey_eaeaea
+color color_main
 color color_message_default_bg
 color color_network_bar_bg_ee4b62
 color color_picker_preview_selector
@@ -788,6 +816,7 @@ color grey_white_has_alpha
 color help_color
 color highlighted_text_material_dark
 color highlighted_text_material_light
+color hint
 color hollyGreenColor
 color honeydewColor
 color icebergColor
@@ -1578,6 +1607,7 @@ drawable avd_show_password_1
 drawable avd_show_password_2
 drawable avd_show_password_3
 drawable background_tab
+drawable bg_progressbar
 drawable bg_team_announce
 drawable bg_yanzhengma
 drawable blue_round_box_4
@@ -1964,9 +1994,21 @@ drawable image_original_selected
 drawable image_original_selector
 drawable image_preview_choose_selected
 drawable image_preview_choose_selector
+drawable img_ac_set
+drawable img_chat_set
+drawable img_close_source
+drawable img_edit
+drawable img_fav
+drawable img_more
 drawable img_my
 drawable img_people
+drawable img_pic_set
 drawable img_pyq
+drawable img_qr
+drawable img_qr_b
+drawable img_right
+drawable img_server
+drawable img_sys_set
 drawable img_xiaoxi
 drawable jrmf_b_bg_search_input
 drawable jrmf_b_btn_close
@@ -2357,6 +2399,8 @@ drawable room_cover_57
 drawable room_cover_58
 drawable room_cover_64
 drawable room_cover_72
+drawable round_layout_bg_color_6dp
+drawable round_layout_white_color_3dp
 drawable rp_open_holder_bg
 drawable shouji
 drawable skin_global_bg
@@ -2871,6 +2915,8 @@ id img_head
 id img_hit_letter
 id img_msg_status
 id img_mute
+id img_title_bar_left
+id img_title_bar_right
 id info
 id invalid_team_text
 id invalid_team_tip
@@ -2895,11 +2941,14 @@ id iv_changeLogo
 id iv_check
 id iv_close
 id iv_cover
+id iv_edit
 id iv_exit
 id iv_flag
 id iv_get_arrow
+id iv_head
 id iv_header
 id iv_icon
+id iv_image
 id iv_lightOn
 id iv_my_rp
 id iv_mybank
@@ -2907,6 +2956,7 @@ id iv_mycard_arrow
 id iv_open_rp
 id iv_paytype_icon
 id iv_paytype_rmb
+id iv_qr
 id iv_quit
 id iv_rmb_icon
 id iv_secureSetting
@@ -2945,6 +2995,7 @@ id line1
 id line3
 id line_get
 id line_set
+id linearLayout
 id linear_buttons
 id linear_icons
 id listItemLayout
@@ -2982,6 +3033,8 @@ id ll_select_country_code
 id ll_sub_bank
 id ll_sub_bank_city
 id ll_sub_bank_province
+id ll_title_bar_left
+id ll_title_bar_right
 id ll_trans_money
 id ll_trans_tip
 id ll_userinfo
@@ -3231,6 +3284,7 @@ id rlCtrl
 id rlRoot
 id rlSur
 id rl_accountInfo
+id rl_base_title_bar
 id rl_change
 id rl_enable_container
 id rl_get_pwd
@@ -3555,6 +3609,7 @@ id tv_recharge
 id tv_redenvelope_amount
 id tv_redenvelope_name
 id tv_remark
+id tv_reset
 id tv_result_hint
 id tv_result_title
 id tv_right
@@ -3567,6 +3622,8 @@ id tv_rp_num
 id tv_rp_time
 id tv_rp_type
 id tv_same_trans_tip
+id tv_sao
+id tv_save
 id tv_sendRpNum
 id tv_send_code
 id tv_send_rp
@@ -3582,6 +3639,9 @@ id tv_time
 id tv_tip
 id tv_tips
 id tv_title
+id tv_title_bar_left
+id tv_title_bar_right
+id tv_title_bar_title
 id tv_tradeMoney
 id tv_tradeNo
 id tv_tradeState
@@ -3634,6 +3694,7 @@ id video_icon
 id viewAnim
 id viewPager
 id viewPagerImage
+id view_divider
 id view_layout
 id view_offset_helper
 id view_pager_image
@@ -3704,13 +3765,16 @@ layout ack_msg_detail_item
 layout ack_msg_info_layout
 layout ack_msg_readed_layout
 layout ack_msg_unread_layout
+layout activity_edit_info
 layout activity_main_tab
 layout activity_msg_migration
 layout activity_my
 layout activity_pick
 layout activity_privatization_config
 layout activity_pyq
+layout activity_qr
 layout activity_robot_profile
+layout activity_title_bar
 layout activity_welcome
 layout add_friend_activity
 layout amap_marker_window_info
@@ -3754,6 +3818,7 @@ layout design_navigation_menu
 layout design_navigation_menu_item
 layout design_text_input_password_icon
 layout dialog_country_picker
+layout dialog_qr
 layout effect_and_filter_item_view
 layout faceu_layout
 layout file_browser_activity
@@ -3872,6 +3937,8 @@ layout jrmf_w_layout_line
 layout jrmf_w_layout_line_959595
 layout jrmf_w_layout_titlebar
 layout js_bridge_activity
+layout layout_text_image
+layout layout_title_bar
 layout leak_canary_display_leak
 layout leak_canary_heap_dump_toast
 layout leak_canary_leak_row
@@ -5375,6 +5442,7 @@ style Widget_DiscreteIndicatorTextAppearance
 style Widget_DiscreteSeekBar
 style blue_bottom_line_edit_text_style
 style custom_dialog_message_text_style
+style dialog_bottom_full
 style dialog_button_text_style
 style dialog_default_style
 style dialog_message_text_style
@@ -5395,6 +5463,7 @@ style myToolbarNavigationButtonStyle
 style recycler_view
 style scroll_view
 style sdk_share_dialog
+style share_animation
 style text_black_12
 style text_black_16
 style text_black_28
@@ -5423,6 +5492,7 @@ styleable AppCompatSeekBar android_thumb tickMark tickMarkTint tickMarkTintMode
 styleable AppCompatTextHelper android_drawableBottom android_drawableEnd android_drawableLeft android_drawableRight android_drawableStart android_drawableTop android_textAppearance
 styleable AppCompatTextView android_textAppearance autoSizeMaxTextSize autoSizeMinTextSize autoSizePresetSizes autoSizeStepGranularity autoSizeTextType fontFamily textAllCaps
 styleable AppCompatTheme actionBarDivider actionBarItemBackground actionBarPopupTheme actionBarSize actionBarSplitStyle actionBarStyle actionBarTabBarStyle actionBarTabStyle actionBarTabTextStyle actionBarTheme actionBarWidgetTheme actionButtonStyle actionDropDownStyle actionMenuTextAppearance actionMenuTextColor actionModeBackground actionModeCloseButtonStyle actionModeCloseDrawable actionModeCopyDrawable actionModeCutDrawable actionModeFindDrawable actionModePasteDrawable actionModePopupWindowStyle actionModeSelectAllDrawable actionModeShareDrawable actionModeSplitBackground actionModeStyle actionModeWebSearchDrawable actionOverflowButtonStyle actionOverflowMenuStyle activityChooserViewStyle alertDialogButtonGroupStyle alertDialogCenterButtons alertDialogStyle alertDialogTheme android_windowAnimationStyle android_windowIsFloating autoCompleteTextViewStyle borderlessButtonStyle buttonBarButtonStyle buttonBarNegativeButtonStyle buttonBarNeutralButtonStyle buttonBarPositiveButtonStyle buttonBarStyle buttonStyle buttonStyleSmall checkboxStyle checkedTextViewStyle colorAccent colorBackgroundFloating colorButtonNormal colorControlActivated colorControlHighlight colorControlNormal colorError colorPrimary colorPrimaryDark colorSwitchThumbNormal controlBackground dialogPreferredPadding dialogTheme dividerHorizontal dividerVertical dropDownListViewStyle dropdownListPreferredItemHeight editTextBackground editTextColor editTextStyle homeAsUpIndicator imageButtonStyle listChoiceBackgroundIndicator listDividerAlertDialog listMenuViewStyle listPopupWindowStyle listPreferredItemHeight listPreferredItemHeightLarge listPreferredItemHeightSmall listPreferredItemPaddingLeft listPreferredItemPaddingRight panelBackground panelMenuListTheme panelMenuListWidth popupMenuStyle popupWindowStyle radioButtonStyle ratingBarStyle ratingBarStyleIndicator ratingBarStyleSmall searchViewStyle seekBarStyle selectableItemBackground selectableItemBackgroundBorderless spinnerDropDownItemStyle spinnerStyle switchStyle textAppearanceLargePopupMenu textAppearanceListItem textAppearanceListItemSecondary textAppearanceListItemSmall textAppearancePopupMenuHeader textAppearanceSearchResultSubtitle textAppearanceSearchResultTitle textAppearanceSmallPopupMenu textColorAlertDialogListItem textColorSearchUrl toolbarNavigationButtonStyle toolbarStyle tooltipForegroundColor tooltipFrameBackground windowActionBar windowActionBarOverlay windowActionModeOverlay windowFixedHeightMajor windowFixedHeightMinor windowFixedWidthMajor windowFixedWidthMinor windowMinWidthMajor windowMinWidthMinor windowNoTitle
+styleable AutoScaleTextView minTextSize
 styleable BottomNavigationBar bnbActiveColor bnbAnimationDuration bnbAutoHideEnabled bnbBackgroundColor bnbBackgroundStyle bnbElevation bnbInactiveColor bnbMode
 styleable BottomNavigationView elevation itemBackground itemIconTint itemTextColor menu
 styleable BottomSheetBehavior_Layout behavior_hideable behavior_peekHeight behavior_skipCollapsed
@@ -5479,8 +5549,10 @@ styleable SwitchCompat android_textOff android_textOn android_thumb showText spl
 styleable TabItem android_icon android_layout android_text
 styleable TabLayout tabBackground tabContentStart tabGravity tabIndicatorColor tabIndicatorHeight tabMaxWidth tabMinWidth tabMode tabPadding tabPaddingBottom tabPaddingEnd tabPaddingStart tabPaddingTop tabSelectedTextColor tabTextAppearance tabTextColor
 styleable TextAppearance android_fontFamily android_shadowColor android_shadowDx android_shadowDy android_shadowRadius android_textColor android_textColorHint android_textColorLink android_textSize android_textStyle android_typeface fontFamily textAllCaps
+styleable TextImageView drawableRightHintResource drawableRightPaddingLeft drawableRightResource hintText hintTextColor textColor
 styleable TextInputLayout android_hint android_textColorHint counterEnabled counterMaxLength counterOverflowTextAppearance counterTextAppearance errorEnabled errorTextAppearance hintAnimationEnabled hintEnabled hintTextAppearance passwordToggleContentDescription passwordToggleDrawable passwordToggleEnabled passwordToggleTint passwordToggleTintMode
 styleable Theme discreteSeekBarStyle
+styleable TitleBar backGroundColor dividerColor dividerHeight isLeftViewShow isRightViewShow leftText leftTextColor leftTextSize leftTextViewPaddingLeft leftViewBackgroundResource leftViewMarginLeft rightText rightTextColor rightTextSize rightTextViewPaddingRight rightViewBackgroundResource rightViewMarginRight titleBarHeight titleText titleTextColor titleTextSize
 styleable Toolbar android_gravity android_minHeight buttonGravity collapseContentDescription collapseIcon contentInsetEnd contentInsetEndWithActions contentInsetLeft contentInsetRight contentInsetStart contentInsetStartWithNavigation logo logoDescription maxButtonHeight navigationContentDescription navigationIcon popupTheme subtitle subtitleTextAppearance subtitleTextColor title titleMargin titleMarginBottom titleMarginEnd titleMarginStart titleMarginTop titleMargins titleTextAppearance titleTextColor
 styleable TwoTextView ttLeftText ttLeftTextColor ttLeftTextSize ttRightText ttRightTextColor ttRightTextSize
 styleable VideoPlaceholder vp_layout vp_ratio_height vp_ratio_width vp_standard
@@ -5488,6 +5560,7 @@ styleable View android_focusable android_theme paddingEnd paddingStart theme
 styleable ViewBackgroundHelper android_background backgroundTint backgroundTintMode
 styleable ViewStubCompat android_id android_inflatedId android_layout
 styleable leak_canary_MoreDetailsView leak_canary_plus_color
+xml filepaths
 xml leak_canary_file_paths
 xml nrtc_setting_pref
 xml provider_paths

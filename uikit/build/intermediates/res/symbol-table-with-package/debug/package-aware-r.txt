@@ -475,6 +475,7 @@ color abc_tint_default
 color abc_tint_edittext
 color abc_tint_seek_thumb
 color abc_tint_spinner
+color abc_tint_switch_thumb
 color abc_tint_switch_track
 color accent_material_dark
 color accent_material_light
@@ -539,6 +540,7 @@ color color_grey_555555
 color color_grey_999999
 color color_grey_ababab
 color color_grey_eaeaea
+color color_main
 color color_message_default_bg
 color color_picker_preview_selector
 color color_red_ccfa3c55
@@ -1346,6 +1348,7 @@ id add
 id add_btn
 id alertTitle
 id all
+id always
 id announce_content
 id announce_create_time
 id announce_title
@@ -1356,6 +1359,7 @@ id audioTextSwitchLayout
 id auto
 id background
 id basic
+id beginning
 id blocking
 id bottom
 id bottomLine
@@ -1391,6 +1395,7 @@ id choose_list
 id chronometer
 id circle
 id clear_btn
+id collapseActionView
 id confirm
 id contactCountText
 id contact_list_view
@@ -1428,6 +1433,7 @@ id design_menu_item_action_area
 id design_menu_item_action_area_stub
 id design_menu_item_text
 id design_navigation_view
+id disableHome
 id discussion_name
 id divider
 id divider_line
@@ -1475,9 +1481,11 @@ id head_layout
 id height
 id holder
 id home
+id homeAsUp
 id icon
 id icon_group
 id identity_container
+id ifRoom
 id image
 id imageView
 id imageViewAdmin
@@ -1572,11 +1580,13 @@ id message_item_unsupport_title
 id message_item_video_play
 id message_list_empty_hint
 id messages_list_layout
+id middle
 id mini
 id msg_progressBar
 id multiply
 id name_layout
 id navigation_header_container
+id never
 id new_message_tip_head_image_view
 id new_message_tip_layout
 id new_message_tip_text_view
@@ -1679,6 +1689,9 @@ id send_to_others_btn
 id session_id
 id settings_item_name
 id shortcut
+id showCustom
+id showHome
+id showTitle
 id simple_image_view
 id smallLabel
 id snackbar_action
@@ -1788,6 +1801,7 @@ id uniform
 id unread_number_explosion
 id unread_number_tip
 id up
+id useLogo
 id user_profile_title
 id user_profile_toggle
 id videoIcon
@@ -1812,6 +1826,7 @@ id widget_video_view_pause
 id widget_video_view_texture
 id widget_video_view_time
 id width
+id withText
 id wrap
 id wrap_content
 id yixin_profile_buddy_operations
@@ -2565,6 +2580,11 @@ style TextAppearance_Design_Error
 style TextAppearance_Design_Hint
 style TextAppearance_Design_Snackbar_Message
 style TextAppearance_Design_Tab
+style TextAppearance_StatusBar_EventContent
+style TextAppearance_StatusBar_EventContent_Info
+style TextAppearance_StatusBar_EventContent_Line2
+style TextAppearance_StatusBar_EventContent_Time
+style TextAppearance_StatusBar_EventContent_Title
 style TextAppearance_Widget_AppCompat_ExpandedMenu_Item
 style TextAppearance_Widget_AppCompat_Toolbar_Subtitle
 style TextAppearance_Widget_AppCompat_Toolbar_Title
@@ -2659,6 +2679,8 @@ style Widget_AppCompat_ListPopupWindow
 style Widget_AppCompat_ListView
 style Widget_AppCompat_ListView_DropDown
 style Widget_AppCompat_ListView_Menu
+style Widget_AppCompat_NotificationActionContainer
+style Widget_AppCompat_NotificationActionText
 style Widget_AppCompat_PopupMenu
 style Widget_AppCompat_PopupMenu_Overflow
 style Widget_AppCompat_PopupWindow
@@ -2711,6 +2733,7 @@ style sdk_share_dialog
 styleable ActionBar background backgroundSplit backgroundStacked contentInsetEnd contentInsetEndWithActions contentInsetLeft contentInsetRight contentInsetStart contentInsetStartWithNavigation customNavigationLayout displayOptions divider elevation height hideOnContentScroll homeAsUpIndicator homeLayout icon indeterminateProgressStyle itemPadding logo navigationMode popupTheme progressBarPadding progressBarStyle subtitle subtitleTextStyle title titleTextStyle
 styleable ActionBarLayout android_layout_gravity
 styleable ActionMenuItemView android_minWidth
+styleable ActionMenuView
 styleable ActionMode background backgroundSplit closeItemLayout height subtitleTextStyle titleTextStyle
 styleable ActivityChooserView expandActivityOverflowButtonDrawable initialActivityCount
 styleable AlertDialog android_layout buttonPanelSideLayout listItemLayout listLayout multiChoiceItemLayout showTitle singleChoiceItemLayout

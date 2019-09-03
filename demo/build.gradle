@@ -139,6 +139,9 @@ dependencies {
     compile project(path: ':library_country_picker')
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
     implementation 'com.ashokvarma.android:bottom-navigation-bar:2.1.0'
+    implementation 'com.bhm.sdk.bhmlibrary:BHMLibrary:1.2.7'
+    implementation 'com.bhm.sdk.bhmlibrary:ActivityResult:1.0.3'
+    implementation 'io.reactivex.rxjava2:rxjava:2.1.8'
 }
 
 

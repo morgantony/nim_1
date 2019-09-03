@@ -15,6 +15,8 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 
+import com.gyf.barlibrary.ImmersionBar;
+import com.netease.nim.uikit.R;
 import com.netease.nim.uikit.common.fragment.TFragment;
 import com.netease.nim.uikit.common.util.log.LogUtil;
 import com.netease.nim.uikit.common.util.sys.ReflectionUtil;
@@ -30,6 +32,8 @@ public abstract class UI extends AppCompatActivity {
 
     private Toolbar toolbar;
 
+    protected ImmersionBar mImmersionBar;//沉浸式状态栏
+
     @Override
     protected void onStart() {
         super.onStart();
@@ -37,7 +41,9 @@ public abstract class UI extends AppCompatActivity {
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
+        if(isImmersionBar()) {
+            initImmersionBar();
+        }
         LogUtil.ui("activity: " + getClass().getSimpleName() + " onCreate()");
     }
 
@@ -50,7 +56,9 @@ public abstract class UI extends AppCompatActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
-
+        if(null != mImmersionBar){
+            mImmersionBar.destroy();//必须调用该方法，防止内存泄漏
+        }
         LogUtil.ui("activity: " + getClass().getSimpleName() + " onDestroy()");
         destroyed = true;
     }
@@ -303,4 +311,50 @@ public abstract class UI extends AppCompatActivity {
         return (T) (findViewById(resId));
     }
 
+
+    private void initImmersionBar() {
+        //在BaseActivity里初始化
+        mImmersionBar = ImmersionBar.with(this);
+        if (isChangeStatusBarColor()){
+            mImmersionBar.fitsSystemWindows(true)
+                    .statusBarColor(R.color.color_activity_blue_bg)
+                    .navigationBarWithKitkatEnable(false);
+        }
+        if (isStatusBarDarkFont()) {
+            mImmersionBar.statusBarDarkFont(true, 0.5f);
+        }
+        if(navigationBarWithKitkatEnable()) {
+            mImmersionBar.keyboardEnable(true).
+                    navigationBarWithKitkatEnable(false);
+        }
+        mImmersionBar.init();
+    }
+
+    protected boolean isImmersionBar(){
+        return true;
+    }
+
+    /** 软键盘顶起默认导航栏
+     * @return
+     */
+    protected boolean navigationBarWithKitkatEnable(){
+        return true;
+    }
+
+    /**
+     * 是否可以使用沉浸式
+     * Is immersion bar enabled boolean.
+     *
+     * @return the boolean
+     */
+    protected boolean isChangeStatusBarColor() {
+        return true;
+    }
+
+    /** 状态栏黑色字体
+     * @return
+     */
+    protected boolean isStatusBarDarkFont(){
+        return false;
+    }
 }

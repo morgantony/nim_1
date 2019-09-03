@@ -11,9 +11,17 @@ import com.netease.nim.weyouchats.DemoCache;
 public class Preferences {
     private static final String KEY_USER_ACCOUNT = "account";
     private static final String KEY_USER_TOKEN = "token";
+    private static final String KEY_USER_INFO = "user";
 
     public static void saveUserAccount(String account) {
         saveString(KEY_USER_ACCOUNT, account);
+    }
+    public static void saveUserInfo(String info) {
+        saveString(KEY_USER_INFO, info);
+    }
+
+    public static String getUserInfo() {
+        return getString(KEY_USER_INFO);
     }
 
     public static String getUserAccount() {

@@ -122,6 +122,7 @@
     <color name="color_grey_999999">#999999</color>
     <color name="color_grey_ababab">#ababab</color>
     <color name="color_grey_eaeaea">#eaeaea</color>
+    <color name="color_main">#f7389fff</color>
     <color name="color_message_default_bg">#e9ecf0</color>
     <color name="color_red_ccfa3c55">#ccfa3c55</color>
     <color name="color_split_line_cccccc">#cccccc</color>
