@@ -2,8 +2,10 @@
 <resources>
     <string name="app_name">微友聊天</string>
     <string name="empty"></string>
-    <string name="main_tab_session">会话</string>
-    <string name="main_tab_contact">通讯录</string>
+    <string name="main_tab_session">消息</string>
+    <string name="main_my">我的</string>
+    <string name="main_pyq">圈子</string>
+    <string name="main_tab_contact">联系人</string>
     <string name="user_profile">个人名片</string>
     <string name="login">登录</string>
     <string name="logining">登录中\u2026</string>

@@ -170,6 +170,7 @@ public class MainActivity extends UI implements ReminderManager.UnreadNumChanged
                 .addItem(new BottomNavigationItem(R.drawable.img_pyq, "圈子"))//.setInActiveColor("#ffff00")
                 .addItem(new BottomNavigationItem(R.drawable.img_my, "我的"))//.setBadgeItem(badgeItem)添加小红点数据
                 .initialise();//initialise 一定要放在 所有设置的最后一项
+        bottomNavigationBar.setElevation(3);
         //设置默认导航栏
         onTabSelected(0);
     }

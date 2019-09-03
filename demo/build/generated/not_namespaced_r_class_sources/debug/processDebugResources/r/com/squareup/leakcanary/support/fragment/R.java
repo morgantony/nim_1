@@ -103,40 +103,40 @@ public final class R {
     public static final class id {
         private id() {}
 
-        public static final int action_container = 0x7f100439;
-        public static final int action_divider = 0x7f10043f;
-        public static final int action_image = 0x7f10043a;
-        public static final int action_text = 0x7f10043b;
-        public static final int actions = 0x7f100448;
+        public static final int action_container = 0x7f10043a;
+        public static final int action_divider = 0x7f100440;
+        public static final int action_image = 0x7f10043b;
+        public static final int action_text = 0x7f10043c;
+        public static final int actions = 0x7f100449;
         public static final int async = 0x7f100065;
         public static final int blocking = 0x7f100066;
-        public static final int chronometer = 0x7f100444;
+        public static final int chronometer = 0x7f100445;
         public static final int forever = 0x7f100067;
         public static final int icon = 0x7f100092;
-        public static final int icon_group = 0x7f100449;
-        public static final int info = 0x7f100445;
+        public static final int icon_group = 0x7f10044a;
+        public static final int info = 0x7f100446;
         public static final int italic = 0x7f100068;
-        public static final int leak_canary_action = 0x7f100295;
-        public static final int leak_canary_display_leak_failure = 0x7f100294;
-        public static final int leak_canary_display_leak_list = 0x7f100293;
-        public static final int leak_canary_row_connector = 0x7f100299;
-        public static final int leak_canary_row_details = 0x7f10029c;
-        public static final int leak_canary_row_layout = 0x7f100298;
-        public static final int leak_canary_row_more = 0x7f10029a;
-        public static final int leak_canary_row_text = 0x7f100296;
-        public static final int leak_canary_row_time = 0x7f100297;
-        public static final int leak_canary_row_title = 0x7f10029b;
+        public static final int leak_canary_action = 0x7f100296;
+        public static final int leak_canary_display_leak_failure = 0x7f100295;
+        public static final int leak_canary_display_leak_list = 0x7f100294;
+        public static final int leak_canary_row_connector = 0x7f10029a;
+        public static final int leak_canary_row_details = 0x7f10029d;
+        public static final int leak_canary_row_layout = 0x7f100299;
+        public static final int leak_canary_row_more = 0x7f10029b;
+        public static final int leak_canary_row_text = 0x7f100297;
+        public static final int leak_canary_row_time = 0x7f100298;
+        public static final int leak_canary_row_title = 0x7f10029c;
         public static final int line1 = 0x7f10000b;
         public static final int line3 = 0x7f10000c;
         public static final int normal = 0x7f100035;
-        public static final int notification_background = 0x7f100447;
-        public static final int notification_main_column = 0x7f100441;
-        public static final int notification_main_column_container = 0x7f100440;
-        public static final int right_icon = 0x7f100446;
-        public static final int right_side = 0x7f100442;
+        public static final int notification_background = 0x7f100448;
+        public static final int notification_main_column = 0x7f100442;
+        public static final int notification_main_column_container = 0x7f100441;
+        public static final int right_icon = 0x7f100447;
+        public static final int right_side = 0x7f100443;
         public static final int text = 0x7f100014;
         public static final int text2 = 0x7f100015;
-        public static final int time = 0x7f100443;
+        public static final int time = 0x7f100444;
         public static final int title = 0x7f100018;
     }
     public static final class integer {
@@ -147,17 +147,17 @@ public final class R {
     public static final class layout {
         private layout() {}
 
-        public static final int leak_canary_display_leak = 0x7f0400c6;
-        public static final int leak_canary_heap_dump_toast = 0x7f0400c7;
-        public static final int leak_canary_leak_row = 0x7f0400c8;
-        public static final int leak_canary_ref_row = 0x7f0400c9;
-        public static final int leak_canary_ref_top_row = 0x7f0400ca;
-        public static final int notification_action = 0x7f040163;
-        public static final int notification_action_tombstone = 0x7f040164;
-        public static final int notification_template_custom_big = 0x7f04016b;
-        public static final int notification_template_icon_group = 0x7f04016c;
-        public static final int notification_template_part_chronometer = 0x7f040170;
-        public static final int notification_template_part_time = 0x7f040171;
+        public static final int leak_canary_display_leak = 0x7f0400c8;
+        public static final int leak_canary_heap_dump_toast = 0x7f0400c9;
+        public static final int leak_canary_leak_row = 0x7f0400ca;
+        public static final int leak_canary_ref_row = 0x7f0400cb;
+        public static final int leak_canary_ref_top_row = 0x7f0400cc;
+        public static final int notification_action = 0x7f040165;
+        public static final int notification_action_tombstone = 0x7f040166;
+        public static final int notification_template_custom_big = 0x7f04016d;
+        public static final int notification_template_icon_group = 0x7f04016e;
+        public static final int notification_template_part_chronometer = 0x7f040172;
+        public static final int notification_template_part_time = 0x7f040173;
     }
     public static final class mipmap {
         private mipmap() {}

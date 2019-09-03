@@ -3706,8 +3706,10 @@ layout ack_msg_readed_layout
 layout ack_msg_unread_layout
 layout activity_main_tab
 layout activity_msg_migration
+layout activity_my
 layout activity_pick
 layout activity_privatization_config
+layout activity_pyq
 layout activity_robot_profile
 layout activity_welcome
 layout add_friend_activity
@@ -4565,6 +4567,8 @@ string luck_rp
 string main_msg_list_clear_sticky_on_top
 string main_msg_list_delete_chatting
 string main_msg_list_sticky_on_top
+string main_my
+string main_pyq
 string main_tab_contact
 string main_tab_session
 string male
