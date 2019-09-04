@@ -29,7 +29,7 @@ MERGED from [android.arch.lifecycle:extensions:1.1.0] C:\Users\Administrator\.gr
 MERGED from [com.ashokvarma.android:bottom-navigation-bar:2.1.0] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\bottom-navigation-bar-2.1.0.aar\b2ef479ff9c512a6a4cfcb467bd3f1ca\AndroidManifest.xml:2:1-13:12
 MERGED from [com.bhm.sdk.bhmlibrary:BHMLibrary:1.2.7] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\BHMLibrary-1.2.7.aar\748644d95d267b61e787e996d7d097ad\AndroidManifest.xml:2:1-14:12
 MERGED from [com.bhm.sdk.bhmlibrary:ActivityResult:1.0.3] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\ActivityResult-1.0.3.aar\8e1ae28c6c451ee6b89b16b647a816f0\AndroidManifest.xml:2:1-14:12
-MERGED from [com.bhm.sdk.rxlibrary:RxLibrary:2.5.2] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\RxLibrary-2.5.2.aar\fb54cb9480645a15c28b0ddee42bbc3e\AndroidManifest.xml:2:1-14:12
+MERGED from [com.bhm.sdk.rxlibrary:RxLibrary:2.5.3] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\RxLibrary-2.5.3.aar\8e46ad15e754a55e07292633df3e892f\AndroidManifest.xml:2:1-14:12
 MERGED from [com.jakewharton.rxbinding2:rxbinding:2.0.0] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\rxbinding-2.0.0.aar\2f06c60db09c0e62d2ba3bce3d556cf5\AndroidManifest.xml:2:1-8:12
 MERGED from [com.trello.rxlifecycle2:rxlifecycle-components:2.1.0] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\rxlifecycle-components-2.1.0.aar\42e1a7076db2b32d78d3c9c2fe5d68da\AndroidManifest.xml:13:1-19:12
 MERGED from [com.trello.rxlifecycle2:rxlifecycle-android:2.1.0] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\rxlifecycle-android-2.1.0.aar\5528512dd7b0b47e3bff61060572b3c6\AndroidManifest.xml:13:1-19:12
@@ -316,8 +316,8 @@ MERGED from [com.bhm.sdk.bhmlibrary:BHMLibrary:1.2.7] C:\Users\Administrator\.gr
 MERGED from [com.bhm.sdk.bhmlibrary:BHMLibrary:1.2.7] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\BHMLibrary-1.2.7.aar\748644d95d267b61e787e996d7d097ad\AndroidManifest.xml:7:5-9:41
 MERGED from [com.bhm.sdk.bhmlibrary:ActivityResult:1.0.3] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\ActivityResult-1.0.3.aar\8e1ae28c6c451ee6b89b16b647a816f0\AndroidManifest.xml:7:5-9:41
 MERGED from [com.bhm.sdk.bhmlibrary:ActivityResult:1.0.3] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\ActivityResult-1.0.3.aar\8e1ae28c6c451ee6b89b16b647a816f0\AndroidManifest.xml:7:5-9:41
-MERGED from [com.bhm.sdk.rxlibrary:RxLibrary:2.5.2] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\RxLibrary-2.5.2.aar\fb54cb9480645a15c28b0ddee42bbc3e\AndroidManifest.xml:7:5-9:41
-MERGED from [com.bhm.sdk.rxlibrary:RxLibrary:2.5.2] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\RxLibrary-2.5.2.aar\fb54cb9480645a15c28b0ddee42bbc3e\AndroidManifest.xml:7:5-9:41
+MERGED from [com.bhm.sdk.rxlibrary:RxLibrary:2.5.3] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\RxLibrary-2.5.3.aar\8e46ad15e754a55e07292633df3e892f\AndroidManifest.xml:7:5-9:41
+MERGED from [com.bhm.sdk.rxlibrary:RxLibrary:2.5.3] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\RxLibrary-2.5.3.aar\8e46ad15e754a55e07292633df3e892f\AndroidManifest.xml:7:5-9:41
 MERGED from [com.jakewharton.rxbinding2:rxbinding:2.0.0] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\rxbinding-2.0.0.aar\2f06c60db09c0e62d2ba3bce3d556cf5\AndroidManifest.xml:6:5-44
 MERGED from [com.jakewharton.rxbinding2:rxbinding:2.0.0] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\rxbinding-2.0.0.aar\2f06c60db09c0e62d2ba3bce3d556cf5\AndroidManifest.xml:6:5-44
 MERGED from [com.trello.rxlifecycle2:rxlifecycle-components:2.1.0] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\rxlifecycle-components-2.1.0.aar\42e1a7076db2b32d78d3c9c2fe5d68da\AndroidManifest.xml:17:5-44
@@ -499,8 +499,8 @@ MERGED from [com.bhm.sdk.bhmlibrary:BHMLibrary:1.2.7] C:\Users\Administrator\.gr
 MERGED from [com.bhm.sdk.bhmlibrary:BHMLibrary:1.2.7] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\BHMLibrary-1.2.7.aar\748644d95d267b61e787e996d7d097ad\AndroidManifest.xml:11:5-12:19
 MERGED from [com.bhm.sdk.bhmlibrary:ActivityResult:1.0.3] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\ActivityResult-1.0.3.aar\8e1ae28c6c451ee6b89b16b647a816f0\AndroidManifest.xml:11:5-12:19
 MERGED from [com.bhm.sdk.bhmlibrary:ActivityResult:1.0.3] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\ActivityResult-1.0.3.aar\8e1ae28c6c451ee6b89b16b647a816f0\AndroidManifest.xml:11:5-12:19
-MERGED from [com.bhm.sdk.rxlibrary:RxLibrary:2.5.2] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\RxLibrary-2.5.2.aar\fb54cb9480645a15c28b0ddee42bbc3e\AndroidManifest.xml:11:5-12:19
-MERGED from [com.bhm.sdk.rxlibrary:RxLibrary:2.5.2] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\RxLibrary-2.5.2.aar\fb54cb9480645a15c28b0ddee42bbc3e\AndroidManifest.xml:11:5-12:19
+MERGED from [com.bhm.sdk.rxlibrary:RxLibrary:2.5.3] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\RxLibrary-2.5.3.aar\8e46ad15e754a55e07292633df3e892f\AndroidManifest.xml:11:5-12:19
+MERGED from [com.bhm.sdk.rxlibrary:RxLibrary:2.5.3] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\RxLibrary-2.5.3.aar\8e46ad15e754a55e07292633df3e892f\AndroidManifest.xml:11:5-12:19
 MERGED from [com.crashlytics.sdk.android:crashlytics-core:2.5.0] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\crashlytics-core-2.5.0.aar\2b93699b5640a980dd377a63f5f9bb24\AndroidManifest.xml:54:5-20
 MERGED from [com.crashlytics.sdk.android:crashlytics-core:2.5.0] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\crashlytics-core-2.5.0.aar\2b93699b5640a980dd377a63f5f9bb24\AndroidManifest.xml:54:5-20
 MERGED from [com.crashlytics.sdk.android:beta:1.2.7] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\beta-1.2.7.aar\9bb93404d04ce9c5f24f46f12a80078e\AndroidManifest.xml:11:5-20

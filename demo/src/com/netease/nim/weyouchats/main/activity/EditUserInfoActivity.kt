@@ -110,25 +110,43 @@ class EditUserInfoActivity : UI() {
     private fun save() {
         val params = HashMap<String, String>()
         params["accid"] = user.accid.toString()
-        params["name"] = tv_name.text.toString()
-        params["sign"] = et_note.text.toString()
-        params["email"] = tv_email.text.toString()
-        params["birth"] = tv_birthday.text.toString()
-        params["mobile"] = user.mobile.toString()//手机号暂时不能修改
-        params["gender"] = tv_sex.text.toString()
-        val headFile = File(imagePath)
-        val requestBody = RequestBody.create(MediaType.parse("image/jpeg; charset=UTF-8"), headFile)
-        val part = MultipartBody.Part.createFormData("file", headFile.name, requestBody)//key(file)与服务器一致
-
+        if(!TextUtils.isEmpty(tv_name.text.toString())) {
+            params["name"] = tv_name.text.toString()
+        }
+        if(!TextUtils.isEmpty(et_note.text.toString())) {
+            params["sign"] = et_note.text.toString()
+        }
+        if(!TextUtils.isEmpty(tv_email.text.toString())) {
+            params["email"] = tv_email.text.toString()
+        }
+        if(!TextUtils.isEmpty(tv_birthday.text.toString())) {
+            params["birth"] = tv_birthday.text.toString()
+        }
+        if(!TextUtils.isEmpty(user.mobile.toString())) {
+            params["mobile"] = user.mobile.toString()//手机号暂时不能修改
+        }
+        if(!TextUtils.isEmpty(tv_sex.text.toString())) {
+            params["gender"] = tv_sex.text.toString()
+        }
         val builder = RxBuilder.newBuilder(this)
                 .setLoadingDialog(RxLoadingDialog.getDefaultDialog())
                 .setDialogAttribute(true, true, false)
                 .setIsLogOutPut(true)//默认是false
                 .setIsDefaultToast(true, rxManager)
                 .bindRx()
-        val observable = builder
-                .createApi(HttpApi::class.java, "http://localhost:8080/", RxUpLoadCallBack())//rxUpLoadListener不能为空
-                .upload(params, part)
+        val headFile = File(imagePath)
+        val observable = if(headFile.isFile){
+            val requestBody = RequestBody.create(MediaType.parse("image/jpeg; charset=UTF-8"), headFile)
+            val part = MultipartBody.Part.createFormData("file", headFile.name, requestBody)//key(file)与服务器一致
+            builder
+                    .createApi(HttpApi::class.java, HttpApi.HOST, RxUpLoadCallBack())//rxUpLoadListener不能为空
+                    .upload(params, part)
+        }else{
+            builder
+                    .createApi(HttpApi::class.java, HttpApi.HOST, RxUpLoadCallBack())//rxUpLoadListener不能为空
+                    .upload(params)
+        }
+
         builder.setCallBack(observable, object : CallBack<UpLoadUserInfoEntity>() {
             override fun onSuccess(response: UpLoadUserInfoEntity?) {
                 if(response!!.code == 200){
