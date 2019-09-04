@@ -15,4 +15,12 @@
     <string name="nim_status_bar_ticker_text">received a message from %1$s</string>
     <string name="nim_status_bar_unsupported_message">%1$s: unsupported message type</string>
     <string name="nim_status_bar_video_message">received a video message from %1$s</string>
+    <string name="pickerview_cancel">Cancel</string>
+    <string name="pickerview_day"> </string>
+    <string name="pickerview_hours"> </string>
+    <string name="pickerview_minutes"> </string>
+    <string name="pickerview_month"> </string>
+    <string name="pickerview_seconds"> </string>
+    <string name="pickerview_submit">Confirm</string>
+    <string name="pickerview_year"> </string>
 </resources>

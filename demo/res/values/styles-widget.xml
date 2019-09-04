@@ -55,4 +55,13 @@
         <item name="android:windowContentOverlay">@null</item>
         <item name="android:scrollHorizontally">true</item>
     </style>
+
+    <!-- 自定义对话框3. -->
+    <style name="dialogStyle" parent="@android:style/Theme.Dialog">
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowIsTranslucent">false</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+    </style>
 </resources>

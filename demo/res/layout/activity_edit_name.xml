@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    android:background="#E4EDF0">
+
+    <com.bhm.sdk.bhmlibrary.views.TitleBar
+        android:id="@+id/titleBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:titleBarHeight="50dp"
+        app:titleTextColor="@color/white"
+        app:rightTextColor="@color/white"
+        app:titleText="修改昵称"
+        app:rightText="保存"
+        app:rightTextSize="16sp"
+        app:leftViewBackgroundResource="@drawable/img_close_source"
+        app:leftViewMarginLeft="15dp"
+        app:rightViewMarginRight="12dp"
+        app:isLeftViewShow="true"
+        app:isRightViewShow="true"
+        app:backGroundColor="@color/color_main"/>
+
+    <EditText
+        android:id="@+id/et_name"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_margin="15dp"
+        android:textColor="#323333"
+        android:textColorHint="#afb2b3"
+        android:hint="请输入"
+        android:lineSpacingExtra="2dp"
+        android:gravity="center_vertical"
+        android:padding="6dp"
+        android:textSize="16sp"
+        android:background="@drawable/round_layout_white_color_3dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:textColor="#919799"
+        android:text="2-30个字符，支持中英文、数字"/>
+</LinearLayout>

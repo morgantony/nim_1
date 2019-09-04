@@ -14,9 +14,13 @@
         app:titleTextColor="@color/white"
         app:rightTextColor="@color/white"
         app:titleText="个人信息"
+        app:rightText="保存"
+        app:rightTextSize="16sp"
         app:leftViewBackgroundResource="@drawable/img_close_source"
         app:leftViewMarginLeft="15dp"
+        app:rightViewMarginRight="12dp"
         app:isLeftViewShow="true"
+        app:isRightViewShow="true"
         app:backGroundColor="@color/color_main"/>
 
     <LinearLayout
@@ -29,8 +33,10 @@
         android:background="@drawable/round_layout_bg_color_6dp">
 
         <LinearLayout
+            android:id="@+id/ll_head"
             android:layout_width="match_parent"
-            android:padding="15dp"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
             android:gravity="center_vertical"
             android:layout_height="60dp"
             android:orientation="horizontal">
@@ -52,6 +58,7 @@
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="1.5dp"
                 android:src="@drawable/img_right"/>
 
         </LinearLayout>
@@ -64,6 +71,7 @@
             android:background="#D4D4D4"/>
 
         <LinearLayout
+            android:id="@+id/ll_name"
             android:layout_width="match_parent"
             android:padding="15dp"
             android:gravity="center_vertical"
@@ -78,6 +86,7 @@
                 android:text="昵称"/>
 
             <TextView
+                android:id="@+id/tv_name"
                 android:layout_width="0dp"
                 android:layout_weight="1"
                 android:gravity="right"
@@ -90,6 +99,7 @@
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="1.5dp"
                 android:src="@drawable/img_right"/>
 
         </LinearLayout>
@@ -102,6 +112,7 @@
             android:background="#D4D4D4"/>
 
         <LinearLayout
+            android:id="@+id/ll_sex"
             android:layout_width="match_parent"
             android:padding="15dp"
             android:gravity="center_vertical"
@@ -116,6 +127,7 @@
                 android:text="性别"/>
 
             <TextView
+                android:id="@+id/tv_sex"
                 android:layout_width="0dp"
                 android:layout_weight="1"
                 android:gravity="right"
@@ -128,6 +140,7 @@
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="1.5dp"
                 android:src="@drawable/img_right"/>
 
         </LinearLayout>
@@ -140,6 +153,7 @@
             android:background="#D4D4D4"/>
 
         <LinearLayout
+            android:id="@+id/ll_birthday"
             android:layout_width="match_parent"
             android:padding="15dp"
             android:gravity="center_vertical"
@@ -154,6 +168,7 @@
                 android:text="生日"/>
 
             <TextView
+                android:id="@+id/tv_birthday"
                 android:layout_width="0dp"
                 android:layout_weight="1"
                 android:gravity="right"
@@ -166,6 +181,48 @@
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="1.5dp"
+                android:src="@drawable/img_right"/>
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.4dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:background="#D4D4D4"/>
+
+        <LinearLayout
+            android:id="@+id/ll_email"
+            android:layout_width="match_parent"
+            android:padding="15dp"
+            android:gravity="center_vertical"
+            android:layout_height="50dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:textColor="#323333"
+                android:text="邮箱"/>
+
+            <TextView
+                android:id="@+id/tv_email"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:gravity="right"
+                android:layout_marginRight="8dp"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:textColor="#4d4c4d"
+                android:text=""/>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="1.5dp"
                 android:src="@drawable/img_right"/>
 
         </LinearLayout>
@@ -196,6 +253,7 @@
                 android:text="微友号"/>
 
             <TextView
+                android:id="@+id/tv_id"
                 android:layout_width="0dp"
                 android:layout_weight="1"
                 android:gravity="right"
@@ -227,6 +285,7 @@
                 android:text="手机号码"/>
 
             <TextView
+                android:id="@+id/tv_phone"
                 android:layout_width="0dp"
                 android:layout_weight="1"
                 android:gravity="right"
@@ -290,6 +349,7 @@
             android:text="个性签名"/>
 
         <EditText
+            android:id="@+id/et_note"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="15dp"
@@ -297,7 +357,7 @@
             android:layout_marginBottom="15dp"
             android:textColor="#323333"
             android:textColorHint="#afb2b3"
-            android:hint="这个人很懒什么都没留下"
+            android:hint="请输入签名"
             android:lineSpacingExtra="2dp"
             android:gravity="start"
             android:padding="6dp"

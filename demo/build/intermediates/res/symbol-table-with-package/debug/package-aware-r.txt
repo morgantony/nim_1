@@ -18,6 +18,10 @@ anim jrmf_rp_slide_right_in
 anim jrmf_rp_slide_right_out
 anim jrmf_w_actionsheet_dialog_in
 anim jrmf_w_actionsheet_dialog_out
+anim pickerview_dialog_scale_in
+anim pickerview_dialog_scale_out
+anim pickerview_slide_in_bottom
+anim pickerview_slide_out_bottom
 anim tooltip_enter
 anim tooltip_exit
 animator design_appbar_state_list_animator
@@ -543,6 +547,12 @@ attr vp_layout
 attr vp_ratio_height
 attr vp_ratio_width
 attr vp_standard
+attr wheelview_dividerColor
+attr wheelview_gravity
+attr wheelview_lineSpacingMultiplier
+attr wheelview_textColorCenter
+attr wheelview_textColorOut
+attr wheelview_textSize
 attr windowActionBar
 attr windowActionBarOverlay
 attr windowActionModeOverlay
@@ -923,6 +933,15 @@ color percent15translucentBlack
 color percent30translucentBlack
 color percent60translucentBlack
 color periwinkleColor
+color pickerview_bgColor_default
+color pickerview_bgColor_overlay
+color pickerview_bg_topbar
+color pickerview_timebtn_nor
+color pickerview_timebtn_pre
+color pickerview_topbar_title
+color pickerview_wheelview_textcolor_center
+color pickerview_wheelview_textcolor_divider
+color pickerview_wheelview_textcolor_out
 color pinkColor
 color pinkLipstickColor
 color plumColor
@@ -1377,6 +1396,11 @@ dimen notification_subtext_size
 dimen notification_top_pad
 dimen notification_top_pad_large_text
 dimen pager_sliding_tab_strip_height
+dimen pickerview_textsize
+dimen pickerview_topbar_btn_textsize
+dimen pickerview_topbar_height
+dimen pickerview_topbar_padding
+dimen pickerview_topbar_title_textsize
 dimen px_size_1
 dimen resend_button_margin_bottom
 dimen robot_message_image_width
@@ -2402,8 +2426,10 @@ drawable room_cover_72
 drawable round_layout_bg_color_6dp
 drawable round_layout_white_color_3dp
 drawable rp_open_holder_bg
+drawable selector_pickerview_btn
 drawable shouji
 drawable skin_global_bg
+drawable solid_lightblack_round
 drawable splash_bg
 drawable stat_sys_third_app_notify
 drawable t_avchat_avatar_default
@@ -2619,7 +2645,9 @@ id bri_rev
 id bri_send
 id bt_chat
 id btnAlSelected
+id btnCancel
 id btnSelect
+id btnSubmit
 id btn_back
 id btn_back_to_list
 id btn_cancel
@@ -2721,6 +2749,7 @@ id contacts_item_time
 id container
 id content
 id contentPanel
+id content_container
 id content_layout
 id content_text
 id content_textview
@@ -2740,6 +2769,7 @@ id cv_crop_image
 id dark
 id data_list
 id date_tip
+id day
 id decor_content_parent
 id default_activity_button
 id delete_btn
@@ -2749,6 +2779,8 @@ id design_menu_item_action_area_stub
 id design_menu_item_text
 id design_navigation_view
 id detail_label
+id dialog_text_loading
+id dialog_view
 id disableHome
 id discussion_name
 id divider
@@ -2817,6 +2849,8 @@ id et_confirm_pwd
 id et_identity
 id et_input_sub_bank
 id et_message
+id et_name
+id et_note
 id et_password
 id et_peak_amount
 id et_peak_message
@@ -2887,6 +2921,7 @@ id hms_progress_text
 id holder
 id home
 id homeAsUp
+id hour
 id hv_robot
 id icon
 id icon_group
@@ -3008,6 +3043,7 @@ id ll_add_card
 id ll_all
 id ll_amount_layout
 id ll_bankCard
+id ll_birthday
 id ll_cardNum
 id ll_city
 id ll_conent
@@ -3016,12 +3052,16 @@ id ll_cooperation_loading
 id ll_deposit
 id ll_deposit_fee
 id ll_edit_url_container
+id ll_email
 id ll_getDeposit
+id ll_head
 id ll_in
+id ll_info
 id ll_input_sub_bank
 id ll_item_root
 id ll_my_change
 id ll_my_freeze
+id ll_name
 id ll_out
 id ll_paytype_container
 id ll_peak_amount_layout
@@ -3030,6 +3070,7 @@ id ll_protocol
 id ll_province
 id ll_result_hint_container
 id ll_select_country_code
+id ll_sex
 id ll_sub_bank
 id ll_sub_bank_city
 id ll_sub_bank_province
@@ -3122,12 +3163,14 @@ id message_rock_paper_scissors_body
 id messages_fragment
 id messages_list_layout
 id middle
+id min
 id mini
 id mode_default
 id mode_fixed
 id mode_fixed_no_title
 id mode_shifting
 id mode_shifting_no_title
+id month
 id msg_progressBar
 id multi_select_dialog_btn_divide_view
 id multi_select_dialog_layout
@@ -3179,8 +3222,13 @@ id online_total
 id operate_layout
 id operator_layout
 id operator_result
+id options1
+id options2
+id options3
+id optionspicker
 id other_check
 id other_layout
+id outmost_container
 id packed
 id packet_ll
 id packet_message
@@ -3318,6 +3366,7 @@ id round
 id rts_text
 id rv_country
 id rv_pick
+id rv_topbar
 id save_image_matrix
 id save_non_transition_alpha
 id save_scale_type
@@ -3345,6 +3394,7 @@ id search_result_list
 id search_result_tip
 id search_src_text
 id search_voice_btn
+id second
 id section_title
 id select_dialog_image_view
 id select_dialog_item_view
@@ -3488,6 +3538,7 @@ id time
 id time_edit
 id time_layout
 id time_mask
+id timepicker
 id timer
 id timer_text
 id timer_tip
@@ -3515,6 +3566,7 @@ id transition_layout_save
 id transition_position
 id transition_scene_layoutid_cache
 id transition_transform
+id tvTitle
 id tv_action_hint
 id tv_all
 id tv_all_money
@@ -3526,6 +3578,7 @@ id tv_bankCardNum
 id tv_bank_name
 id tv_bankname
 id tv_best
+id tv_birthday
 id tv_bless
 id tv_bri_mess_rev
 id tv_bri_mess_send
@@ -3551,6 +3604,7 @@ id tv_date_time
 id tv_deposit
 id tv_deposit_fee
 id tv_des
+id tv_email
 id tv_empty
 id tv_exit
 id tv_folder_name
@@ -3562,6 +3616,7 @@ id tv_getDeposit
 id tv_group_member_num
 id tv_hit_letter
 id tv_huoquyanzhengma
+id tv_id
 id tv_idCardNum
 id tv_identityno
 id tv_image_count
@@ -3597,6 +3652,7 @@ id tv_paytype_balance
 id tv_paytype_name
 id tv_peak_amount_icon
 id tv_peak_type
+id tv_phone
 id tv_prompt
 id tv_protocol
 id tv_province
@@ -3627,6 +3683,7 @@ id tv_save
 id tv_sendRpNum
 id tv_send_code
 id tv_send_rp
+id tv_sex
 id tv_status
 id tv_sub_bank
 id tv_sub_bank_city
@@ -3721,9 +3778,11 @@ id width
 id withText
 id wrap
 id wrap_content
+id year
 id yixin_profile_buddy_operations
 integer abc_config_activityDefaultDur
 integer abc_config_activityShortDur
+integer animation_default_duration
 integer app_bar_elevation_anim_duration
 integer bottom_sheet_slide_duration
 integer cancel_button_image_alpha
@@ -3766,6 +3825,7 @@ layout ack_msg_info_layout
 layout ack_msg_readed_layout
 layout ack_msg_unread_layout
 layout activity_edit_info
+layout activity_edit_name
 layout activity_main_tab
 layout activity_msg_migration
 layout activity_my
@@ -3838,6 +3898,7 @@ layout hwpush_layout4
 layout hwpush_layout7
 layout hwpush_layout8
 layout icon_list_item
+layout include_pickerview_topbar
 layout item_country
 layout item_country_large_padding
 layout item_custom_notification
@@ -3937,6 +3998,8 @@ layout jrmf_w_layout_line
 layout jrmf_w_layout_line_959595
 layout jrmf_w_layout_titlebar
 layout js_bridge_activity
+layout layout_basepickerview
+layout layout_dialog_app_loading
 layout layout_text_image
 layout layout_title_bar
 layout leak_canary_display_leak
@@ -4113,6 +4176,8 @@ layout notification_template_part_chronometer
 layout notification_template_part_time
 layout online_people_fragment
 layout online_people_item
+layout pickerview_options
+layout pickerview_time
 layout pop_folder
 layout push_expandable_big_image_notification
 layout push_expandable_big_text_notification
@@ -4787,6 +4852,14 @@ string picker_image_preview_original
 string picker_image_preview_original_select
 string picker_image_send
 string picker_image_send_select
+string pickerview_cancel
+string pickerview_day
+string pickerview_hours
+string pickerview_minutes
+string pickerview_month
+string pickerview_seconds
+string pickerview_submit
+string pickerview_year
 string picture_save_fail
 string picture_save_to
 string pin_rp_done
@@ -5441,7 +5514,9 @@ style Widget_Design_TextInputLayout
 style Widget_DiscreteIndicatorTextAppearance
 style Widget_DiscreteSeekBar
 style blue_bottom_line_edit_text_style
+style custom_dialog2
 style custom_dialog_message_text_style
+style dialogStyle
 style dialog_bottom_full
 style dialog_button_text_style
 style dialog_default_style
@@ -5459,7 +5534,9 @@ style jrmf_rp_commondialog
 style leak_canary_LeakCanary_Base
 style leak_canary_Theme_Transparent
 style list_view
+style loading_dialog
 style myToolbarNavigationButtonStyle
+style pickerview_dialogAnim
 style recycler_view
 style scroll_view
 style sdk_share_dialog
@@ -5560,6 +5637,7 @@ styleable View android_focusable android_theme paddingEnd paddingStart theme
 styleable ViewBackgroundHelper android_background backgroundTint backgroundTintMode
 styleable ViewStubCompat android_id android_inflatedId android_layout
 styleable leak_canary_MoreDetailsView leak_canary_plus_color
+styleable pickerview wheelview_dividerColor wheelview_gravity wheelview_lineSpacingMultiplier wheelview_textColorCenter wheelview_textColorOut wheelview_textSize
 xml filepaths
 xml leak_canary_file_paths
 xml nrtc_setting_pref

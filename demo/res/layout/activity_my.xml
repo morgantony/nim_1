@@ -10,7 +10,7 @@
         android:orientation="vertical">
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="280dp"
+            android:layout_height="240dp"
             android:background="@color/color_activity_blue_bg"
             android:orientation="vertical">
 
@@ -27,7 +27,7 @@
                 android:layout_width="75dp"
                 android:layout_height="75dp"
                 android:layout_gravity="center_horizontal"
-                android:layout_marginTop="42dp"/>
+                android:layout_marginTop="38dp"/>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -68,6 +68,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_marginTop="-35dp"
+            android:visibility="gone"
             android:layout_height="75dp"
             android:layout_marginLeft="15dp"
             android:layout_marginRight="15dp"
@@ -150,6 +151,7 @@
             android:background="@drawable/round_layout_bg_color_6dp">
 
             <LinearLayout
+                android:id="@+id/ll_info"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center_vertical"
@@ -158,19 +160,32 @@
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/img_fav"
+                    android:src="@drawable/img_chat_set"
                     android:layout_marginRight="10dp"
-                    android:layout_marginTop="12dp"
-                    android:layout_marginBottom="12dp"
+                    android:layout_marginTop="18dp"
+                    android:layout_marginBottom="18dp"
                     android:layout_marginLeft="15dp"/>
 
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
                     android:layout_height="wrap_content"
-                    android:text="我的收藏"
+                    android:text="用户信息"
                     android:textSize="17sp"
                     android:textColor="#333333"/>
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/img_right"
+                    android:layout_marginRight="12dp"/>
             </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.4dp"
+                android:layout_marginLeft="44dp"
+                android:background="#D4D4D4"/>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -183,22 +198,36 @@
                     android:layout_height="wrap_content"
                     android:src="@drawable/img_ac_set"
                     android:layout_marginRight="10dp"
-                    android:layout_marginTop="12dp"
-                    android:layout_marginBottom="12dp"
+                    android:layout_marginTop="18dp"
+                    android:layout_marginBottom="18dp"
                     android:layout_marginLeft="15dp"/>
 
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
                     android:layout_height="wrap_content"
                     android:text="账号设置"
                     android:textSize="17sp"
                     android:textColor="#333333"/>
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/img_right"
+                    android:layout_marginRight="12dp"/>
             </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.4dp"
+                android:layout_marginLeft="44dp"
+                android:background="#D4D4D4"/>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center_vertical"
+                android:visibility="gone"
                 android:orientation="horizontal">
 
                 <ImageView
@@ -229,16 +258,23 @@
                     android:layout_height="wrap_content"
                     android:src="@drawable/img_sys_set"
                     android:layout_marginRight="10dp"
-                    android:layout_marginTop="12dp"
-                    android:layout_marginBottom="12dp"
+                    android:layout_marginTop="18dp"
+                    android:layout_marginBottom="18dp"
                     android:layout_marginLeft="15dp"/>
 
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
                     android:layout_height="wrap_content"
                     android:text="系统设置"
                     android:textSize="17sp"
                     android:textColor="#333333"/>
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/img_right"
+                    android:layout_marginRight="12dp"/>
             </LinearLayout>
         </LinearLayout>
 
@@ -246,7 +282,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
-            android:layout_marginBottom="40dp"
+            android:layout_marginBottom="20dp"
             android:layout_marginLeft="15dp"
             android:layout_marginRight="15dp"
             android:orientation="vertical"
@@ -263,17 +299,30 @@
                     android:layout_height="wrap_content"
                     android:src="@drawable/img_pic_set"
                     android:layout_marginRight="10dp"
-                    android:layout_marginTop="12dp"
-                    android:layout_marginBottom="12dp"
+                    android:layout_marginTop="18dp"
+                    android:layout_marginBottom="18dp"
                     android:layout_marginLeft="15dp"/>
 
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
                     android:layout_height="wrap_content"
-                    android:text="关于微友"
+                    android:text="帮助"
                     android:textSize="17sp"
                     android:textColor="#333333"/>
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/img_right"
+                    android:layout_marginRight="12dp"/>
             </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.4dp"
+                android:layout_marginLeft="44dp"
+                android:background="#D4D4D4"/>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -286,16 +335,23 @@
                     android:layout_height="wrap_content"
                     android:src="@drawable/img_server"
                     android:layout_marginRight="10dp"
-                    android:layout_marginTop="12dp"
-                    android:layout_marginBottom="12dp"
+                    android:layout_marginTop="18dp"
+                    android:layout_marginBottom="18dp"
                     android:layout_marginLeft="15dp"/>
 
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
                     android:layout_height="wrap_content"
-                    android:text="客服"
+                    android:text="关于微友"
                     android:textSize="17sp"
                     android:textColor="#333333"/>
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/img_right"
+                    android:layout_marginRight="12dp"/>
             </LinearLayout>
         </LinearLayout>
 

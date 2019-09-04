@@ -17,6 +17,7 @@
     <color name="color_grey_888888">#888888</color>
     <color name="color_grey_666666">#666666</color>
     <color name="color_activity_blue_bg">#f7389fff</color>
+    <color name="color_main">#f7389fff</color>
     <color name="split_line_grey_color_d9d9d9">#D9D9D9</color>
     <color name="green_4DC0A4">#4DC0A4</color>
     <color name="gray7">#c5c4c4</color>

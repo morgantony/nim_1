@@ -28,12 +28,12 @@
         "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\2a1aec394fcd57ee7215b2b9f27e108d\\res\\drawable-xxhdpi-v4\\abc_menu_hardkey_panel_mtrl_mult.9.png"
     },
     {
-        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4\\stat_sys_third_app_notify.png",
-        "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\push-internal-3.6.3.aar\\bcff2f107d526e2a9148ed13f94f0060\\res\\drawable-xxhdpi-v4\\stat_sys_third_app_notify.png"
-    },
-    {
         "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4\\img_right.png",
         "source": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\res\\drawable-xxhdpi\\img_right.png"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4\\stat_sys_third_app_notify.png",
+        "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\push-internal-3.6.3.aar\\bcff2f107d526e2a9148ed13f94f0060\\res\\drawable-xxhdpi-v4\\stat_sys_third_app_notify.png"
     },
     {
         "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4\\img_qr_b.png",

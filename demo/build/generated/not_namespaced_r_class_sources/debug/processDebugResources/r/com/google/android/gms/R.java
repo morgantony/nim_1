@@ -22,17 +22,17 @@ public final class R {
     public static final class color {
         private color() {}
 
-        public static final int common_google_signin_btn_text_dark = 0x7f0e01ab;
+        public static final int common_google_signin_btn_text_dark = 0x7f0e01b4;
         public static final int common_google_signin_btn_text_dark_default = 0x7f0e00a4;
         public static final int common_google_signin_btn_text_dark_disabled = 0x7f0e00a5;
         public static final int common_google_signin_btn_text_dark_focused = 0x7f0e00a6;
         public static final int common_google_signin_btn_text_dark_pressed = 0x7f0e00a7;
-        public static final int common_google_signin_btn_text_light = 0x7f0e01ac;
+        public static final int common_google_signin_btn_text_light = 0x7f0e01b5;
         public static final int common_google_signin_btn_text_light_default = 0x7f0e00a8;
         public static final int common_google_signin_btn_text_light_disabled = 0x7f0e00a9;
         public static final int common_google_signin_btn_text_light_focused = 0x7f0e00aa;
         public static final int common_google_signin_btn_text_light_pressed = 0x7f0e00ab;
-        public static final int common_google_signin_btn_tint = 0x7f0e01ad;
+        public static final int common_google_signin_btn_tint = 0x7f0e01b6;
     }
     public static final class drawable {
         private drawable() {}
@@ -68,16 +68,16 @@ public final class R {
         public static final int center = 0x7f100054;
         public static final int dark = 0x7f100086;
         public static final int email = 0x7f10006b;
-        public static final int end_text = 0x7f100447;
+        public static final int end_text = 0x7f10045c;
         public static final int icon_only = 0x7f100083;
         public static final int light = 0x7f100087;
         public static final int none = 0x7f100033;
         public static final int normal = 0x7f100035;
         public static final int radio = 0x7f1000a5;
         public static final int standard = 0x7f100084;
-        public static final int start_text = 0x7f100444;
+        public static final int start_text = 0x7f100459;
         public static final int text = 0x7f100014;
-        public static final int text1 = 0x7f100192;
+        public static final int text1 = 0x7f10019f;
         public static final int text2 = 0x7f100015;
         public static final int toolbar = 0x7f1000bc;
         public static final int wide = 0x7f100085;
@@ -86,7 +86,7 @@ public final class R {
     public static final class integer {
         private integer() {}
 
-        public static final int google_play_services_version = 0x7f0d0007;
+        public static final int google_play_services_version = 0x7f0d0008;
     }
     public static final class string {
         private string() {}

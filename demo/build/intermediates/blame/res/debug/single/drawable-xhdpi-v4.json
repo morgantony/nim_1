@@ -16,12 +16,12 @@
         "source": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\res\\drawable-xhdpi\\actionbar_dark_back_icon.png"
     },
     {
-        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\nim_audio_animation_list_left_3.png",
-        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\uikit\\build\\intermediates\\packaged_res\\debug\\drawable-xhdpi-v4\\nim_audio_animation_list_left_3.png"
-    },
-    {
         "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\jrmf_w_ic_pay_type_select.png",
         "source": "F:\\my_sdk\\manyi\\2\\nim_1\\jrmfRpWalletlib\\build\\intermediates\\packaged_res\\debug\\drawable-xhdpi-v4\\jrmf_w_ic_pay_type_select.png"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\nim_audio_animation_list_left_3.png",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\uikit\\build\\intermediates\\packaged_res\\debug\\drawable-xhdpi-v4\\nim_audio_animation_list_left_3.png"
     },
     {
         "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\t_avchat_microphone_pressed.png",
@@ -80,32 +80,32 @@
         "source": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\res\\drawable-xhdpi\\nim_female.png"
     },
     {
-        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\abc_switch_track_mtrl_alpha.9.png",
-        "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\2a1aec394fcd57ee7215b2b9f27e108d\\res\\drawable-xhdpi-v4\\abc_switch_track_mtrl_alpha.9.png"
-    },
-    {
         "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\jrmf_w_ic_change.png",
         "source": "F:\\my_sdk\\manyi\\2\\nim_1\\jrmfRpWalletlib\\build\\intermediates\\packaged_res\\debug\\drawable-xhdpi-v4\\jrmf_w_ic_change.png"
     },
     {
-        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\ic_capture_delete.png",
-        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\uikit\\build\\intermediates\\packaged_res\\debug\\drawable-xhdpi-v4\\ic_capture_delete.png"
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\abc_switch_track_mtrl_alpha.9.png",
+        "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\2a1aec394fcd57ee7215b2b9f27e108d\\res\\drawable-xhdpi-v4\\abc_switch_track_mtrl_alpha.9.png"
     },
     {
         "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\nim_team_owner_icon.png",
         "source": "F:\\my_sdk\\manyi\\2\\nim_1\\uikit\\build\\intermediates\\packaged_res\\debug\\drawable-xhdpi-v4\\nim_team_owner_icon.png"
     },
     {
-        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\message_plus_red_packet_pressed.png",
-        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\res-rp\\drawable-xhdpi\\message_plus_red_packet_pressed.png"
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\ic_capture_delete.png",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\uikit\\build\\intermediates\\packaged_res\\debug\\drawable-xhdpi-v4\\ic_capture_delete.png"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\jrmf_w_add_card.png",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\jrmfRpWalletlib\\build\\intermediates\\packaged_res\\debug\\drawable-xhdpi-v4\\jrmf_w_add_card.png"
     },
     {
         "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\logo.png",
         "source": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\res\\drawable-xhdpi\\logo.png"
     },
     {
-        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\jrmf_w_add_card.png",
-        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\jrmfRpWalletlib\\build\\intermediates\\packaged_res\\debug\\drawable-xhdpi-v4\\jrmf_w_add_card.png"
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\message_plus_red_packet_pressed.png",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\res-rp\\drawable-xhdpi\\message_plus_red_packet_pressed.png"
     },
     {
         "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\jrmf_rp_ic_close.png",
@@ -160,12 +160,12 @@
         "source": "F:\\my_sdk\\manyi\\2\\nim_1\\jrmfRpWalletlib\\build\\intermediates\\packaged_res\\debug\\drawable-xhdpi-v4\\jrmf_w_switch.png"
     },
     {
-        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\nim_message_input_emotion.png",
-        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\uikit\\build\\intermediates\\packaged_res\\debug\\drawable-xhdpi-v4\\nim_message_input_emotion.png"
-    },
-    {
         "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\jrmf_rp_ic_pin.png",
         "source": "F:\\my_sdk\\manyi\\2\\nim_1\\jrmfRpWalletlib\\build\\intermediates\\packaged_res\\debug\\drawable-xhdpi-v4\\jrmf_rp_ic_pin.png"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\nim_message_input_emotion.png",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\uikit\\build\\intermediates\\packaged_res\\debug\\drawable-xhdpi-v4\\nim_message_input_emotion.png"
     },
     {
         "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\img_qr_b.png",

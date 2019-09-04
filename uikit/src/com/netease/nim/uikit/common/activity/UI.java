@@ -357,4 +357,14 @@ public abstract class UI extends AppCompatActivity {
     protected boolean isStatusBarDarkFont(){
         return false;
     }
+
+    @Override
+    public void finish() {
+        InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+        View  view = getCurrentFocus();
+        if (view != null && imm != null && view.getWindowToken() != null) {
+            imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
+        }
+        super.finish();
+    }
 }

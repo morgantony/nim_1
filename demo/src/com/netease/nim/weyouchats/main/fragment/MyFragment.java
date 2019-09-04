@@ -2,7 +2,9 @@ package com.netease.nim.weyouchats.main.fragment;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.bhm.sdk.onresult.ActivityResult;
@@ -19,8 +21,10 @@ public class MyFragment extends MainTabFragment {
 
     private HeadImageView headImageView;
     private TextView tv_name;
+    private TextView tv_des;
     private ImageView iv_qr;
     private ImageView iv_edit;
+    private LinearLayout ll_info;
 
     public MyFragment() {
         this.setContainerId(MainTab.MY.fragmentId);
@@ -49,6 +53,8 @@ public class MyFragment extends MainTabFragment {
         tv_name = findView(R.id.tv_name);
         iv_qr = findView(R.id.iv_qr);
         iv_edit = findView(R.id.iv_edit);
+        ll_info = findView(R.id.ll_info);
+        tv_des = findView(R.id.tv_des);
     }
 
     private void initData(){
@@ -56,13 +62,19 @@ public class MyFragment extends MainTabFragment {
         if(null != user){
             headImageView.loadAvatar(user.getIcon());
             tv_name.setText(user.getName());
+            if(!TextUtils.isEmpty(user.getSign())){
+                tv_des.setText(user.getSign());
+            }
         }
     }
 
     private void initEvent(){
         iv_qr.setOnClickListener(v -> startActivity(new Intent(getActivity(), QRActivity.class)));
+        ll_info.setOnClickListener(v -> startActivity(new Intent(getActivity(), EditUserInfoActivity.class)));
         iv_edit.setOnClickListener(v -> {
-            new ActivityResult(getActivity()).startForResult(EditUserInfoActivity.class, (resultCode, data) -> {
+            Intent intent = new Intent(getActivity(), EditUserInfoActivity.class);
+            intent.putExtra("edit", true);
+            new ActivityResult(getActivity()).startForResult(intent, (resultCode, data) -> {
                 if(data != null){
                     //更新头像和网名等
                 }

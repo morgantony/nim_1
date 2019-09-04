@@ -36,12 +36,12 @@ public final class R {
 
         public static final int dsb_disabled_color = 0x7f0e00c5;
         public static final int dsb_progress_color = 0x7f0e00c6;
-        public static final int dsb_progress_color_list = 0x7f0e01b0;
+        public static final int dsb_progress_color_list = 0x7f0e01b9;
         public static final int dsb_ripple_color_focused = 0x7f0e00c7;
-        public static final int dsb_ripple_color_list = 0x7f0e01b1;
+        public static final int dsb_ripple_color_list = 0x7f0e01ba;
         public static final int dsb_ripple_color_pressed = 0x7f0e00c8;
         public static final int dsb_track_color = 0x7f0e00c9;
-        public static final int dsb_track_color_list = 0x7f0e01b2;
+        public static final int dsb_track_color_list = 0x7f0e01bb;
     }
     public static final class style {
         private style() {}
