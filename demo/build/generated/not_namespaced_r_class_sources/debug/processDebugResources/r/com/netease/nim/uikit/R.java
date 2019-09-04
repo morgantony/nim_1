@@ -1349,6 +1349,7 @@ public final class R {
         public static final int notification_template_icon_low_bg = 0x7f0203f1;
         public static final int notification_tile_bg = 0x7f02039b;
         public static final int notify_panel_notification_icon_bg = 0x7f02039c;
+        public static final int solid_lightblack_round = 0x7f0203b7;
         public static final int tooltip_frame_dark = 0x7f0203dc;
         public static final int tooltip_frame_light = 0x7f0203dd;
         public static final int up_icon = 0x7f0203de;
@@ -1477,6 +1478,8 @@ public final class R {
         public static final int design_menu_item_action_area_stub = 0x7f100152;
         public static final int design_menu_item_text = 0x7f100151;
         public static final int design_navigation_view = 0x7f100150;
+        public static final int dialog_text_loading = 0x7f1002b1;
+        public static final int dialog_view = 0x7f1002af;
         public static final int disableHome = 0x7f100037;
         public static final int discussion_name = 0x7f10043f;
         public static final int divider = 0x7f100350;
@@ -1933,6 +1936,7 @@ public final class R {
         public static final int design_navigation_menu = 0x7f040052;
         public static final int design_navigation_menu_item = 0x7f040053;
         public static final int design_text_input_password_icon = 0x7f040054;
+        public static final int layout_dialog_app_loading = 0x7f0400cf;
         public static final int nim_action_bar_custom_view = 0x7f0400ec;
         public static final int nim_action_bar_right_clickable_tv = 0x7f0400ed;
         public static final int nim_action_bar_right_picker_preview = 0x7f0400ee;
@@ -2787,6 +2791,7 @@ public final class R {
         public static final int horizontal_deep_thick_divider = 0x7f0b01b4;
         public static final int horizontal_light_thin_divider = 0x7f0b01b5;
         public static final int list_view = 0x7f0b01b9;
+        public static final int loading_dialog = 0x7f0b01ba;
         public static final int myToolbarNavigationButtonStyle = 0x7f0b01bb;
         public static final int recycler_view = 0x7f0b01bd;
         public static final int scroll_view = 0x7f0b01be;

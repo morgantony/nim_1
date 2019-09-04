@@ -54,5 +54,6 @@ dependencies {
 
     implementation "com.github.chrisbanes.photoview:library:1.2.4"
     //api 'jp.co.cyberagent.android.gpuimage:gpuimage-library:1.4.1' // if you want to use the Glide GPU Filters
-    implementation 'com.gyf.barlibrary:barlibrary:2.3.0'
+    api 'com.gyf.barlibrary:barlibrary:2.3.0'
+    api 'com.bhm.sdk.rxlibrary:RxLibrary:2.5.2'
 }

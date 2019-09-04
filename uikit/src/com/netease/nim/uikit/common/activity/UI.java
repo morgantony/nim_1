@@ -7,7 +7,6 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
-import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.text.TextUtils;
 import android.view.KeyEvent;
@@ -15,6 +14,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 
+import com.bhm.sdk.rxlibrary.rxjava.RxBaseActivity;
 import com.gyf.barlibrary.ImmersionBar;
 import com.netease.nim.uikit.R;
 import com.netease.nim.uikit.common.fragment.TFragment;
@@ -24,7 +24,7 @@ import com.netease.nim.uikit.common.util.sys.ReflectionUtil;
 import java.util.ArrayList;
 import java.util.List;
 
-public abstract class UI extends AppCompatActivity {
+public abstract class UI extends RxBaseActivity {
 
     private boolean destroyed = false;
 
