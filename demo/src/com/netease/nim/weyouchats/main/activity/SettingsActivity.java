@@ -385,7 +385,7 @@ public class SettingsActivity extends UI implements SettingsAdapter.SwitchChange
      * 注销
      */
     private void logout() {
-        MainActivity.logout(SettingsActivity.this, false);
+        MainActivity.Companion.logout(SettingsActivity.this, false);
 
         finish();
         NIMClient.getService(AuthService.class).logout();

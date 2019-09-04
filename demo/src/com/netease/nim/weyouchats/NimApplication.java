@@ -150,7 +150,7 @@ public class NimApplication extends Application {
         AVChatOptions avChatOptions = new AVChatOptions() {
             @Override
             public void logout(Context context) {
-                MainActivity.logout(context, true);
+                MainActivity.Companion.logout(context, true);
             }
         };
         avChatOptions.entranceActivity = WelcomeActivity.class;
@@ -189,7 +189,7 @@ public class NimApplication extends Application {
         RTSOptions rtsOptions = new RTSOptions() {
             @Override
             public void logout(Context context) {
-                MainActivity.logout(context, true);
+                MainActivity.Companion.logout(context, true);
             }
         };
         RTSKit.init(rtsOptions);

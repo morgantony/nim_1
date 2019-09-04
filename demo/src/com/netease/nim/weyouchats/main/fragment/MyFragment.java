@@ -25,7 +25,7 @@ public class MyFragment extends MainTabFragment {
     private TextView tv_name;
     private TextView tv_des;
     private ImageView iv_qr;
-    private ImageView iv_edit;
+    private ImageView iv_edit;   //已隐藏
     private LinearLayout ll_info;
     private LinearLayout ll_account_setting;
 
@@ -55,7 +55,7 @@ public class MyFragment extends MainTabFragment {
         headImageView = findView(R.id.hv_robot);
         tv_name = findView(R.id.tv_name);
         iv_qr = findView(R.id.iv_qr);
-        iv_edit = findView(R.id.iv_edit);
+        iv_edit = findView(R.id.iv_edit);   //已隐藏
         ll_info = findView(R.id.ll_info);
         tv_des = findView(R.id.tv_des);
         ll_account_setting = findView(R.id.ll_account_setting);
@@ -75,6 +75,7 @@ public class MyFragment extends MainTabFragment {
     private void initEvent(){
         iv_qr.setOnClickListener(v -> startActivity(new Intent(getActivity(), QRActivity.class)));
         ll_info.setOnClickListener(v -> startActivity(new Intent(getActivity(), EditUserInfoActivity.class)));
+        //已隐藏
         iv_edit.setOnClickListener(v -> {
             Intent intent = new Intent(getActivity(), EditUserInfoActivity.class);
             intent.putExtra("edit", true);

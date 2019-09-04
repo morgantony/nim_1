@@ -203,7 +203,7 @@ public class WelcomeActivity extends UI {
     }
 
     private void showMainActivity(Intent intent) {
-        MainActivity.start(WelcomeActivity.this, intent);
+        MainActivity.Companion.start(WelcomeActivity.this, intent);
         finish();
     }
 

@@ -447,7 +447,7 @@ public class LoginActivity extends UI implements OnKeyListener {
                         // 初始化消息提醒配置
                         initNotificationConfig();
                         // 进入主界面
-                        MainActivity.start(LoginActivity.this, null);
+                        MainActivity.Companion.start(LoginActivity.this, null);
                         finish();
                     }
 
