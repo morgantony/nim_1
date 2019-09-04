@@ -392,6 +392,10 @@
         "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\BHMLibrary-1.2.7.aar\\748644d95d267b61e787e996d7d097ad\\res\\layout\\layout_text_image.xml"
     },
     {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\layout\\activity_change_pw.xml",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\res\\layout\\activity_change_pw.xml"
+    },
+    {
         "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\layout\\jrmf_w_layout_titlebar.xml",
         "source": "F:\\my_sdk\\manyi\\2\\nim_1\\jrmfRpWalletlib\\build\\intermediates\\packaged_res\\debug\\layout\\jrmf_w_layout_titlebar.xml"
     },
@@ -506,6 +510,10 @@
     {
         "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\layout\\nim_contacts_select.xml",
         "source": "F:\\my_sdk\\manyi\\2\\nim_1\\uikit\\build\\intermediates\\packaged_res\\debug\\layout\\nim_contacts_select.xml"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\layout\\activity_forget_pw.xml",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\res\\layout\\activity_forget_pw.xml"
     },
     {
         "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\layout\\nim_message_item_thumb_progress_bar_text.xml",
@@ -1072,6 +1080,10 @@
         "source": "F:\\my_sdk\\manyi\\2\\nim_1\\uikit\\build\\intermediates\\packaged_res\\debug\\layout\\nim_media_item_date.xml"
     },
     {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\layout\\dialog_exit_app.xml",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\res\\layout\\dialog_exit_app.xml"
+    },
+    {
         "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\layout\\abc_screen_simple_overlay_action_mode.xml",
         "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\2a1aec394fcd57ee7215b2b9f27e108d\\res\\layout\\abc_screen_simple_overlay_action_mode.xml"
     },
@@ -1348,6 +1360,10 @@
         "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\design-26.1.0.aar\\bb077bc3644e38cb4de772bda2a12959\\res\\layout\\design_navigation_item_header.xml"
     },
     {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\layout\\activity_account_setting.xml",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\res\\layout\\activity_account_setting.xml"
+    },
+    {
         "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\layout\\jrmf_w_activity_recharge.xml",
         "source": "F:\\my_sdk\\manyi\\2\\nim_1\\jrmfRpWalletlib\\build\\intermediates\\packaged_res\\debug\\layout\\jrmf_w_activity_recharge.xml"
     },
@@ -1541,7 +1557,7 @@
     },
     {
         "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\layout\\layout_dialog_app_loading.xml",
-        "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\RxLibrary-2.5.2.aar\\fb54cb9480645a15c28b0ddee42bbc3e\\res\\layout\\layout_dialog_app_loading.xml"
+        "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\RxLibrary-2.5.3.aar\\8e46ad15e754a55e07292633df3e892f\\res\\layout\\layout_dialog_app_loading.xml"
     },
     {
         "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\layout\\jrmf_rp_browsers.xml",

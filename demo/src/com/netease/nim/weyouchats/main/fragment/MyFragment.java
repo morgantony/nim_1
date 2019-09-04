@@ -14,6 +14,7 @@ import com.netease.nim.uikit.common.ui.imageview.HeadImageView;
 import com.netease.nim.weyouchats.R;
 import com.netease.nim.weyouchats.config.preference.Preferences;
 import com.netease.nim.weyouchats.login.User;
+import com.netease.nim.weyouchats.main.activity.AccountSettingActivity;
 import com.netease.nim.weyouchats.main.activity.EditUserInfoActivity;
 import com.netease.nim.weyouchats.main.activity.QRActivity;
 import com.netease.nim.weyouchats.main.model.MainTab;
@@ -26,6 +27,7 @@ public class MyFragment extends MainTabFragment {
     private ImageView iv_qr;
     private ImageView iv_edit;
     private LinearLayout ll_info;
+    private LinearLayout ll_account_setting;
 
     public MyFragment() {
         this.setContainerId(MainTab.MY.fragmentId);
@@ -56,6 +58,7 @@ public class MyFragment extends MainTabFragment {
         iv_edit = findView(R.id.iv_edit);
         ll_info = findView(R.id.ll_info);
         tv_des = findView(R.id.tv_des);
+        ll_account_setting = findView(R.id.ll_account_setting);
     }
 
     private void initData(){
@@ -93,5 +96,6 @@ public class MyFragment extends MainTabFragment {
                 }
             });
         });
+        ll_account_setting.setOnClickListener(v -> startActivity(new Intent(getActivity(), AccountSettingActivity.class)));
     }
 }

@@ -1,8 +1,11 @@
 package com.netease.nim.weyouchats.common.util;
 
+import android.app.Dialog;
 import android.content.Context;
 import android.support.v4.content.ContextCompat;
 import android.view.View;
+import android.view.Window;
+import android.widget.Button;
 
 import com.bhm.sdk.bhmlibrary.utils.DateUtils;
 import com.bigkoo.pickerview.builder.TimePickerBuilder;
@@ -99,6 +102,22 @@ public class PickerUtils {
             return i + str1 + i1 + str2 + i2 + str3 + i3 + str4 + i4;//返回 2018-04-01 05:02
         }else{
             return i + str1 + i1 + str2 + i2;//返回 2018-04-01
+        }
+    }
+
+    public static void showExitDialog(Context context, View.OnClickListener clickListener){
+        Dialog dialog = new Dialog(context, R.style.dialogStyle);
+        Window window = dialog.getWindow();
+        window.setContentView(R.layout.dialog_exit_app);
+        Button left = (Button) window.findViewById(R.id.btn_left);
+        Button right = (Button) window.findViewById(R.id.btn_right);
+        left.setOnClickListener(v -> dialog.dismiss());
+        right.setOnClickListener(v -> {
+            dialog.dismiss();
+            clickListener.onClick(v);
+        });
+        if (!dialog.isShowing()) {
+            dialog.show();
         }
     }
 }

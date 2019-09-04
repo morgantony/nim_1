@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    android:background="#E4EDF0">
+
+    <com.bhm.sdk.bhmlibrary.views.TitleBar
+        android:id="@+id/titleBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:titleBarHeight="50dp"
+        app:titleTextColor="@color/white"
+        app:rightTextColor="@color/white"
+        app:titleText="修改密码"
+        app:rightText="确定"
+        app:rightTextSize="16sp"
+        app:leftViewBackgroundResource="@drawable/img_close_source"
+        app:leftViewMarginLeft="15dp"
+        app:rightViewMarginRight="12dp"
+        app:isLeftViewShow="true"
+        app:isRightViewShow="true"
+        app:backGroundColor="@color/color_main"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_marginTop="15dp"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:gravity="center_vertical"
+        android:layout_height="48dp"
+        android:orientation="horizontal"
+        android:background="@drawable/round_layout_white_color_3dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:textColor="#323333"
+            android:text="原密码："/>
+
+        <com.netease.nim.uikit.common.ui.widget.ClearableEditTextWithIcon
+            android:id="@+id/et_old"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@null"
+            android:digits="1234567890abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+            android:drawablePadding="15dp"
+            android:hint="旧密码"
+            android:inputType="textPassword"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            android:textCursorDrawable="@null"
+            android:textColor="@color/c66000000"
+            android:textSize="16sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_marginTop="15dp"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:gravity="center_vertical"
+        android:layout_height="48dp"
+        android:orientation="horizontal"
+        android:background="@drawable/round_layout_white_color_3dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:textColor="#323333"
+            android:text="新密码："/>
+
+        <com.netease.nim.uikit.common.ui.widget.ClearableEditTextWithIcon
+            android:id="@+id/et_new"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@null"
+            android:digits="1234567890abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+            android:drawablePadding="15dp"
+            android:hint="新密码(由6-12位字母+数字组合)"
+            android:inputType="textPassword"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            android:textCursorDrawable="@null"
+            android:textColor="@color/c66000000"
+            android:textSize="16sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_update_pw"
+        android:layout_width="match_parent"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:gravity="center_vertical"
+        android:layout_height="48dp"
+        android:orientation="horizontal"
+        android:background="@drawable/round_layout_white_color_3dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:textColor="#323333"
+            android:text="确认密码："/>
+
+        <com.netease.nim.uikit.common.ui.widget.ClearableEditTextWithIcon
+            android:id="@+id/et_new_sure"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@null"
+            android:digits="1234567890abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+            android:drawablePadding="15dp"
+            android:hint="确认密码"
+            android:inputType="textPassword"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            android:textCursorDrawable="@null"
+            android:textColor="@color/c66000000"
+            android:textSize="16sp" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tv_forget"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:layout_marginTop="6dp"
+        android:layout_marginRight="15dp"
+        android:layout_gravity="right"
+        android:gravity="center"
+        android:textColor="@color/color_main"
+        android:textSize="12sp"
+        android:text="忘记密码？"/>
+
+</LinearLayout>

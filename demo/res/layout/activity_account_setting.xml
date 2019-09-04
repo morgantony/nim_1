@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    android:background="#E4EDF0">
+
+    <com.bhm.sdk.bhmlibrary.views.TitleBar
+        android:id="@+id/titleBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:titleBarHeight="50dp"
+        app:titleTextColor="@color/white"
+        app:rightTextColor="@color/white"
+        app:titleText="账号设置"
+        app:rightText=""
+        app:rightTextSize="16sp"
+        app:leftViewBackgroundResource="@drawable/img_close_source"
+        app:leftViewMarginLeft="15dp"
+        app:rightViewMarginRight="12dp"
+        app:isLeftViewShow="true"
+        app:isRightViewShow="true"
+        app:backGroundColor="@color/color_main"/>
+
+    <LinearLayout
+        android:id="@+id/ll_update_pw"
+        android:layout_width="match_parent"
+        android:layout_marginTop="15dp"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:gravity="center_vertical"
+        android:layout_height="48dp"
+        android:orientation="horizontal"
+        android:background="@drawable/round_layout_white_color_3dp">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:textColor="#323333"
+            android:text="修改密码"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="1.5dp"
+            android:src="@drawable/img_right"/>
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tv_logout"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginTop="56dp"
+        android:layout_marginLeft="38dp"
+        android:layout_marginRight="38dp"
+        android:gravity="center"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        android:background="@color/color_network_bar_bg_ee4b62"
+        android:text="退出当前账号"/>
+
+</LinearLayout>

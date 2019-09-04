@@ -2658,6 +2658,7 @@ id btn_choose_face_shape
 id btn_choose_filter
 id btn_choose_red_level
 id btn_confirm
+id btn_left
 id btn_next
 id btn_next_step1
 id btn_next_step2
@@ -2665,6 +2666,7 @@ id btn_ok
 id btn_pay
 id btn_putin
 id btn_read_config
+id btn_right
 id btn_submit
 id btn_trans_account
 id btn_trans_finish
@@ -2845,12 +2847,16 @@ id enlarge_eye_level_select_block
 id enterAlways
 id enterAlwaysCollapsed
 id et_amount
+id et_code
 id et_confirm_pwd
 id et_identity
 id et_input_sub_bank
 id et_message
 id et_name
+id et_new
+id et_new_sure
 id et_note
+id et_old
 id et_password
 id et_peak_amount
 id et_peak_message
@@ -3038,6 +3044,7 @@ id listMode
 id listView
 id list_item
 id liv_index
+id ll_account_setting
 id ll_action_container
 id ll_add_card
 id ll_all
@@ -3078,6 +3085,7 @@ id ll_title_bar_left
 id ll_title_bar_right
 id ll_trans_money
 id ll_trans_tip
+id ll_update_pw
 id ll_userinfo
 id ll_wallet_recharge
 id ll_yanzengma
@@ -3608,6 +3616,7 @@ id tv_email
 id tv_empty
 id tv_exit
 id tv_folder_name
+id tv_forget
 id tv_forget_pswd
 id tv_forget_pwd
 id tv_freeze
@@ -3627,6 +3636,7 @@ id tv_label
 id tv_left
 id tv_letter
 id tv_limit
+id tv_logout
 id tv_look_others
 id tv_look_rp_history
 id tv_mess
@@ -3824,8 +3834,11 @@ layout ack_msg_detail_item
 layout ack_msg_info_layout
 layout ack_msg_readed_layout
 layout ack_msg_unread_layout
+layout activity_account_setting
+layout activity_change_pw
 layout activity_edit_info
 layout activity_edit_name
+layout activity_forget_pw
 layout activity_main_tab
 layout activity_msg_migration
 layout activity_my
@@ -3878,6 +3891,7 @@ layout design_navigation_menu
 layout design_navigation_menu_item
 layout design_text_input_password_icon
 layout dialog_country_picker
+layout dialog_exit_app
 layout dialog_qr
 layout effect_and_filter_item_view
 layout faceu_layout

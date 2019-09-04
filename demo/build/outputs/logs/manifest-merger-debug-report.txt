@@ -7,9 +7,9 @@ INJECTED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:84:9-86:43
 	android:name
 		ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:85:13-50
 manifest
-ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:2:1-598:12
-INJECTED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:2:1-598:12
-INJECTED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:2:1-598:12
+ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:2:1-613:12
+INJECTED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:2:1-613:12
+INJECTED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:2:1-613:12
 MERGED from [com.crashlytics.sdk.android:crashlytics:2.8.0] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\crashlytics-2.8.0.aar\e1017cc276e05286f95716743d689efd\AndroidManifest.xml:2:1-19:12
 MERGED from [:rtskit] F:\my_sdk\manyi\2\nim_1\rtskit\build\intermediates\merged_manifests\debug\processDebugManifest\merged\AndroidManifest.xml:2:1-32:12
 MERGED from [:library_country_picker] F:\my_sdk\manyi\2\nim_1\library_country_picker\build\intermediates\merged_manifests\debug\processDebugManifest\merged\AndroidManifest.xml:2:1-15:12
@@ -82,19 +82,19 @@ MERGED from [com.google.android.gms:play-services-basement-license:11.6.0] C:\Us
 MERGED from [com.google.firebase:firebase-common-license:11.6.0] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\firebase-common-license-11.6.0.aar\57de239edcbf5ced41d845fbda86634a\AndroidManifest.xml:2:1-6:12
 MERGED from [com.google.android.gms:play-services-tasks-license:11.6.0] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\play-services-tasks-license-11.6.0.aar\2fbad06b523c5a99a09f9d362f0d70a7\AndroidManifest.xml:2:1-6:12
 MERGED from [com.google.firebase:firebase-analytics-impl-license:11.6.0] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\firebase-analytics-impl-license-11.6.0.aar\6623b830aa792c1908251f7244498a18\AndroidManifest.xml:2:1-6:12
-INJECTED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:2:1-598:12
-INJECTED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:2:1-598:12
+INJECTED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:2:1-613:12
+INJECTED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:2:1-613:12
 	package
 		ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:4:5-41
 	android:versionName
 		INJECTED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml
-		ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:2:1-598:12
+		ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:2:1-613:12
 		INJECTED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml
 	xmlns:tools
 		ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:3:5-51
 	android:versionCode
 		INJECTED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml
-		ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:2:1-598:12
+		ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:2:1-613:12
 		INJECTED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml
 	xmlns:android
 		ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:2:11-69
@@ -464,7 +464,7 @@ ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:74:5-83
 	android:name
 		ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:74:22-80
 application
-ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:76:5-596:19
+ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:76:5-611:19
 MERGED from [com.crashlytics.sdk.android:crashlytics:2.8.0] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\crashlytics-2.8.0.aar\e1017cc276e05286f95716743d689efd\AndroidManifest.xml:11:5-17:19
 MERGED from [com.crashlytics.sdk.android:crashlytics:2.8.0] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\crashlytics-2.8.0.aar\e1017cc276e05286f95716743d689efd\AndroidManifest.xml:11:5-17:19
 MERGED from [:rtskit] F:\my_sdk\manyi\2\nim_1\rtskit\build\intermediates\merged_manifests\debug\processDebugManifest\merged\AndroidManifest.xml:11:5-30:19
@@ -1095,318 +1095,354 @@ ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:390:9-394:75
 		ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:393:13-56
 	android:name
 		ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:390:19-69
-service#com.netease.nimlib.service.NimService
-ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:397:9-399:39
-	android:process
-		ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:399:13-36
-	android:name
-		ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:398:13-65
-service#com.netease.nimlib.service.NimService$Aux
-ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:402:9-404:39
-	android:process
-		ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:404:13-36
-	android:name
-		ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:403:13-69
-service#com.netease.nimlib.job.NIMJobService
-ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:407:9-411:39
-	android:process
-		ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:411:13-36
-	android:exported
-		ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:409:13-36
-	android:permission
-		ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:410:13-69
-	android:name
-		ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:408:13-64
-receiver#com.netease.nimlib.service.NimReceiver
-ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:414:9-422:20
-	android:process
-		ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:417:13-36
-	android:exported
-		ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:416:13-37
-	android:name
-		ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:415:13-66
-intent-filter#action:name:android.intent.action.BOOT_COMPLETED+action:name:android.net.conn.CONNECTIVITY_CHANGE
-ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:418:13-421:29
-action#android.intent.action.BOOT_COMPLETED
-ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:419:17-79
-	android:name
-		ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:419:25-76
-action#android.net.conn.CONNECTIVITY_CHANGE
-ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:420:17-79
-	android:name
-		ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:420:25-76
-receiver#com.netease.nimlib.service.ResponseReceiver
-ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:425:9-80
-	android:name
-		ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:425:19-77
-service#com.netease.nimlib.service.ResponseService
-ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:428:9-78
-	android:name
-		ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:428:18-75
-provider#com.netease.nimlib.ipc.NIMContentProvider
-ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:432:9-436:39
-	android:process
-		ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:436:13-36
-	android:authorities
-		ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:434:13-74
-	android:exported
-		ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:435:13-37
-	android:name
-		ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:433:13-69
-receiver#com.netease.nim.weyouchats.receiver.CustomNotificationReceiver
-ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:440:9-447:20
-	android:enabled
-		ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:442:13-35
-	android:exported
-		ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:443:13-37
-	android:name
-		ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:441:13-90
-intent-filter#action:name:com.netease.nim.demo.ACTION.RECEIVE_CUSTOM_NOTIFICATION
-ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:444:13-446:29
-action#com.netease.nim.demo.ACTION.RECEIVE_CUSTOM_NOTIFICATION
-ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:445:17-98
-	android:name
-		ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:445:25-95
-service#com.xiaomi.push.service.XMJobService
-ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:450:9-455:42
-	android:process
-		ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:455:13-39
-	android:enabled
-		ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:452:13-35
-	android:exported
-		ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:453:13-37
-	android:permission
-		ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:454:13-69
-	android:name
-		ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:451:13-64
-service#com.xiaomi.push.service.XMPushService
-ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:457:9-460:42
-	android:process
-		ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:460:13-39
-	android:enabled
-		ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:459:13-35
-	android:name
-		ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:458:13-65
-receiver#com.xiaomi.push.service.receivers.PingReceiver
-ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:462:9-469:20
-	android:process
-		ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:465:13-39
-	android:exported
-		ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:464:13-37
-	android:name
-		ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:463:13-74
-intent-filter#action:name:com.xiaomi.push.PING_TIMER
-ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:466:13-468:29
-action#com.xiaomi.push.PING_TIMER
-ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:467:17-69
-	android:name
-		ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:467:25-66
-receiver#com.xiaomi.push.service.receivers.NetworkStatusReceiver
-ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:471:9-478:20
-	android:exported
-		ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:473:13-36
-	android:name
-		ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:472:13-83
-intent-filter#action:name:android.net.conn.CONNECTIVITY_CHANGE+category:name:android.intent.category.DEFAULT
-ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:474:13-477:29
-category#android.intent.category.DEFAULT
-ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:476:17-76
-	android:name
-		ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:476:27-73
-service#com.xiaomi.mipush.sdk.PushMessageHandler
-ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:480:9-483:39
-	android:enabled
-		ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:482:13-35
-	android:exported
-		ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:483:13-36
-	android:name
-		ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:481:13-68
-service#com.xiaomi.mipush.sdk.MessageHandleService
-ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:485:9-487:38
-	android:enabled
-		ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:487:13-35
-	android:name
-		ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:486:13-70
-receiver#com.netease.nimlib.mixpush.mi.MiPushReceiver
-ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:489:9-497:20
-	android:exported
-		ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:491:13-36
-	android:name
-		ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:490:13-72
-intent-filter#action:name:com.xiaomi.mipush.ERROR+action:name:com.xiaomi.mipush.MESSAGE_ARRIVED+action:name:com.xiaomi.mipush.RECEIVE_MESSAGE
-ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:492:13-496:29
-	android:priority
-		ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:492:28-57
-action#com.xiaomi.mipush.RECEIVE_MESSAGE
-ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:493:17-76
-	android:name
-		ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:493:25-73
-action#com.xiaomi.mipush.MESSAGE_ARRIVED
-ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:494:17-76
-	android:name
-		ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:494:25-73
-action#com.xiaomi.mipush.ERROR
-ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:495:17-66
-	android:name
-		ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:495:25-63
-meta-data#com.huawei.hms.client.appid
-ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:501:9-503:41
-	android:value
-		ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:503:13-38
-	android:name
-		ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:502:13-55
-provider#com.huawei.hms.update.provider.UpdateProvider
-ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:505:9-509:50
-	android:grantUriPermissions
-		ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:509:13-47
-	android:authorities
-		ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:507:13-81
-	android:exported
-		ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:508:13-37
-	android:name
-		ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:506:13-73
-receiver#com.netease.nimlib.mixpush.hw.HWPushReceiver
-ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:512:9-526:20
-	android:name
-		ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:512:19-78
-intent-filter#action:name:com.huawei.android.push.intent.CLICK+action:name:com.huawei.android.push.intent.RECEIVE+action:name:com.huawei.android.push.intent.REGISTRATION+action:name:com.huawei.intent.action.PUSH_STATE
-ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:513:13-522:29
-	android:priority
-		ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:513:28-57
-action#com.huawei.android.push.intent.REGISTRATION
-ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:515:17-86
-	android:name
-		ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:515:25-83
-action#com.huawei.android.push.intent.RECEIVE
-ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:517:17-81
-	android:name
-		ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:517:25-78
-action#com.huawei.android.push.intent.CLICK
-ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:519:17-79
-	android:name
-		ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:519:25-76
-action#com.huawei.intent.action.PUSH_STATE
-ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:521:17-78
-	android:name
-		ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:521:25-75
-meta-data#CS_cloud_ablitity
-ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:523:13-525:56
-	android:value
-		ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:525:17-53
-	android:name
-		ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:524:17-49
-receiver#com.huawei.hms.support.api.push.PushEventReceiver
-ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:528:9-533:20
-	android:name
-		ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:528:19-83
-intent-filter#action:name:com.huawei.intent.action.PUSH
-ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:529:13-532:29
-action#com.huawei.intent.action.PUSH
-ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:531:17-72
-	android:name
-		ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:531:25-69
-service#com.amap.api.location.APSService
-ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:536:9-68
-	android:name
-		ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:536:18-65
-service#com.netease.nimlib.mixpush.fcm.FCMTokenService
-ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:539:9-543:19
-	android:name
-		ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:539:18-79
-intent-filter#action:name:com.google.firebase.INSTANCE_ID_EVENT
-ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:540:13-542:29
-action#com.google.firebase.INSTANCE_ID_EVENT
-ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:541:17-80
-	android:name
-		ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:541:25-77
-meta-data#com.google.firebase.messaging.default_notification_icon
-ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:546:9-548:63
-	android:resource
-		ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:548:13-60
-	android:name
-		ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:547:13-83
-meta-data#com.google.firebase.messaging.default_notification_color
-ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:549:9-551:59
-	android:resource
-		ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:551:13-56
-	android:name
-		ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:550:13-84
-receiver#com.netease.nimlib.mixpush.mz.MZPushReceiver
-ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:554:9-568:20
-	android:name
-		ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:554:19-78
-intent-filter#action:name:com.meizu.c2dm.intent.RECEIVE+action:name:com.meizu.c2dm.intent.REGISTRATION+action:name:com.meizu.flyme.push.intent.MESSAGE+action:name:com.meizu.flyme.push.intent.REGISTER.FEEDBACK+action:name:com.meizu.flyme.push.intent.UNREGISTER.FEEDBACK+category:name:com.netease.nim.demo
-ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:555:13-567:29
-	android:priority
-		ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:555:28-57
-action#com.meizu.flyme.push.intent.MESSAGE
-ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:557:17-78
-	android:name
-		ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:557:25-75
-action#com.meizu.flyme.push.intent.REGISTER.FEEDBACK
-ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:559:17-88
-	android:name
-		ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:559:25-85
-action#com.meizu.flyme.push.intent.UNREGISTER.FEEDBACK
-ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:561:17-90
-	android:name
-		ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:561:25-87
-action#com.meizu.c2dm.intent.REGISTRATION
-ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:563:17-77
-	android:name
-		ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:563:25-74
-action#com.meizu.c2dm.intent.RECEIVE
-ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:564:17-72
-	android:name
-		ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:564:25-69
-category#com.netease.nim.demo
-ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:566:17-65
-	android:name
-		ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:566:27-62
-meta-data#io.fabric.ApiKey
-ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:570:9-572:72
-	android:value
-		ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:572:13-69
-	android:name
-		ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:571:13-44
-service#com.vivo.push.sdk.service.CommandClientService
-ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:575:9-577:38
-	android:exported
-		ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:577:13-36
-	android:name
-		ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:576:13-74
-activity#com.vivo.push.sdk.LinkProxyClientActivity
-ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:578:9-582:74
+activity#com.netease.nim.weyouchats.main.activity.AccountSettingActivity
+ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:395:9-399:75
 	android:screenOrientation
-		ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:581:13-49
-	android:exported
-		ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:580:13-37
+		ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:397:13-49
+	android:windowSoftInputMode
+		ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:399:13-72
+	android:configChanges
+		ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:396:13-48
 	android:theme
-		ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:582:13-72
+		ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:398:13-56
 	android:name
-		ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:579:13-69
+		ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:395:19-71
+activity#com.netease.nim.weyouchats.main.activity.ChangePassWordActivity
+ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:400:9-404:75
+	android:screenOrientation
+		ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:402:13-49
+	android:windowSoftInputMode
+		ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:404:13-72
+	android:configChanges
+		ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:401:13-48
+	android:theme
+		ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:403:13-56
+	android:name
+		ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:400:19-71
+activity#com.netease.nim.weyouchats.main.activity.ForgetPassWordActivity
+ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:405:9-409:75
+	android:screenOrientation
+		ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:407:13-49
+	android:windowSoftInputMode
+		ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:409:13-72
+	android:configChanges
+		ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:406:13-48
+	android:theme
+		ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:408:13-56
+	android:name
+		ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:405:19-71
+service#com.netease.nimlib.service.NimService
+ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:412:9-414:39
+	android:process
+		ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:414:13-36
+	android:name
+		ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:413:13-65
+service#com.netease.nimlib.service.NimService$Aux
+ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:417:9-419:39
+	android:process
+		ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:419:13-36
+	android:name
+		ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:418:13-69
+service#com.netease.nimlib.job.NIMJobService
+ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:422:9-426:39
+	android:process
+		ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:426:13-36
+	android:exported
+		ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:424:13-36
+	android:permission
+		ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:425:13-69
+	android:name
+		ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:423:13-64
+receiver#com.netease.nimlib.service.NimReceiver
+ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:429:9-437:20
+	android:process
+		ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:432:13-36
+	android:exported
+		ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:431:13-37
+	android:name
+		ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:430:13-66
+intent-filter#action:name:android.intent.action.BOOT_COMPLETED+action:name:android.net.conn.CONNECTIVITY_CHANGE
+ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:433:13-436:29
+action#android.intent.action.BOOT_COMPLETED
+ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:434:17-79
+	android:name
+		ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:434:25-76
+action#android.net.conn.CONNECTIVITY_CHANGE
+ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:435:17-79
+	android:name
+		ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:435:25-76
+receiver#com.netease.nimlib.service.ResponseReceiver
+ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:440:9-80
+	android:name
+		ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:440:19-77
+service#com.netease.nimlib.service.ResponseService
+ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:443:9-78
+	android:name
+		ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:443:18-75
+provider#com.netease.nimlib.ipc.NIMContentProvider
+ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:447:9-451:39
+	android:process
+		ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:451:13-36
+	android:authorities
+		ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:449:13-74
+	android:exported
+		ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:450:13-37
+	android:name
+		ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:448:13-69
+receiver#com.netease.nim.weyouchats.receiver.CustomNotificationReceiver
+ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:455:9-462:20
+	android:enabled
+		ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:457:13-35
+	android:exported
+		ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:458:13-37
+	android:name
+		ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:456:13-90
+intent-filter#action:name:com.netease.nim.demo.ACTION.RECEIVE_CUSTOM_NOTIFICATION
+ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:459:13-461:29
+action#com.netease.nim.demo.ACTION.RECEIVE_CUSTOM_NOTIFICATION
+ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:460:17-98
+	android:name
+		ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:460:25-95
+service#com.xiaomi.push.service.XMJobService
+ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:465:9-470:42
+	android:process
+		ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:470:13-39
+	android:enabled
+		ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:467:13-35
+	android:exported
+		ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:468:13-37
+	android:permission
+		ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:469:13-69
+	android:name
+		ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:466:13-64
+service#com.xiaomi.push.service.XMPushService
+ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:472:9-475:42
+	android:process
+		ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:475:13-39
+	android:enabled
+		ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:474:13-35
+	android:name
+		ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:473:13-65
+receiver#com.xiaomi.push.service.receivers.PingReceiver
+ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:477:9-484:20
+	android:process
+		ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:480:13-39
+	android:exported
+		ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:479:13-37
+	android:name
+		ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:478:13-74
+intent-filter#action:name:com.xiaomi.push.PING_TIMER
+ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:481:13-483:29
+action#com.xiaomi.push.PING_TIMER
+ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:482:17-69
+	android:name
+		ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:482:25-66
+receiver#com.xiaomi.push.service.receivers.NetworkStatusReceiver
+ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:486:9-493:20
+	android:exported
+		ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:488:13-36
+	android:name
+		ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:487:13-83
+intent-filter#action:name:android.net.conn.CONNECTIVITY_CHANGE+category:name:android.intent.category.DEFAULT
+ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:489:13-492:29
+category#android.intent.category.DEFAULT
+ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:491:17-76
+	android:name
+		ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:491:27-73
+service#com.xiaomi.mipush.sdk.PushMessageHandler
+ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:495:9-498:39
+	android:enabled
+		ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:497:13-35
+	android:exported
+		ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:498:13-36
+	android:name
+		ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:496:13-68
+service#com.xiaomi.mipush.sdk.MessageHandleService
+ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:500:9-502:38
+	android:enabled
+		ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:502:13-35
+	android:name
+		ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:501:13-70
+receiver#com.netease.nimlib.mixpush.mi.MiPushReceiver
+ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:504:9-512:20
+	android:exported
+		ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:506:13-36
+	android:name
+		ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:505:13-72
+intent-filter#action:name:com.xiaomi.mipush.ERROR+action:name:com.xiaomi.mipush.MESSAGE_ARRIVED+action:name:com.xiaomi.mipush.RECEIVE_MESSAGE
+ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:507:13-511:29
+	android:priority
+		ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:507:28-57
+action#com.xiaomi.mipush.RECEIVE_MESSAGE
+ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:508:17-76
+	android:name
+		ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:508:25-73
+action#com.xiaomi.mipush.MESSAGE_ARRIVED
+ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:509:17-76
+	android:name
+		ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:509:25-73
+action#com.xiaomi.mipush.ERROR
+ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:510:17-66
+	android:name
+		ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:510:25-63
+meta-data#com.huawei.hms.client.appid
+ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:516:9-518:41
+	android:value
+		ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:518:13-38
+	android:name
+		ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:517:13-55
+provider#com.huawei.hms.update.provider.UpdateProvider
+ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:520:9-524:50
+	android:grantUriPermissions
+		ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:524:13-47
+	android:authorities
+		ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:522:13-81
+	android:exported
+		ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:523:13-37
+	android:name
+		ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:521:13-73
+receiver#com.netease.nimlib.mixpush.hw.HWPushReceiver
+ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:527:9-541:20
+	android:name
+		ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:527:19-78
+intent-filter#action:name:com.huawei.android.push.intent.CLICK+action:name:com.huawei.android.push.intent.RECEIVE+action:name:com.huawei.android.push.intent.REGISTRATION+action:name:com.huawei.intent.action.PUSH_STATE
+ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:528:13-537:29
+	android:priority
+		ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:528:28-57
+action#com.huawei.android.push.intent.REGISTRATION
+ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:530:17-86
+	android:name
+		ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:530:25-83
+action#com.huawei.android.push.intent.RECEIVE
+ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:532:17-81
+	android:name
+		ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:532:25-78
+action#com.huawei.android.push.intent.CLICK
+ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:534:17-79
+	android:name
+		ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:534:25-76
+action#com.huawei.intent.action.PUSH_STATE
+ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:536:17-78
+	android:name
+		ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:536:25-75
+meta-data#CS_cloud_ablitity
+ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:538:13-540:56
+	android:value
+		ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:540:17-53
+	android:name
+		ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:539:17-49
+receiver#com.huawei.hms.support.api.push.PushEventReceiver
+ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:543:9-548:20
+	android:name
+		ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:543:19-83
+intent-filter#action:name:com.huawei.intent.action.PUSH
+ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:544:13-547:29
+action#com.huawei.intent.action.PUSH
+ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:546:17-72
+	android:name
+		ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:546:25-69
+service#com.amap.api.location.APSService
+ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:551:9-68
+	android:name
+		ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:551:18-65
+service#com.netease.nimlib.mixpush.fcm.FCMTokenService
+ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:554:9-558:19
+	android:name
+		ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:554:18-79
+intent-filter#action:name:com.google.firebase.INSTANCE_ID_EVENT
+ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:555:13-557:29
+action#com.google.firebase.INSTANCE_ID_EVENT
+ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:556:17-80
+	android:name
+		ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:556:25-77
+meta-data#com.google.firebase.messaging.default_notification_icon
+ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:561:9-563:63
+	android:resource
+		ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:563:13-60
+	android:name
+		ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:562:13-83
+meta-data#com.google.firebase.messaging.default_notification_color
+ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:564:9-566:59
+	android:resource
+		ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:566:13-56
+	android:name
+		ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:565:13-84
+receiver#com.netease.nimlib.mixpush.mz.MZPushReceiver
+ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:569:9-583:20
+	android:name
+		ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:569:19-78
+intent-filter#action:name:com.meizu.c2dm.intent.RECEIVE+action:name:com.meizu.c2dm.intent.REGISTRATION+action:name:com.meizu.flyme.push.intent.MESSAGE+action:name:com.meizu.flyme.push.intent.REGISTER.FEEDBACK+action:name:com.meizu.flyme.push.intent.UNREGISTER.FEEDBACK+category:name:com.netease.nim.demo
+ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:570:13-582:29
+	android:priority
+		ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:570:28-57
+action#com.meizu.flyme.push.intent.MESSAGE
+ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:572:17-78
+	android:name
+		ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:572:25-75
+action#com.meizu.flyme.push.intent.REGISTER.FEEDBACK
+ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:574:17-88
+	android:name
+		ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:574:25-85
+action#com.meizu.flyme.push.intent.UNREGISTER.FEEDBACK
+ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:576:17-90
+	android:name
+		ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:576:25-87
+action#com.meizu.c2dm.intent.REGISTRATION
+ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:578:17-77
+	android:name
+		ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:578:25-74
+action#com.meizu.c2dm.intent.RECEIVE
+ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:579:17-72
+	android:name
+		ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:579:25-69
+category#com.netease.nim.demo
+ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:581:17-65
+	android:name
+		ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:581:27-62
+meta-data#io.fabric.ApiKey
+ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:585:9-587:72
+	android:value
+		ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:587:13-69
+	android:name
+		ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:586:13-44
+service#com.vivo.push.sdk.service.CommandClientService
+ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:590:9-592:38
+	android:exported
+		ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:592:13-36
+	android:name
+		ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:591:13-74
+activity#com.vivo.push.sdk.LinkProxyClientActivity
+ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:593:9-597:74
+	android:screenOrientation
+		ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:596:13-49
+	android:exported
+		ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:595:13-37
+	android:theme
+		ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:597:13-72
+	android:name
+		ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:594:13-69
 meta-data#com.vivo.push.api_key
-ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:583:9-585:67
+ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:598:9-600:67
 	android:value
-		ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:585:13-65
+		ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:600:13-65
 	android:name
-		ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:584:13-49
+		ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:599:13-49
 meta-data#com.vivo.push.app_id
-ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:586:9-588:36
+ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:601:9-603:36
 	android:value
-		ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:588:13-34
+		ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:603:13-34
 	android:name
-		ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:587:13-48
+		ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:602:13-48
 receiver#com.netease.nimlib.mixpush.vivo.VivoPushReceiver
-ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:590:9-595:20
+ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:605:9-610:20
 	android:name
-		ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:590:19-82
+		ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:605:19-82
 intent-filter#action:name:com.vivo.pushclient.action.RECEIVE
-ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:591:13-594:29
+ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:606:13-609:29
 action#com.vivo.pushclient.action.RECEIVE
-ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:593:17-76
+ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:608:17-76
 	android:name
-		ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:593:25-74
+		ADDED from F:\my_sdk\manyi\2\nim_1\demo\AndroidManifest.xml:608:25-74
 provider#com.crashlytics.android.CrashlyticsInitProvider
 ADDED from [com.crashlytics.sdk.android:crashlytics:2.8.0] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\crashlytics-2.8.0.aar\e1017cc276e05286f95716743d689efd\AndroidManifest.xml:12:9-16:39
 	android:authorities

@@ -188,6 +188,7 @@
                 android:background="#D4D4D4"/>
 
             <LinearLayout
+                android:id="@+id/ll_account_setting"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center_vertical"
