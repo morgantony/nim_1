@@ -27,8 +27,11 @@ public class ContactHttpClient {
     // code
     private static final int RESULT_CODE_SUCCESS = 200;
 
-    // api
-    private static final String API_NAME_REGISTER = "createDemoUser";
+    // 找回密码
+    private static final String API_NAME_UPDATEPASSWORD = "user/updatePassword";
+
+    // 注册
+    private static final String API_NAME_REGISTER = "user/createUser";
 
     //登录
     private static final String API_NAME_LOGIN = "user/login";
@@ -42,7 +45,7 @@ public class ContactHttpClient {
 
     // request
     private static final String REQUEST_USER_NAME = "mobile";
-    private static final String REQUEST_NICK_NAME = "nickname";
+    private static final String REQUEST_NICK_NAME = "code";
     private static final String REQUEST_PASSWORD = "password";
 
     // result
@@ -165,6 +168,56 @@ public class ContactHttpClient {
         });
     }
 
+    /**
+     * 找回密码
+     */
+    public void findPW(String account, String nickName, String password, final ContactHttpCallback<Void> callback) {
+        String url = DemoServers.API_COUSMER + API_NAME_UPDATEPASSWORD;
+        try {
+            nickName = URLEncoder.encode(nickName, "UTF-8");
+        } catch (UnsupportedEncodingException e) {
+            e.printStackTrace();
+        }
+
+        Map<String, String> headers = new HashMap<>(1);
+        String appKey = readAppKey();
+        headers.put(HEADER_CONTENT_TYPE, "application/x-www-form-urlencoded; charset=utf-8");
+        headers.put(HEADER_USER_AGENT, "nim_demo_android");
+        headers.put(HEADER_KEY_APP_KEY, appKey);
+
+        StringBuilder body = new StringBuilder();
+        body.append(REQUEST_USER_NAME).append("=").append(account.toLowerCase()).append("&")
+                .append(REQUEST_NICK_NAME).append("=").append(nickName).append("&")
+                .append(REQUEST_PASSWORD).append("=").append(password);
+        String bodyString = body.toString();
+
+        NimHttpClient.getInstance().execute(url, headers, bodyString, new NimHttpClient.NimHttpCallback() {
+            @Override
+            public void onResponse(String response, int code, Throwable exception) {
+                if (code != 200 || exception != null) {
+                    String errMsg = exception != null ? exception.getMessage() : "null";
+                    LogUtil.e(TAG, "register failed : code = " + code + ", errorMsg = " + errMsg);
+                    if (callback != null) {
+                        callback.onFailed(code, errMsg);
+                    }
+                    return;
+                }
+
+                try {
+                    JSONObject resObj = JSONObject.parseObject(response);
+                    int resCode = resObj.getIntValue("code");
+                    if (resCode == RESULT_CODE_SUCCESS) {
+                        callback.onSuccess(null);
+                    } else {
+                        String error = resObj.getString(RESULT_KEY_ERROR_MSG);
+                        callback.onFailed(resCode, error);
+                    }
+                } catch (JSONException e) {
+                    callback.onFailed(-1, e.getMessage());
+                }
+            }
+        });
+    }
 
     public void sendCode(String mobile, int type,final ContactHttpCallback<User> callback) {
         String url = DemoServers.API_COUSMER + API_NAME_SENDCODE;

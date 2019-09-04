@@ -237,14 +237,16 @@ public class LoginActivity extends UI implements OnKeyListener {
 
         tv_jump_login.setOnClickListener(view -> {
             if(tv_jump_login.getText().equals("忘记密码")){  //跳转忘记密码
-//                ll_yanzengma.setVisibility(View.VISIBLE);
-//                register_login_tip.setText("注  册");
-//                tv_jump_login.setText("已有账号?点击登录");
-//                tv_jump_register.setVisibility(View.GONE);
+                ll_yanzengma.setVisibility(View.VISIBLE);
+                register_login_tip.setText("找  回  密  码");
+                edit_mima_account.setHint("请输入新密码");
+                tv_jump_login.setText("已有账号?点击登录");
+                tv_jump_register.setVisibility(View.GONE);
             }else{                                        //跳转登录
                 ll_yanzengma.setVisibility(View.GONE);
                 tv_jump_register.setVisibility(View.VISIBLE);
                 register_login_tip.setText("登  录");
+                edit_mima_account.setHint("密码");
                 tv_jump_login.setText("忘记密码");
                 tv_jump_register.setText("注册");
             }
@@ -255,12 +257,15 @@ public class LoginActivity extends UI implements OnKeyListener {
             ll_yanzengma.setVisibility(View.VISIBLE);
             register_login_tip.setText("注  册");
             tv_jump_login.setText("已有账号?点击登录");
+            edit_mima_account.setHint("密码");
             tv_jump_register.setVisibility(View.GONE);
         });
         //注册 or 登录
         register_login_tip.setOnClickListener(view -> {
             if(register_login_tip.getText().equals("注  册")){
                 register();
+            }else if(register_login_tip.getText().equals("找  回  密  码")){
+                findPassW();
             }else{
                 login();
             }
@@ -271,13 +276,69 @@ public class LoginActivity extends UI implements OnKeyListener {
         });
         //获取验证码
         tv_huoquyanzhengma.setOnClickListener(view->{
-            yanZhengMa();
+            //0 --注册 1--找回密码
+            if(register_login_tip.getText().equals("注  册")){
+                yanZhengMa(0);
+            }else if(register_login_tip.getText().equals("找  回  密  码")){
+                yanZhengMa(1);
+            }
+
         });
 //        String account = Preferences.getUserAccount();
 //        loginAccountEdit.setText(account);
     }
 
-    private void yanZhengMa() {
+    private void findPassW() {
+
+            if (!checkRegisterContentValid()) {
+                return;
+            }
+
+            if (!NetworkUtil.isNetAvailable(LoginActivity.this)) {
+                ToastHelper.showToast(LoginActivity.this, R.string.network_is_not_available);
+                return;
+            }
+
+            DialogMaker.showProgressDialog(this, getString(R.string.passwording), false);
+
+            // 找回密码流程
+            final String account =tv_country_picker.getText()+"-"+ edit_phone_account.getText().toString();
+            final String nickName = edit_yanzhengma.getText().toString();   //验证码
+            final String password = edit_mima_account.getText().toString();
+
+            ContactHttpClient.getInstance().findPW(account, nickName, password, new ContactHttpClient.ContactHttpCallback<Void>() {
+                @Override
+                public void onSuccess(Void aVoid) {
+                    ToastHelper.showToast(LoginActivity.this, R.string.find_password_success);
+//                switchMode();  // 切换回登录
+//                loginAccountEdit.setText(account);
+//                loginPasswordEdit.setText(password);
+//
+//                registerAccountEdit.setText("");
+//                registerNickNameEdit.setText("");
+//                registerPasswordEdit.setText("");
+
+                    DialogMaker.dismissProgressDialog();
+
+                    //显示登录UI
+                    ll_yanzengma.setVisibility(View.GONE);
+                    tv_jump_register.setVisibility(View.VISIBLE);
+                    register_login_tip.setText("登  录");
+                    edit_mima_account.setHint("密码");
+                    tv_jump_login.setText("忘记密码");
+                    tv_jump_register.setText("注册");
+
+                }
+
+                @Override
+                public void onFailed(int code, String errorMsg) {
+                    ToastHelper.showToast(LoginActivity.this, getString(R.string.register_failed, String.valueOf(code), errorMsg));
+                    DialogMaker.dismissProgressDialog();
+                }
+            });
+    }
+
+    private void yanZhengMa(int password) {
         DialogMaker.showProgressDialog(this, null, getString(R.string.sendcode), true, new DialogInterface.OnCancelListener() {
             @Override
             public void onCancel(DialogInterface dialog) {
@@ -289,7 +350,7 @@ public class LoginActivity extends UI implements OnKeyListener {
         }).setCanceledOnTouchOutside(false);
 
         final String mobile = tv_country_picker.getText()+"-"+edit_phone_account.getEditableText().toString().toLowerCase();
-        final int password = 0;   //0 --注册 1--修改密码
+          //0 --注册 1--修改密码
 
         ContactHttpClient.getInstance().sendCode(mobile,password, new ContactHttpClient.ContactHttpCallback<User>() {
             @Override
@@ -478,9 +539,9 @@ public class LoginActivity extends UI implements OnKeyListener {
      * ***************************************** 注册 **************************************
      */
     private void register() {
-        if (!registerMode || !registerPanelInited) {
-            return;
-        }
+//        if (!registerMode || !registerPanelInited) {
+//            return;
+//        }
         if (!checkRegisterContentValid()) {
             return;
         }
@@ -493,8 +554,8 @@ public class LoginActivity extends UI implements OnKeyListener {
         DialogMaker.showProgressDialog(this, getString(R.string.registering), false);
 
         // 注册流程            String nick = registerNickNameEdit.getText().toString().trim();
-        final String account = edit_phone_account.getText().toString();
-        final String nickName = edit_yanzhengma.getText().toString();
+        final String account =tv_country_picker.getText()+"-"+ edit_phone_account.getText().toString();
+        final String nickName = edit_yanzhengma.getText().toString();   //验证码
         final String password = edit_mima_account.getText().toString();
 
         ContactHttpClient.getInstance().register(account, nickName, password, new ContactHttpClient.ContactHttpCallback<Void>() {
@@ -524,9 +585,9 @@ public class LoginActivity extends UI implements OnKeyListener {
     }
 
     private boolean checkRegisterContentValid() {
-        if (!registerMode || !registerPanelInited) {
-            return false;
-        }
+//        if (!registerMode || !registerPanelInited) {
+//            return false;
+//        }
 
         // 帐号检查
         String account = edit_phone_account.getText().toString().trim();
