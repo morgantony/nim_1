@@ -8,6 +8,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.bhm.sdk.onresult.ActivityResult;
+import com.bumptech.glide.Glide;
 import com.google.gson.Gson;
 import com.netease.nim.uikit.common.ui.imageview.HeadImageView;
 import com.netease.nim.weyouchats.R;
@@ -77,6 +78,18 @@ public class MyFragment extends MainTabFragment {
             new ActivityResult(getActivity()).startForResult(intent, (resultCode, data) -> {
                 if(data != null){
                     //更新头像和网名等
+                    String head = data.getStringExtra("head");
+                    String name = data.getStringExtra("name");
+                    String sign = data.getStringExtra("sign");
+                    if(!TextUtils.isEmpty(head)){
+                        Glide.with(this).load(head).into(headImageView);
+                    }
+                    if(!TextUtils.isEmpty(name)){
+                        tv_name.setText(name);
+                    }
+                    if(!TextUtils.isEmpty(sign)){
+                        tv_des.setText(sign);
+                    }
                 }
             });
         });

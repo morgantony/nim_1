@@ -33,7 +33,7 @@ class EditUserItemActivity : UI() {
     }
 
     private fun initEvent() {
-        titleBar.setLeftOnClickListener { v -> finish() }
+        titleBar.setLeftOnClickListener { finish() }
         titleBar.setRightOnClickListener {
             if (TextUtils.isEmpty(et_name.text)) {
                 if(intent!!.getIntExtra("type", 0) == 1){

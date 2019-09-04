@@ -1309,6 +1309,7 @@ drawable notification_template_icon_bg
 drawable notification_template_icon_low_bg
 drawable notification_tile_bg
 drawable notify_panel_notification_icon_bg
+drawable solid_lightblack_round
 drawable tooltip_frame_dark
 drawable tooltip_frame_light
 drawable up_icon
@@ -1433,6 +1434,8 @@ id design_menu_item_action_area
 id design_menu_item_action_area_stub
 id design_menu_item_text
 id design_navigation_view
+id dialog_text_loading
+id dialog_view
 id disableHome
 id discussion_name
 id divider
@@ -1881,6 +1884,7 @@ layout design_navigation_item_subheader
 layout design_navigation_menu
 layout design_navigation_menu_item
 layout design_text_input_password_icon
+layout layout_dialog_app_loading
 layout nim_action_bar_custom_view
 layout nim_action_bar_right_clickable_tv
 layout nim_action_bar_right_picker_preview
@@ -2726,6 +2730,7 @@ style grid_view
 style horizontal_deep_thick_divider
 style horizontal_light_thin_divider
 style list_view
+style loading_dialog
 style myToolbarNavigationButtonStyle
 style recycler_view
 style scroll_view
