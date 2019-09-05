@@ -302,7 +302,7 @@ public class LoginActivity extends UI implements OnKeyListener {
             DialogMaker.showProgressDialog(this, getString(R.string.passwording), false);
 
             // 找回密码流程
-            final String account =tv_country_picker.getText()+"-"+ edit_phone_account.getText().toString();
+            final String account =tv_country_picker.getText().toString().replace("+","%2B")+"-"+ edit_phone_account.getText().toString();
             final String nickName = edit_yanzhengma.getText().toString();   //验证码
             final String password = edit_mima_account.getText().toString();
 
@@ -430,7 +430,7 @@ public class LoginActivity extends UI implements OnKeyListener {
             }
         }).setCanceledOnTouchOutside(false);
 
-        final String mobile = tv_country_picker.getText()+"-"+edit_phone_account.getEditableText().toString().toLowerCase();
+        final String mobile = tv_country_picker.getText().toString().replace("+","%2B")+"-"+edit_phone_account.getEditableText().toString().toLowerCase();
         final String password = edit_mima_account.getEditableText().toString().toLowerCase();
 //        final String token = tokenFromPassword(edit_mima_account.getEditableText().toString());
 
@@ -554,7 +554,7 @@ public class LoginActivity extends UI implements OnKeyListener {
         DialogMaker.showProgressDialog(this, getString(R.string.registering), false);
 
         // 注册流程            String nick = registerNickNameEdit.getText().toString().trim();
-        final String account =tv_country_picker.getText()+"-"+ edit_phone_account.getText().toString();
+        final String account =tv_country_picker.getText().toString().replace("+","%2B")+"-"+ edit_phone_account.getText().toString();
         final String nickName = edit_yanzhengma.getText().toString();   //验证码
         final String password = edit_mima_account.getText().toString();
 
