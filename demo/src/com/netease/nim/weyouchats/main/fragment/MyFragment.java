@@ -54,7 +54,6 @@ public class MyFragment extends MainTabFragment {
     @Override
     protected void onInit() {
         findViews();
-        initData();
         initEvent();
     }
 
@@ -111,5 +110,11 @@ public class MyFragment extends MainTabFragment {
         ll_about.setOnClickListener(v -> startActivity(new Intent(getActivity(), AboutActivity.class)));
         ll_help.setOnClickListener(v -> startActivity(new Intent(getActivity(), HelpingCenterActivity.class)));
         ll_system_setting.setOnClickListener(v -> startActivity(new Intent(getActivity(), SystemSettingActivity.class)));
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        initData();
     }
 }

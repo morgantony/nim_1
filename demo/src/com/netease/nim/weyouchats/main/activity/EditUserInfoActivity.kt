@@ -38,12 +38,13 @@ class EditUserInfoActivity : UI() {
 
     private fun initView() {
         user = Gson().fromJson(Preferences.getUserInfo(), User::class.java)
-        hv_robot.loadAvatar(user.icon)
+        val requestOptions = RequestOptions().centerCrop().error(R.drawable.nim_avatar_default)
+        Glide.with(this@EditUserInfoActivity).load(user.icon).apply(requestOptions).into(hv_robot)
         imagePath = user.icon.toString()
         tv_name.text = if (user.name == null) "" else user.name
         if (user.gender == null){
             tv_sex.text = ""
-        } else if(user.gender.toString() == "1"){
+        } else if(user.gender.toString() == "1" || user.gender.toString() == "男"){
             tv_sex.text = "男"
         }else{
             tv_sex.text = "女"
