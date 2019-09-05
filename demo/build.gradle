@@ -143,6 +143,8 @@ dependencies {
     implementation 'com.bhm.sdk.bhmlibrary:ActivityResult:1.0.3'
     implementation 'io.reactivex.rxjava2:rxjava:2.1.8'
     implementation 'com.contrarywind:Android-PickerView:4.1.0'
+    implementation "org.jetbrains.anko:anko-commons:0.10.8"
+
 }
 
 
