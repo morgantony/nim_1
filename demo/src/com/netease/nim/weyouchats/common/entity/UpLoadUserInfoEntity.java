@@ -9,7 +9,7 @@ public class UpLoadUserInfoEntity extends BaseResponse {
     @SerializedName("msg")
     private String msg;
     @SerializedName("data")
-    private DataEntity data;
+    private String data;
 
     public int getCode() {
         return code;
@@ -27,15 +27,12 @@ public class UpLoadUserInfoEntity extends BaseResponse {
         this.msg = msg;
     }
 
-    public DataEntity getData() {
+    public String getData() {
         return data;
     }
 
-    public void setData(DataEntity data) {
+    public void setData(String data) {
         this.data = data;
     }
 
-    private class DataEntity extends BaseResponse{
-
-    }
 }

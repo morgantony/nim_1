@@ -4,8 +4,6 @@ import com.netease.nim.weyouchats.common.entity.ChangePassWordEntity;
 import com.netease.nim.weyouchats.common.entity.UpLoadUserInfoEntity;
 import com.netease.nim.weyouchats.config.DemoServers;
 
-import java.util.Map;
-
 import io.reactivex.Observable;
 import okhttp3.MultipartBody;
 import retrofit2.http.Field;
@@ -14,7 +12,6 @@ import retrofit2.http.GET;
 import retrofit2.http.Multipart;
 import retrofit2.http.POST;
 import retrofit2.http.Part;
-import retrofit2.http.PartMap;
 import retrofit2.http.Query;
 
 public interface HttpApi {
@@ -25,14 +22,20 @@ public interface HttpApi {
     @Multipart
     @POST("user/updateUserInfo")
     Observable<UpLoadUserInfoEntity> upload(
-            @PartMap Map<String,String> params,
+            @Part("accid") String accid,
             @Part MultipartBody.Part file);
 
     /*上传文件*/
-    @Multipart
+    @FormUrlEncoded
     @POST("user/updateUserInfo")
     Observable<UpLoadUserInfoEntity> upload(
-            @PartMap Map<String,String> params);
+            @Field("accid") String accid,
+            @Field("name") String name,
+            @Field("sign") String sign,
+            @Field("email") String email,
+            @Field("birth") String birth,
+            @Field("mobile") String mobile,
+            @Field("gender") String gender);
 
     /*修改密码*/
 

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    android:background="#E4EDF0">
+
+    <com.bhm.sdk.bhmlibrary.views.TitleBar
+        android:id="@+id/titleBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:titleBarHeight="50dp"
+        app:titleTextColor="@color/white"
+        app:rightTextColor="@color/white"
+        app:titleText="头像"
+        app:rightText="•••"
+        app:leftViewBackgroundResource="@drawable/img_close_source"
+        app:leftViewMarginLeft="15dp"
+        app:isLeftViewShow="true"
+        app:isRightViewShow="true"
+        app:backGroundColor="@color/color_main"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center">
+        <ImageView
+            android:id="@+id/iv_head"
+            android:layout_width="250dp"
+            android:layout_height="250dp"
+            android:background="#F5F9FA"
+            android:layout_gravity="center"/>
+    </LinearLayout>
+</LinearLayout>

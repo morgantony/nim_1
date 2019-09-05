@@ -9,11 +9,11 @@ import android.support.v4.app.FragmentManager
 import android.support.v4.view.ViewPager
 import android.text.TextUtils
 import android.view.View
-
 import com.ashokvarma.bottomnavigation.BottomNavigationBar
 import com.ashokvarma.bottomnavigation.BottomNavigationItem
 import com.bhm.sdk.onresult.ActivityResult
 import com.bumptech.glide.Glide
+import com.bumptech.glide.request.RequestOptions
 import com.netease.nim.avchatkit.AVChatProfile
 import com.netease.nim.avchatkit.activity.AVChatActivity
 import com.netease.nim.avchatkit.constant.AVChatExtras
@@ -50,10 +50,7 @@ import com.netease.nimlib.sdk.msg.constant.SessionTypeEnum
 import com.netease.nimlib.sdk.msg.model.IMMessage
 import com.netease.nimlib.sdk.msg.model.RecentContact
 import kotlinx.android.synthetic.main.activity_my.*
-import kotlinx.android.synthetic.main.amap_marker_window_info.view.*
 import kotlinx.android.synthetic.main.main.*
-
-import java.util.ArrayList
 
 /**
  * 主界面
@@ -150,9 +147,8 @@ class MainActivity : UI(), ReminderManager.UnreadNumChangedCallback, ViewPager.O
                     val head = data.getStringExtra("head")
                     val name = data.getStringExtra("name")
                     val sign = data.getStringExtra("sign")
-                    if (!TextUtils.isEmpty(head)) {
-                        Glide.with(this).load(head).into(hv_robot)
-                    }
+                    val requestOptions = RequestOptions().centerCrop().error(R.drawable.nim_avatar_default)
+                    Glide.with(this).load(head).apply(requestOptions).into(hv_robot)
                     if (!TextUtils.isEmpty(name)) {
                         tv_name.text = name
                     }

@@ -3860,6 +3860,7 @@ layout activity_qr
 layout activity_robot_profile
 layout activity_system_setting
 layout activity_title_bar
+layout activity_upload_head
 layout activity_welcome
 layout add_friend_activity
 layout amap_marker_window_info

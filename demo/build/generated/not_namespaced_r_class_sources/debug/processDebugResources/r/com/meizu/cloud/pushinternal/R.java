@@ -34,8 +34,8 @@ public final class R {
     public static final class layout {
         private layout() {}
 
-        public static final int push_expandable_big_image_notification = 0x7f040189;
-        public static final int push_expandable_big_text_notification = 0x7f04018a;
-        public static final int push_pure_pic_notification = 0x7f04018b;
+        public static final int push_expandable_big_image_notification = 0x7f04018a;
+        public static final int push_expandable_big_text_notification = 0x7f04018b;
+        public static final int push_pure_pic_notification = 0x7f04018c;
     }
 }

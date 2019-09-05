@@ -73,15 +73,15 @@ public final class R {
     public static final class layout {
         private layout() {}
 
-        public static final int hms_download_progress = 0x7f040068;
-        public static final int hwpush_buttons_layout = 0x7f040069;
-        public static final int hwpush_icons_layout = 0x7f04006a;
-        public static final int hwpush_layout2 = 0x7f04006b;
-        public static final int hwpush_layout4 = 0x7f04006c;
-        public static final int hwpush_layout7 = 0x7f04006d;
-        public static final int hwpush_layout8 = 0x7f04006e;
-        public static final int upsdk_app_dl_progress_dialog = 0x7f0401a4;
-        public static final int upsdk_ota_update_view = 0x7f0401a5;
+        public static final int hms_download_progress = 0x7f040069;
+        public static final int hwpush_buttons_layout = 0x7f04006a;
+        public static final int hwpush_icons_layout = 0x7f04006b;
+        public static final int hwpush_layout2 = 0x7f04006c;
+        public static final int hwpush_layout4 = 0x7f04006d;
+        public static final int hwpush_layout7 = 0x7f04006e;
+        public static final int hwpush_layout8 = 0x7f04006f;
+        public static final int upsdk_app_dl_progress_dialog = 0x7f0401a5;
+        public static final int upsdk_ota_update_view = 0x7f0401a6;
     }
     public static final class string {
         private string() {}

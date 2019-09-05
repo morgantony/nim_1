@@ -9,6 +9,7 @@ import android.widget.TextView;
 
 import com.bhm.sdk.onresult.ActivityResult;
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.request.RequestOptions;
 import com.google.gson.Gson;
 import com.netease.nim.uikit.common.ui.imageview.HeadImageView;
 import com.netease.nim.weyouchats.R;
@@ -73,7 +74,8 @@ public class MyFragment extends MainTabFragment {
     private void initData(){
         User user = new Gson().fromJson(Preferences.getUserInfo(), User.class);
         if(null != user){
-            headImageView.loadAvatar(user.getIcon());
+            RequestOptions requestOptions = new RequestOptions().centerCrop().error(R.drawable.nim_avatar_default);
+            Glide.with(this).load(user.getIcon()).apply(requestOptions).into(headImageView);
             tv_name.setText(user.getName());
             if(!TextUtils.isEmpty(user.getSign())){
                 tv_des.setText(user.getSign());
@@ -94,9 +96,8 @@ public class MyFragment extends MainTabFragment {
                     String head = data.getStringExtra("head");
                     String name = data.getStringExtra("name");
                     String sign = data.getStringExtra("sign");
-                    if(!TextUtils.isEmpty(head)){
-                        Glide.with(this).load(head).into(headImageView);
-                    }
+                    RequestOptions requestOptions = new RequestOptions().centerCrop().error(R.drawable.nim_avatar_default);
+                    Glide.with(this).load(head).apply(requestOptions).into(headImageView);
                     if(!TextUtils.isEmpty(name)){
                         tv_name.setText(name);
                     }

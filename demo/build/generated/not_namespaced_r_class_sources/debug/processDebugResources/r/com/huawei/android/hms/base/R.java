@@ -61,9 +61,9 @@ public final class R {
     public static final class layout {
         private layout() {}
 
-        public static final int hms_download_progress = 0x7f040068;
-        public static final int upsdk_app_dl_progress_dialog = 0x7f0401a4;
-        public static final int upsdk_ota_update_view = 0x7f0401a5;
+        public static final int hms_download_progress = 0x7f040069;
+        public static final int upsdk_app_dl_progress_dialog = 0x7f0401a5;
+        public static final int upsdk_ota_update_view = 0x7f0401a6;
     }
     public static final class string {
         private string() {}
