@@ -4,20 +4,20 @@
         "source": "F:\\my_sdk\\manyi\\2\\nim_1\\rtskit\\build\\intermediates\\packaged_res\\debug\\layout\\rts_activity.xml"
     },
     {
-        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\layout\\nim_message_item_video.xml",
-        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\uikit\\build\\intermediates\\packaged_res\\debug\\layout\\nim_message_item_video.xml"
-    },
-    {
         "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\layout\\jrmf_w_item_new_card.xml",
         "source": "F:\\my_sdk\\manyi\\2\\nim_1\\jrmfRpWalletlib\\build\\intermediates\\packaged_res\\debug\\layout\\jrmf_w_item_new_card.xml"
     },
     {
-        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\layout\\item_country.xml",
-        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\library_country_picker\\build\\intermediates\\packaged_res\\debug\\layout\\item_country.xml"
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\layout\\nim_message_item_video.xml",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\uikit\\build\\intermediates\\packaged_res\\debug\\layout\\nim_message_item_video.xml"
     },
     {
         "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\layout\\nim_contact_loading_frame.xml",
         "source": "F:\\my_sdk\\manyi\\2\\nim_1\\uikit\\build\\intermediates\\packaged_res\\debug\\layout\\nim_contact_loading_frame.xml"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\layout\\item_country.xml",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\library_country_picker\\build\\intermediates\\packaged_res\\debug\\layout\\item_country.xml"
     },
     {
         "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_part_time.xml",
@@ -40,12 +40,12 @@
         "source": "F:\\my_sdk\\manyi\\2\\nim_1\\avchatkit\\build\\intermediates\\packaged_res\\debug\\layout\\team_avchat_call_layout.xml"
     },
     {
-        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\layout\\black_list_activity.xml",
-        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\res\\layout\\black_list_activity.xml"
-    },
-    {
         "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\layout\\jrmf_w_layout_line.xml",
         "source": "F:\\my_sdk\\manyi\\2\\nim_1\\jrmfRpWalletlib\\build\\intermediates\\packaged_res\\debug\\layout\\jrmf_w_layout_line.xml"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\layout\\black_list_activity.xml",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\res\\layout\\black_list_activity.xml"
     },
     {
         "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\layout\\activity_pick.xml",
@@ -140,12 +140,12 @@
         "source": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\res\\layout\\chat_room_message_tab.xml"
     },
     {
-        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\layout\\nim_message_item_picture.xml",
-        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\uikit\\build\\intermediates\\packaged_res\\debug\\layout\\nim_message_item_picture.xml"
-    },
-    {
         "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\layout\\avchat_record_layout.xml",
         "source": "F:\\my_sdk\\manyi\\2\\nim_1\\avchatkit\\build\\intermediates\\packaged_res\\debug\\layout\\avchat_record_layout.xml"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\layout\\nim_message_item_picture.xml",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\uikit\\build\\intermediates\\packaged_res\\debug\\layout\\nim_message_item_picture.xml"
     },
     {
         "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\layout\\nim_contact_select_area_item.xml",
@@ -240,24 +240,24 @@
         "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\2a1aec394fcd57ee7215b2b9f27e108d\\res\\layout\\abc_alert_dialog_title_material.xml"
     },
     {
-        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\layout\\nim_menu_dialog_item.xml",
-        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\uikit\\build\\intermediates\\packaged_res\\debug\\layout\\nim_menu_dialog_item.xml"
-    },
-    {
         "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\layout\\file_browser_activity.xml",
         "source": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\res\\layout\\file_browser_activity.xml"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\layout\\nim_menu_dialog_item.xml",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\uikit\\build\\intermediates\\packaged_res\\debug\\layout\\nim_menu_dialog_item.xml"
     },
     {
         "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\layout\\user_profile_gender_layout.xml",
         "source": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\res\\layout\\user_profile_gender_layout.xml"
     },
     {
-        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\layout\\activity_robot_profile.xml",
-        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\res\\layout\\activity_robot_profile.xml"
-    },
-    {
         "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\layout\\message_info_activity.xml",
         "source": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\res\\layout\\message_info_activity.xml"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\layout\\activity_robot_profile.xml",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\res\\layout\\activity_robot_profile.xml"
     },
     {
         "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\layout\\nim_picker_album_activity.xml",
@@ -276,12 +276,12 @@
         "source": "F:\\my_sdk\\manyi\\2\\nim_1\\jrmfRpWalletlib\\build\\intermediates\\packaged_res\\debug\\layout\\jrmf_w_activity_my_rp.xml"
     },
     {
-        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\layout\\nim_popup_menu_list_item.xml",
-        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\uikit\\build\\intermediates\\packaged_res\\debug\\layout\\nim_popup_menu_list_item.xml"
-    },
-    {
         "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\layout\\jrmf_w_activity_bank_setting.xml",
         "source": "F:\\my_sdk\\manyi\\2\\nim_1\\jrmfRpWalletlib\\build\\intermediates\\packaged_res\\debug\\layout\\jrmf_w_activity_bank_setting.xml"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\layout\\nim_popup_menu_list_item.xml",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\uikit\\build\\intermediates\\packaged_res\\debug\\layout\\nim_popup_menu_list_item.xml"
     },
     {
         "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\layout\\dialog_qr.xml",
@@ -368,12 +368,12 @@
         "source": "F:\\my_sdk\\manyi\\2\\nim_1\\jrmfRpWalletlib\\build\\intermediates\\packaged_res\\debug\\layout\\jrmf_rp_activity_trans_pay.xml"
     },
     {
-        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\layout\\pop_folder.xml",
-        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\uikit\\build\\intermediates\\packaged_res\\debug\\layout\\pop_folder.xml"
-    },
-    {
         "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\layout\\multi_select_dialog_default_layout.xml",
         "source": "F:\\my_sdk\\manyi\\2\\nim_1\\avchatkit\\build\\intermediates\\packaged_res\\debug\\layout\\multi_select_dialog_default_layout.xml"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\layout\\pop_folder.xml",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\uikit\\build\\intermediates\\packaged_res\\debug\\layout\\pop_folder.xml"
     },
     {
         "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\layout\\jrmf_w_dialog_input_pwd.xml",
@@ -464,12 +464,12 @@
         "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\design-26.1.0.aar\\bb077bc3644e38cb4de772bda2a12959\\res\\layout\\design_bottom_sheet_dialog.xml"
     },
     {
-        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\layout\\jrmf_w_header_rp_detail.xml",
-        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\jrmfRpWalletlib\\build\\intermediates\\packaged_res\\debug\\layout\\jrmf_w_header_rp_detail.xml"
-    },
-    {
         "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\layout\\nim_popup_menu_layout.xml",
         "source": "F:\\my_sdk\\manyi\\2\\nim_1\\uikit\\build\\intermediates\\packaged_res\\debug\\layout\\nim_popup_menu_layout.xml"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\layout\\jrmf_w_header_rp_detail.xml",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\jrmfRpWalletlib\\build\\intermediates\\packaged_res\\debug\\layout\\jrmf_w_header_rp_detail.xml"
     },
     {
         "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\layout\\chat_room_activity.xml",
@@ -508,12 +508,12 @@
         "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\Android-PickerView-4.1.0.aar\\bbd6ecf0e79e0b73797851bd8f5a0db0\\res\\layout\\layout_basepickerview.xml"
     },
     {
-        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\layout\\nim_contacts_select.xml",
-        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\uikit\\build\\intermediates\\packaged_res\\debug\\layout\\nim_contacts_select.xml"
-    },
-    {
         "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\layout\\activity_forget_pw.xml",
         "source": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\res\\layout\\activity_forget_pw.xml"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\layout\\nim_contacts_select.xml",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\uikit\\build\\intermediates\\packaged_res\\debug\\layout\\nim_contacts_select.xml"
     },
     {
         "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\layout\\nim_message_item_thumb_progress_bar_text.xml",
@@ -532,12 +532,12 @@
         "source": "F:\\my_sdk\\manyi\\2\\nim_1\\jrmfRpWalletlib\\build\\intermediates\\packaged_res\\debug\\layout\\jrmf_rp_dialog_paytype.xml"
     },
     {
-        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\layout\\nim_new_message_tip_layout.xml",
-        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\uikit\\build\\intermediates\\packaged_res\\debug\\layout\\nim_new_message_tip_layout.xml"
-    },
-    {
         "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\layout\\support_simple_spinner_dropdown_item.xml",
         "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\2a1aec394fcd57ee7215b2b9f27e108d\\res\\layout\\support_simple_spinner_dropdown_item.xml"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\layout\\nim_new_message_tip_layout.xml",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\uikit\\build\\intermediates\\packaged_res\\debug\\layout\\nim_new_message_tip_layout.xml"
     },
     {
         "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\layout\\fixed_bottom_navigation_item.xml",
@@ -548,12 +548,12 @@
         "source": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\res\\layout\\send_ack_msg_layout.xml"
     },
     {
-        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\layout\\nim_message_item.xml",
-        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\uikit\\build\\intermediates\\packaged_res\\debug\\layout\\nim_message_item.xml"
-    },
-    {
         "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\layout\\user_profile_edittext_layout.xml",
         "source": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\res\\layout\\user_profile_edittext_layout.xml"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\layout\\nim_message_item.xml",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\uikit\\build\\intermediates\\packaged_res\\debug\\layout\\nim_message_item.xml"
     },
     {
         "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\layout\\notification_action.xml",
@@ -840,6 +840,10 @@
         "source": "F:\\my_sdk\\manyi\\2\\nim_1\\avchatkit\\build\\intermediates\\packaged_res\\debug\\layout\\multi_select_dialog_list_item.xml"
     },
     {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\layout\\activity_system_setting.xml",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\res\\layout\\activity_system_setting.xml"
+    },
+    {
         "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\layout\\user_profile_set_activity.xml",
         "source": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\res\\layout\\user_profile_set_activity.xml"
     },
@@ -1110,6 +1114,10 @@
     {
         "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\layout\\nim_msg_list_fetch_load_more.xml",
         "source": "F:\\my_sdk\\manyi\\2\\nim_1\\uikit\\build\\intermediates\\packaged_res\\debug\\layout\\nim_msg_list_fetch_load_more.xml"
+    },
+    {
+        "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\layout\\activity_helping_center.xml",
+        "source": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\res\\layout\\activity_helping_center.xml"
     },
     {
         "merged": "F:\\my_sdk\\manyi\\2\\nim_1\\demo\\build\\intermediates\\res\\merged\\debug\\layout\\chat_rooms.xml",

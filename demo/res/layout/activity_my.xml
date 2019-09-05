@@ -11,7 +11,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="150dp"
-            android:background="@color/color_activity_blue_bg"
+            android:background="@color/color_main"
             android:orientation="vertical">
 
             <ImageView
@@ -249,6 +249,7 @@
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/ll_system_setting"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center_vertical"
@@ -290,6 +291,7 @@
             android:background="@drawable/round_layout_bg_color_6dp">
 
             <LinearLayout
+                android:id="@+id/ll_help"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center_vertical"
@@ -326,6 +328,7 @@
                 android:background="#D4D4D4"/>
 
             <LinearLayout
+                android:id="@+id/ll_about"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center_vertical"

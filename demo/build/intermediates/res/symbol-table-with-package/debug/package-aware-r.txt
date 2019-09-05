@@ -3044,6 +3044,11 @@ id listMode
 id listView
 id list_item
 id liv_index
+id ll_1
+id ll_2
+id ll_3
+id ll_4
+id ll_about
 id ll_account_setting
 id ll_action_container
 id ll_add_card
@@ -3062,6 +3067,7 @@ id ll_edit_url_container
 id ll_email
 id ll_getDeposit
 id ll_head
+id ll_help
 id ll_in
 id ll_info
 id ll_input_sub_bank
@@ -3075,12 +3081,14 @@ id ll_peak_amount_layout
 id ll_peak_num_layout
 id ll_protocol
 id ll_province
+id ll_qr
 id ll_result_hint_container
 id ll_select_country_code
 id ll_sex
 id ll_sub_bank
 id ll_sub_bank_city
 id ll_sub_bank_province
+id ll_system_setting
 id ll_title_bar_left
 id ll_title_bar_right
 id ll_trans_money
@@ -3101,6 +3109,7 @@ id location_pin
 id login_layout
 id mail_view_content_layout
 id main_tab_pager
+id main_titleBar
 id male_check
 id male_layout
 id marker_address
@@ -3473,6 +3482,8 @@ id submenuarrow
 id submit_area
 id surface
 id swipe_refresh
+id switchButton1
+id switchButton2
 id switchLayout
 id switch_cameras
 id switch_mode_top_layout
@@ -3750,7 +3761,6 @@ id value_layout
 id version
 id version_detail
 id version_detail_date
-id version_detail_git
 id version_layout
 id version_textview
 id versions
@@ -3839,6 +3849,7 @@ layout activity_change_pw
 layout activity_edit_info
 layout activity_edit_name
 layout activity_forget_pw
+layout activity_helping_center
 layout activity_main_tab
 layout activity_msg_migration
 layout activity_my
@@ -3847,6 +3858,7 @@ layout activity_privatization_config
 layout activity_pyq
 layout activity_qr
 layout activity_robot_profile
+layout activity_system_setting
 layout activity_title_bar
 layout activity_welcome
 layout add_friend_activity
@@ -4474,6 +4486,7 @@ string female
 string file_browser
 string file_transfer_state_downloaded
 string file_transfer_state_undownload
+string find_password_success
 string firebase_database_url
 string folder_image_count
 string forget_pwd
@@ -4840,6 +4853,7 @@ string other
 string over_team_capacity
 string over_team_member_capacity
 string password_toggle_content_description
+string passwording
 string path_password_eye
 string path_password_eye_mask_strike_through
 string path_password_eye_mask_visible

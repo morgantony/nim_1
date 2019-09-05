@@ -14,9 +14,12 @@ import com.netease.nim.uikit.common.ui.imageview.HeadImageView;
 import com.netease.nim.weyouchats.R;
 import com.netease.nim.weyouchats.config.preference.Preferences;
 import com.netease.nim.weyouchats.login.User;
+import com.netease.nim.weyouchats.main.activity.AboutActivity;
 import com.netease.nim.weyouchats.main.activity.AccountSettingActivity;
 import com.netease.nim.weyouchats.main.activity.EditUserInfoActivity;
+import com.netease.nim.weyouchats.main.activity.HelpingCenterActivity;
 import com.netease.nim.weyouchats.main.activity.QRActivity;
+import com.netease.nim.weyouchats.main.activity.SystemSettingActivity;
 import com.netease.nim.weyouchats.main.model.MainTab;
 
 public class MyFragment extends MainTabFragment {
@@ -28,6 +31,9 @@ public class MyFragment extends MainTabFragment {
     private ImageView iv_edit;   //已隐藏
     private LinearLayout ll_info;
     private LinearLayout ll_account_setting;
+    private LinearLayout ll_about;
+    private LinearLayout ll_help;
+    private LinearLayout ll_system_setting;
 
     public MyFragment() {
         this.setContainerId(MainTab.MY.fragmentId);
@@ -59,6 +65,9 @@ public class MyFragment extends MainTabFragment {
         ll_info = findView(R.id.ll_info);
         tv_des = findView(R.id.tv_des);
         ll_account_setting = findView(R.id.ll_account_setting);
+        ll_about = findView(R.id.ll_about);
+        ll_help = findView(R.id.ll_help);
+        ll_system_setting = findView(R.id.ll_system_setting);
     }
 
     private void initData(){
@@ -98,5 +107,8 @@ public class MyFragment extends MainTabFragment {
             });
         });
         ll_account_setting.setOnClickListener(v -> startActivity(new Intent(getActivity(), AccountSettingActivity.class)));
+        ll_about.setOnClickListener(v -> startActivity(new Intent(getActivity(), AboutActivity.class)));
+        ll_help.setOnClickListener(v -> startActivity(new Intent(getActivity(), HelpingCenterActivity.class)));
+        ll_system_setting.setOnClickListener(v -> startActivity(new Intent(getActivity(), SystemSettingActivity.class)));
     }
 }

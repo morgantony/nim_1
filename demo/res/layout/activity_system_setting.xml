@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    android:background="#E4EDF0">
+
+    <com.bhm.sdk.bhmlibrary.views.TitleBar
+        android:id="@+id/titleBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:titleBarHeight="50dp"
+        app:titleTextColor="@color/white"
+        app:rightTextColor="@color/white"
+        app:titleText="帮助"
+        app:rightText=""
+        app:rightTextSize="16sp"
+        app:leftViewBackgroundResource="@drawable/img_close_source"
+        app:leftViewMarginLeft="15dp"
+        app:rightViewMarginRight="12dp"
+        app:isLeftViewShow="true"
+        app:isRightViewShow="true"
+        app:backGroundColor="@color/color_main"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_marginTop="15dp"
+        android:layout_height="0.4dp"
+        android:background="#DFDCDC"/>
+
+    <LinearLayout
+        android:id="@+id/ll_1"
+        android:layout_width="match_parent"
+        android:paddingLeft="15dp"
+        android:paddingRight="12dp"
+        android:gravity="center_vertical"
+        android:layout_height="48dp"
+        android:orientation="horizontal"
+        android:background="#F5F9FA">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:textColor="#323333"
+            android:text="消息静音"/>
+
+        <com.netease.nim.uikit.common.ui.widget.SwitchButton
+            android:id="@+id/switchButton1"
+            android:layout_width="58dip"
+            android:layout_height="36dp"/>
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.4dp"
+        android:background="#DFDCDC"/>
+
+    <LinearLayout
+        android:id="@+id/ll_2"
+        android:layout_width="match_parent"
+        android:paddingLeft="15dp"
+        android:paddingRight="12dp"
+        android:gravity="center_vertical"
+        android:layout_height="48dp"
+        android:orientation="horizontal"
+        android:background="#F5F9FA">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:textColor="#323333"
+            android:text="推送通知"/>
+
+        <com.netease.nim.uikit.common.ui.widget.SwitchButton
+            android:id="@+id/switchButton2"
+            android:layout_width="58dip"
+            android:layout_height="36dp"/>
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.4dp"
+        android:background="#DFDCDC"/>
+
+    <LinearLayout
+        android:id="@+id/ll_3"
+        android:layout_width="match_parent"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:gravity="center_vertical"
+        android:layout_height="48dp"
+        android:orientation="horizontal"
+        android:background="#F5F9FA">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:textColor="#323333"
+            android:text="清除聊天记录"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="1.5dp"
+            android:src="@drawable/img_right"/>
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.4dp"
+        android:background="#DFDCDC"/>
+
+    <LinearLayout
+        android:id="@+id/ll_4"
+        android:layout_width="match_parent"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:gravity="center_vertical"
+        android:layout_height="48dp"
+        android:orientation="horizontal"
+        android:background="#F5F9FA">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:textColor="#323333"
+            android:text="清除图片、视频缓存"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="1.5dp"
+            android:src="@drawable/img_right"/>
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.4dp"
+        android:background="#DFDCDC"/>
+
+</LinearLayout>

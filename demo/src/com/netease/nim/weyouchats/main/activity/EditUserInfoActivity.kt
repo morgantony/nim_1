@@ -59,6 +59,7 @@ class EditUserInfoActivity : UI() {
     @SuppressLint("SetTextI18n")
     private fun initEvent() {
         titleBar.setLeftOnClickListener { finish() }
+        ll_qr.setOnClickListener { v -> startActivity(Intent(this@EditUserInfoActivity, QRActivity::class.java)) }
         if (!intent.getBooleanExtra("edit", false)) {
             titleBar.setRightText("")
             et_note.isEnabled = false

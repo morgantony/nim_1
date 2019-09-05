@@ -3,9 +3,11 @@ package com.netease.nim.weyouchats.common.util;
 import android.app.Dialog;
 import android.content.Context;
 import android.support.v4.content.ContextCompat;
+import android.text.TextUtils;
 import android.view.View;
 import android.view.Window;
 import android.widget.Button;
+import android.widget.TextView;
 
 import com.bhm.sdk.bhmlibrary.utils.DateUtils;
 import com.bigkoo.pickerview.builder.TimePickerBuilder;
@@ -106,11 +108,26 @@ public class PickerUtils {
     }
 
     public static void showExitDialog(Context context, View.OnClickListener clickListener){
+        showExitDialog(context, null, null, null, clickListener);
+    }
+
+    public static void showExitDialog(Context context, String content, String leftStr
+            , String rightStr, View.OnClickListener clickListener){
         Dialog dialog = new Dialog(context, R.style.dialogStyle);
         Window window = dialog.getWindow();
         window.setContentView(R.layout.dialog_exit_app);
+        TextView tv_content = (TextView) window.findViewById(R.id.tv_content);
         Button left = (Button) window.findViewById(R.id.btn_left);
         Button right = (Button) window.findViewById(R.id.btn_right);
+        if(!TextUtils.isEmpty(content)){
+            tv_content.setText(content);
+        }
+        if(!TextUtils.isEmpty(leftStr)){
+            left.setText(leftStr);
+        }
+        if(!TextUtils.isEmpty(rightStr)){
+            right.setText(rightStr);
+        }
         left.setOnClickListener(v -> dialog.dismiss());
         right.setOnClickListener(v -> {
             dialog.dismiss();

@@ -68,18 +68,18 @@ public final class R {
         public static final int center = 0x7f100054;
         public static final int dark = 0x7f100086;
         public static final int email = 0x7f10006b;
-        public static final int end_text = 0x7f100466;
+        public static final int end_text = 0x7f100470;
         public static final int icon_only = 0x7f100083;
         public static final int light = 0x7f100087;
         public static final int none = 0x7f100033;
         public static final int normal = 0x7f100035;
         public static final int radio = 0x7f1000a5;
         public static final int standard = 0x7f100084;
-        public static final int start_text = 0x7f100463;
+        public static final int start_text = 0x7f10046d;
         public static final int text = 0x7f100014;
-        public static final int text1 = 0x7f1001ac;
+        public static final int text1 = 0x7f1001b5;
         public static final int text2 = 0x7f100015;
-        public static final int toolbar = 0x7f1000bc;
+        public static final int toolbar = 0x7f1000c2;
         public static final int wide = 0x7f100085;
         public static final int wrap_content = 0x7f100049;
     }
