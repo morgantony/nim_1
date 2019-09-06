@@ -8,12 +8,18 @@ import android.os.Bundle
 import android.support.v4.app.FragmentManager
 import android.support.v4.view.ViewPager
 import android.text.TextUtils
+import android.view.Gravity
+import android.view.LayoutInflater
 import android.view.View
+import android.view.ViewGroup
+import android.widget.RelativeLayout
+import android.widget.Toast
 import com.ashokvarma.bottomnavigation.BottomNavigationBar
 import com.ashokvarma.bottomnavigation.BottomNavigationItem
 import com.bhm.sdk.onresult.ActivityResult
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
+import com.example.zhouwei.library.CustomPopWindow
 import com.netease.nim.avchatkit.AVChatProfile
 import com.netease.nim.avchatkit.activity.AVChatActivity
 import com.netease.nim.avchatkit.constant.AVChatExtras
@@ -51,6 +57,7 @@ import com.netease.nimlib.sdk.msg.model.IMMessage
 import com.netease.nimlib.sdk.msg.model.RecentContact
 import kotlinx.android.synthetic.main.activity_my.*
 import kotlinx.android.synthetic.main.main.*
+import org.jetbrains.anko.toast
 
 /**
  * 主界面
@@ -58,8 +65,9 @@ import kotlinx.android.synthetic.main.main.*
  */
 class MainActivity : UI(), ReminderManager.UnreadNumChangedCallback, ViewPager.OnPageChangeListener, BottomNavigationBar.OnTabSelectedListener {
 
-
+    lateinit var  popWindow : CustomPopWindow
     //    private PagerSlidingTabStrip tabs;
+    private var fragmentFlag = 0
     private var pager: ViewPager? = null
     private var scrollState: Int = 0
     private var adapter: MainTabPagerAdapter? = null
@@ -100,6 +108,19 @@ class MainActivity : UI(), ReminderManager.UnreadNumChangedCallback, ViewPager.O
         requestSystemMessageUnreadCount()
         initUnreadCover()
         requestBasicPermission()
+        initPop()
+    }
+
+    private fun initPop() {
+        val contentView = LayoutInflater.from(this).inflate(R.layout.pop_layout1, null)
+        //处理popWindow 显示内容
+        handleLogic(contentView)
+        popWindow= CustomPopWindow.PopupWindowBuilder(this)
+                .setView(contentView)
+                .setFocusable(true)
+                .setOutsideTouchable(true)
+                .setAnimationStyle(R.style.CustomPopWindowStyle)
+                .create()
     }
 
     private fun initView() {
@@ -130,14 +151,14 @@ class MainActivity : UI(), ReminderManager.UnreadNumChangedCallback, ViewPager.O
          */
         bottomNavigationBar!!.addItem(BottomNavigationItem(R.drawable.img_xiaoxi, "消息"))
                 .addItem(BottomNavigationItem(R.drawable.img_people, "联系人"))
-                .addItem(BottomNavigationItem(R.drawable.img_pyq, "圈子"))//.setInActiveColor("#ffff00")
+//                .addItem(BottomNavigationItem(R.drawable.img_pyq, "圈子"))//.setInActiveColor("#ffff00")
                 .addItem(BottomNavigationItem(R.drawable.img_my, "我的"))//.setBadgeItem(badgeItem)添加小红点数据
                 .initialise()//initialise 一定要放在 所有设置的最后一项
         bottomNavigationBar!!.elevation = 3f
         //设置默认导航栏
         onTabSelected(0)
 
-        //"我的"右上角按钮
+        //titlebar"我的"右上角按钮
         main_titleBar.setRightOnClickListener {
             val intent = Intent(this, EditUserInfoActivity::class.java)
             intent.putExtra("edit", true)
@@ -159,7 +180,14 @@ class MainActivity : UI(), ReminderManager.UnreadNumChangedCallback, ViewPager.O
             }
         }
 
+        fl_tianjia.setOnClickListener {
+            if (fragmentFlag == 1) {   //是联系人界面
+                popWindow.showAsDropDown(fl_tianjia, 0, 35)
+            }
+        }
     }
+
+
 
     private fun parseIntent(): Boolean {
 
@@ -436,23 +464,31 @@ class MainActivity : UI(), ReminderManager.UnreadNumChangedCallback, ViewPager.O
         selectPage()
         enableMsgNotification(false)
         bottomNavigationBar!!.selectTab(position, false)
-        when(position){
-            0->{
+        when (position) {
+            0 -> {
                 main_titleBar.setTitleText("消息")
+                fl_tianjia.visibility = View.GONE
                 main_titleBar.setIsRightViewShow(false)
+                fragmentFlag = 0
             }
-            1->{
+            1 -> {
                 main_titleBar.setTitleText("联系人")
+                fl_tianjia.visibility = View.VISIBLE
                 main_titleBar.setIsRightViewShow(false)
+                fragmentFlag = 1
             }
-            2->{
-                main_titleBar.setTitleText("圈子")
-                main_titleBar.setIsRightViewShow(false)
-            }
-            3->{
+            //后续开发
+//            2->{
+//                main_titleBar.setTitleText("圈子")
+//            fl_tianjia.visibility=View.GONE
+//            main_titleBar.setIsRightViewShow(false)
+//                fragmentFlag=2
+//            }
+            2 -> {
                 main_titleBar.setTitleText("")
-//                main_titleBar.setIsRightImageViewShow(true)
+                fl_tianjia.visibility = View.GONE
                 main_titleBar.setIsRightViewShow(true)
+                fragmentFlag = 3
             }
         }
     }
@@ -545,6 +581,31 @@ class MainActivity : UI(), ReminderManager.UnreadNumChangedCallback, ViewPager.O
             extra.putExtra(EXTRA_APP_QUIT, quit)
             start(context, extra)
         }
+    }
+
+    private fun handleLogic(contentView: View) {
+        val listener = View.OnClickListener { v ->
+            if (popWindow != null) {
+                popWindow.dissmiss()
+            }
+            when (v.id) {
+                R.id.tv_one -> {
+                    //添加好友
+                    toast("添加好友")
+                }
+                R.id.tv_two -> {
+                    //附近的人
+
+                }
+                R.id.tv_three -> {
+                    //扫一扫
+
+                }
+            }
+        }
+        contentView.findViewById<View>(R.id.tv_one).setOnClickListener(listener)
+        contentView.findViewById<View>(R.id.tv_two).setOnClickListener(listener)
+        contentView.findViewById<View>(R.id.tv_three).setOnClickListener(listener)
     }
 
 }

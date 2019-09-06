@@ -349,7 +349,7 @@ public class LoginActivity extends UI implements OnKeyListener {
             }
         }).setCanceledOnTouchOutside(false);
 
-        final String mobile = tv_country_picker.getText()+"-"+edit_phone_account.getEditableText().toString().toLowerCase();
+        final String mobile = tv_country_picker.getText().toString().replace("+","%2B")+"-"+edit_phone_account.getEditableText().toString().toLowerCase();
           //0 --注册 1--修改密码
 
         ContactHttpClient.getInstance().sendCode(mobile,password, new ContactHttpClient.ContactHttpCallback<User>() {
