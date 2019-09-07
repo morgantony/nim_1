@@ -610,6 +610,8 @@
             android:exported="false"
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <activity android:name=".main.activity.BdMapActivity" />
+
         <meta-data
             android:name="com.vivo.push.api_key"
             android:value="18374205-eb53-428c-bad2-7a75712f6487"/>
@@ -623,6 +625,13 @@
                 <action android:name="com.vivo.pushclient.action.RECEIVE"/>
             </intent-filter>
         </receiver>
+        <meta-data
+            android:name="com.baidu.lbsapi.API_KEY"
+            android:value="KU3wSzTlGNCcdFT9555kG8zVyY5HtvwD" />
+        <service android:name="com.baidu.location.f"
+            android:enabled="true"
+            android:process=":remote"/>
+
     </application>
 
 </manifest>

@@ -37,6 +37,7 @@ import com.netease.nim.uikit.support.permission.annotation.OnMPermissionNeverAsk
 import com.netease.nim.weyouchats.R
 import com.netease.nim.weyouchats.common.ui.viewpager.FadeInOutPageTransformer
 import com.netease.nim.weyouchats.config.preference.Preferences
+import com.netease.nim.weyouchats.contact.activity.AddFriendActivity
 import com.netease.nim.weyouchats.login.LoginActivity
 import com.netease.nim.weyouchats.login.LogoutHelper
 import com.netease.nim.weyouchats.main.adapter.MainTabPagerAdapter
@@ -57,6 +58,7 @@ import com.netease.nimlib.sdk.msg.model.IMMessage
 import com.netease.nimlib.sdk.msg.model.RecentContact
 import kotlinx.android.synthetic.main.activity_my.*
 import kotlinx.android.synthetic.main.main.*
+import org.jetbrains.anko.intentFor
 import org.jetbrains.anko.toast
 
 /**
@@ -591,15 +593,16 @@ class MainActivity : UI(), ReminderManager.UnreadNumChangedCallback, ViewPager.O
             when (v.id) {
                 R.id.tv_one -> {
                     //添加好友
-                    toast("添加好友")
+                    AddFriendActivity.start(this)
                 }
                 R.id.tv_two -> {
                     //附近的人
-
+                    toast("附近的人")
+                    startActivity(intentFor<BdMapActivity>())
                 }
                 R.id.tv_three -> {
                     //扫一扫
-
+                    toast("扫一扫")
                 }
             }
         }
