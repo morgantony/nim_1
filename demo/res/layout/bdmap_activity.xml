@@ -19,7 +19,7 @@
         app:rightTextSize="16sp"
         app:rightViewMarginRight="12dp"
         app:titleBarHeight="50dp"
-        app:titleText="个人信息"
+        app:titleText="附近的人"
         app:titleTextColor="@color/white">
 
         <FrameLayout
@@ -35,7 +35,7 @@
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="3dp"
+                    android:layout_marginLeft="5dp"
                     android:src="@drawable/img_close_source"/>
 
                 <TextView

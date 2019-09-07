@@ -441,6 +441,7 @@ public class LoginActivity extends UI implements OnKeyListener {
                     @Override
                     public void onSuccess(LoginInfo param) {
                         LogUtil.i(TAG, "login success");
+                        LogUtil.i(TAG, user.toString());
                         onLoginDone();
                         DemoCache.setAccount(user.getAccid());
                         saveLoginInfo(user);

@@ -6,55 +6,66 @@ import android.os.Build
 import android.os.Bundle
 import android.support.v4.app.ActivityCompat
 import android.support.v4.content.ContextCompat
+import android.view.LayoutInflater
 import android.view.View
-import android.view.View.OnClickListener
-import android.widget.Button
-import android.widget.CompoundButton
+import android.widget.*
 import android.widget.RadioGroup.OnCheckedChangeListener
-import android.widget.Toast
-import android.widget.ToggleButton
 
 import com.baidu.location.BDLocation
 import com.baidu.location.BDLocationListener
 import com.baidu.location.LocationClient
 import com.baidu.location.LocationClientOption
 import com.baidu.mapapi.SDKInitializer
-import com.baidu.mapapi.map.BaiduMap
-import com.baidu.mapapi.map.BitmapDescriptor
-import com.baidu.mapapi.map.MapStatusUpdate
-import com.baidu.mapapi.map.MapStatusUpdateFactory
-import com.baidu.mapapi.map.MapView
-import com.baidu.mapapi.map.MyLocationConfiguration
+import com.baidu.mapapi.map.*
 import com.baidu.mapapi.map.MyLocationConfiguration.LocationMode
-import com.baidu.mapapi.map.MyLocationData
 import com.baidu.mapapi.model.LatLng
 import com.netease.nim.uikit.common.activity.UI
 import com.netease.nim.weyouchats.R
 import kotlinx.android.synthetic.main.bdmap_activity.*
+import android.graphics.Bitmap
+import com.google.gson.Gson
+import com.netease.nim.uikit.common.ui.imageview.HeadImageView
+import com.netease.nim.weyouchats.config.preference.Preferences
+import com.netease.nim.weyouchats.login.User
+import org.jetbrains.anko.toast
 
+
+/**
+ * 太坑了，定位必须要二次确认权限 见 judgePermission()
+ */
 class BdMapActivity : UI() {
     // 定位相关
-     var mLocClient: LocationClient?=null
+    var mLocClient: LocationClient? = null
     var myListener = MyLocationListenner()
     private var mCurrentMode: LocationMode? = null
     internal var mCurrentMarker: BitmapDescriptor? = null
 
     internal var mMapView: MapView? = null
-     var mBaiduMap: BaiduMap?=null
+    var mBaiduMap: BaiduMap? = null
 
     // UI相关
     internal var radioButtonListener: OnCheckedChangeListener? = null
     internal var requestLocButton: Button? = null
     internal var togglebtn: ToggleButton? = null
     internal var isFirstLoc = true// 是否首次定位
-
+    internal var markerView:View ?=null// 是否首次定位
+    lateinit var user:User
     public override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        SDKInitializer.initialize(applicationContext)
         setContentView(R.layout.bdmap_activity)
         fl_fanhui.setOnClickListener {
             finish()
         }
+
+        markerView = LayoutInflater.from(this).inflate(R.layout.location_touxiang, null)//加载布局
+        user = Gson().fromJson(Preferences.getUserInfo(), User::class.java)
+
+        val imageView = markerView?.findViewById<HeadImageView>(R.id.hv_location_touxiang)//布局里面的image
+        if(user.icon!=null){
+            imageView?.loadAvatar(user.icon)
+        }
+
+
         judgePermission()
         //        requestLocButton = (Button) findViewById(R.id.button1);
         mCurrentMode = LocationMode.NORMAL
@@ -106,6 +117,12 @@ class BdMapActivity : UI() {
         mBaiduMap = mMapView!!.map
         // 开启定位图层
         mBaiduMap?.isMyLocationEnabled = true
+
+        mBaiduMap?.setOnMarkerClickListener {
+            toast("点击头像")
+            true
+        }
+
         // 定位初始化
         mLocClient = LocationClient(this)
         mLocClient?.registerLocationListener(myListener)
@@ -118,6 +135,16 @@ class BdMapActivity : UI() {
         mLocClient?.start()
 
     }
+
+    private fun getViewBitmap(addViewContent: View): Bitmap {
+        addViewContent.isDrawingCacheEnabled = true
+        addViewContent.measure(View.MeasureSpec.makeMeasureSpec(0, View.MeasureSpec.UNSPECIFIED), View.MeasureSpec.makeMeasureSpec(0, View.MeasureSpec.UNSPECIFIED))
+        addViewContent.layout(0, 0, addViewContent.measuredWidth, addViewContent.measuredHeight)
+        addViewContent.buildDrawingCache()
+        val cacheBitmap = addViewContent.drawingCache
+        return Bitmap.createBitmap(cacheBitmap)
+    }
+
 
     /**
      * 定位SDK监听函数
@@ -134,19 +161,45 @@ class BdMapActivity : UI() {
                     .direction(100f).latitude(location.latitude)
                     .longitude(location.longitude).build()
             mBaiduMap?.setMyLocationData(locData)
+            val wd = locData.latitude   //纬度
+            val jd = locData.longitude  //经度
+
+            val ll = LatLng(wd,jd)
             if (isFirstLoc) {
                 isFirstLoc = false
-                val ll = LatLng(location.latitude,
-                        location.longitude)
+
                 // MapStatusUpdate u = MapStatusUpdateFactory.newLatLng(ll);
                 // 设置缩放比例,更新地图状态
                 val f = mBaiduMap?.maxZoomLevel// 19.0
                 val u = MapStatusUpdateFactory.newLatLngZoom(ll,
-                        f!!.minus(2))
-                mBaiduMap?.animateMapStatus(u)
+                        f!!.minus(6))    //当前比例尺 500米
+
+                //构建Marker图标
+                val bitmap = BitmapDescriptorFactory.fromBitmap(getViewBitmap(markerView!!))
+//                val bitmap = BitmapDescriptorFactory.fromResource(R.drawable.red_qipao)
+                //构建MarkerOption，用于在地图上添加Marker
+                val option = MarkerOptions()
+                        .position(ll)
+                        .anchor(0.5f,0.5f)//覆盖物的对齐点，0.5f,0.5f为覆盖物的中心点
+                        .icon(bitmap)
+                //在地图上添加Marker，并显示
+                mBaiduMap?.addOverlay(option)
+                mBaiduMap?.animateMapStatus(u)     ////设置地图显示比例尺
+
                 //地图位置显示
                 Toast.makeText(this@BdMapActivity, location.addrStr,
                         Toast.LENGTH_SHORT).show()
+            }else{
+                mBaiduMap?.clear()
+//                val bitmap = BitmapDescriptorFactory.fromResource(R.drawable.red_qipao)
+                val bitmap = BitmapDescriptorFactory.fromBitmap(getViewBitmap(markerView!!))
+                //构建MarkerOption，用于在地图上添加Marker
+                val option = MarkerOptions()
+                        .position(ll)
+                        .anchor(0.5f,1f)//覆盖物的对齐点，0.5f,0.5f为覆盖物的中心点
+                        .icon(bitmap)
+                //在地图上添加Marker，并显示
+                mBaiduMap?.addOverlay(option)
             }
 
         }
