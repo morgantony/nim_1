@@ -4,19 +4,28 @@ import android.Manifest
 import android.app.Activity
 import android.content.Context
 import android.content.Intent
+import android.content.pm.PackageManager
+import android.os.Build
 import android.os.Bundle
+import android.support.v4.app.ActivityCompat
 import android.support.v4.app.FragmentManager
+import android.support.v4.content.ContextCompat
 import android.support.v4.view.ViewPager
 import android.text.TextUtils
-import android.view.Gravity
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
-import android.widget.RelativeLayout
-import android.widget.Toast
 import com.ashokvarma.bottomnavigation.BottomNavigationBar
 import com.ashokvarma.bottomnavigation.BottomNavigationItem
+import com.baidu.location.BDLocation
+import com.baidu.location.BDLocationListener
+import com.baidu.location.LocationClient
+import com.baidu.location.LocationClientOption
 import com.bhm.sdk.onresult.ActivityResult
+import com.bhm.sdk.rxlibrary.rxjava.RxBuilder
+import com.bhm.sdk.rxlibrary.rxjava.callback.CallBack
+import com.bhm.sdk.rxlibrary.rxjava.callback.RxUpLoadCallBack
+import com.bhm.sdk.rxlibrary.utils.RxLoadingDialog
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.example.zhouwei.library.CustomPopWindow
@@ -35,6 +44,9 @@ import com.netease.nim.uikit.support.permission.annotation.OnMPermissionDenied
 import com.netease.nim.uikit.support.permission.annotation.OnMPermissionGranted
 import com.netease.nim.uikit.support.permission.annotation.OnMPermissionNeverAskAgain
 import com.netease.nim.weyouchats.R
+import com.netease.nim.weyouchats.common.HttpApi
+import com.netease.nim.weyouchats.common.entity.UpdatePositionEntity
+import com.netease.nim.weyouchats.common.maputil.Const
 import com.netease.nim.weyouchats.common.ui.viewpager.FadeInOutPageTransformer
 import com.netease.nim.weyouchats.config.preference.Preferences
 import com.netease.nim.weyouchats.contact.activity.AddFriendActivity
@@ -65,7 +77,8 @@ import org.jetbrains.anko.toast
  * 主界面
  * Created by huangjun on 2015/3/25.
  */
-class MainActivity : UI(), ReminderManager.UnreadNumChangedCallback, ViewPager.OnPageChangeListener, BottomNavigationBar.OnTabSelectedListener {
+open class MainActivity : UI(), ReminderManager.UnreadNumChangedCallback, ViewPager.OnPageChangeListener, BottomNavigationBar.OnTabSelectedListener {
+
 
     lateinit var  popWindow : CustomPopWindow
     //    private PagerSlidingTabStrip tabs;
@@ -79,6 +92,11 @@ class MainActivity : UI(), ReminderManager.UnreadNumChangedCallback, ViewPager.O
     //    private TextBadgeItem badgeItem;
 
     private var isFirstIn: Boolean = false
+
+    private var isFirstUpload: Boolean = false
+
+    var mLocationClient: LocationClient? = null    //LocationClient类是定位SDK的核心类
+    var myListener: BDLocationListener = MyLocationListener()
 
     private val sysMsgUnreadCountChangedObserver = Observer<Int> { unreadCount ->
         SystemMessageUnreadManager.getInstance().sysMsgUnreadCount = unreadCount!!
@@ -111,8 +129,59 @@ class MainActivity : UI(), ReminderManager.UnreadNumChangedCallback, ViewPager.O
         initUnreadCover()
         requestBasicPermission()
         initPop()
+        judgePermission()   //百度地图权限的二次确认
+
+
+
     }
 
+    //初始化定位 开始定位
+    private fun initLocations() {
+        //声明LocationClient类
+        mLocationClient = LocationClient(this)
+        //注册监听函数
+        mLocationClient?.registerLocationListener(myListener)
+
+        val option = LocationClientOption()
+        option.locationMode = LocationClientOption.LocationMode.Hight_Accuracy
+        //可选，默认高精度，设置定位模式，高精度，低功耗，仅设备
+
+        option.setCoorType("bd09ll")
+        //可选，默认gcj02，设置返回的定位结果坐标系
+
+//        val span = 0  //定位一次
+//        option.setScanSpan(span)
+        //可选，默认0，即仅定位一次，设置发起定位请求的间隔需要大于等于1000ms才是有效的
+
+        option.setIsNeedAddress(true)
+        //可选，设置是否需要地址信息，默认不需要
+
+        option.isOpenGps = true
+        //可选，默认false,设置是否使用gps
+
+        option.isLocationNotify = true
+        //可选，默认false，设置是否当GPS有效时按照1S/1次频率输出GPS结果
+
+        option.setIsNeedLocationDescribe(true)
+        //可选，默认false，设置是否需要位置语义化结果，可以在BDLocation.getLocationDescribe里得到，结果类似于“在北京天安门附近”
+
+        option.setIsNeedLocationPoiList(true)
+        //可选，默认false，设置是否需要POI结果，可以在BDLocation.getPoiList里得到
+
+        option.setIgnoreKillProcess(false)
+        //可选，默认true，定位SDK内部是一个SERVICE，并放到了独立进程，设置是否在stop的时候杀死这个进程，默认不杀死
+
+        option.SetIgnoreCacheException(false)
+        //可选，默认false，设置是否收集CRASH信息，默认收集
+
+        option.setEnableSimulateGps(false)
+        //可选，默认false，设置是否需要过滤GPS仿真结果，默认需要
+
+        //配置LocationClient属性
+        mLocationClient?.locOption = option
+
+        mLocationClient?.start() //开始定位
+    }
     private fun initPop() {
         val contentView = LayoutInflater.from(this).inflate(R.layout.pop_layout1, null)
         //处理popWindow 显示内容
@@ -406,6 +475,7 @@ class MainActivity : UI(), ReminderManager.UnreadNumChangedCallback, ViewPager.O
         // 第一次 ， 三方通知唤起进会话页面之类的，不会走初始化过程
         val temp = isFirstIn
         isFirstIn = false
+        initLocations()
         if (pager == null && temp) {
             return
         }
@@ -434,6 +504,7 @@ class MainActivity : UI(), ReminderManager.UnreadNumChangedCallback, ViewPager.O
         registerMsgUnreadInfoObserver(false)
         registerSystemMessageObservers(false)
         DropManager.getInstance().destroy()
+        mLocationClient?.stop()   //销毁LocationClient
     }
 
     public override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent) {
@@ -565,6 +636,7 @@ class MainActivity : UI(), ReminderManager.UnreadNumChangedCallback, ViewPager.O
             start(context, null)
         }
 
+
         @JvmStatic
         fun start(context: Context, extras: Intent? = null) {
             val intent = Intent()
@@ -611,4 +683,190 @@ class MainActivity : UI(), ReminderManager.UnreadNumChangedCallback, ViewPager.O
         contentView.findViewById<View>(R.id.tv_three).setOnClickListener(listener)
     }
 
+    private fun updatePosition(jd: Double, wd: Double) {
+        val builder = RxBuilder.newBuilder(this)
+                .setLoadingDialog(RxLoadingDialog.getDefaultDialog())
+                .setDialogAttribute(false, true, false)
+                .setIsLogOutPut(true)//默认是false
+                .setIsDefaultToast(true, rxManager)
+                .bindRx()
+        val observable = builder
+                .createApi(HttpApi::class.java, HttpApi.HOST, RxUpLoadCallBack())//rxUpLoadListener不能为空
+                .updatePosition(Preferences.getUserToken(), jd.toString(), wd.toString())
+
+        builder.setCallBack(observable, object : CallBack<UpdatePositionEntity>() {
+            override fun onSuccess(response: UpdatePositionEntity?) {
+                if (response!!.code == 200) {
+                    Log.e("888888","位置更新成功")
+                } else {
+                    toast("位置更新失败")
+                }
+            }
+        })
+    }
+
+
+    //6.0之后要动态获取权限，重要！！！
+    private fun judgePermission() {
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            // 检查该权限是否已经获取
+            // 权限是否已经 授权 GRANTED---授权  DINIED---拒绝
+
+            // sd卡权限
+            val SdCardPermission = arrayOf(Manifest.permission.WRITE_EXTERNAL_STORAGE)
+            if (ContextCompat.checkSelfPermission(this, SdCardPermission[0]) != PackageManager.PERMISSION_GRANTED) {
+                // 如果没有授予该权限，就去提示用户请求
+                ActivityCompat.requestPermissions(this, SdCardPermission, 100)
+            }
+
+            //手机状态权限
+            val readPhoneStatePermission = arrayOf(Manifest.permission.READ_PHONE_STATE)
+            if (ContextCompat.checkSelfPermission(this, readPhoneStatePermission[0]) != PackageManager.PERMISSION_GRANTED) {
+                // 如果没有授予该权限，就去提示用户请求
+                ActivityCompat.requestPermissions(this, readPhoneStatePermission, 200)
+            }
+
+            //定位权限
+            val locationPermission = arrayOf(Manifest.permission.ACCESS_FINE_LOCATION)
+            if (ContextCompat.checkSelfPermission(this, locationPermission[0]) != PackageManager.PERMISSION_GRANTED) {
+                // 如果没有授予该权限，就去提示用户请求
+                ActivityCompat.requestPermissions(this, locationPermission, 300)
+            }
+
+            val ACCESS_COARSE_LOCATION = arrayOf(Manifest.permission.ACCESS_COARSE_LOCATION)
+            if (ContextCompat.checkSelfPermission(this, ACCESS_COARSE_LOCATION[0]) != PackageManager.PERMISSION_GRANTED) {
+                // 如果没有授予该权限，就去提示用户请求
+                ActivityCompat.requestPermissions(this, ACCESS_COARSE_LOCATION, 400)
+            }
+
+
+            val READ_EXTERNAL_STORAGE = arrayOf(Manifest.permission.READ_EXTERNAL_STORAGE)
+            if (ContextCompat.checkSelfPermission(this, READ_EXTERNAL_STORAGE[0]) != PackageManager.PERMISSION_GRANTED) {
+                // 如果没有授予该权限，就去提示用户请求
+                ActivityCompat.requestPermissions(this, READ_EXTERNAL_STORAGE, 500)
+            }
+
+            val WRITE_EXTERNAL_STORAGE = arrayOf(Manifest.permission.WRITE_EXTERNAL_STORAGE)
+            if (ContextCompat.checkSelfPermission(this, WRITE_EXTERNAL_STORAGE[0]) != PackageManager.PERMISSION_GRANTED) {
+                // 如果没有授予该权限，就去提示用户请求
+                ActivityCompat.requestPermissions(this, WRITE_EXTERNAL_STORAGE, 600)
+            }
+
+        } else {
+            //doSdCardResult();
+        }
+        //LocationClient.reStart();
+    }
+
+    //百度地图定位回调监听
+   inner class MyLocationListener : BDLocationListener {
+        override fun onReceiveLocation(location: BDLocation) {
+            //获取定位结果
+            val sb = StringBuffer(256)
+
+            sb.append("time : ")
+            sb.append(location.time)    //获取定位时间
+
+            sb.append("\nerror code : ")
+            sb.append(location.locType)    //获取类型类型
+
+            sb.append("\nlatitude : ")
+            sb.append(location.latitude.toString() + "")    //获取纬度信息
+
+            sb.append("\nlontitude : ")
+            sb.append(location.longitude.toString() + "")    //获取经度信息
+
+            sb.append("\nradius : ")
+            sb.append(location.radius)    //获取定位精准度
+
+            if (location.locType == BDLocation.TypeGpsLocation) {
+
+                // GPS定位结果
+                sb.append("\nspeed : ")
+                sb.append(location.speed)    // 单位：公里每小时
+
+                sb.append("\nsatellite : ")
+                sb.append(location.satelliteNumber)    //获取卫星数
+
+                sb.append("\nheight : ")
+                sb.append(location.altitude)    //获取海拔高度信息，单位米
+
+                sb.append("\ndirection : ")
+                sb.append(location.direction)    //获取方向信息，单位度
+
+                sb.append("\naddr : ")
+                sb.append(location.addrStr)    //获取地址信息
+
+                sb.append("\ndescribe : ")
+                sb.append("gps定位成功")
+
+            } else if (location.locType == BDLocation.TypeNetWorkLocation) {
+
+                // 网络定位结果
+                sb.append("\naddr : ")
+                sb.append(location.addrStr)    //获取地址信息
+
+                sb.append("\noperationers : ")
+                sb.append(location.operators)    //获取运营商信息
+
+                sb.append("\ndescribe : ")
+                sb.append("网络定位成功")
+
+            } else if (location.locType == BDLocation.TypeOffLineLocation) {
+
+                // 离线定位结果
+                sb.append("\ndescribe : ")
+                sb.append("离线定位成功，离线定位结果也是有效的")
+
+            } else if (location.locType == BDLocation.TypeServerError) {
+
+                sb.append("\ndescribe : ")
+                sb.append("服务端网络定位失败，可以反馈IMEI号和大体定位时间到loc-bugs@baidu.com，会有人追查原因")
+
+            } else if (location.locType == BDLocation.TypeNetWorkException) {
+
+                sb.append("\ndescribe : ")
+                sb.append("网络不同导致定位失败，请检查网络是否通畅")
+
+            } else if (location.locType == BDLocation.TypeCriteriaException) {
+
+                sb.append("\ndescribe : ")
+                sb.append("无法获取有效定位依据导致定位失败，一般是由于手机的原因，处于飞行模式下一般会造成这种结果，可以试着重启手机")
+
+            }
+
+            sb.append("\nlocationdescribe : ")
+            sb.append(location.locationDescribe)    //位置语义化信息
+
+            val list = location.poiList    // POI数据
+            if (list != null) {
+                sb.append("\npoilist size = : ")
+                sb.append(list.size)
+                for (p in list) {
+                    sb.append("\npoi= : ")
+                    sb.append(p.id + " " + p.name + " " + p.rank)
+                }
+            }
+
+            Log.i("BaiduLocationApiDem", sb.toString())
+
+            //坐标位置不变的话 就不用更新位置
+            try {
+                val a=Const.LONGITUDE.toString().split(".")[0]==location.longitude.toString().split(".")[0]
+                val b=Const.LATITUDE.toString().split(".")[0]==location.latitude.toString().split(".")[0]
+                if(a&&b){
+                    return
+                }
+            }catch (e:java.lang.Exception){
+
+            }
+            //现在已经定位成功，可以将定位的数据保存下来，Const就是保存数据的类
+            Const.LONGITUDE = location.longitude
+            Const.LATITUDE = location.latitude
+            Log.e("888888","${Const.LONGITUDE}   ${Const.LATITUDE}")
+            updatePosition(Const.LONGITUDE, Const.LATITUDE)
+        }
+
+    }
 }

@@ -108,9 +108,9 @@ public class UploadHeadPortraitActivity extends UI {
                         @Override
                         public void onResult(int code, Void result, Throwable exception) {
                             if (code == ResponseCode.RES_SUCCESS) {
-                                user.setIcon(imagePath);
+                                user.setIcon(url);
                                 Preferences.saveUserInfo(new Gson().toJson(user));
-                                Glide.with(UploadHeadPortraitActivity.this).load(imagePath).into(iv_head);
+                                Glide.with(UploadHeadPortraitActivity.this).load(url).into(iv_head);
                                 ToastHelper.showToast(UploadHeadPortraitActivity.this, R.string.head_update_success);
                                 onUpdateDone();
                             } else {

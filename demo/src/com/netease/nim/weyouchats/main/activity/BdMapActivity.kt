@@ -2,31 +2,35 @@ package com.netease.nim.weyouchats.main.activity
 
 import android.Manifest
 import android.content.pm.PackageManager
+import android.graphics.Bitmap
 import android.os.Build
 import android.os.Bundle
 import android.support.v4.app.ActivityCompat
 import android.support.v4.content.ContextCompat
 import android.view.LayoutInflater
 import android.view.View
-import android.widget.*
-import android.widget.RadioGroup.OnCheckedChangeListener
-
+import android.widget.Toast
 import com.baidu.location.BDLocation
 import com.baidu.location.BDLocationListener
 import com.baidu.location.LocationClient
 import com.baidu.location.LocationClientOption
-import com.baidu.mapapi.SDKInitializer
 import com.baidu.mapapi.map.*
 import com.baidu.mapapi.map.MyLocationConfiguration.LocationMode
 import com.baidu.mapapi.model.LatLng
-import com.netease.nim.uikit.common.activity.UI
-import com.netease.nim.weyouchats.R
-import kotlinx.android.synthetic.main.bdmap_activity.*
-import android.graphics.Bitmap
+import com.bhm.sdk.rxlibrary.rxjava.RxBuilder
+import com.bhm.sdk.rxlibrary.rxjava.callback.CallBack
+import com.bhm.sdk.rxlibrary.rxjava.callback.RxUpLoadCallBack
+import com.bhm.sdk.rxlibrary.utils.RxLoadingDialog
+import com.bumptech.glide.Glide
 import com.google.gson.Gson
+import com.netease.nim.uikit.common.activity.UI
 import com.netease.nim.uikit.common.ui.imageview.HeadImageView
+import com.netease.nim.weyouchats.R
+import com.netease.nim.weyouchats.common.HttpApi
+import com.netease.nim.weyouchats.common.entity.UpdatePositionEntity
 import com.netease.nim.weyouchats.config.preference.Preferences
 import com.netease.nim.weyouchats.login.User
+import kotlinx.android.synthetic.main.bdmap_activity.*
 import org.jetbrains.anko.toast
 
 
@@ -38,18 +42,14 @@ class BdMapActivity : UI() {
     var mLocClient: LocationClient? = null
     var myListener = MyLocationListenner()
     private var mCurrentMode: LocationMode? = null
-    internal var mCurrentMarker: BitmapDescriptor? = null
 
     internal var mMapView: MapView? = null
     var mBaiduMap: BaiduMap? = null
 
     // UI相关
-    internal var radioButtonListener: OnCheckedChangeListener? = null
-    internal var requestLocButton: Button? = null
-    internal var togglebtn: ToggleButton? = null
     internal var isFirstLoc = true// 是否首次定位
-    internal var markerView:View ?=null// 是否首次定位
-    lateinit var user:User
+    internal var markerView: View? = null// 是否首次定位
+    lateinit var user: User
     public override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.bdmap_activity)
@@ -61,56 +61,12 @@ class BdMapActivity : UI() {
         user = Gson().fromJson(Preferences.getUserInfo(), User::class.java)
 
         val imageView = markerView?.findViewById<HeadImageView>(R.id.hv_location_touxiang)//布局里面的image
-        if(user.icon!=null){
-            imageView?.loadAvatar(user.icon)
+        if (user.icon != null) {
+//            imageView?.loadAvatar(user.icon)
+            Glide.with(this).load(user.icon).into(imageView)
         }
-
-
         judgePermission()
-        //        requestLocButton = (Button) findViewById(R.id.button1);
         mCurrentMode = LocationMode.NORMAL
-        //        requestLocButton.setText("普通");
-        //        OnClickListener btnClickListener = new OnClickListener() {
-        //            public void onClick(View v) {
-        //                switch (mCurrentMode) {
-        //                    case NORMAL:
-        //                        requestLocButton.setText("跟随");
-        //                        mCurrentMode = LocationMode.FOLLOWING;
-        //                        mBaiduMap
-        //                                .setMyLocationConfigeration(new MyLocationConfiguration(
-        //                                        mCurrentMode, true, mCurrentMarker));
-        //                        break;
-        //                    case COMPASS:
-        //                        requestLocButton.setText("普通");
-        //                        mCurrentMode = LocationMode.NORMAL;
-        //                        mBaiduMap
-        //                                .setMyLocationConfigeration(new MyLocationConfiguration(
-        //                                        mCurrentMode, true, mCurrentMarker));
-        //                        break;
-        //                    case FOLLOWING:
-        //                        requestLocButton.setText("罗盘");
-        //                        mCurrentMode = LocationMode.COMPASS;
-        //                        mBaiduMap
-        //                                .setMyLocationConfigeration(new MyLocationConfiguration(
-        //                                        mCurrentMode, true, mCurrentMarker));
-        //                        break;
-        //                }
-        //            }
-        //        };
-        //        requestLocButton.setOnClickListener(btnClickListener);
-        //
-        //        togglebtn = (ToggleButton) findViewById(R.id.togglebutton);
-        //        togglebtn
-        //                .setOnCheckedChangeListener((buttonView, isChecked) -> {
-        //                    if (isChecked) {
-        //                        // 普通地图
-        //                        mBaiduMap.setMapType(BaiduMap.MAP_TYPE_SATELLITE);
-        //                    } else {
-        //                        // 卫星地图
-        //                        mBaiduMap.setMapType(BaiduMap.MAP_TYPE_NORMAL);
-        //                    }
-        //
-        //                });
 
         // 地图初始化
         mMapView = findViewById<View>(R.id.bmapView) as MapView
@@ -164,8 +120,9 @@ class BdMapActivity : UI() {
             val wd = locData.latitude   //纬度
             val jd = locData.longitude  //经度
 
-            val ll = LatLng(wd,jd)
+            val ll = LatLng(wd, jd)
             if (isFirstLoc) {
+
                 isFirstLoc = false
 
                 // MapStatusUpdate u = MapStatusUpdateFactory.newLatLng(ll);
@@ -180,7 +137,7 @@ class BdMapActivity : UI() {
                 //构建MarkerOption，用于在地图上添加Marker
                 val option = MarkerOptions()
                         .position(ll)
-                        .anchor(0.5f,0.5f)//覆盖物的对齐点，0.5f,0.5f为覆盖物的中心点
+                        .anchor(0.5f, 0.5f)//覆盖物的对齐点，0.5f,0.5f为覆盖物的中心点
                         .icon(bitmap)
                 //在地图上添加Marker，并显示
                 mBaiduMap?.addOverlay(option)
@@ -189,14 +146,14 @@ class BdMapActivity : UI() {
                 //地图位置显示
                 Toast.makeText(this@BdMapActivity, location.addrStr,
                         Toast.LENGTH_SHORT).show()
-            }else{
+            } else {
                 mBaiduMap?.clear()
 //                val bitmap = BitmapDescriptorFactory.fromResource(R.drawable.red_qipao)
                 val bitmap = BitmapDescriptorFactory.fromBitmap(getViewBitmap(markerView!!))
                 //构建MarkerOption，用于在地图上添加Marker
                 val option = MarkerOptions()
                         .position(ll)
-                        .anchor(0.5f,1f)//覆盖物的对齐点，0.5f,0.5f为覆盖物的中心点
+                        .anchor(0.5f, 1f)//覆盖物的对齐点，0.5f,0.5f为覆盖物的中心点
                         .icon(bitmap)
                 //在地图上添加Marker，并显示
                 mBaiduMap?.addOverlay(option)

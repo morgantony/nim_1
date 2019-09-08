@@ -2,6 +2,7 @@ package com.netease.nim.weyouchats.common;
 
 import com.netease.nim.weyouchats.common.entity.ChangePassWordEntity;
 import com.netease.nim.weyouchats.common.entity.UpLoadUserInfoEntity;
+import com.netease.nim.weyouchats.common.entity.UpdatePositionEntity;
 import com.netease.nim.weyouchats.config.DemoServers;
 
 import io.reactivex.Observable;
@@ -44,6 +45,20 @@ public interface HttpApi {
             @Query("token") String token,
             @Query("password") String password,
             @Query("newPassword") String newPassword);
+
+    /*更新位置*/
+
+    @GET("near/updatePosition")
+    Observable<UpdatePositionEntity> updatePosition(
+            @Query("token") String token,
+            @Query("latitude") String password,
+            @Query("longitude") String newPassword);
+
+    /*附近的人*/
+
+    @GET("near/nearPersonList")
+    Observable<UpdatePositionEntity> nearPersonList(
+            @Query("token") String token);
 
     /*找回密码中的获取验证码*/
     @FormUrlEncoded
