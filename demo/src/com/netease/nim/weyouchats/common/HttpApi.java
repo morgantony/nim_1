@@ -1,6 +1,7 @@
 package com.netease.nim.weyouchats.common;
 
 import com.netease.nim.weyouchats.common.entity.ChangePassWordEntity;
+import com.netease.nim.weyouchats.common.entity.CommenEntity;
 import com.netease.nim.weyouchats.common.entity.UpLoadUserInfoEntity;
 import com.netease.nim.weyouchats.common.entity.UpdatePositionEntity;
 import com.netease.nim.weyouchats.config.DemoServers;
@@ -57,7 +58,7 @@ public interface HttpApi {
     /*附近的人*/
 
     @GET("near/nearPersonList")
-    Observable<UpdatePositionEntity> nearPersonList(
+    Observable<CommenEntity> nearPersonList(
             @Query("token") String token);
 
     /*找回密码中的获取验证码*/

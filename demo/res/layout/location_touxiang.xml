@@ -10,4 +10,11 @@
         android:layout_height="35dp"
         android:layout_marginBottom="5dp"
         android:src="@drawable/red_qipao"/>
+
+    <!--<ImageView-->
+        <!--android:id="@+id/hv_location_touxiang"-->
+        <!--android:layout_width="35dp"-->
+        <!--android:layout_height="35dp"-->
+        <!--android:layout_marginBottom="5dp"-->
+        <!--android:src="@drawable/red_qipao" />-->
 </LinearLayout>

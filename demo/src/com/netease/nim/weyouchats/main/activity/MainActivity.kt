@@ -853,9 +853,15 @@ open class MainActivity : UI(), ReminderManager.UnreadNumChangedCallback, ViewPa
 
             //坐标位置不变的话 就不用更新位置
             try {
-                val a=Const.LONGITUDE.toString().split(".")[0]==location.longitude.toString().split(".")[0]
-                val b=Const.LATITUDE.toString().split(".")[0]==location.latitude.toString().split(".")[0]
+                val a=Const.LONGITUDE.toString()==location.longitude.toString()
+                val b=Const.LATITUDE.toString()==location.latitude.toString()
                 if(a&&b){
+                    return
+                }
+                if(Const.LONGITUDE.toString()=="4.9E-324"){   //定位失败的返回坐标
+                    return
+                }
+                if(Const.LATITUDE.toString()=="4.9E-324"){
                     return
                 }
             }catch (e:java.lang.Exception){

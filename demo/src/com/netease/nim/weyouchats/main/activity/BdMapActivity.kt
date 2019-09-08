@@ -3,10 +3,12 @@ package com.netease.nim.weyouchats.main.activity
 import android.Manifest
 import android.content.pm.PackageManager
 import android.graphics.Bitmap
+import android.graphics.drawable.Drawable
 import android.os.Build
 import android.os.Bundle
 import android.support.v4.app.ActivityCompat
 import android.support.v4.content.ContextCompat
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.widget.Toast
@@ -22,12 +24,16 @@ import com.bhm.sdk.rxlibrary.rxjava.callback.CallBack
 import com.bhm.sdk.rxlibrary.rxjava.callback.RxUpLoadCallBack
 import com.bhm.sdk.rxlibrary.utils.RxLoadingDialog
 import com.bumptech.glide.Glide
+import com.bumptech.glide.request.target.SimpleTarget
+import com.bumptech.glide.request.transition.Transition
 import com.google.gson.Gson
 import com.netease.nim.uikit.common.activity.UI
 import com.netease.nim.uikit.common.ui.imageview.HeadImageView
+import com.netease.nim.weyouchats.DemoCache
 import com.netease.nim.weyouchats.R
 import com.netease.nim.weyouchats.common.HttpApi
-import com.netease.nim.weyouchats.common.entity.UpdatePositionEntity
+import com.netease.nim.weyouchats.common.entity.CommenEntity
+import com.netease.nim.weyouchats.common.entity.LocationBean
 import com.netease.nim.weyouchats.config.preference.Preferences
 import com.netease.nim.weyouchats.login.User
 import kotlinx.android.synthetic.main.bdmap_activity.*
@@ -48,8 +54,11 @@ class BdMapActivity : UI() {
 
     // UI相关
     internal var isFirstLoc = true// 是否首次定位
-    internal var markerView: View? = null// 是否首次定位
+    lateinit var markerView: View// 是否首次定位
     lateinit var user: User
+    lateinit var marker:Marker
+    lateinit var imageView: HeadImageView
+    var localist= arrayListOf<nearPersonListBean>()
     public override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.bdmap_activity)
@@ -60,9 +69,9 @@ class BdMapActivity : UI() {
         markerView = LayoutInflater.from(this).inflate(R.layout.location_touxiang, null)//加载布局
         user = Gson().fromJson(Preferences.getUserInfo(), User::class.java)
 
-        val imageView = markerView?.findViewById<HeadImageView>(R.id.hv_location_touxiang)//布局里面的image
+        imageView = markerView.findViewById(R.id.hv_location_touxiang)//布局里面的image
+
         if (user.icon != null) {
-//            imageView?.loadAvatar(user.icon)
             Glide.with(this).load(user.icon).into(imageView)
         }
         judgePermission()
@@ -75,7 +84,8 @@ class BdMapActivity : UI() {
         mBaiduMap?.isMyLocationEnabled = true
 
         mBaiduMap?.setOnMarkerClickListener {
-            toast("点击头像")
+            val bundle=it.extraInfo
+            toast("${bundle.getString("accid")}")
             true
         }
 
@@ -85,10 +95,11 @@ class BdMapActivity : UI() {
         val option = LocationClientOption()
         option.isOpenGps = true// 打开gps
         option.setCoorType("bd09ll") // 设置坐标类型
-        option.setScanSpan(2000)// 设置发起定位请求的间隔时间为1000ms
+        option.setScanSpan(1000)// 设置发起定位请求的间隔时间为10s
         option.setIsNeedAddress(true)
         mLocClient?.locOption = option
         mLocClient?.start()
+
 
     }
 
@@ -132,31 +143,44 @@ class BdMapActivity : UI() {
                         f!!.minus(6))    //当前比例尺 500米
 
                 //构建Marker图标
-                val bitmap = BitmapDescriptorFactory.fromBitmap(getViewBitmap(markerView!!))
-//                val bitmap = BitmapDescriptorFactory.fromResource(R.drawable.red_qipao)
+                val bitmap = BitmapDescriptorFactory.fromBitmap(getViewBitmap(markerView))
                 //构建MarkerOption，用于在地图上添加Marker
                 val option = MarkerOptions()
                         .position(ll)
                         .anchor(0.5f, 0.5f)//覆盖物的对齐点，0.5f,0.5f为覆盖物的中心点
                         .icon(bitmap)
+
+
                 //在地图上添加Marker，并显示
-                mBaiduMap?.addOverlay(option)
+                marker=  (mBaiduMap?.addOverlay(option)) as Marker
+
+                val mBundle =  Bundle()       //使用Bundle来标识每一个标注的信息
+                mBundle.putString("accid", DemoCache.getAccount())
+                marker.extraInfo = mBundle
+
                 mBaiduMap?.animateMapStatus(u)     ////设置地图显示比例尺
 
                 //地图位置显示
                 Toast.makeText(this@BdMapActivity, location.addrStr,
                         Toast.LENGTH_SHORT).show()
+
+                //只第一次请求附近的人的信息
+                nearPersonList()
             } else {
-                mBaiduMap?.clear()
-//                val bitmap = BitmapDescriptorFactory.fromResource(R.drawable.red_qipao)
+                marker.remove()
                 val bitmap = BitmapDescriptorFactory.fromBitmap(getViewBitmap(markerView!!))
                 //构建MarkerOption，用于在地图上添加Marker
                 val option = MarkerOptions()
                         .position(ll)
                         .anchor(0.5f, 1f)//覆盖物的对齐点，0.5f,0.5f为覆盖物的中心点
                         .icon(bitmap)
+
                 //在地图上添加Marker，并显示
-                mBaiduMap?.addOverlay(option)
+              marker=  (mBaiduMap?.addOverlay(option)) as Marker
+
+                val mBundle =  Bundle()       //使用Bundle来标识每一个标注的信息
+                mBundle.putString("accid", DemoCache.getAccount())
+                marker.extraInfo = mBundle
             }
 
         }
@@ -182,6 +206,91 @@ class BdMapActivity : UI() {
         mMapView!!.onDestroy()
         mMapView = null
         super.onDestroy()
+    }
+
+    private fun nearPersonList() {
+        val builder = RxBuilder.newBuilder(this)
+                .setLoadingDialog(RxLoadingDialog.getDefaultDialog())
+                .setDialogAttribute(false, true, false)
+                .setIsLogOutPut(true)//默认是false
+                .setIsDefaultToast(true, rxManager)
+                .bindRx()
+        val observable = builder
+                .createApi(HttpApi::class.java, HttpApi.HOST, RxUpLoadCallBack())//rxUpLoadListener不能为空
+                .nearPersonList(Preferences.getUserToken())
+
+        builder.setCallBack(observable, object : CallBack<CommenEntity>() {
+            override fun onSuccess(response: CommenEntity?) {
+                if (response!!.code == 200) {
+                    localist.clear()
+                    response.data?.let {
+                        response.data?.list?.let {
+                            localist=((response.data)as LocationBean).list
+                        }
+                    }
+                    if (localist.isEmpty()){
+                        return
+                    }
+                    Log.e("888888",localist.toString())
+                    var bitmap :BitmapDescriptor
+                    localist.forEachIndexed { index, nearPersonListBean ->
+
+                        /**
+                         * 监听图片加载成功或失败
+                         * 每次重新new控件出来，不然覆盖前面的头像
+                         */
+                        Glide.with(this@BdMapActivity).load(nearPersonListBean.icon).into(object : SimpleTarget<Drawable>() {
+                            override fun onLoadFailed(errorDrawable: Drawable?) {
+                                super.onLoadFailed(errorDrawable)
+                               val markerViews = LayoutInflater.from(this@BdMapActivity).inflate(R.layout.location_touxiang, null)//加载布局
+                                val imageViews:HeadImageView = markerViews.findViewById(R.id.hv_location_touxiang)//布局里面的image
+                                imageViews.setImageResource(R.drawable.red_qipao)    //没有头像，就显示默认气泡
+                                bitmap = BitmapDescriptorFactory.fromBitmap(getViewBitmap(markerViews))
+                                val mBundle =  Bundle()       //使用Bundle来标识每一个标注的信息
+                                mBundle.putString("accid",nearPersonListBean.accid)
+                                mBundle.putString("name",nearPersonListBean.name)
+                                mBundle.putString("icon",nearPersonListBean.icon)
+                                mBundle.putString("mobile",nearPersonListBean.mobile)
+                                mBundle.putString("sign",nearPersonListBean.sign)
+                                mBundle.putString("email",nearPersonListBean.email)
+                                mBundle.putString("birth",nearPersonListBean.birth)
+                                mBundle.putString("gender",nearPersonListBean.gender)
+                                mBundle.putDouble("distance",nearPersonListBean.distance?:-1.00)
+                                mBundle.putDouble("latitude",nearPersonListBean.latitude?:-1.00)
+                                mBundle.putDouble("longitude",nearPersonListBean.longitude?:-1.00)
+                                // 地图标注
+                                val overlayOptions =  MarkerOptions().position(LatLng(nearPersonListBean.longitude?:-1.00,nearPersonListBean.latitude?:-1.00)).icon(bitmap)
+                                val marker=mBaiduMap?.addOverlay(overlayOptions)
+                                marker?.extraInfo = mBundle
+                            }
+                            override fun onResourceReady(resource: Drawable?, transition: Transition<in Drawable>?) {
+                               val markerViewss = LayoutInflater.from(this@BdMapActivity).inflate(R.layout.location_touxiang, null)//加载布局
+                               val imageViewss :HeadImageView= markerViewss.findViewById(R.id.hv_location_touxiang)//布局里面的image
+                                imageViewss.setImageDrawable(resource)
+                                bitmap = BitmapDescriptorFactory.fromBitmap(getViewBitmap(markerViewss))
+                                val mBundle =  Bundle()       //使用Bundle来标识每一个标注的信息
+                                mBundle.putString("accid",nearPersonListBean.accid)
+                                mBundle.putString("name",nearPersonListBean.name)
+                                mBundle.putString("icon",nearPersonListBean.icon)
+                                mBundle.putString("mobile",nearPersonListBean.mobile)
+                                mBundle.putString("sign",nearPersonListBean.sign)
+                                mBundle.putString("email",nearPersonListBean.email)
+                                mBundle.putString("birth",nearPersonListBean.birth)
+                                mBundle.putString("gender",nearPersonListBean.gender)
+                                mBundle.putDouble("distance",nearPersonListBean.distance?:-1.00)
+                                mBundle.putDouble("latitude",nearPersonListBean.latitude?:-1.00)
+                                mBundle.putDouble("longitude",nearPersonListBean.longitude?:-1.00)
+                                // 地图标注
+                                val overlayOptions =  MarkerOptions().position(LatLng(nearPersonListBean.longitude?:-1.00,nearPersonListBean.latitude?:-1.00)).icon(bitmap)
+                                val marker=mBaiduMap?.addOverlay(overlayOptions)
+                                marker?.extraInfo = mBundle
+                            }
+                        })
+                    }
+                } else {
+                }
+            }
+        })
     }
 
 
@@ -240,3 +349,17 @@ class BdMapActivity : UI() {
 
 
 }
+ class nearPersonListBean{
+     var accid:String?=null
+     var name:String?=null
+     var icon:String?=null
+     var mobile:String?=null
+     var sign:String?=null
+     var email:String?=null
+     var birth:String?=null
+     var gender:String?=null
+
+     var distance:Double?=-1.00
+     var latitude:Double?=-1.00
+     var longitude:Double?=-1.00
+ }
