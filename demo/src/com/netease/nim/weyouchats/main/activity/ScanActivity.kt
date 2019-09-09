@@ -115,6 +115,9 @@ class ScanActivity : UI(), QRCodeView.Delegate {
         Log.e(TAG, "打开相机出错")
     }
 
+    /**
+     * 当不选择照片直接返回扫一扫 data: Intent? 会为空  加问号
+     */
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
 

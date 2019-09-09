@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.text.TextUtils;
+import android.util.Log;
 import android.widget.ImageView;
 
 import com.bhm.sdk.bhmlibrary.views.TitleBar;
@@ -19,7 +20,9 @@ import com.netease.nim.uikit.common.media.model.GLImage;
 import com.netease.nim.uikit.common.ui.dialog.DialogMaker;
 import com.netease.nim.weyouchats.R;
 import com.netease.nim.weyouchats.config.preference.Preferences;
+import com.netease.nim.weyouchats.contact.ContactHttpClient;
 import com.netease.nim.weyouchats.contact.helper.UserUpdateHelper;
+import com.netease.nim.weyouchats.login.LoginActivity;
 import com.netease.nim.weyouchats.login.User;
 import com.netease.nimlib.sdk.AbortableFuture;
 import com.netease.nimlib.sdk.NIMClient;
@@ -112,6 +115,8 @@ public class UploadHeadPortraitActivity extends UI {
                                 Preferences.saveUserInfo(new Gson().toJson(user));
                                 Glide.with(UploadHeadPortraitActivity.this).load(url).into(iv_head);
                                 ToastHelper.showToast(UploadHeadPortraitActivity.this, R.string.head_update_success);
+                                //通过云信上传头像成功后通知后台同步云信的头像到服务器
+                                updateUserinfoByYx();
                                 onUpdateDone();
                             } else {
                                 imagePath = "";
@@ -124,6 +129,21 @@ public class UploadHeadPortraitActivity extends UI {
                     ToastHelper.showToast(UploadHeadPortraitActivity.this, R.string.user_info_update_failed);
                     onUpdateDone();
                 }
+            }
+        });
+    }
+
+    private void updateUserinfoByYx() {
+        final String token = Preferences.getUserToken();
+        ContactHttpClient.getInstance().updateUserinfoByYx(token, new ContactHttpClient.ContactHttpCallback<User>() {
+            @Override
+            public void onSuccess(User user) {
+                Log.e("999999","服务器同步云信成功");
+            }
+
+            @Override
+            public void onFailed(int code, String errorMsg) {
+                Log.e("999999","服务器同步云信失败==code==errorMsg"+code+errorMsg);
             }
         });
     }

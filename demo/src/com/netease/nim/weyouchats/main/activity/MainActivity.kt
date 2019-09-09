@@ -5,6 +5,7 @@ import android.app.Activity
 import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
+import android.graphics.drawable.BitmapDrawable
 import android.os.Build
 import android.os.Bundle
 import android.support.v4.app.ActivityCompat
@@ -13,8 +14,12 @@ import android.support.v4.content.ContextCompat
 import android.support.v4.view.ViewPager
 import android.text.TextUtils
 import android.util.Log
+import android.view.Gravity
 import android.view.LayoutInflater
 import android.view.View
+import android.widget.PopupWindow
+import android.widget.RelativeLayout
+import android.widget.TextView
 import com.ashokvarma.bottomnavigation.BottomNavigationBar
 import com.ashokvarma.bottomnavigation.BottomNavigationItem
 import com.baidu.location.BDLocation
@@ -77,8 +82,10 @@ import org.jetbrains.anko.toast
  * 主界面
  * Created by huangjun on 2015/3/25.
  */
-open class MainActivity : UI(), ReminderManager.UnreadNumChangedCallback, ViewPager.OnPageChangeListener, BottomNavigationBar.OnTabSelectedListener {
+open class MainActivity : UI(), ReminderManager.UnreadNumChangedCallback, ViewPager.OnPageChangeListener, BottomNavigationBar.OnTabSelectedListener, PopupWindow.OnDismissListener {
 
+    private var popupWindow: PopupWindow?=null  //仿ios底部弹窗
+    private var navigationHeight: Int = 0
 
     lateinit var  popWindow : CustomPopWindow
     //    private PagerSlidingTabStrip tabs;
@@ -109,6 +116,9 @@ open class MainActivity : UI(), ReminderManager.UnreadNumChangedCallback, ViewPa
         //        setToolBar(R.id.toolbar, R.string.app_name, R.drawable.actionbar_dark_logo);
         //        setTitle(R.string.app_name);
         isFirstIn = true
+
+        val resourceId = resources.getIdentifier("navigation_bar_height", "dimen", "android")
+        navigationHeight = resources.getDimensionPixelSize(resourceId)
 
         //不保留后台活动，从厂商推送进聊天页面，会无法退出聊天页面
         if (savedInstanceState == null && parseIntent()) {
@@ -220,40 +230,46 @@ open class MainActivity : UI(), ReminderManager.UnreadNumChangedCallback, ViewPa
         /**
          * 添加导航按钮
          */
-        bottomNavigationBar!!.addItem(BottomNavigationItem(R.drawable.img_xiaoxi, "消息"))
+        bottomNavigationBar!!.addItem(BottomNavigationItem(R.drawable.img_xiaoxi, "会话"))
                 .addItem(BottomNavigationItem(R.drawable.img_people, "联系人"))
 //                .addItem(BottomNavigationItem(R.drawable.img_pyq, "圈子"))//.setInActiveColor("#ffff00")
-                .addItem(BottomNavigationItem(R.drawable.img_my, "我的"))//.setBadgeItem(badgeItem)添加小红点数据
+                .addItem(BottomNavigationItem(R.drawable.img_my, "我"))//.setBadgeItem(badgeItem)添加小红点数据
                 .initialise()//initialise 一定要放在 所有设置的最后一项
         bottomNavigationBar!!.elevation = 3f
         //设置默认导航栏
         onTabSelected(0)
 
+        fl_tianjia.visibility = View.VISIBLE
+        tv_right_title.text="• • •"
+
         //titlebar"我的"右上角按钮
         main_titleBar.setRightOnClickListener {
-            val intent = Intent(this, EditUserInfoActivity::class.java)
-            intent.putExtra("edit", true)
-            ActivityResult(this).startForResult(intent) { _, data ->
-                if (data != null) {
-                    //更新头像和网名等
-                    val head = data.getStringExtra("head")
-                    val name = data.getStringExtra("name")
-                    val sign = data.getStringExtra("sign")
-                    val requestOptions = RequestOptions().centerCrop().error(R.drawable.nim_avatar_default)
-                    Glide.with(this).load(head).apply(requestOptions).into(hv_robot)
-                    if (!TextUtils.isEmpty(name)) {
-                        tv_name.text = name
+                    val intent = Intent(this, EditUserInfoActivity::class.java)
+                    intent.putExtra("edit", true)
+                    ActivityResult(this).startForResult(intent) { _, data ->
+                        if (data != null) {
+                            //更新头像和网名等
+                            val head = data.getStringExtra("head")
+                            val name = data.getStringExtra("name")
+                            val sign = data.getStringExtra("sign")
+                            val requestOptions = RequestOptions().centerCrop().error(R.drawable.nim_avatar_default)
+                            Glide.with(this).load(head).apply(requestOptions).into(hv_robot)
+                            if (!TextUtils.isEmpty(name)) {
+                                tv_name.text = name
+                            }
+                            if (!TextUtils.isEmpty(sign)) {
+                                tv_des.text = sign
+                            }
+                        }
                     }
-                    if (!TextUtils.isEmpty(sign)) {
-                        tv_des.text = sign
-                    }
-                }
-            }
+
         }
 
         fl_tianjia.setOnClickListener {
             if (fragmentFlag == 1) {   //是联系人界面
                 popWindow.showAsDropDown(fl_tianjia, 0, 35)
+            }else if(fragmentFlag == 0){   //会话页面
+                openPopupWindow(main_titleBar)
             }
         }
     }
@@ -539,14 +555,16 @@ open class MainActivity : UI(), ReminderManager.UnreadNumChangedCallback, ViewPa
         bottomNavigationBar!!.selectTab(position, false)
         when (position) {
             0 -> {
-                main_titleBar.setTitleText("消息")
-                fl_tianjia.visibility = View.GONE
+                main_titleBar.setTitleText("会话")
+                fl_tianjia.visibility = View.VISIBLE
+                tv_right_title.text="•••"
                 main_titleBar.setIsRightViewShow(false)
                 fragmentFlag = 0
             }
             1 -> {
                 main_titleBar.setTitleText("联系人")
                 fl_tianjia.visibility = View.VISIBLE
+                tv_right_title.text="添加"
                 main_titleBar.setIsRightViewShow(false)
                 fragmentFlag = 1
             }
@@ -561,6 +579,8 @@ open class MainActivity : UI(), ReminderManager.UnreadNumChangedCallback, ViewPa
                 main_titleBar.setTitleText("")
                 fl_tianjia.visibility = View.GONE
                 main_titleBar.setIsRightViewShow(true)
+                main_titleBar.setIsRightTextViewShow(false)
+                main_titleBar.setIsRightImageViewShow(true)
                 fragmentFlag = 3
             }
         }
@@ -874,6 +894,62 @@ open class MainActivity : UI(), ReminderManager.UnreadNumChangedCallback, ViewPa
 //            Log.e("888888","${Const.LONGITUDE}   ${Const.LATITUDE}")
             updatePosition(Const.LONGITUDE, Const.LATITUDE)
         }
-
     }
+
+    private fun openPopupWindow(v: View) {
+        //防止重复按按钮
+        if (popupWindow != null && popupWindow!!.isShowing) {
+            return
+        }
+        //设置PopupWindow的View
+        val view = LayoutInflater.from(this).inflate(R.layout.view_popupwindow, null)
+        popupWindow = PopupWindow(view, RelativeLayout.LayoutParams.MATCH_PARENT,
+                RelativeLayout.LayoutParams.WRAP_CONTENT)
+        //设置背景,这个没什么效果，不添加会报错
+        popupWindow!!.setBackgroundDrawable(BitmapDrawable())
+        //设置点击弹窗外隐藏自身
+        popupWindow!!.isFocusable = true
+        popupWindow!!.isOutsideTouchable = true
+        //设置动画
+        popupWindow!!.animationStyle = R.style.PopupWindow
+        //设置位置
+        popupWindow!!.showAtLocation(v, Gravity.BOTTOM, 0, navigationHeight)
+        //设置消失监听
+        popupWindow!!.setOnDismissListener(this)
+        //设置PopupWindow的View点击事件
+        setOnPopupViewClick(view)
+        //设置背景色
+        setBackgroundAlpha(0.5f)
+    }
+
+    private fun setOnPopupViewClick(view: View) {
+        val tv_read: TextView = view.findViewById<View>(R.id.tv_read) as TextView
+        val tv_clear: TextView = view.findViewById<View>(R.id.tv_clear) as TextView
+        val tv_cancel: TextView = view.findViewById<View>(R.id.tv_cancel) as TextView
+        tv_read.setOnClickListener{
+
+            popupWindow?.dismiss()
+        }
+        tv_clear.setOnClickListener{
+
+            popupWindow?.dismiss()
+        }
+        tv_cancel.setOnClickListener{
+            popupWindow?.dismiss()
+        }
+    }
+    //设置屏幕背景透明效果
+    fun setBackgroundAlpha(alpha: Float) {
+        val lp = window.attributes
+        lp.alpha = alpha
+        window.attributes = lp
+    }
+
+    /**
+     * 仿ios底部弹窗消失监听
+     */
+    override fun onDismiss() {
+        setBackgroundAlpha(1f)
+    }
+
 }

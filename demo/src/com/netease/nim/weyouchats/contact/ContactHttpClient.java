@@ -38,6 +38,9 @@ public class ContactHttpClient {
     //获取验证码
     private static final String API_NAME_SENDCODE = "user/sendcode";
 
+    //服务器同步云信个人信息
+    private static final String UpdateUserinfoByYx = "user/updateUserinfoByYx";
+
     // header
     private static final String HEADER_KEY_APP_KEY = "appkey";
     private static final String HEADER_CONTENT_TYPE = "Content-Type";
@@ -230,6 +233,47 @@ public class ContactHttpClient {
         StringBuilder body = new StringBuilder();
         body.append(REQUEST_USER_NAME).append("=").append(mobile.toLowerCase()).append("&")
                 .append(REQUEST_PASSWORD).append("=").append(type);
+        String bodyString = body.toString();
+
+        NimHttpClient.getInstance().execute(url, headers, bodyString, new NimHttpClient.NimHttpCallback() {
+            @Override
+            public void onResponse(String response, int code, Throwable exception) {
+                if (code != 200 || exception != null) {
+                    String errMsg = exception != null ? exception.getMessage() : "null";
+                    LogUtil.e(TAG, "register failed : code = " + code + ", errorMsg = " + errMsg);
+                    if (callback != null) {
+                        callback.onFailed(code, errMsg);
+                    }
+                    return;
+                }
+
+                try {
+                    JSONObject resObj = JSONObject.parseObject(response);
+                    int resCode = resObj.getIntValue("code");
+                    if (resCode == RESULT_CODE_SUCCESS) {
+                        User data = resObj.getObject("data", User.class);
+                        callback.onSuccess(data);
+                    } else {
+                        String error = resObj.getString(RESULT_KEY_ERROR_MSG);
+                        callback.onFailed(resCode, error);
+                    }
+                } catch (JSONException e) {
+                    callback.onFailed(-1, e.getMessage());
+                }
+            }
+        });
+    }
+
+    public void updateUserinfoByYx(String token,final ContactHttpCallback<User> callback) {
+        String url = DemoServers.API_COUSMER + UpdateUserinfoByYx;
+        Map<String, String> headers = new HashMap<>(1);
+        String appKey = readAppKey();
+        headers.put(HEADER_CONTENT_TYPE, "application/x-www-form-urlencoded; charset=utf-8");
+        headers.put(HEADER_USER_AGENT, "nim_demo_android");
+        headers.put(HEADER_KEY_APP_KEY, appKey);
+
+        StringBuilder body = new StringBuilder();
+        body.append("token").append("=").append(token);
         String bodyString = body.toString();
 
         NimHttpClient.getInstance().execute(url, headers, bodyString, new NimHttpClient.NimHttpCallback() {
