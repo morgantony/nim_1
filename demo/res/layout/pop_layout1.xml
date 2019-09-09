@@ -19,8 +19,8 @@
             android:id="@+id/tv_one"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="10dp"
+            android:paddingTop="15dp"
+            android:paddingBottom="15dp"
             android:gravity="center"
             android:text="添加好友"
             android:textColor="@android:color/white" />
@@ -31,10 +31,10 @@
             android:background="@color/colorWhite"/>
         <TextView
             android:id="@+id/tv_two"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="10dp"
+            android:paddingTop="15dp"
+            android:paddingBottom="15dp"
             android:text="附近的人"
             android:textColor="@android:color/white" />
 
@@ -45,10 +45,10 @@
 
         <TextView
             android:id="@+id/tv_three"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="10dp"
+            android:paddingTop="15dp"
+            android:paddingBottom="15dp"
             android:text="扫一扫"
             android:textColor="@android:color/white" />
     </LinearLayout>

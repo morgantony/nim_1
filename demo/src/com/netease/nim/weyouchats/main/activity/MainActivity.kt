@@ -675,6 +675,7 @@ open class MainActivity : UI(), ReminderManager.UnreadNumChangedCallback, ViewPa
                 R.id.tv_three -> {
                     //扫一扫
                     toast("扫一扫")
+                    startActivity(intentFor<ScanActivity>())
                 }
             }
         }
@@ -697,7 +698,7 @@ open class MainActivity : UI(), ReminderManager.UnreadNumChangedCallback, ViewPa
         builder.setCallBack(observable, object : CallBack<UpdatePositionEntity>() {
             override fun onSuccess(response: UpdatePositionEntity?) {
                 if (response!!.code == 200) {
-                    Log.e("888888","位置更新成功")
+//                    Log.e("888888","位置更新成功")
                 } else {
                     toast("位置更新失败")
                 }
@@ -870,7 +871,7 @@ open class MainActivity : UI(), ReminderManager.UnreadNumChangedCallback, ViewPa
             //现在已经定位成功，可以将定位的数据保存下来，Const就是保存数据的类
             Const.LONGITUDE = location.longitude
             Const.LATITUDE = location.latitude
-            Log.e("888888","${Const.LONGITUDE}   ${Const.LATITUDE}")
+//            Log.e("888888","${Const.LONGITUDE}   ${Const.LATITUDE}")
             updatePosition(Const.LONGITUDE, Const.LATITUDE)
         }
 

@@ -231,7 +231,7 @@ class BdMapActivity : UI() {
                     if (localist.isEmpty()){
                         return
                     }
-                    Log.e("888888",localist.toString())
+//                    Log.e("888888",localist.toString())
                     var bitmap :BitmapDescriptor
                     localist.forEachIndexed { index, nearPersonListBean ->
 
