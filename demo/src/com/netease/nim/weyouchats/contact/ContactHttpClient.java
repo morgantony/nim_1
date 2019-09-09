@@ -3,8 +3,12 @@ package com.netease.nim.weyouchats.contact;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageManager;
 
+import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONException;
 import com.alibaba.fastjson.JSONObject;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.reflect.TypeToken;
 import com.netease.nim.weyouchats.DemoCache;
 import com.netease.nim.weyouchats.config.DemoServers;
 import com.netease.nim.weyouchats.login.User;
@@ -14,6 +18,7 @@ import com.netease.nim.uikit.common.util.log.LogUtil;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -40,6 +45,9 @@ public class ContactHttpClient {
 
     //服务器同步云信个人信息
     private static final String UpdateUserinfoByYx = "user/updateUserinfoByYx";
+
+    //搜索好友
+    private static final String SearchFriend = "user/searchFriend";
 
     // header
     private static final String HEADER_KEY_APP_KEY = "appkey";
@@ -293,6 +301,57 @@ public class ContactHttpClient {
                     int resCode = resObj.getIntValue("code");
                     if (resCode == RESULT_CODE_SUCCESS) {
                         User data = resObj.getObject("data", User.class);
+                        callback.onSuccess(data);
+                    } else {
+                        String error = resObj.getString(RESULT_KEY_ERROR_MSG);
+                        callback.onFailed(resCode, error);
+                    }
+                } catch (JSONException e) {
+                    callback.onFailed(-1, e.getMessage());
+                }
+            }
+        });
+    }
+
+    /**
+     * 搜索好友
+     * @param searchNumber
+     * @param callback
+     */
+    public void searchFriend(String searchNumber,final ContactHttpCallback<List<User>> callback) {
+        String url = DemoServers.API_COUSMER + SearchFriend;
+        Map<String, String> headers = new HashMap<>(1);
+        String appKey = readAppKey();
+        headers.put(HEADER_CONTENT_TYPE, "application/x-www-form-urlencoded; charset=utf-8");
+        headers.put(HEADER_USER_AGENT, "nim_demo_android");
+        headers.put(HEADER_KEY_APP_KEY, appKey);
+
+        StringBuilder body = new StringBuilder();
+        body.append("searchNumber").append("=").append(searchNumber);
+        String bodyString = body.toString();
+
+        NimHttpClient.getInstance().execute(url, headers, bodyString, new NimHttpClient.NimHttpCallback() {
+            @Override
+            public void onResponse(String response, int code, Throwable exception) {
+                if (code != 200 || exception != null) {
+                    String errMsg = exception != null ? exception.getMessage() : "null";
+                    LogUtil.e(TAG, "register failed : code = " + code + ", errorMsg = " + errMsg);
+                    if (callback != null) {
+                        callback.onFailed(code, errMsg);
+                    }
+                    return;
+                }
+
+                try {
+                    JSONObject resObj = JSONObject.parseObject(response);
+                    int resCode = resObj.getIntValue("code");
+                    if (resCode == RESULT_CODE_SUCCESS) {
+                        JSONArray jsonArray= resObj.getJSONArray("data");
+
+                        GsonBuilder builder = new GsonBuilder();
+                        Gson gson = builder.create();
+                        List<User> data = gson.fromJson(jsonArray.toString(),new TypeToken<List<User>>(){}.getType());
+
                         callback.onSuccess(data);
                     } else {
                         String error = resObj.getString(RESULT_KEY_ERROR_MSG);

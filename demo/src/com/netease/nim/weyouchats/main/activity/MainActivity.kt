@@ -557,7 +557,7 @@ open class MainActivity : UI(), ReminderManager.UnreadNumChangedCallback, ViewPa
             0 -> {
                 main_titleBar.setTitleText("会话")
                 fl_tianjia.visibility = View.VISIBLE
-                tv_right_title.text="•••"
+                tv_right_title.text="• • •"
                 main_titleBar.setIsRightViewShow(false)
                 fragmentFlag = 0
             }

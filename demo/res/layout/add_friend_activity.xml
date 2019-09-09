@@ -39,4 +39,10 @@
         android:paddingRight="15dp"
         android:textColor="@color/color_black_333333"
         android:textColorHint="@color/contact_letter_idx_bg" />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    </android.support.v7.widget.RecyclerView>
 </LinearLayout>
