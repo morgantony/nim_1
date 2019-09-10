@@ -128,7 +128,7 @@ public abstract class BaseMessageActivity extends UI {
         LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.MATCH_PARENT);
         for (final SessionCustomization.OptionsButton button : buttons) {
             ImageView imageView = new ImageView(activity);
-            imageView.setImageResource(button.iconId);
+            imageView.setImageResource(button.iconId);     //聊天界面顶部标题右侧按钮布局
             imageView.setBackgroundResource(R.drawable.nim_nim_action_bar_button_selector);
             imageView.setPadding(ScreenUtil.dip2px(10), 0, ScreenUtil.dip2px(10), 0);
             imageView.setOnClickListener(new View.OnClickListener() {

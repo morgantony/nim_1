@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.FrameLayout;
+import android.widget.TextView;
 
 import com.bhm.sdk.bhmlibrary.views.TitleBar;
 import com.netease.nim.uikit.common.ToastHelper;
@@ -42,8 +43,7 @@ import java.util.Set;
 public class P2PMessageActivity extends BaseMessageActivity {
 
     private boolean isResume = false;
-//    private TitleBar titleMyBar;
-//    private FrameLayout fl_fanhui;
+//    private TextView tv_center_title;
     public static void start(Context context, String contactId, SessionCustomization customization, IMMessage anchor) {
         Intent intent = new Intent();
         intent.putExtra(Extras.EXTRA_ACCOUNT, contactId);
@@ -60,24 +60,21 @@ public class P2PMessageActivity extends BaseMessageActivity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+//        tv_center_title=findViewById(R.id.tv_center_title);
         // 单聊特例话数据，包括个人信息，
         requestBuddyInfo();
         displayOnlineState();
         registerObservers(true);
 
-        initTitleBar();
     }
 
-    /**
-     * 标题
-     */
-    private void initTitleBar() {
-//        titleMyBar.findViewById(R.id.titleBar);
-//        titleMyBar.setTitleText(UserInfoHelper.getUserTitleName(sessionId, SessionTypeEnum.P2P));
+//    /**
+//     * 标题
+//     */
+//    private void initTitleBar() {
 //
-//        fl_fanhui.findViewById(R.id.fl_fanhui);
-//        fl_fanhui.setOnClickListener(view -> onBackPressed());
-    }
+//        tv_center_title.setText(UserInfoHelper.getUserTitleName(sessionId, SessionTypeEnum.P2P));
+//    }
 
     @Override
     protected void onDestroy() {
@@ -99,6 +96,7 @@ public class P2PMessageActivity extends BaseMessageActivity {
 
     private void requestBuddyInfo() {
         setTitle(UserInfoHelper.getUserTitleName(sessionId, SessionTypeEnum.P2P));
+//        initTitleBar();
     }
 
     private void displayOnlineState() {
@@ -144,21 +142,25 @@ public class P2PMessageActivity extends BaseMessageActivity {
         @Override
         public void onAddedOrUpdatedFriends(List<String> accounts) {
             setTitle(UserInfoHelper.getUserTitleName(sessionId, SessionTypeEnum.P2P));
+//            initTitleBar();
         }
 
         @Override
         public void onDeletedFriends(List<String> accounts) {
             setTitle(UserInfoHelper.getUserTitleName(sessionId, SessionTypeEnum.P2P));
+//            initTitleBar();
         }
 
         @Override
         public void onAddUserToBlackList(List<String> account) {
             setTitle(UserInfoHelper.getUserTitleName(sessionId, SessionTypeEnum.P2P));
+//            initTitleBar();
         }
 
         @Override
         public void onRemoveUserFromBlackList(List<String> account) {
             setTitle(UserInfoHelper.getUserTitleName(sessionId, SessionTypeEnum.P2P));
+//            initTitleBar();
         }
     };
 

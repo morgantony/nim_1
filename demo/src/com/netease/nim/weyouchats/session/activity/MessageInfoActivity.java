@@ -55,7 +55,7 @@ public class MessageInfoActivity extends UI {
 
         ToolBarOptions options = new NimToolBarOptions();
         options.titleId = R.string.message_info;
-        options.navigateId = R.drawable.actionbar_dark_back_icon;
+        options.navigateId = R.drawable.img_close_source;
         setToolBar(R.id.toolbar, options);
 
         account = getIntent().getStringExtra(EXTRA_ACCOUNT);

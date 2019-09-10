@@ -10,9 +10,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:backGroundColor="@color/color_main"
-        app:isLeftViewShow="false"
+        app:isLeftViewShow="true"
         app:isRightViewShow="false"
-        app:leftText="返回"
         app:leftViewBackgroundResource="@drawable/img_close_source"
         app:leftViewMarginLeft="15dp"
         app:rightTextColor="@color/white"
@@ -22,34 +21,34 @@
         app:titleText="附近的人"
         app:titleTextColor="@color/white">
 
-        <FrameLayout
-            android:id="@+id/fl_fanhui"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerVertical="true">
+        <!--<FrameLayout-->
+            <!--android:id="@+id/fl_fanhui"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_centerVertical="true">-->
 
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="5dp"
-                    android:src="@drawable/img_close_source"/>
+            <!--<LinearLayout-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:orientation="horizontal">-->
+                <!--<ImageView-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_marginLeft="5dp"-->
+                    <!--android:src="@drawable/img_close_source"/>-->
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="3dp"
-                    android:layout_gravity="center"
-                    android:gravity="center"
-                    android:text="返回"
-                    android:textColor="@color/white"
-                    android:textSize="16sp" />
-            </LinearLayout>
+                <!--<TextView-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_marginLeft="3dp"-->
+                    <!--android:layout_gravity="center"-->
+                    <!--android:gravity="center"-->
+                    <!--android:text="返回"-->
+                    <!--android:textColor="@color/white"-->
+                    <!--android:textSize="16sp" />-->
+            <!--</LinearLayout>-->
 
-        </FrameLayout>
+        <!--</FrameLayout>-->
     </com.bhm.sdk.bhmlibrary.views.TitleBar>
 
     <com.baidu.mapapi.map.MapView

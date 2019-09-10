@@ -684,7 +684,7 @@ open class MainActivity : UI(), ReminderManager.UnreadNumChangedCallback, ViewPa
             }
             when (v.id) {
                 R.id.tv_one -> {
-                    //添加好友
+                    //nim_ic_message_actionbar_p2p_add
                     AddFriendActivity.start(this)
                 }
                 R.id.tv_two -> {

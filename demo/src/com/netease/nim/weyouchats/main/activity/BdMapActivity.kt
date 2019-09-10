@@ -62,10 +62,12 @@ class BdMapActivity : UI() {
     public override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.bdmap_activity)
-        fl_fanhui.setOnClickListener {
-            finish()
+//        fl_fanhui.setOnClickListener {
+//            finish()
+//        }
+        titleBar.setLeftOnClickListener {
+            onBackPressed()
         }
-
         markerView = LayoutInflater.from(this).inflate(R.layout.location_touxiang, null)//加载布局
         user = Gson().fromJson(Preferences.getUserInfo(), User::class.java)
 
