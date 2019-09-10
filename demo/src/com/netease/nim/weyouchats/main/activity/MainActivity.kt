@@ -5,9 +5,11 @@ import android.app.Activity
 import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
+import android.graphics.Color
 import android.graphics.drawable.BitmapDrawable
 import android.os.Build
 import android.os.Bundle
+import android.support.design.internal.BottomNavigationItemView
 import android.support.v4.app.ActivityCompat
 import android.support.v4.app.FragmentManager
 import android.support.v4.content.ContextCompat
@@ -22,6 +24,7 @@ import android.widget.RelativeLayout
 import android.widget.TextView
 import com.ashokvarma.bottomnavigation.BottomNavigationBar
 import com.ashokvarma.bottomnavigation.BottomNavigationItem
+import com.ashokvarma.bottomnavigation.TextBadgeItem
 import com.baidu.location.BDLocation
 import com.baidu.location.BDLocationListener
 import com.baidu.location.LocationClient
@@ -37,6 +40,8 @@ import com.example.zhouwei.library.CustomPopWindow
 import com.netease.nim.avchatkit.AVChatProfile
 import com.netease.nim.avchatkit.activity.AVChatActivity
 import com.netease.nim.avchatkit.constant.AVChatExtras
+import com.netease.nim.uikit.api.NimUIKit
+import com.netease.nim.uikit.api.model.SimpleCallback
 import com.netease.nim.uikit.api.model.main.LoginSyncDataStatusObserver
 import com.netease.nim.uikit.business.contact.selector.activity.ContactSelectActivity
 import com.netease.nim.uikit.common.ToastHelper
@@ -44,6 +49,8 @@ import com.netease.nim.uikit.common.activity.UI
 import com.netease.nim.uikit.common.ui.dialog.DialogMaker
 import com.netease.nim.uikit.common.ui.drop.DropCover
 import com.netease.nim.uikit.common.ui.drop.DropManager
+import com.netease.nim.uikit.common.ui.listview.AutoRefreshListView
+import com.netease.nim.uikit.common.ui.listview.ListViewUtil
 import com.netease.nim.uikit.support.permission.MPermission
 import com.netease.nim.uikit.support.permission.annotation.OnMPermissionDenied
 import com.netease.nim.uikit.support.permission.annotation.OnMPermissionGranted
@@ -58,6 +65,7 @@ import com.netease.nim.weyouchats.contact.activity.AddFriendActivity
 import com.netease.nim.weyouchats.login.LoginActivity
 import com.netease.nim.weyouchats.login.LogoutHelper
 import com.netease.nim.weyouchats.main.adapter.MainTabPagerAdapter
+import com.netease.nim.weyouchats.main.helper.MessageHelper
 import com.netease.nim.weyouchats.main.helper.SystemMessageUnreadManager
 import com.netease.nim.weyouchats.main.model.MainTab
 import com.netease.nim.weyouchats.main.reminder.ReminderItem
@@ -67,16 +75,24 @@ import com.netease.nim.weyouchats.team.TeamCreateHelper
 import com.netease.nimlib.sdk.NIMClient
 import com.netease.nimlib.sdk.NimIntent
 import com.netease.nimlib.sdk.Observer
+import com.netease.nimlib.sdk.ResponseCode
+import com.netease.nimlib.sdk.friend.model.AddFriendNotify
 import com.netease.nimlib.sdk.msg.MsgService
 import com.netease.nimlib.sdk.msg.SystemMessageObserver
 import com.netease.nimlib.sdk.msg.SystemMessageService
 import com.netease.nimlib.sdk.msg.constant.SessionTypeEnum
+import com.netease.nimlib.sdk.msg.constant.SystemMessageStatus
+import com.netease.nimlib.sdk.msg.constant.SystemMessageType
 import com.netease.nimlib.sdk.msg.model.IMMessage
 import com.netease.nimlib.sdk.msg.model.RecentContact
+import com.netease.nimlib.sdk.msg.model.SystemMessage
+import com.netease.nimlib.sdk.uinfo.model.NimUserInfo
 import kotlinx.android.synthetic.main.activity_my.*
 import kotlinx.android.synthetic.main.main.*
 import org.jetbrains.anko.intentFor
 import org.jetbrains.anko.toast
+import java.util.ArrayList
+import java.util.HashSet
 
 /**
  * 主界面
@@ -95,6 +111,9 @@ open class MainActivity : UI(), ReminderManager.UnreadNumChangedCallback, ViewPa
     private var adapter: MainTabPagerAdapter? = null
 
     private var bottomNavigationBar: BottomNavigationBar? = null
+
+   lateinit var badgeItem0 :TextBadgeItem
+   private var badgeItem1 :TextBadgeItem?=null
     private var fm: FragmentManager? = null
     //    private TextBadgeItem badgeItem;
 
@@ -141,8 +160,215 @@ open class MainActivity : UI(), ReminderManager.UnreadNumChangedCallback, ViewPa
         initPop()
         judgePermission()   //百度地图权限的二次确认
 
+//        loadMessages() // load old data
+//        registerSystemObserver(true)
 
+    }
+    private val LOAD_MESSAGE_COUNT = 100
+    private val itemIds = HashSet<Long>()
+    private var firstLoad = true
+    // 去重
+    private fun duplicateFilter(msg: SystemMessage): Boolean {
+        if (itemIds.contains(msg.messageId)) {
+            return true
+        }
 
+        itemIds.add(msg.messageId)
+        return false
+    }
+    /**
+     * 加载历史消息
+     */
+    fun loadMessages() {
+//        listView.onRefreshStart(AutoRefreshListView.Mode.END)
+        var loadCompleted: Boolean // 是否已经加载完成，后续没有数据了or已经满足本次请求数量
+        var validMessageCount = 0 // 实际加载的数量（排除被过滤被合并的条目）
+        val messageFromAccounts = ArrayList<String>(LOAD_MESSAGE_COUNT)
+
+        while (true) {
+            val temps = NIMClient.getService(SystemMessageService::class.java)
+                    .querySystemMessagesBlock(loadOffset, LOAD_MESSAGE_COUNT)
+
+            loadOffset += temps.size
+            loadCompleted = temps.size < LOAD_MESSAGE_COUNT
+
+            var tempValidCount = 0
+
+            for (m in temps) {
+                // 去重
+                if (duplicateFilter(m)) {
+                    continue
+                }
+
+                // 同一个账号的好友申请仅保留最近一条
+                if (addFriendVerifyFilter(m)) {
+                    continue
+                }
+
+                // 保存有效消息
+                items.add(m)
+                tempValidCount++
+                if (!messageFromAccounts.contains(m.fromAccount)) {
+                    messageFromAccounts.add(m.fromAccount)
+                }
+
+                // 判断是否达到请求数
+                if (++validMessageCount >= LOAD_MESSAGE_COUNT) {
+                    loadCompleted = true
+                    // 已经满足要求，此时需要修正loadOffset
+                    loadOffset -= temps.size
+                    loadOffset += tempValidCount
+
+                    break
+                }
+            }
+
+            if (loadCompleted) {
+                break
+            }
+        }
+
+        // 更新数据源，刷新界面
+        refresh()
+
+        val first = firstLoad
+        firstLoad = false
+//        if (first) {
+//            ListViewUtil.scrollToPosition(listView, 0, 0) // 第一次加载后显示顶部
+//        }
+
+//        listView.onRefreshComplete(validMessageCount, LOAD_MESSAGE_COUNT, true)
+
+        // 收集未知用户资料的账号集合并从远程获取
+        collectAndRequestUnknownUserInfo(messageFromAccounts)
+    }
+
+    private fun registerSystemObserver(register: Boolean) {
+        NIMClient.getService(SystemMessageObserver::class.java).observeReceiveSystemMsg(systemMessageObserver, register)
+    }
+
+    internal var systemMessageObserver: Observer<SystemMessage> = Observer { systemMessage -> onIncomingMessage(systemMessage) }
+    private val items = ArrayList<SystemMessage>()
+    private var loadOffset = 0
+    /**
+     * 新消息到来
+     */
+    private fun onIncomingMessage(message: SystemMessage) {
+        // 同一个账号的好友申请仅保留最近一条
+        if (addFriendVerifyFilter(message)) {
+            var del: SystemMessage? = null
+            for (m in items) {
+                if (m.getFromAccount() == message.fromAccount && m.getType() == SystemMessageType.AddFriend) {
+                    val attachData = m.getAttachObject() as AddFriendNotify
+                    if (attachData != null && attachData.event == AddFriendNotify.Event.RECV_ADD_FRIEND_VERIFY_REQUEST) {
+                        del = m
+                        break
+                    }
+                }
+            }
+
+            if (del != null) {
+                items.remove(del)
+            }
+        }
+
+        loadOffset++
+        items.add(0, message)
+
+        // 只有拉人入群才可以设置自定义字段
+        val customInfo = message.customInfo
+        Log.e("111", "system message , customInfo = $customInfo")
+
+        // 获取系统通知的内容。例如：申请附言，拒绝理由
+        val content = message.content
+        Log.e("111", "system message , content = $content")
+
+        refresh()
+
+        // 收集未知用户资料的账号集合并从远程获取
+        val messageFromAccounts = ArrayList<String>(1)
+        messageFromAccounts.add(message.fromAccount)
+        collectAndRequestUnknownUserInfo(messageFromAccounts)
+    }
+    private fun refresh() {
+        runOnUiThread {
+
+            val coun=items.count { (it.status== SystemMessageStatus.init) and
+                MessageHelper.isVerifyMessageNeedDeal(it)}
+            Log.e("433", "联系人$coun")
+        //初始化红点
+
+            if(coun<=0){
+//                if (!badgeItem1!!.isHidden){
+                    badgeItem1?.hide(false)
+//                }
+            }else{
+                if (coun>=100){
+                    badgeItem1!!
+                            .setText("99+")
+                            .show(false)
+                }else{
+                    badgeItem1!!
+                            .setText(coun.toString())
+                            .show(false)
+                }
+//                if (badgeItem1!!.isHidden){
+                    badgeItem1!!.show(false)
+//                }
+            }
+        }
+    }
+
+    // 请求未知的用户资料
+    private fun collectAndRequestUnknownUserInfo(messageFromAccounts: List<String>) {
+        val unknownAccounts = ArrayList<String>()
+        for (account in messageFromAccounts) {
+            if (NimUIKit.getUserInfoProvider().getUserInfo(account) == null) {
+                unknownAccounts.add(account)
+            }
+        }
+
+        if (!unknownAccounts.isEmpty()) {
+            requestUnknownUser(unknownAccounts)
+        }
+    }
+
+    private fun requestUnknownUser(accounts: List<String>) {
+        NimUIKit.getUserInfoProvider().getUserInfoAsync(accounts) { success, result, code ->
+            if (code == ResponseCode.RES_SUCCESS.toInt()) {
+                if (result != null && !result.isEmpty()) {
+                    refresh()
+                }
+            }
+        }
+    }
+
+    private val MERGE_ADD_FRIEND_VERIFY = false // 是否要合并好友申请，同一个用户仅保留最近一条申请内容（默认不合并）
+    private val addFriendVerifyRequestAccounts = HashSet<String>() // 发送过好友申请的账号（好友申请合并用）
+
+    // 同一个账号的好友申请仅保留最近一条
+    private fun addFriendVerifyFilter(msg: SystemMessage): Boolean {
+        if (!MERGE_ADD_FRIEND_VERIFY) {
+            return false // 不需要MERGE，不过滤
+        }
+
+        if (msg.type != SystemMessageType.AddFriend) {
+            return false // 不过滤
+        }
+
+        val attachData = msg.attachObject as AddFriendNotify
+                ?: return true // 过滤
+
+        if (attachData.event != AddFriendNotify.Event.RECV_ADD_FRIEND_VERIFY_REQUEST) {
+            return false // 不过滤
+        }
+
+        if (addFriendVerifyRequestAccounts.contains(msg.fromAccount)) {
+            return true // 过滤
+        }
+
+        addFriendVerifyRequestAccounts.add(msg.fromAccount)
+        return false // 不过滤
     }
 
     //初始化定位 开始定位
@@ -206,6 +432,7 @@ open class MainActivity : UI(), ReminderManager.UnreadNumChangedCallback, ViewPa
 
     private fun initView() {
         bottomNavigationBar = findViewById(R.id.bottom_nav_bar)
+
         fm = supportFragmentManager
 
         /**
@@ -217,21 +444,36 @@ open class MainActivity : UI(), ReminderManager.UnreadNumChangedCallback, ViewPa
                 .setActiveColor("#1ba4f3")//选中颜色
                 .setInActiveColor("#939799")//未选中颜色
                 .setBarBackgroundColor("#f5f9fa")//导航栏背景色
-        //        badgeItem = new TextBadgeItem()
-        //                .setBorderWidth(2)//Badge的Border(边界)宽度
-        //                .setBorderColor(Color.BLUE)//Badge的Border颜色
-        //                .setBackgroundColor(Color.RED)
-        //                .setTextColor(Color.BLACK)//文本颜色
-        //                .setGravity(Gravity.RIGHT| Gravity.TOP)//位置，默认右上角
-        //                .setAnimationDuration(2000)
-        //                .setHideOnSelect(true)//当选中状态时消失，非选中状态显示
-        //                .setText("99");
+
+
+        //初始化红点
+        badgeItem0 =  TextBadgeItem()
+                .setBorderWidth(2)//Badge的Border(边界)宽度
+                .setBorderColor(Color.parseColor("#ee4b62"))//Badge的Border颜色
+                .setBackgroundColor(Color.parseColor("#ee4b62"))
+                .setTextColor(Color.WHITE)//文本颜色
+                .setGravity(Gravity.RIGHT or Gravity.TOP)
+//                .setAnimationDuration(2000)
+//                .setHideOnSelect(true)//当选中状态时消失，非选中状态显示
+                .setText("")
+                .hide(false)
+
+        badgeItem1 =  TextBadgeItem()
+                .setBorderWidth(2)//Badge的Border(边界)宽度
+                .setBorderColor(Color.parseColor("#ee4b62"))//Badge的Border颜色
+                .setBackgroundColor(Color.parseColor("#ee4b62"))
+                .setTextColor(Color.WHITE)//文本颜色
+                .setGravity(Gravity.RIGHT or Gravity.TOP)   //按位或
+//                .setAnimationDuration(2000)
+//                .setHideOnSelect(true)//当选中状态时消失，非选中状态显示
+                .setText("")
+//                .hide(false)
 
         /**
          * 添加导航按钮
          */
-        bottomNavigationBar!!.addItem(BottomNavigationItem(R.drawable.img_xiaoxi, "会话"))
-                .addItem(BottomNavigationItem(R.drawable.img_people, "联系人"))
+        bottomNavigationBar!!.addItem(BottomNavigationItem(R.drawable.img_xiaoxi, "会话").setBadgeItem(badgeItem0))
+                .addItem(BottomNavigationItem(R.drawable.img_people, "联系人").setBadgeItem(badgeItem1))
 //                .addItem(BottomNavigationItem(R.drawable.img_pyq, "圈子"))//.setInActiveColor("#ffff00")
                 .addItem(BottomNavigationItem(R.drawable.img_my, "我"))//.setBadgeItem(badgeItem)添加小红点数据
                 .initialise()//initialise 一定要放在 所有设置的最后一项
@@ -325,6 +567,7 @@ open class MainActivity : UI(), ReminderManager.UnreadNumChangedCallback, ViewPa
     private fun findViews() {
         //        tabs = findView(R.id.tabs);
         pager = findView(R.id.main_tab_pager)
+
     }
 
     private fun setupPager() {
@@ -492,11 +735,18 @@ open class MainActivity : UI(), ReminderManager.UnreadNumChangedCallback, ViewPa
         val temp = isFirstIn
         isFirstIn = false
         initLocations()
+
+        Log.e("433","来到了onresume")
         if (pager == null && temp) {
             return
         }
         //如果不是第一次进 ， eg: 其他页面back
         if (pager == null) {
+//            items.clear()
+//            loadOffset=0
+//            addFriendVerifyRequestAccounts.clear()
+//            registerSystemObserver(true)
+//            loadMessages()
             init()
         }
         enableMsgNotification(false)
@@ -521,6 +771,7 @@ open class MainActivity : UI(), ReminderManager.UnreadNumChangedCallback, ViewPa
         registerSystemMessageObservers(false)
         DropManager.getInstance().destroy()
         mLocationClient?.stop()   //销毁LocationClient
+        registerSystemObserver(false)
     }
 
     public override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent) {
@@ -594,7 +845,43 @@ open class MainActivity : UI(), ReminderManager.UnreadNumChangedCallback, ViewPa
 
     //未读消息数量观察者实现
     override fun onUnreadNumChanged(item: ReminderItem) {
-        //        MainTab tab = MainTab.fromReminderId(item.getId());
+    //val tab = MainTab.fromReminderId(item.getId());
+        when(item.id){
+            0->{
+                Log.e("433","会话${item.unread}")
+                    if(item.unread<=0){
+                        if (!badgeItem0.isHidden){
+                            badgeItem0.hide(false)
+                        }
+                    }else{
+                        if (item.unread>=100){
+                            badgeItem0.setText("99+")
+                        }else{
+                            badgeItem0.setText(item.unread.toString())
+                        }
+                        if (badgeItem0.isHidden){
+                            badgeItem0.show(false)
+                        }
+                    }
+            }
+            1->{
+                if(item.unread<=0){
+                    if (!badgeItem1!!.isHidden){
+                        badgeItem1!!.hide(false)
+                    }
+                }else{
+                    if (item.unread>=100){
+                        badgeItem1!!.setText("99+")
+                    }else{
+                        badgeItem1!!.setText(item.unread.toString())
+                    }
+                    if (badgeItem1!!.isHidden){
+                        badgeItem1!!.show(false)
+                    }
+                }    //只能这样了  。。。。。。。。
+            }
+        }
+//        loadMessages() // load old data
         //        if (tab != null) {
         //            tabs.updateTab(tab.tabIndex, item);
         //        }

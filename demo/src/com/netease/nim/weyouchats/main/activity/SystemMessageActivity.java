@@ -426,6 +426,7 @@ public class SystemMessageActivity extends UI implements TAdapterDelegate,
 
             @Override
             public void run() {
+                Log.e("999","===="+items.size());
                 adapter.notifyDataSetChanged();
             }
         });
