@@ -927,11 +927,11 @@ open class MainActivity : UI(), ReminderManager.UnreadNumChangedCallback, ViewPa
         val tv_clear: TextView = view.findViewById<View>(R.id.tv_clear) as TextView
         val tv_cancel: TextView = view.findViewById<View>(R.id.tv_cancel) as TextView
         tv_read.setOnClickListener{
-
+            NIMClient.getService(MsgService::class.java).clearAllUnreadCount() //全部标记已读
             popupWindow?.dismiss()
         }
         tv_clear.setOnClickListener{
-
+            NIMClient.getService(MsgService::class.java).clearMsgDatabase(true)   //清空聊天记录
             popupWindow?.dismiss()
         }
         tv_cancel.setOnClickListener{

@@ -3,6 +3,10 @@ package com.netease.nim.uikit.business.session.activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.FrameLayout;
+
+import com.bhm.sdk.bhmlibrary.views.TitleBar;
 import com.netease.nim.uikit.common.ToastHelper;
 
 import com.alibaba.fastjson.JSON;
@@ -38,7 +42,8 @@ import java.util.Set;
 public class P2PMessageActivity extends BaseMessageActivity {
 
     private boolean isResume = false;
-
+//    private TitleBar titleMyBar;
+//    private FrameLayout fl_fanhui;
     public static void start(Context context, String contactId, SessionCustomization customization, IMMessage anchor) {
         Intent intent = new Intent();
         intent.putExtra(Extras.EXTRA_ACCOUNT, contactId);
@@ -59,6 +64,19 @@ public class P2PMessageActivity extends BaseMessageActivity {
         requestBuddyInfo();
         displayOnlineState();
         registerObservers(true);
+
+        initTitleBar();
+    }
+
+    /**
+     * 标题
+     */
+    private void initTitleBar() {
+//        titleMyBar.findViewById(R.id.titleBar);
+//        titleMyBar.setTitleText(UserInfoHelper.getUserTitleName(sessionId, SessionTypeEnum.P2P));
+//
+//        fl_fanhui.findViewById(R.id.fl_fanhui);
+//        fl_fanhui.setOnClickListener(view -> onBackPressed());
     }
 
     @Override
@@ -204,8 +222,8 @@ public class P2PMessageActivity extends BaseMessageActivity {
 
     @Override
     protected void initToolBar() {
-//        ToolBarOptions options = new NimToolBarOptions();
-//        setToolBar(R.id.toolbar, options);
+        ToolBarOptions options = new NimToolBarOptions();
+        setToolBar(R.id.toolbar, options);
     }
 
     @Override
