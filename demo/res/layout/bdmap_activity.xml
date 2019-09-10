@@ -10,7 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:backGroundColor="@color/color_main"
-        app:isLeftViewShow="true"
+        app:isLeftViewShow="false"
         app:isRightViewShow="false"
         app:leftViewBackgroundResource="@drawable/img_close_source"
         app:leftViewMarginLeft="15dp"
@@ -21,21 +21,21 @@
         app:titleText="附近的人"
         app:titleTextColor="@color/white">
 
-        <!--<FrameLayout-->
-            <!--android:id="@+id/fl_fanhui"-->
-            <!--android:layout_width="wrap_content"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:layout_centerVertical="true">-->
+        <FrameLayout
+            android:id="@+id/fl_fanhui"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true">
 
-            <!--<LinearLayout-->
-                <!--android:layout_width="wrap_content"-->
-                <!--android:layout_height="wrap_content"-->
-                <!--android:orientation="horizontal">-->
-                <!--<ImageView-->
-                    <!--android:layout_width="wrap_content"-->
-                    <!--android:layout_height="wrap_content"-->
-                    <!--android:layout_marginLeft="5dp"-->
-                    <!--android:src="@drawable/img_close_source"/>-->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:src="@drawable/img_close_source"/>
 
                 <!--<TextView-->
                     <!--android:layout_width="wrap_content"-->
@@ -46,9 +46,9 @@
                     <!--android:text="返回"-->
                     <!--android:textColor="@color/white"-->
                     <!--android:textSize="16sp" />-->
-            <!--</LinearLayout>-->
+            </LinearLayout>
 
-        <!--</FrameLayout>-->
+        </FrameLayout>
     </com.bhm.sdk.bhmlibrary.views.TitleBar>
 
     <com.baidu.mapapi.map.MapView

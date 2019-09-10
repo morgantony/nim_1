@@ -9,7 +9,7 @@
         android:layout_width="35dp"
         android:layout_height="35dp"
         android:layout_marginBottom="5dp"
-        android:src="@drawable/red_qipao"/>
+        android:src="@drawable/gray_blank_touxiang"/>
 
     <!--<ImageView-->
         <!--android:id="@+id/hv_location_touxiang"-->

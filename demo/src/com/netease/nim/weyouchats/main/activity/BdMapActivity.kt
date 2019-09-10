@@ -35,6 +35,7 @@ import com.netease.nim.weyouchats.common.HttpApi
 import com.netease.nim.weyouchats.common.entity.CommenEntity
 import com.netease.nim.weyouchats.common.entity.LocationBean
 import com.netease.nim.weyouchats.config.preference.Preferences
+import com.netease.nim.weyouchats.contact.activity.UserProfileActivity
 import com.netease.nim.weyouchats.login.User
 import kotlinx.android.synthetic.main.bdmap_activity.*
 import org.jetbrains.anko.toast
@@ -62,12 +63,12 @@ class BdMapActivity : UI() {
     public override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.bdmap_activity)
-//        fl_fanhui.setOnClickListener {
-//            finish()
-//        }
-        titleBar.setLeftOnClickListener {
-            onBackPressed()
+        fl_fanhui.setOnClickListener {
+            finish()
         }
+//        titleBar.setLeftOnClickListener {
+//            onBackPressed()
+//        }
         markerView = LayoutInflater.from(this).inflate(R.layout.location_touxiang, null)//加载布局
         user = Gson().fromJson(Preferences.getUserInfo(), User::class.java)
 
@@ -88,6 +89,7 @@ class BdMapActivity : UI() {
         mBaiduMap?.setOnMarkerClickListener {
             val bundle=it.extraInfo
             toast("${bundle.getString("accid")}")
+            UserProfileActivity.start(this, bundle.getString("accid"))
             true
         }
 
@@ -246,7 +248,7 @@ class BdMapActivity : UI() {
                                 super.onLoadFailed(errorDrawable)
                                val markerViews = LayoutInflater.from(this@BdMapActivity).inflate(R.layout.location_touxiang, null)//加载布局
                                 val imageViews:HeadImageView = markerViews.findViewById(R.id.hv_location_touxiang)//布局里面的image
-                                imageViews.setImageResource(R.drawable.red_qipao)    //没有头像，就显示默认气泡
+                                imageViews.setImageResource(R.drawable.gray_blank_touxiang)    //没有头像，就显示默认气泡
                                 bitmap = BitmapDescriptorFactory.fromBitmap(getViewBitmap(markerViews))
                                 val mBundle =  Bundle()       //使用Bundle来标识每一个标注的信息
                                 mBundle.putString("accid",nearPersonListBean.accid)
