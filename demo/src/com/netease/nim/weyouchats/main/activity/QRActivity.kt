@@ -31,7 +31,9 @@ import com.netease.nim.weyouchats.R
 import com.netease.nim.weyouchats.common.util.ScreenShotUtils
 import com.netease.nim.weyouchats.config.preference.Preferences
 import com.netease.nim.weyouchats.login.User
+import kotlinx.android.synthetic.main.activity_qr.*
 import org.jetbrains.anko.doAsync
+import org.jetbrains.anko.intentFor
 import org.jetbrains.anko.uiThread
 import java.io.File
 import java.io.FileOutputStream
@@ -61,11 +63,12 @@ class QRActivity : UI() {
             tv_name.text = user.name
             createChineseQRCodeWithLogo("wy://${user.accid}")
         }
-
+        tv_wechat_num.text="微友号:${user.accid}"
     }
 
     lateinit var bt:Bitmap
     private fun createChineseQRCodeWithLogo(str:String) {
+        //异步生成二维码保存在相册，然后ui线程显示二维码
        doAsync {
            val logoBitmap = BitmapFactory.decodeResource(this@QRActivity.resources, R.drawable.ic_logo)
             bt= QRCodeEncoder.syncEncodeQRCode(str, BGAQRCodeUtil.dp2px(this@QRActivity, 150f),
@@ -90,9 +93,12 @@ class QRActivity : UI() {
 
     private fun initEvent() {
         titleBar!!.setLeftOnClickListener { v -> finish() }
-        iv_qr!!.setOnClickListener { v ->
+        titleBar!!.setRightOnClickListener {
             showDialog()
         }
+//        iv_qr!!.setOnClickListener { v ->
+//
+//        }
     }
 
     private fun showDialog() {
@@ -132,17 +138,18 @@ class QRActivity : UI() {
             }
         }
         view.findViewById<View>(R.id.tv_sao).setOnClickListener { view1 ->
-            //扫描二维码
+            //扫描二维码  跳转扫描二维码界面
             if (mDialog != null && mDialog!!.isShowing) {
+                startActivity(intentFor<ScanActivity>())
                 mDialog!!.dismiss()
             }
         }
-        view.findViewById<View>(R.id.tv_reset).setOnClickListener { view1 ->
-            //重置二维码
-            if (mDialog != null && mDialog!!.isShowing) {
-                mDialog!!.dismiss()
-            }
-        }
+//        view.findViewById<View>(R.id.tv_reset).setOnClickListener { view1 ->
+//            //重置二维码
+//            if (mDialog != null && mDialog!!.isShowing) {
+//                mDialog!!.dismiss()
+//            }
+//        }
         window.setContentView(view)
         window.setLayout(WindowManager.LayoutParams.MATCH_PARENT, WindowManager.LayoutParams.WRAP_CONTENT)//设置横向全屏
     }

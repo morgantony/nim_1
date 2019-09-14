@@ -10,7 +10,7 @@
         app:titleTextColor="@color/white"
         app:rightTextColor="@color/white"
         app:titleText="扫一扫"
-        app:rightText="•••"
+        app:rightText="• • •"
         app:leftViewBackgroundResource="@drawable/img_close_source"
         app:leftViewMarginLeft="15dp"
         app:isLeftViewShow="true"

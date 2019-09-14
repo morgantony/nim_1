@@ -23,7 +23,9 @@ import com.netease.nim.uikit.common.media.imagepicker.ImagePickerLauncher
 import com.netease.nim.uikit.common.media.imagepicker.option.DefaultImagePickerOption
 import com.netease.nim.uikit.common.media.imagepicker.option.ImagePickerOption
 import com.netease.nim.uikit.common.media.model.GLImage
+import com.netease.nim.weyouchats.DemoCache
 import com.netease.nim.weyouchats.R
+import com.netease.nim.weyouchats.contact.activity.UserProfileActivity
 import kotlinx.android.synthetic.main.activity_bga_scan.*
 import org.jetbrains.anko.intentFor
 import java.util.*
@@ -87,7 +89,8 @@ class ScanActivity : UI(), QRCodeView.Delegate {
                     startActivity(intent)
                 }
                 result.startsWith("wy://") -> {
-
+                    //打开个人信息页面
+                    UserProfileActivity.start(this, DemoCache.getAccount())
                 }
                 else -> startActivity(intentFor<BlankActivity>("result" to result))
             }

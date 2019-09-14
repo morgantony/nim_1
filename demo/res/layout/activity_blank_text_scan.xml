@@ -13,7 +13,7 @@
         app:isRightViewShow="false"
         app:leftViewBackgroundResource="@drawable/img_close_source"
         app:leftViewMarginLeft="15dp"
-        app:rightText="•••"
+        app:rightText="• • •"
         app:rightTextColor="@color/white"
         app:titleBarHeight="50dp"
         app:titleText="扫描结果"

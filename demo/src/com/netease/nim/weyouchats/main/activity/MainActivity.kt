@@ -88,6 +88,7 @@ import com.netease.nimlib.sdk.msg.model.RecentContact
 import com.netease.nimlib.sdk.msg.model.SystemMessage
 import com.netease.nimlib.sdk.uinfo.model.NimUserInfo
 import kotlinx.android.synthetic.main.activity_my.*
+import kotlinx.android.synthetic.main.contacts_list.*
 import kotlinx.android.synthetic.main.main.*
 import org.jetbrains.anko.intentFor
 import org.jetbrains.anko.toast
@@ -164,6 +165,9 @@ open class MainActivity : UI(), ReminderManager.UnreadNumChangedCallback, ViewPa
 //        registerSystemObserver(true)
 
     }
+
+
+    /*start  Deprecated*/
     private val LOAD_MESSAGE_COUNT = 100
     private val itemIds = HashSet<Long>()
     private var firstLoad = true
@@ -299,22 +303,22 @@ open class MainActivity : UI(), ReminderManager.UnreadNumChangedCallback, ViewPa
         //初始化红点
 
             if(coun<=0){
-//                if (!badgeItem1!!.isHidden){
                     badgeItem1?.hide(false)
-//                }
+                tv_red_.visibility=View.GONE
             }else{
+                tv_red_.visibility=View.VISIBLE
                 if (coun>=100){
+                    tv_red_.text="99+"
                     badgeItem1!!
                             .setText("99+")
                             .show(false)
                 }else{
+                    tv_red_.text=coun.toString()
                     badgeItem1!!
                             .setText(coun.toString())
                             .show(false)
                 }
-//                if (badgeItem1!!.isHidden){
                     badgeItem1!!.show(false)
-//                }
             }
         }
     }
@@ -370,6 +374,7 @@ open class MainActivity : UI(), ReminderManager.UnreadNumChangedCallback, ViewPa
         addFriendVerifyRequestAccounts.add(msg.fromAccount)
         return false // 不过滤
     }
+    /*end Deprecated*/
 
     //初始化定位 开始定位
     private fun initLocations() {
@@ -484,28 +489,28 @@ open class MainActivity : UI(), ReminderManager.UnreadNumChangedCallback, ViewPa
         fl_tianjia.visibility = View.VISIBLE
         tv_right_title.text="• • •"
 
-        //titlebar"我的"右上角按钮
-        main_titleBar.setRightOnClickListener {
-                    val intent = Intent(this, EditUserInfoActivity::class.java)
-                    intent.putExtra("edit", true)
-                    ActivityResult(this).startForResult(intent) { _, data ->
-                        if (data != null) {
-                            //更新头像和网名等
-                            val head = data.getStringExtra("head")
-                            val name = data.getStringExtra("name")
-                            val sign = data.getStringExtra("sign")
-                            val requestOptions = RequestOptions().centerCrop().error(R.drawable.nim_avatar_default)
-                            Glide.with(this).load(head).apply(requestOptions).into(hv_robot)
-                            if (!TextUtils.isEmpty(name)) {
-                                tv_name.text = name
-                            }
-                            if (!TextUtils.isEmpty(sign)) {
-                                tv_des.text = sign
-                            }
-                        }
-                    }
-
-        }
+        //titlebar"我的"右上角按钮    *隐藏*
+//        main_titleBar.setRightOnClickListener {
+//                    val intent = Intent(this, EditUserInfoActivity::class.java)
+//                    intent.putExtra("edit", true)
+//                    ActivityResult(this).startForResult(intent) { _, data ->
+//                        if (data != null) {
+//                            //更新头像和网名等
+//                            val head = data.getStringExtra("head")
+//                            val name = data.getStringExtra("name")
+//                            val sign = data.getStringExtra("sign")
+//                            val requestOptions = RequestOptions().centerCrop().error(R.drawable.nim_avatar_default)
+//                            Glide.with(this).load(head).apply(requestOptions).into(hv_robot)
+//                            if (!TextUtils.isEmpty(name)) {
+//                                tv_name.text = name
+//                            }
+//                            if (!TextUtils.isEmpty(sign)) {
+//                                tv_des.text = sign
+//                            }
+//                        }
+//                    }
+//
+//        }
 
         fl_tianjia.setOnClickListener {
             if (fragmentFlag == 1) {   //是联系人界面
@@ -809,14 +814,14 @@ open class MainActivity : UI(), ReminderManager.UnreadNumChangedCallback, ViewPa
                 main_titleBar.setTitleText("会话")
                 fl_tianjia.visibility = View.VISIBLE
                 tv_right_title.text="• • •"
-                main_titleBar.setIsRightViewShow(false)
+//                main_titleBar.setIsRightViewShow(false)
                 fragmentFlag = 0
             }
             1 -> {
                 main_titleBar.setTitleText("联系人")
                 fl_tianjia.visibility = View.VISIBLE
                 tv_right_title.text="添加"
-                main_titleBar.setIsRightViewShow(false)
+//                main_titleBar.setIsRightViewShow(false)
                 fragmentFlag = 1
             }
             //后续开发
@@ -829,9 +834,9 @@ open class MainActivity : UI(), ReminderManager.UnreadNumChangedCallback, ViewPa
             2 -> {
                 main_titleBar.setTitleText("")
                 fl_tianjia.visibility = View.GONE
-                main_titleBar.setIsRightViewShow(true)
-                main_titleBar.setIsRightTextViewShow(false)
-                main_titleBar.setIsRightImageViewShow(true)
+//                main_titleBar.setIsRightViewShow(true)
+//                main_titleBar.setIsRightTextViewShow(false)
+//                main_titleBar.setIsRightImageViewShow(true)
                 fragmentFlag = 3
             }
         }
@@ -866,14 +871,18 @@ open class MainActivity : UI(), ReminderManager.UnreadNumChangedCallback, ViewPa
             }
             1->{
                 if(item.unread<=0){
+                    tv_red_?.visibility=View.GONE
                     if (!badgeItem1!!.isHidden){
                         badgeItem1!!.hide(false)
                     }
                 }else{
+                    tv_red_?.visibility=View.VISIBLE
                     if (item.unread>=100){
                         badgeItem1!!.setText("99+")
+                        tv_red_?.text="99+"
                     }else{
                         badgeItem1!!.setText(item.unread.toString())
+                        tv_red_?.text=item.unread.toString()
                     }
                     if (badgeItem1!!.isHidden){
                         badgeItem1!!.show(false)

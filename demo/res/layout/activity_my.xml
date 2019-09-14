@@ -8,9 +8,10 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
+
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="150dp"
+            android:layout_height="wrap_content"
             android:background="@color/color_main"
             android:orientation="vertical">
 
@@ -18,16 +19,36 @@
                 android:id="@+id/iv_edit"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:padding="14dp"
                 android:layout_gravity="right"
-                android:visibility="gone"
-                android:src="@drawable/img_edit"/>
+                android:padding="14dp"
+                android:src="@drawable/img_edit"
+                android:visibility="gone" />
 
-            <com.netease.nim.uikit.common.ui.imageview.HeadImageView
-                android:id="@+id/hv_robot"
+            <RelativeLayout
                 android:layout_width="75dp"
                 android:layout_height="75dp"
-                android:layout_gravity="center_horizontal" />
+                android:layout_gravity="center_horizontal">
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <com.netease.nim.uikit.common.ui.imageview.HeadImageView
+                        android:id="@+id/hv_robot"
+                        android:layout_width="75dp"
+                        android:layout_height="75dp" />
+                </FrameLayout>
+
+                <ImageView
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginRight="2dp"
+                    android:layout_marginBottom="2dp"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/carame_line" />
+            </RelativeLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -41,15 +62,15 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="暂无数据"
-                    android:textSize="18sp"
-                    android:textColor="#f5f9fa"/>
+                    android:textColor="#f5f9fa"
+                    android:textSize="18sp" />
 
                 <ImageView
                     android:id="@+id/iv_qr"
                     android:layout_width="16dp"
                     android:layout_height="16dp"
-                    android:src="@drawable/img_qr"
-                    android:layout_marginLeft="10dp"/>
+                    android:layout_marginLeft="10dp"
+                    android:src="@drawable/img_qr" />
 
             </LinearLayout>
 
@@ -57,98 +78,103 @@
                 android:id="@+id/tv_des"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="6dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginBottom="15dp"
                 android:gravity="center"
                 android:text="这个人很懒，什么都没留下"
-                android:textSize="13sp"
-                android:textColor="#e1e5e6"/>
+                android:textColor="#e1e5e6"
+                android:textSize="13sp" />
 
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_marginTop="-35dp"
-            android:visibility="gone"
             android:layout_height="75dp"
             android:layout_marginLeft="15dp"
+            android:layout_marginTop="-35dp"
             android:layout_marginRight="15dp"
+            android:background="@drawable/round_layout_bg_color_6dp"
             android:orientation="horizontal"
-            android:background="@drawable/round_layout_bg_color_6dp">
+            android:visibility="gone">
 
             <LinearLayout
                 android:layout_width="0dp"
+                android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:orientation="vertical"
-                android:layout_height="match_parent">
+                android:orientation="vertical">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="3"
-                    android:textSize="25sp"
-                    android:textColor="@color/black"/>
+                    android:textColor="@color/black"
+                    android:textSize="25sp" />
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="动态"
-                    android:textSize="12.5sp"
-                    android:textColor="#666666"/>
+                    android:textColor="#666666"
+                    android:textSize="12.5sp" />
 
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="0dp"
+                android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:orientation="vertical"
-                android:layout_height="match_parent">
+                android:orientation="vertical">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="20"
-                    android:textSize="25sp"
-                    android:textColor="@color/black"/>
+                    android:textColor="@color/black"
+                    android:textSize="25sp" />
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="关注"
-                    android:textSize="12.5sp"
-                    android:textColor="#666666"/>
+                    android:textColor="#666666"
+                    android:textSize="12.5sp" />
 
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="0dp"
+                android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:orientation="vertical"
-                android:layout_height="match_parent">
+                android:orientation="vertical">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="8"
-                    android:textSize="25sp"
-                    android:textColor="@color/black"/>
+                    android:textColor="@color/black"
+                    android:textSize="25sp" />
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="粉丝"
-                    android:textSize="12.5sp"
-                    android:textColor="#666666"/>
+                    android:textColor="#666666"
+                    android:textSize="12.5sp" />
 
             </LinearLayout>
         </LinearLayout>
+
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_marginTop="12dp"
             android:layout_height="wrap_content"
             android:layout_marginLeft="15dp"
+            android:layout_marginTop="12dp"
             android:layout_marginRight="15dp"
-            android:orientation="vertical"
-            android:background="@drawable/round_layout_bg_color_6dp">
+            android:background="@drawable/round_layout_bg_color_6dp"
+            android:orientation="vertical">
 
             <LinearLayout
                 android:id="@+id/ll_info"
@@ -160,32 +186,32 @@
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/img_chat_set"
-                    android:layout_marginRight="10dp"
+                    android:layout_marginLeft="15dp"
                     android:layout_marginTop="18dp"
+                    android:layout_marginRight="10dp"
                     android:layout_marginBottom="18dp"
-                    android:layout_marginLeft="15dp"/>
+                    android:src="@drawable/img_chat_set" />
 
                 <TextView
                     android:layout_width="0dp"
-                    android:layout_weight="1"
                     android:layout_height="wrap_content"
-                    android:text="用户信息"
-                    android:textSize="17sp"
-                    android:textColor="#333333"/>
+                    android:layout_weight="1"
+                    android:text="个人信息"
+                    android:textColor="#333333"
+                    android:textSize="17sp" />
 
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/img_right"
-                    android:layout_marginRight="12dp"/>
+                    android:layout_marginRight="12dp"
+                    android:src="@drawable/img_right" />
             </LinearLayout>
 
             <View
                 android:layout_width="match_parent"
                 android:layout_height="0.4dp"
                 android:layout_marginLeft="44dp"
-                android:background="#D4D4D4"/>
+                android:background="#D4D4D4" />
 
             <LinearLayout
                 android:id="@+id/ll_account_setting"
@@ -197,56 +223,33 @@
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/img_ac_set"
-                    android:layout_marginRight="10dp"
+                    android:layout_marginLeft="15dp"
                     android:layout_marginTop="18dp"
+                    android:layout_marginRight="10dp"
                     android:layout_marginBottom="18dp"
-                    android:layout_marginLeft="15dp"/>
+                    android:src="@drawable/img_ac_set" />
 
                 <TextView
                     android:layout_width="0dp"
-                    android:layout_weight="1"
                     android:layout_height="wrap_content"
+                    android:layout_weight="1"
                     android:text="账号设置"
-                    android:textSize="17sp"
-                    android:textColor="#333333"/>
+                    android:textColor="#333333"
+                    android:textSize="17sp" />
 
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/img_right"
-                    android:layout_marginRight="12dp"/>
+                    android:layout_marginRight="12dp"
+                    android:src="@drawable/img_right" />
             </LinearLayout>
 
             <View
                 android:layout_width="match_parent"
                 android:layout_height="0.4dp"
                 android:layout_marginLeft="44dp"
-                android:background="#D4D4D4"/>
+                android:background="#D4D4D4" />
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center_vertical"
-                android:visibility="gone"
-                android:orientation="horizontal">
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/img_chat_set"
-                    android:layout_marginRight="10dp"
-                    android:layout_marginTop="12dp"
-                    android:layout_marginBottom="12dp"
-                    android:layout_marginLeft="15dp"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="聊天设置"
-                    android:textSize="17sp"
-                    android:textColor="#333333"/>
-            </LinearLayout>
 
             <LinearLayout
                 android:id="@+id/ll_system_setting"
@@ -258,37 +261,37 @@
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/img_sys_set"
-                    android:layout_marginRight="10dp"
+                    android:layout_marginLeft="15dp"
                     android:layout_marginTop="18dp"
+                    android:layout_marginRight="10dp"
                     android:layout_marginBottom="18dp"
-                    android:layout_marginLeft="15dp"/>
+                    android:src="@drawable/img_sys_set" />
 
                 <TextView
                     android:layout_width="0dp"
-                    android:layout_weight="1"
                     android:layout_height="wrap_content"
+                    android:layout_weight="1"
                     android:text="系统设置"
-                    android:textSize="17sp"
-                    android:textColor="#333333"/>
+                    android:textColor="#333333"
+                    android:textSize="17sp" />
 
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/img_right"
-                    android:layout_marginRight="12dp"/>
+                    android:layout_marginRight="12dp"
+                    android:src="@drawable/img_right" />
             </LinearLayout>
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
-            android:layout_marginBottom="20dp"
             android:layout_marginLeft="15dp"
+            android:layout_marginTop="12dp"
             android:layout_marginRight="15dp"
-            android:orientation="vertical"
-            android:background="@drawable/round_layout_bg_color_6dp">
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/round_layout_bg_color_6dp"
+            android:orientation="vertical">
 
             <LinearLayout
                 android:id="@+id/ll_help"
@@ -300,32 +303,32 @@
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/img_pic_set"
-                    android:layout_marginRight="10dp"
+                    android:layout_marginLeft="15dp"
                     android:layout_marginTop="18dp"
+                    android:layout_marginRight="10dp"
                     android:layout_marginBottom="18dp"
-                    android:layout_marginLeft="15dp"/>
+                    android:src="@drawable/img_pic_set" />
 
                 <TextView
                     android:layout_width="0dp"
-                    android:layout_weight="1"
                     android:layout_height="wrap_content"
-                    android:text="帮助"
-                    android:textSize="17sp"
-                    android:textColor="#333333"/>
+                    android:layout_weight="1"
+                    android:text="意见反馈"
+                    android:textColor="#333333"
+                    android:textSize="17sp" />
 
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/img_right"
-                    android:layout_marginRight="12dp"/>
+                    android:layout_marginRight="12dp"
+                    android:src="@drawable/img_right" />
             </LinearLayout>
 
             <View
                 android:layout_width="match_parent"
                 android:layout_height="0.4dp"
                 android:layout_marginLeft="44dp"
-                android:background="#D4D4D4"/>
+                android:background="#D4D4D4" />
 
             <LinearLayout
                 android:id="@+id/ll_about"
@@ -337,25 +340,25 @@
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/img_server"
-                    android:layout_marginRight="10dp"
+                    android:layout_marginLeft="15dp"
                     android:layout_marginTop="18dp"
+                    android:layout_marginRight="10dp"
                     android:layout_marginBottom="18dp"
-                    android:layout_marginLeft="15dp"/>
+                    android:src="@drawable/img_server" />
 
                 <TextView
                     android:layout_width="0dp"
-                    android:layout_weight="1"
                     android:layout_height="wrap_content"
+                    android:layout_weight="1"
                     android:text="关于微友"
-                    android:textSize="17sp"
-                    android:textColor="#333333"/>
+                    android:textColor="#333333"
+                    android:textSize="17sp" />
 
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/img_right"
-                    android:layout_marginRight="12dp"/>
+                    android:layout_marginRight="12dp"
+                    android:src="@drawable/img_right" />
             </LinearLayout>
         </LinearLayout>
 

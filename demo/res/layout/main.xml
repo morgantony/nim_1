@@ -51,7 +51,7 @@
             app:leftViewBackgroundResource="@drawable/img_close_source"
             app:rightViewBackgroundResource="@drawable/img_edit"
             app:leftViewMarginLeft="15dp"
-            app:rightText="•••"
+            app:rightText="• • •"
             app:rightTextColor="@color/white"
             app:rightTextSize="16sp"
             app:rightViewMarginRight="12dp"
