@@ -27,7 +27,7 @@ public class ChatRoomSessionHelper {
 
     private static ChatRoomSessionCustomization getChatRoomSessionCustomization() {
         ArrayList<BaseAction> actions = new ArrayList<>();
-        actions.add(new GuessAction());
+//        actions.add(new GuessAction());
         ChatRoomSessionCustomization customization = new ChatRoomSessionCustomization();
         customization.actions = actions;
         return customization;

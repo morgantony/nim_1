@@ -47,12 +47,12 @@ public interface HttpApi {
             @Field("gender") String gender);
 
     /*修改密码*/
-
-    @GET("user/modifyPassword")
+    @FormUrlEncoded
+    @POST("user/modifyPassword")
     Observable<ChangePassWordEntity> changePassWord(
-            @Query("token") String token,
-            @Query("password") String password,
-            @Query("newPassword") String newPassword);
+            @Field("token") String token,
+            @Field("password") String password,
+            @Field("newPassword") String newPassword);
 
     /*更新位置*/
 

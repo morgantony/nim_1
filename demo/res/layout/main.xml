@@ -56,7 +56,7 @@
             app:rightTextSize="16sp"
             app:rightViewMarginRight="12dp"
             app:titleBarHeight="50dp"
-            app:titleText="消息"
+            app:titleText="会话"
             app:titleTextColor="@color/white" />
             <FrameLayout
                 android:id="@+id/fl_tianjia"

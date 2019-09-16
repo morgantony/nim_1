@@ -9,7 +9,7 @@ import com.netease.nimlib.sdk.msg.constant.SessionTypeEnum;
 import com.netease.nimlib.sdk.msg.model.IMMessage;
 
 /**
- * Created by hzxuwen on 2015/6/11.
+ * 猜拳
  */
 public class GuessAction extends BaseAction {
 
