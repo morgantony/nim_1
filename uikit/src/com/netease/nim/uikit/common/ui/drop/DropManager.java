@@ -11,7 +11,6 @@ import com.netease.nim.uikit.common.util.log.LogUtil;
 import com.netease.nim.uikit.common.util.sys.ScreenUtil;
 
 /**
- * Created by huangjun on 2016/9/13.
  */
 public class DropManager {
 

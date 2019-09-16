@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -33,13 +34,13 @@ import java.util.List;
 
 /**
  * 黑名单
- * Created by huangjun on 2015/8/12.
  */
 public class BlackListActivity extends UI implements TAdapterDelegate {
     private static final String TAG = "BlackListActivity";
     private static final int REQUEST_CODE_BLACK = 1;
 
     private ListView listView;
+    private LinearLayout ll_img;
     private List<UserInfo> data = new ArrayList<>();
     private BlackListAdapter adapter;
 
@@ -59,8 +60,8 @@ public class BlackListActivity extends UI implements TAdapterDelegate {
         options.titleId = R.string.black_list;
         setToolBar(R.id.toolbar, options);
 
-        initData();
         findViews();
+        initData();
         initActionbar();
     }
 
@@ -83,6 +84,13 @@ public class BlackListActivity extends UI implements TAdapterDelegate {
         final List<String> accounts = NIMClient.getService(FriendService.class).getBlackList();
         List<String> unknownAccounts = new ArrayList<>();
 
+        if (accounts.isEmpty()){
+            ll_img.setVisibility(View.VISIBLE);
+            listView.setVisibility(View.GONE);
+        }else{
+            ll_img.setVisibility(View.GONE);
+            listView.setVisibility(View.VISIBLE);
+        }
         for (String account : accounts) {
             UserInfo userInfo = NimUIKit.getUserInfoProvider().getUserInfo(account);
             if (userInfo == null) {
@@ -99,7 +107,14 @@ public class BlackListActivity extends UI implements TAdapterDelegate {
                 public void onResult(boolean success, List<NimUserInfo> result, int code) {
                     if (code == ResponseCode.RES_SUCCESS) {
                         data.addAll(result);
-                        adapter.notifyDataSetChanged();
+                        if(data.isEmpty()){
+                            ll_img.setVisibility(View.VISIBLE);
+                            listView.setVisibility(View.GONE);
+                        }else{
+                            ll_img.setVisibility(View.GONE);
+                            listView.setVisibility(View.VISIBLE);
+                            adapter.notifyDataSetChanged();
+                        }
                     }
                 }
             });
@@ -133,6 +148,7 @@ public class BlackListActivity extends UI implements TAdapterDelegate {
         notifyText.setBackgroundColor(getResources().getColor(R.color.color_yellow_fcf3cd));
         notifyText.setTextColor(getResources().getColor(R.color.color_yellow_796413));
         listView = findView(R.id.black_list_view);
+        ll_img = findView(R.id.ll_img);
         adapter = new BlackListAdapter(this, data, this, viewHolderEventListener);
         listView.setAdapter(adapter);
     }
@@ -145,7 +161,14 @@ public class BlackListActivity extends UI implements TAdapterDelegate {
                 public void onSuccess(Void param) {
                     ToastHelper.showToast(BlackListActivity.this, "移出黑名单成功");
                     data.remove(user);
-                    adapter.notifyDataSetChanged();
+                    if(data.isEmpty()){
+                        ll_img.setVisibility(View.VISIBLE);
+                        listView.setVisibility(View.GONE);
+                    }else{
+                        ll_img.setVisibility(View.GONE);
+                        listView.setVisibility(View.VISIBLE);
+                        adapter.notifyDataSetChanged();
+                    }
                 }
 
                 @Override
@@ -172,7 +195,14 @@ public class BlackListActivity extends UI implements TAdapterDelegate {
                 @Override
                 public void onSuccess(Void param) {
                     data.add(NimUIKit.getUserInfoProvider().getUserInfo(account));
-                    adapter.notifyDataSetChanged();
+                    if(data.isEmpty()){
+                        ll_img.setVisibility(View.VISIBLE);
+                        listView.setVisibility(View.GONE);
+                    }else{
+                        ll_img.setVisibility(View.GONE);
+                        listView.setVisibility(View.VISIBLE);
+                        adapter.notifyDataSetChanged();
+                    }
                 }
 
                 @Override

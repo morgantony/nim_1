@@ -97,7 +97,6 @@ import java.util.HashSet
 
 /**
  * 主界面
- * Created by huangjun on 2015/3/25.
  */
 open class MainActivity : UI(), ReminderManager.UnreadNumChangedCallback, ViewPager.OnPageChangeListener, BottomNavigationBar.OnTabSelectedListener, PopupWindow.OnDismissListener {
 
@@ -488,6 +487,7 @@ open class MainActivity : UI(), ReminderManager.UnreadNumChangedCallback, ViewPa
 
         fl_tianjia.visibility = View.VISIBLE
         tv_right_title.text="• • •"
+        tv_right_title.background=null
 
         //titlebar"我的"右上角按钮    *隐藏*
 //        main_titleBar.setRightOnClickListener {
@@ -814,13 +814,15 @@ open class MainActivity : UI(), ReminderManager.UnreadNumChangedCallback, ViewPa
                 main_titleBar.setTitleText("会话")
                 fl_tianjia.visibility = View.VISIBLE
                 tv_right_title.text="• • •"
+                tv_right_title.background=null
 //                main_titleBar.setIsRightViewShow(false)
                 fragmentFlag = 0
             }
             1 -> {
                 main_titleBar.setTitleText("联系人")
                 fl_tianjia.visibility = View.VISIBLE
-                tv_right_title.text="添加"
+                tv_right_title.text=""
+                tv_right_title.setBackgroundResource(R.drawable.img_edit)
 //                main_titleBar.setIsRightViewShow(false)
                 fragmentFlag = 1
             }
@@ -903,7 +905,7 @@ open class MainActivity : UI(), ReminderManager.UnreadNumChangedCallback, ViewPa
     @OnMPermissionGranted(BASIC_PERMISSION_REQUEST_CODE)
     fun onBasicPermissionSuccess() {
         try {
-            ToastHelper.showToast(this, "授权成功")
+//            ToastHelper.showToast(this, "授权成功")
         } catch (e: Exception) {
             e.printStackTrace()
         }
@@ -945,7 +947,7 @@ open class MainActivity : UI(), ReminderManager.UnreadNumChangedCallback, ViewPa
         private val REQUEST_CODE_NORMAL = 1
         private val REQUEST_CODE_ADVANCED = 2
         const val BASIC_PERMISSION_REQUEST_CODE = 100
-        private val BASIC_PERMISSIONS = arrayOf(Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.READ_EXTERNAL_STORAGE, Manifest.permission.CAMERA, Manifest.permission.READ_PHONE_STATE, Manifest.permission.RECORD_AUDIO, Manifest.permission.ACCESS_COARSE_LOCATION, Manifest.permission.ACCESS_FINE_LOCATION)
+        private val BASIC_PERMISSIONS = arrayOf(Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.READ_EXTERNAL_STORAGE, Manifest.permission.CAMERA, Manifest.permission.READ_PHONE_STATE, Manifest.permission.RECORD_AUDIO, Manifest.permission.ACCESS_COARSE_LOCATION, Manifest.permission.ACCESS_FINE_LOCATION,Manifest.permission.READ_CONTACTS)
 
         @JvmStatic
         fun start(context: Context) {

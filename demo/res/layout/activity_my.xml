@@ -25,8 +25,8 @@
                 android:visibility="gone" />
 
             <RelativeLayout
-                android:layout_width="75dp"
-                android:layout_height="75dp"
+                android:layout_width="85dp"
+                android:layout_height="85dp"
                 android:layout_gravity="center_horizontal">
 
                 <FrameLayout
@@ -35,8 +35,8 @@
 
                     <com.netease.nim.uikit.common.ui.imageview.HeadImageView
                         android:id="@+id/hv_robot"
-                        android:layout_width="75dp"
-                        android:layout_height="75dp" />
+                        android:layout_width="85dp"
+                        android:layout_height="85dp" />
                 </FrameLayout>
 
                 <ImageView
@@ -44,8 +44,8 @@
                     android:layout_height="15dp"
                     android:layout_alignParentRight="true"
                     android:layout_alignParentBottom="true"
-                    android:layout_marginRight="2dp"
-                    android:layout_marginBottom="2dp"
+                    android:layout_marginRight="3dp"
+                    android:layout_marginBottom="3dp"
                     android:scaleType="centerInside"
                     android:src="@drawable/carame_line" />
             </RelativeLayout>

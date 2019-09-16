@@ -27,10 +27,35 @@
         android:id="@+id/notify_bar"
         layout="@layout/network_status_bar" />
 
+    <LinearLayout
+        android:id="@+id/ll_img"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:src="@drawable/found_null_pic" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="100dp"
+            android:gravity="center"
+            android:textColor="#9B9999"
+            android:textSize="14dp"
+            android:text="暂无黑名单成员\n(づ｡◕‿‿◕｡)づ"/>
+    </LinearLayout>
+
     <ListView
         android:id="@+id/black_list_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:visibility="gone"
         android:divider="@null"
         android:scrollbars="vertical" />
 </LinearLayout>

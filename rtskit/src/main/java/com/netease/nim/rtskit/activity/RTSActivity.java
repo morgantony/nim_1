@@ -58,7 +58,6 @@ import java.util.List;
 /**
  * 发起/接受会话界面
  * <p/>
- * Created by huangjun on 2015/7/27.
  */
 public class RTSActivity extends UI implements View.OnClickListener {
 

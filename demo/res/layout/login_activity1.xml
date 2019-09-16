@@ -89,7 +89,7 @@
                             android:paddingRight="15dp"
                             android:textCursorDrawable="@null"
                             android:textColor="@color/c66000000"
-                            android:text="15559773249"
+                            android:text=""
                             android:textSize="18sp" />
 
                         <View
@@ -185,7 +185,7 @@
                             android:paddingRight="15dp"
                             android:textCursorDrawable="@null"
                             android:textColor="@color/c66000000"
-                            android:text="1234567"
+                            android:text=""
                             android:textSize="18sp" />
 
                         <View

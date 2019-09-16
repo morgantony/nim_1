@@ -19,6 +19,7 @@
     <string name="login_hint_account">请输入帐号</string>
     <string name="login_hint_password">请输入密码</string>
     <string name="input_account">请输入帐号，限20位字母或者数字</string>
+    <string name="input_find_new_account">请输入对方手机号或微友号</string>
     <string name="register_account_tip">帐号限20位字母或者数字</string>
     <string name="input_nickname">请输入昵称，限10位汉字、字母或者数字</string>
     <string name="register_nick_name_tip">验证码不能为空</string>
@@ -41,6 +42,7 @@
     <string name="remove">移除</string>
     <string name="menu">菜单</string>
     <string name="verify_reminder">验证提醒</string>
+    <string name="verify_new_friend_reminder">新的朋友</string>
     <string name="without_content">暂无</string>
     <string name="create">新建</string>
     <string name="delete_tip">删除提示</string>
@@ -60,7 +62,7 @@
     <string name="nim_status_unlogin">未登录</string>
     <string name="nim_status_connecting">连接中...</string>
     <string name="nim_status_logining">登录中...</string>
-    <string name="copyright">Copyright ©1997-2019 阿满集团版权所有</string>
+    <string name="copyright">Copyright ©1997-2019 微友科技有限公司版权所有</string>
     <string name="user_not_exsit">该用户不存在</string>
     <string name="user_tips">请检查你输入的帐号是否正确</string>
     <string name="edit">编辑</string>
@@ -90,7 +92,7 @@
     <string name="remove_friend_success">删除好友成功</string>
     <string name="add_friend_self_tip">不能添加自己为好友</string>
     <string name="add_friend_verify_tip">好友验证请求</string>
-    <string name="black_list_tip">你不会接收到列表中联系人的任何消息</string>
+    <string name="black_list_tip">tips:你不会接收到列表中联系人的任何消息</string>
 
     <!-- 群 -->
     <string name="add_buddy">添加好友</string>
@@ -164,6 +166,7 @@
     <string name="time_from_default">22:00</string>
     <string name="time_to_default">08:00</string>
     <string name="black_list">黑名单</string>
+    <string name="my_suggest">意见反馈</string>
     <string name="msg_speaker">听筒模式</string>
     <string name="ring">响铃模式</string>
     <string name="vibrate">振动模式</string>

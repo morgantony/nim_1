@@ -32,7 +32,6 @@ import java.util.List;
 /**
  * 群聊界面
  * <p/>
- * Created by huangjun on 2015/3/5.
  */
 public class TeamMessageActivity extends BaseMessageActivity {
 

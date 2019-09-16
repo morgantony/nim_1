@@ -27,6 +27,13 @@ public interface HttpApi {
             @Part("accid") String accid,
             @Part MultipartBody.Part file);
 
+    /*上传建议*/
+    @FormUrlEncoded
+    @POST("user/kefu")
+    Observable<UpLoadUserInfoEntity> kefu(
+            @Field("token") String token,
+            @Field("message") String message);//建议内容
+
     /*上传文件*/
     @FormUrlEncoded
     @POST("user/updateUserInfo")

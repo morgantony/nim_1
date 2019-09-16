@@ -90,7 +90,7 @@ class ScanActivity : UI(), QRCodeView.Delegate {
                 }
                 result.startsWith("wy://") -> {
                     //打开个人信息页面
-                    UserProfileActivity.start(this, DemoCache.getAccount())
+                    UserProfileActivity.start(this, result.split("//")[1])
                 }
                 else -> startActivity(intentFor<BlankActivity>("result" to result))
             }

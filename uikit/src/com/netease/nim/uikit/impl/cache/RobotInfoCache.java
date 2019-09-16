@@ -22,7 +22,6 @@ import java.util.concurrent.ConcurrentHashMap;
 /**
  * 机器人缓存
  * <p/>
- * Created by huangjun on 2017/6/22.
  */
 public class RobotInfoCache {
 

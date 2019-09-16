@@ -7,7 +7,6 @@ import com.netease.nim.avchatkit.common.Handlers;
 import com.netease.nimlib.sdk.avchat.model.AVChatData;
 
 /**
- * Created by huangjun on 2015/5/12.
  */
 public class AVChatProfile {
 

@@ -9,6 +9,8 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.FrameLayout;
+import android.widget.LinearLayout;
 
 import com.netease.nim.uikit.common.ToastHelper;
 
@@ -48,7 +50,6 @@ import java.util.Set;
 /**
  * 系统消息中心界面
  * <p/>
- * Created by huangjun on 2015/3/18.
  */
 public class SystemMessageActivity extends UI implements TAdapterDelegate,
         AutoRefreshListView.OnRefreshListener, SystemMessageViewHolder.SystemMessageListener {
@@ -60,6 +61,8 @@ public class SystemMessageActivity extends UI implements TAdapterDelegate,
 
     // view
     private MessageListView listView;
+    private FrameLayout message_activity_list_view_container;
+    private LinearLayout ll_img;
 
     // adapter
     private SystemMessageAdapter adapter;
@@ -118,7 +121,7 @@ public class SystemMessageActivity extends UI implements TAdapterDelegate,
         setContentView(R.layout.system_notification_message_activity);
 
         ToolBarOptions options = new NimToolBarOptions();
-        options.titleId = R.string.verify_reminder;
+        options.titleId = R.string.verify_new_friend_reminder;
         setToolBar(R.id.toolbar, options);
 
         initAdapter();
@@ -173,6 +176,8 @@ public class SystemMessageActivity extends UI implements TAdapterDelegate,
     }
 
     private void initListView() {
+        message_activity_list_view_container=findViewById(R.id.message_activity_list_view_container);
+        ll_img=findViewById(R.id.ll_img);
         listView = (MessageListView) findViewById(R.id.messageListView);
         listView.setMode(AutoRefreshListView.Mode.END);
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.GINGERBREAD) {
@@ -427,7 +432,14 @@ public class SystemMessageActivity extends UI implements TAdapterDelegate,
             @Override
             public void run() {
                 Log.e("999","===="+items.size());
-                adapter.notifyDataSetChanged();
+                if (items.isEmpty()){
+                    message_activity_list_view_container.setVisibility(View.GONE);
+                    ll_img.setVisibility(View.VISIBLE);
+                }else{
+                    message_activity_list_view_container.setVisibility(View.VISIBLE);
+                    ll_img.setVisibility(View.GONE);
+                    adapter.notifyDataSetChanged();
+                }
             }
         });
     }

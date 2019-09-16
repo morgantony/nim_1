@@ -9,7 +9,6 @@ import java.util.List;
 
 /**
  * 通讯录获取数据任务
- * Created by huangjun on 2015/2/10.
  */
 public class ContactDataTask {
 

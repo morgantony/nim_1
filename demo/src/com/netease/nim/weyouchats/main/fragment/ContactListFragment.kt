@@ -16,14 +16,14 @@ import com.netease.nim.uikit.business.contact.core.item.ItemTypes
 import com.netease.nim.weyouchats.contact.activity.BlackListActivity
 import com.netease.nim.weyouchats.main.activity.SystemMessageActivity
 import com.netease.nim.weyouchats.main.activity.TeamListActivity
+import com.netease.nim.weyouchats.main.activity.TongXunLuActivity
 import kotlinx.android.synthetic.main.contacts_list.*
+import org.jetbrains.anko.intentFor
 
 
 /**
  * 集成通讯录列表
  *
- *
- * Created by huangjun on 2015/9/7.
  */
 class ContactListFragment : MainTabFragment() {
 
@@ -52,7 +52,7 @@ class ContactListFragment : MainTabFragment() {
         }
         //通讯录
         ll_tongxunllu.setOnClickListener {
-            myToast("敬请期待")
+            startActivity(context.intentFor<TongXunLuActivity>())
         }
         //群聊
         ll_qunliao.setOnClickListener {

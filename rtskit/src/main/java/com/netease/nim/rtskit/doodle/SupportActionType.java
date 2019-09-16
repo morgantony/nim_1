@@ -5,7 +5,6 @@ import android.util.SparseArray;
 import com.netease.nim.rtskit.doodle.action.MyEraser;
 
 /**
- * Created by huangjun on 2015/6/24.
  */
 public class SupportActionType {
     private final int DEFAULT_TYPE_KEY_ERASER = -1;

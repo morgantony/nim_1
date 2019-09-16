@@ -29,13 +29,13 @@ allprojects {
 }
 
 ext {
-    compileSdkVersion = 26
-    buildToolsVersion = '26.0.2'
+    compileSdkVersion = 28
+    buildToolsVersion = '28.0.2'
     minSdkVersion = 16
-    targetSdkVersion = 26
-    appTargetSdkVersion = 26
-    versionCode = 67
-    versionName = '6.6.6'
+    targetSdkVersion = 28
+    appTargetSdkVersion = 28
+    versionCode = 1
+    versionName = '1.0.0'
     sdkSourceCompatibility = 1.7
     sdkTargetCompatibility = 1.7
     appSourceCompatibility = 1.7

@@ -79,7 +79,6 @@ import java.util.Map;
 
 /**
  * 基于RecyclerView的消息收发模块
- * Created by huangjun on 2016/12/27.
  */
 public class MessageListPanelEx {
     private final static String TAG = "MessageListPanelEx";

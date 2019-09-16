@@ -41,14 +41,14 @@
 
                 <TextView
                     android:id="@+id/tv_red_"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="16dp"
+                    android:layout_height="16dp"
+                    android:gravity="center"
                     android:visibility="gone"
                     android:layout_marginTop="3dp"
                     android:layout_alignParentRight="true"
                     android:background="@drawable/circle_layout_bg_color_red"
-                    android:padding="2dp"
-                    android:text="99+"
+                    android:text=""
                     android:textColor="@color/white"
                     android:textSize="8dp" />
             </RelativeLayout>

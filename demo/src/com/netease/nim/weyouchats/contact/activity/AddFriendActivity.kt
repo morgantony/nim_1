@@ -2,12 +2,14 @@ package com.netease.nim.weyouchats.contact.activity
 
 import android.content.Context
 import android.content.Intent
+import android.graphics.Color
 import android.os.Bundle
 import android.support.v7.widget.LinearLayoutManager
 import android.text.TextUtils
 import android.util.Log
 import android.view.View
 import android.widget.TextView
+import com.bumptech.glide.Glide
 import com.chad.library.adapter.base.BaseQuickAdapter
 import com.chad.library.adapter.base.BaseViewHolder
 
@@ -26,9 +28,12 @@ import com.netease.nim.uikit.common.ui.widget.ClearableEditTextWithIcon
 import com.netease.nim.weyouchats.config.preference.Preferences
 import com.netease.nim.weyouchats.contact.ContactHttpClient
 import com.netease.nim.weyouchats.login.User
+import com.netease.nimlib.sdk.NIMClient
 import com.netease.nimlib.sdk.ResponseCode
+import com.netease.nimlib.sdk.friend.FriendService
 import com.netease.nimlib.sdk.uinfo.model.NimUserInfo
 import kotlinx.android.synthetic.main.add_friend_activity.*
+import org.w3c.dom.Text
 
 /**
  * 添加好友页面
@@ -55,9 +60,9 @@ class AddFriendActivity : UI() {
         setToolBar(R.id.toolbar, options)
 
         //搜索结果列表item
-        mAdapter.onItemClickListener=BaseQuickAdapter.OnItemClickListener{adapter,view,position->
-            UserProfileActivity.start(this, (adapter.data[position] as User).accid)
-        }
+//        mAdapter.onItemClickListener=BaseQuickAdapter.OnItemClickListener{adapter,view,position->
+//            UserProfileActivity.start(this, (adapter.data[position] as User).accid)
+//        }
 
         findViews()
         initActionbar()
@@ -143,7 +148,20 @@ class AddFriendActivity : UI() {
 //搜索好友结果适配器
 class SearchAdapter(var context: Context, datas: List<User>?, resId:Int) : BaseQuickAdapter<User, BaseViewHolder>(resId,datas) {
     override fun convert(helper: BaseViewHolder?, item: User?) {
-        helper?.setText(R.id.tv_a,if(item?.name==null){item?.mobile}else{item?.name})
+        val tv_tianjia=helper?.getView<TextView>(R.id.tv_tianjia)
+        helper?.setText(R.id.tv_mingzi,if(item?.name==null){item?.mobile}else{item.name})
+        if (item?.icon!=null){
+            Glide.with(context).load(item.icon).into(helper?.getView(R.id.hv_touxiang))
+        }
+        when {
+            NIMClient.getService(FriendService::class.java).isMyFriend(item?.accid) -> tv_tianjia?.text = "已是好友"
+            item?.accid==DemoCache.getAccount() -> tv_tianjia?.text = "编辑您的名片"
+            else -> tv_tianjia?.text = "添加好友"
+        }
+        helper?.getView<TextView>(R.id.tv_tianjia)?.setOnClickListener {
+            //添加好友
+            UserProfileActivity.start(context, item?.accid)
+        }
     }
 
 }

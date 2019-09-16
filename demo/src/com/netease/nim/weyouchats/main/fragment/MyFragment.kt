@@ -26,6 +26,9 @@ import com.netease.nim.weyouchats.main.model.MainTab
 import kotlinx.android.synthetic.main.activity_my.*
 import org.jetbrains.anko.intentFor
 
+/**
+ * 我
+ */
 class MyFragment : MainTabFragment() {
 
     private var headImageView: HeadImageView? = null

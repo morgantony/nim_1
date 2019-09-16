@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AbsListView;
 import android.widget.AdapterView;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import com.netease.nim.uikit.common.ToastHelper;
 
@@ -35,7 +36,6 @@ import java.util.List;
 /**
  * 群列表(通讯录)
  * <p/>
- * Created by huangjun on 2015/4/21.
  */
 public class TeamListActivity extends UI implements AdapterView.OnItemClickListener {
 
@@ -43,7 +43,9 @@ public class TeamListActivity extends UI implements AdapterView.OnItemClickListe
 
     private ContactDataAdapter adapter;
 
+    //显示隐藏列表或者无数据图标页面
     private ListView lvContacts;
+    private LinearLayout ll_img;
 
     private int itemType;
 
@@ -68,6 +70,7 @@ public class TeamListActivity extends UI implements AdapterView.OnItemClickListe
         setToolBar(R.id.toolbar, options);
 
         lvContacts = (ListView) findViewById(R.id.group_list);
+        ll_img = (LinearLayout) findViewById(R.id.ll_img);
 
         GroupStrategy groupStrategy = new GroupStrategy();
         IContactDataProvider dataProvider = new ContactDataProvider(itemType);
@@ -107,11 +110,16 @@ public class TeamListActivity extends UI implements AdapterView.OnItemClickListe
         int count = NIMClient.getService(TeamService.class).queryTeamCountByTypeBlock(itemType == ItemTypes.TEAMS
                 .ADVANCED_TEAM ? TeamTypeEnum.Advanced : TeamTypeEnum.Normal);
         if (count == 0) {
+            ll_img.setVisibility(View.VISIBLE);
+            lvContacts.setVisibility(View.GONE);
             if (itemType == ItemTypes.TEAMS.ADVANCED_TEAM) {
-                ToastHelper.showToast(TeamListActivity.this, R.string.no_team);
+//                ToastHelper.showToast(TeamListActivity.this, R.string.no_team);
             } else if (itemType == ItemTypes.TEAMS.NORMAL_TEAM) {
-                ToastHelper.showToast(TeamListActivity.this, R.string.no_normal_team);
+//                ToastHelper.showToast(TeamListActivity.this, R.string.no_normal_team);
             }
+        }else{
+            ll_img.setVisibility(View.GONE);
+            lvContacts.setVisibility(View.VISIBLE);
         }
 
         adapter.load(true);

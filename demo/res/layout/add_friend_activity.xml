@@ -32,7 +32,7 @@
         android:layout_marginRight="10dp"
         android:layout_marginTop="20dp"
         android:background="@drawable/nim_blue_edit_text_bg"
-        android:hint="@string/input_account"
+        android:hint="@string/input_find_new_account"
         android:inputType="text"
         android:padding="5dp"
         android:paddingLeft="15dp"
@@ -43,6 +43,7 @@
     <android.support.v7.widget.RecyclerView
         android:id="@+id/recyclerView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:layout_marginTop="10dp">
     </android.support.v7.widget.RecyclerView>
 </LinearLayout>

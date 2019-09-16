@@ -17,7 +17,6 @@ import java.util.Map;
  * 通讯录列表数据抽象类
  * Group定义
  * <p>
- * Created by huangjun on 2015/2/10.
  */
 public abstract class AbsContactDataList {
     protected final ContactGroupStrategy groupStrategy;
