@@ -178,6 +178,33 @@
             <include
                 android:id="@+id/team_invitee_authen_layout"
                 layout="@layout/nim_advanced_team_info_divider_item" />
+
+            <LinearLayout
+                android:id="@+id/ll_1"
+                android:layout_width="match_parent"
+                android:paddingLeft="15dp"
+                android:paddingRight="12dp"
+                android:gravity="center_vertical"
+                android:layout_height="48dp"
+                android:orientation="horizontal"
+                android:background="@color/white">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:textSize="15sp"
+                    android:textColor="@color/grey"
+                    android:text="全体禁言"/>
+
+                <com.netease.nim.uikit.common.ui.widget.SwitchButton
+                    android:id="@+id/switchButton1"
+                    android:layout_width="58dip"
+                    android:layout_height="36dp"/>
+
+            </LinearLayout>
+
+
         </LinearLayout>
     </ScrollView>
 </LinearLayout>

@@ -4,6 +4,8 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.pm.ApplicationInfo;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.os.Handler;
 import android.text.TextUtils;
@@ -12,6 +14,8 @@ import android.view.View;
 import android.widget.AbsListView;
 import android.widget.TextView;
 
+import com.alibaba.fastjson.JSONException;
+import com.alibaba.fastjson.JSONObject;
 import com.netease.nim.uikit.R;
 import com.netease.nim.uikit.api.NimUIKit;
 import com.netease.nim.uikit.api.model.SimpleCallback;
@@ -21,6 +25,7 @@ import com.netease.nim.uikit.api.model.user.UserInfoObserver;
 import com.netease.nim.uikit.api.wrapper.NimToolBarOptions;
 import com.netease.nim.uikit.business.contact.core.item.ContactIdFilter;
 import com.netease.nim.uikit.business.contact.selector.activity.ContactSelectActivity;
+import com.netease.nim.uikit.business.preference.Preferences;
 import com.netease.nim.uikit.business.session.actions.PickImageAction;
 import com.netease.nim.uikit.business.team.adapter.TeamMemberAdapter;
 import com.netease.nim.uikit.business.team.adapter.TeamMemberAdapter.TeamMemberItem;
@@ -34,14 +39,17 @@ import com.netease.nim.uikit.common.activity.ToolBarOptions;
 import com.netease.nim.uikit.common.activity.UI;
 import com.netease.nim.uikit.common.adapter.TAdapterDelegate;
 import com.netease.nim.uikit.common.adapter.TViewHolder;
+import com.netease.nim.uikit.common.http.NimHttpClient;
 import com.netease.nim.uikit.common.media.imagepicker.Constants;
 import com.netease.nim.uikit.common.media.imagepicker.ImagePickerLauncher;
 import com.netease.nim.uikit.common.media.model.GLImage;
 import com.netease.nim.uikit.common.ui.dialog.DialogMaker;
 import com.netease.nim.uikit.common.ui.dialog.MenuDialog;
 import com.netease.nim.uikit.common.ui.imageview.HeadImageView;
+import com.netease.nim.uikit.common.ui.widget.SwitchButton;
 import com.netease.nim.uikit.common.util.log.LogUtil;
 import com.netease.nim.uikit.common.util.sys.TimeUtil;
+import com.netease.nim.uikit.impl.NimUIKitImpl;
 import com.netease.nimlib.sdk.AbortableFuture;
 import com.netease.nimlib.sdk.NIMClient;
 import com.netease.nimlib.sdk.RequestCallback;
@@ -62,7 +70,9 @@ import com.netease.nimlib.sdk.team.model.TeamMember;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * 高级群群资料页
@@ -183,6 +193,8 @@ public class AdvancedTeamInfoActivity extends UI implements TAdapterDelegate, Te
     private TextView authenticationText;
 
     private TextView notificationConfigText;
+
+    private SwitchButton switchButton1;
 
     // state
     private boolean isSelfAdmin = false;
@@ -314,6 +326,13 @@ public class AdvancedTeamInfoActivity extends UI implements TAdapterDelegate, Te
             public void onClick(View v) {
                 showSelector(R.string.set_head_image, REQUEST_PICK_ICON);
             }
+        });
+        switchButton1=findViewById(R.id.switchButton1);
+        switchButton1.setCheck(Preferences.getquantijinyan(this));
+        switchButton1.setOnChangedListener((v, checkState) -> {
+            Preferences.savequantijinyan(checkState,this);
+            //禁言接口
+            NIMClient.getService(TeamService.class).muteAllTeamMember(teamId, checkState);
         });
         teamHeadImage = findViewById(R.id.team_head_image);
         teamNameText = findViewById(R.id.team_name);

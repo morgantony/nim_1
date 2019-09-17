@@ -15,6 +15,8 @@ public class Preferences {
 
     private static final String toggle = "toggleNotification";
 
+    private static final String quantijinyan = "quantijinyan";
+
     public static void saveUserAccount(String account) {
         saveString(KEY_USER_ACCOUNT, account);
     }
@@ -54,7 +56,7 @@ public class Preferences {
         return DemoCache.getContext().getSharedPreferences("Demo", Context.MODE_PRIVATE);
     }
 
-    /*Sp  Boolean*/
+    /*Sp  Boolean  系统设置 推送开关*/
     public static Boolean gettoggle() {
         return getBlooen(toggle);
     }
@@ -67,6 +69,23 @@ public class Preferences {
         editor.commit();
     }
     private static Boolean getBlooen(String key) {
+        return getSharedPreferences().getBoolean(key, true);
+    }
+    /*Sp  Boolean*/
+
+    /*Sp  Boolean  群聊-全体禁言开关*/
+    public static Boolean getquantijinyan() {
+        return getquantijinyanBlooen(quantijinyan);
+    }
+    public static void savequantijinyan(Boolean a) {
+        savequantijinyanBlooen(quantijinyan, a);
+    }
+    private static void savequantijinyanBlooen(String key, Boolean value) {
+        SharedPreferences.Editor editor = getSharedPreferences().edit();
+        editor.putBoolean(key, value);
+        editor.commit();
+    }
+    private static Boolean getquantijinyanBlooen(String key) {
         return getSharedPreferences().getBoolean(key, true);
     }
     /*Sp  Boolean*/

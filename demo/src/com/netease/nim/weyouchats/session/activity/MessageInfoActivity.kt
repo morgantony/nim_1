@@ -48,7 +48,7 @@ class MessageInfoActivity : UI() {
         }
 
         NIMClient.getService(FriendService::class.java).setMessageNotify(account, checkState).setCallback(object : RequestCallback<Void> {
-            override fun onSuccess(param: Void) {
+            override fun onSuccess(param: Void?) {
                 if (checkState) {
                     ToastHelper.showToast(this@MessageInfoActivity, "开启消息提醒成功")
                 } else {
