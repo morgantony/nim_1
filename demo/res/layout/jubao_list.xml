@@ -1,0 +1,386 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/app_bar_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay"
+        app:elevation="0dp">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/color_main"
+            app:titleTextColor="@color/white">
+
+        </android.support.v7.widget.Toolbar>
+    </android.support.design.widget.AppBarLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/color_E4E4E4"
+        android:paddingLeft="15dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="8dp"
+        android:text="请选择投诉该账号的原因:"
+        android:textColor="#7E7D7D"
+        android:textSize="12dp" />
+
+    <ScrollView
+        style="@style/scroll_view"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="@color/color_background"
+        android:fillViewport="true"
+        android:scrollbarStyle="outsideOverlay">
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:orientation="vertical">
+
+
+            <LinearLayout
+                android:id="@+id/one"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:orientation="vertical"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:minHeight="50dp">
+
+                    <TextView
+                        android:id="@+id/one_item_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_marginTop="17dip"
+                        android:layout_marginRight="15dp"
+                        android:gravity="center_vertical"
+                        android:singleLine="true"
+                        android:text="发布不适当内容对我造成骚扰"
+                        android:textColor="@color/grey"
+                        android:textSize="@dimen/text_size_15" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignTop="@id/one_item_title"
+                        android:layout_alignParentRight="true"
+                        android:layout_toRightOf="@id/one_item_title"
+                        android:drawableRight="@drawable/nim_arrow_right"
+                        android:drawablePadding="5dp"
+                        android:ellipsize="end"
+                        android:gravity="right|center_vertical"
+                        android:singleLine="true"
+                        android:textColor="@color/color_grey_999999"
+                        android:textColorHint="@color/color_grey_999999"
+                        android:textSize="@dimen/text_size_15" />
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1px"
+                    android:layout_below="@+id/content_layout"
+                    android:background="@color/color_split_line_d9d9d9" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/two"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:orientation="vertical"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:minHeight="50dp">
+
+                    <TextView
+                        android:id="@+id/two_item_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_marginTop="17dip"
+                        android:layout_marginRight="15dp"
+                        android:gravity="center_vertical"
+                        android:singleLine="true"
+                        android:text="存在欺诈骗钱行为"
+                        android:textColor="@color/grey"
+                        android:textSize="@dimen/text_size_15" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignTop="@id/two_item_title"
+                        android:layout_alignParentRight="true"
+                        android:layout_toRightOf="@id/two_item_title"
+                        android:drawableRight="@drawable/nim_arrow_right"
+                        android:drawablePadding="5dp"
+                        android:ellipsize="end"
+                        android:gravity="right|center_vertical"
+                        android:singleLine="true"
+                        android:textColor="@color/color_grey_999999"
+                        android:textColorHint="@color/color_grey_999999"
+                        android:textSize="@dimen/text_size_15" />
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1px"
+                    android:layout_below="@+id/content_layout"
+                    android:background="@color/color_split_line_d9d9d9" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/three"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:orientation="vertical"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:minHeight="50dp">
+
+                    <TextView
+                        android:id="@+id/three_item_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_marginTop="17dip"
+                        android:layout_marginRight="15dp"
+                        android:gravity="center_vertical"
+                        android:singleLine="true"
+                        android:text="此账号可能被盗用了"
+                        android:textColor="@color/grey"
+                        android:textSize="@dimen/text_size_15" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignTop="@id/three_item_title"
+                        android:layout_alignParentRight="true"
+                        android:layout_toRightOf="@id/three_item_title"
+                        android:drawableRight="@drawable/nim_arrow_right"
+                        android:drawablePadding="5dp"
+                        android:ellipsize="end"
+                        android:gravity="right|center_vertical"
+                        android:singleLine="true"
+                        android:textColor="@color/color_grey_999999"
+                        android:textColorHint="@color/color_grey_999999"
+                        android:textSize="@dimen/text_size_15" />
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1px"
+                    android:layout_below="@+id/content_layout"
+                    android:background="@color/color_split_line_d9d9d9" />
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/four"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:orientation="vertical"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:minHeight="50dp">
+
+                    <TextView
+                        android:id="@+id/four_item_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_marginTop="17dip"
+                        android:layout_marginRight="15dp"
+                        android:gravity="center_vertical"
+                        android:singleLine="true"
+                        android:text="存在侵权行为"
+                        android:textColor="@color/grey"
+                        android:textSize="@dimen/text_size_15" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignTop="@id/four_item_title"
+                        android:layout_alignParentRight="true"
+                        android:layout_toRightOf="@id/four_item_title"
+                        android:drawableRight="@drawable/nim_arrow_right"
+                        android:drawablePadding="5dp"
+                        android:ellipsize="end"
+                        android:gravity="right|center_vertical"
+                        android:singleLine="true"
+                        android:textColor="@color/color_grey_999999"
+                        android:textColorHint="@color/color_grey_999999"
+                        android:textSize="@dimen/text_size_15" />
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1px"
+                    android:layout_below="@+id/content_layout"
+                    android:background="@color/color_split_line_d9d9d9" />
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/five"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:orientation="vertical"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:minHeight="50dp">
+
+                    <TextView
+                        android:id="@+id/five_item_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_marginTop="17dip"
+                        android:layout_marginRight="15dp"
+                        android:gravity="center_vertical"
+                        android:singleLine="true"
+                        android:text="发布伪冒品信息"
+                        android:textColor="@color/grey"
+                        android:textSize="@dimen/text_size_15" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignTop="@id/five_item_title"
+                        android:layout_alignParentRight="true"
+                        android:layout_toRightOf="@id/five_item_title"
+                        android:drawableRight="@drawable/nim_arrow_right"
+                        android:drawablePadding="5dp"
+                        android:ellipsize="end"
+                        android:gravity="right|center_vertical"
+                        android:singleLine="true"
+                        android:textColor="@color/color_grey_999999"
+                        android:textColorHint="@color/color_grey_999999"
+                        android:textSize="@dimen/text_size_15" />
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1px"
+                    android:layout_below="@+id/content_layout"
+                    android:background="@color/color_split_line_d9d9d9" />
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/six"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:orientation="vertical"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:minHeight="50dp">
+
+                    <TextView
+                        android:id="@+id/six_item_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_marginTop="17dip"
+                        android:layout_marginRight="15dp"
+                        android:gravity="center_vertical"
+                        android:singleLine="true"
+                        android:text="冒充他人"
+                        android:textColor="@color/grey"
+                        android:textSize="@dimen/text_size_15" />
+
+                    <TextView
+                        android:id="@+id/item_detail"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignTop="@id/six_item_title"
+                        android:layout_alignParentRight="true"
+                        android:layout_toRightOf="@id/six_item_title"
+                        android:drawableRight="@drawable/nim_arrow_right"
+                        android:drawablePadding="5dp"
+                        android:ellipsize="end"
+                        android:gravity="right|center_vertical"
+                        android:singleLine="true"
+                        android:textColor="@color/color_grey_999999"
+                        android:textColorHint="@color/color_grey_999999"
+                        android:textSize="@dimen/text_size_15" />
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1px"
+                    android:layout_below="@+id/content_layout"
+                    android:background="@color/color_split_line_d9d9d9" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/toushuxuzhi"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="投诉须知"
+                    android:textColor="#2081B8"
+                    android:textSize="12dp"/>
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+
+</LinearLayout>

@@ -88,6 +88,7 @@ public class UserProfileActivity extends UI {
     private ViewGroup toggleLayout;
     private Button addFriendBtn;
     private Button removeFriendBtn;
+    private Button jubao_buddy;
     private Button chatBtn;
     private SwitchButton blackSwitch;
     private SwitchButton noticeSwitch;
@@ -177,6 +178,7 @@ public class UserProfileActivity extends UI {
         addFriendBtn = findView(R.id.add_buddy);
         chatBtn = findView(R.id.begin_chat);
         removeFriendBtn = findView(R.id.remove_buddy);
+        jubao_buddy = findView(R.id.jubao_buddy);
         birthdayLayout = findView(R.id.birthday);
         nickText = findView(R.id.user_nick);
         birthdayText = birthdayLayout.findViewById(R.id.value);
@@ -196,6 +198,7 @@ public class UserProfileActivity extends UI {
         addFriendBtn.setOnClickListener(onClickListener);
         chatBtn.setOnClickListener(onClickListener);
         removeFriendBtn.setOnClickListener(onClickListener);
+        jubao_buddy.setOnClickListener(onClickListener);
         aliasLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -299,12 +302,14 @@ public class UserProfileActivity extends UI {
         if (NIMClient.getService(FriendService.class).isMyFriend(account)) {
             chatBtn.setVisibility(View.VISIBLE);
             removeFriendBtn.setVisibility(View.VISIBLE);
+            jubao_buddy.setVisibility(View.VISIBLE);
             addFriendBtn.setVisibility(View.GONE);
             updateAlias(true);
         } else {
             chatBtn.setVisibility(View.GONE);   //不是好友隐藏聊天按钮
             addFriendBtn.setVisibility(View.VISIBLE);
             removeFriendBtn.setVisibility(View.GONE);
+            jubao_buddy.setVisibility(View.GONE);
             updateAlias(false);
         }
     }
@@ -513,6 +518,11 @@ public class UserProfileActivity extends UI {
                 onRemoveFriend();
             } else if (v == chatBtn) {
                 onChat();
+            } else if (v == jubao_buddy){
+                //举报投诉
+                Intent intent = new Intent(UserProfileActivity.this, JuBaoActivity.class);
+                intent.putExtra("account",account);
+                startActivity(intent);
             }
         }
     };

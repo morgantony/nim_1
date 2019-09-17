@@ -6,14 +6,18 @@ import com.netease.nim.weyouchats.common.entity.UpLoadUserInfoEntity;
 import com.netease.nim.weyouchats.common.entity.UpdatePositionEntity;
 import com.netease.nim.weyouchats.config.DemoServers;
 
+import java.util.Map;
+
 import io.reactivex.Observable;
 import okhttp3.MultipartBody;
+import okhttp3.RequestBody;
 import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
 import retrofit2.http.Multipart;
 import retrofit2.http.POST;
 import retrofit2.http.Part;
+import retrofit2.http.PartMap;
 import retrofit2.http.Query;
 
 public interface HttpApi {
@@ -26,6 +30,7 @@ public interface HttpApi {
     Observable<UpLoadUserInfoEntity> upload(
             @Part("accid") String accid,
             @Part MultipartBody.Part file);
+
 
     /*上传建议*/
     @FormUrlEncoded

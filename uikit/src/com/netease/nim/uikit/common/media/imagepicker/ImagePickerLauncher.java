@@ -36,21 +36,9 @@ public class ImagePickerLauncher {
         CustomAlertDialog dialog = new CustomAlertDialog(context);
         dialog.setTitle(titleResId);
         dialog.addItem(context.getString(R.string.input_panel_take),
-                       new CustomAlertDialog.onSeparateItemClickListener() {
-
-                           @Override
-                           public void onClick() {
-                               takePhoto(context, requestCode);
-                           }
-                       });
+                () -> takePhoto(context, requestCode));
         dialog.addItem(context.getString(R.string.choose_from_photo_album),
-                       new CustomAlertDialog.onSeparateItemClickListener() {
-
-                           @Override
-                           public void onClick() {
-                               selectImageFromAlbum(context, requestCode);
-                           }
-                       });
+                () -> selectImageFromAlbum(context, requestCode));
         dialog.show();
     }
 
@@ -61,21 +49,9 @@ public class ImagePickerLauncher {
         CustomAlertDialog dialog = new CustomAlertDialog(context);
         dialog.setTitle(titleResId);
         dialog.addItem(context.getString(R.string.input_panel_take),
-                       new CustomAlertDialog.onSeparateItemClickListener() {
-
-                           @Override
-                           public void onClick() {
-                               takePhoto(context, requestCode);
-                           }
-                       });
+                () -> takePhoto(context, requestCode));
         dialog.addItem(context.getString(R.string.choose_from_photo_album),
-                       new CustomAlertDialog.onSeparateItemClickListener() {
-
-                           @Override
-                           public void onClick() {
-                               selectImage(context, requestCode, option);
-                           }
-                       });
+                () -> selectImage(context, requestCode, option));
         dialog.show();
     }
 

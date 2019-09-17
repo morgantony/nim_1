@@ -155,6 +155,7 @@
 
                 <include
                     android:id="@+id/team_extension_layout"
+                    android:visibility="gone"
                     layout="@layout/nim_advanced_team_info_divider_item" />
 
                 <include

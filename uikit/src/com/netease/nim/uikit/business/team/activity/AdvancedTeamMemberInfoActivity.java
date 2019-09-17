@@ -13,6 +13,9 @@ import com.netease.nim.uikit.R;
 import com.netease.nim.uikit.api.NimUIKit;
 import com.netease.nim.uikit.api.model.SimpleCallback;
 import com.netease.nim.uikit.api.wrapper.NimToolBarOptions;
+import com.netease.nim.uikit.business.contact.core.item.ContactItem;
+import com.netease.nim.uikit.business.contact.core.item.ItemTypes;
+import com.netease.nim.uikit.business.contact.core.util.ContactHelper;
 import com.netease.nim.uikit.business.uinfo.UserInfoHelper;
 import com.netease.nim.uikit.common.ToastHelper;
 import com.netease.nim.uikit.common.activity.ToolBarOptions;
@@ -31,6 +34,7 @@ import com.netease.nimlib.sdk.ResponseCode;
 import com.netease.nimlib.sdk.team.TeamService;
 import com.netease.nimlib.sdk.team.constant.TeamMemberType;
 import com.netease.nimlib.sdk.team.model.TeamMember;
+import com.netease.nimlib.sdk.uinfo.model.UserInfo;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -316,13 +320,21 @@ public class AdvancedTeamMemberInfoActivity extends UI implements View.OnClickLi
                             if (code == ResponseCode.RES_SUCCESS && result != null) {
                                 String invitor = result.get(viewMember.getAccount());
                                 if (invitor != null) {
-                                    invitorInfo.setText(invitor);
+                                    final UserInfo user = NimUIKit.getUserInfoProvider().getUserInfo(invitor);
+                                    if (user != null) {
+                                        invitorInfo.setText(user.getName());     //由显示accid改为显示名字
+                                    }
+//                                    invitorInfo.setText(invitor);
                                 }
                             }
                         }
                     });
         } else {
-            invitorInfo.setText(viewMember.getInvitorAccid());
+            final UserInfo user = NimUIKit.getUserInfoProvider().getUserInfo(viewMember.getInvitorAccid());
+            if (user != null) {
+                invitorInfo.setText(user.getName());   //由显示accid改为显示名字
+            }
+//            invitorInfo.setText(viewMember.getInvitorAccid());
         }
     }
 
