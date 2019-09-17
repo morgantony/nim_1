@@ -574,6 +574,7 @@
         </service>
 
         <!--设置收到 fcm 通知展示的图标和颜色-->
+        <!--android:resource="@drawable/ic_stat_notify_msg"-->
         <meta-data
             android:name="com.google.firebase.messaging.default_notification_icon"
             android:resource="@drawable/ic_stat_notify_msg" />

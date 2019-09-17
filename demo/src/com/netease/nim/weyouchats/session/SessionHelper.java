@@ -222,7 +222,7 @@ public class SessionHelper {
 
                 @Override
                 public void onClick(Context context, View view, String sessionId) {
-                    MessageInfoActivity.startActivity(context, sessionId); //打开聊天信息
+                    MessageInfoActivity.Companion.startActivity(context, sessionId); //打开聊天信息
                 }
             };
             infoButton.iconId = R.drawable.nim_ic_message_actionbar_p2p_add;
@@ -685,16 +685,16 @@ public class SessionHelper {
     private static List<PopupMenuItem> getMoreMenuItems(Context context, String sessionId,
                                                         SessionTypeEnum sessionTypeEnum) {
         List<PopupMenuItem> moreMenuItems = new ArrayList<PopupMenuItem>();
-        moreMenuItems.add(new PopupMenuItem(context, ACTION_HISTORY_QUERY, sessionId, sessionTypeEnum,
-                                            DemoCache.getContext().getString(R.string.message_history_query)));
+//        moreMenuItems.add(new PopupMenuItem(context, ACTION_HISTORY_QUERY, sessionId, sessionTypeEnum,
+//                                            DemoCache.getContext().getString(R.string.message_history_query)));
         moreMenuItems.add(new PopupMenuItem(context, ACTION_SEARCH_MESSAGE, sessionId, sessionTypeEnum,
                                             DemoCache.getContext().getString(R.string.message_search_title)));
-        moreMenuItems.add(new PopupMenuItem(context, ACTION_CLEAR_MESSAGE, sessionId, sessionTypeEnum,
-                                            DemoCache.getContext().getString(R.string.message_clear)));
-        if (sessionTypeEnum == SessionTypeEnum.P2P) {
-            moreMenuItems.add(new PopupMenuItem(context, ACTION_CLEAR_P2P_MESSAGE, sessionId, sessionTypeEnum,
-                                                DemoCache.getContext().getString(R.string.message_p2p_clear)));
-        }
+//        moreMenuItems.add(new PopupMenuItem(context, ACTION_CLEAR_MESSAGE, sessionId, sessionTypeEnum,
+//                                            DemoCache.getContext().getString(R.string.message_clear)));
+//        if (sessionTypeEnum == SessionTypeEnum.P2P) {
+//            moreMenuItems.add(new PopupMenuItem(context, ACTION_CLEAR_P2P_MESSAGE, sessionId, sessionTypeEnum,
+//                                                DemoCache.getContext().getString(R.string.message_p2p_clear)));
+//        }
         return moreMenuItems;
     }
 }

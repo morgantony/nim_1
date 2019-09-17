@@ -164,6 +164,7 @@ public class NimApplication extends Application {
         };
         avChatOptions.entranceActivity = WelcomeActivity.class;
         avChatOptions.notificationIconRes = R.drawable.ic_stat_notify_msg;
+//        avChatOptions.notificationIconRes = R.drawable.img_edit;
         AVChatKit.init(avChatOptions);
 
         // 初始化日志系统

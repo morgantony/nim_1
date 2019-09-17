@@ -77,7 +77,7 @@
     <string name="input_panel_tip">Tip</string>
     <string name="input_panel_ack_msg">已读回执</string>
     <string name="message_history_query">云消息记录</string>
-    <string name="message_search_title">搜索本地消息记录</string>
+    <string name="message_search_title">查找聊天记录</string>
     <string name="message_clear">清空本地消息记录</string>
     <string name="message_p2p_clear">清空点对点历史消息</string>
     <string name="message_p2p_clear_tips">确定清空点对点历史消息?</string>
@@ -97,6 +97,7 @@
     <!-- 群 -->
     <string name="add_buddy">添加好友</string>
     <string name="create_normal_team">创建讨论组</string>
+    <string name="create_advance_team">创建群聊</string>
     <string name="team_apply_sending">发送中…</string>
     <string name="no_team">您还没有群</string>
     <string name="no_normal_team">您还没有讨论组</string>

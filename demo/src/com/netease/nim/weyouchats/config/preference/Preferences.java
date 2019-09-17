@@ -13,9 +13,12 @@ public class Preferences {
     private static final String KEY_USER_TOKEN = "token";
     private static final String KEY_USER_INFO = "user";
 
+    private static final String toggle = "toggleNotification";
+
     public static void saveUserAccount(String account) {
         saveString(KEY_USER_ACCOUNT, account);
     }
+
     public static void saveUserInfo(String info) {
         saveString(KEY_USER_INFO, info);
     }
@@ -42,6 +45,7 @@ public class Preferences {
         editor.commit();
     }
 
+
     private static String getString(String key) {
         return getSharedPreferences().getString(key, null);
     }
@@ -49,4 +53,21 @@ public class Preferences {
     static SharedPreferences getSharedPreferences() {
         return DemoCache.getContext().getSharedPreferences("Demo", Context.MODE_PRIVATE);
     }
+
+    /*Sp  Boolean*/
+    public static Boolean gettoggle() {
+        return getBlooen(toggle);
+    }
+    public static void savetoggle(Boolean a) {
+        saveBlooen(toggle, a);
+    }
+    private static void saveBlooen(String key, Boolean value) {
+        SharedPreferences.Editor editor = getSharedPreferences().edit();
+        editor.putBoolean(key, value);
+        editor.commit();
+    }
+    private static Boolean getBlooen(String key) {
+        return getSharedPreferences().getBoolean(key, true);
+    }
+    /*Sp  Boolean*/
 }
