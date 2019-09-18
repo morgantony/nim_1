@@ -10,7 +10,7 @@ import com.netease.nim.weyouchats.main.model.MainTab;
 public class PYQFragment extends MainTabFragment {
 
     public PYQFragment() {
-        this.setContainerId(MainTab.PYQ.fragmentId);
+//        this.setContainerId(MainTab.PYQ.fragmentId);
     }
 
     @Override

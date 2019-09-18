@@ -42,7 +42,6 @@ import java.util.List;
 /**
  * 视频录制界面
  * <p/>
- * Created by huangjun on 2015/4/11.
  */
 public class CaptureVideoActivity extends UI implements SurfaceHolder.Callback {
 

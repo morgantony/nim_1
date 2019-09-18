@@ -18,14 +18,41 @@
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            android:background="?attr/colorPrimary"
-            app:titleTextAppearance="@style/Toolbar.TitleText">
+            android:background="@color/color_main"
+            app:titleTextColor="@color/white">
         </android.support.v7.widget.Toolbar>
     </android.support.design.widget.AppBarLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_img"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:visibility="gone"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:src="@drawable/found_null_pic" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="100dp"
+            android:gravity="center"
+            android:textColor="#9B9999"
+            android:textSize="14dp"
+            android:text="暂无好友验证\n(づ｡◕‿‿◕｡)づ"/>
+    </LinearLayout>
+
 
     <FrameLayout
         android:id="@+id/message_activity_list_view_container"
         android:layout_width="match_parent"
+        android:visibility="gone"
         android:layout_height="0dip"
         android:layout_weight="1">
 

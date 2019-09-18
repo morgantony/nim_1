@@ -20,7 +20,6 @@ import java.util.List;
 /**
  * 机器人列表
  * <p>
- * Created by huangjun on 2017/6/21.
  */
 
 public class RobotListActivity extends ListActivityBase<NimRobotInfo> {

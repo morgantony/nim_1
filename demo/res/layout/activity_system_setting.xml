@@ -13,7 +13,7 @@
         app:titleBarHeight="50dp"
         app:titleTextColor="@color/white"
         app:rightTextColor="@color/white"
-        app:titleText="帮助"
+        app:titleText="系统设置"
         app:rightText=""
         app:rightTextSize="16sp"
         app:leftViewBackgroundResource="@drawable/img_close_source"

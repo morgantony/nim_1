@@ -57,5 +57,5 @@ dependencies {
     api 'com.gyf.barlibrary:barlibrary:2.3.0'
 
     api 'com.bhm.sdk.rxlibrary:RxLibrary:2.5.3'
-
+    api 'com.bhm.sdk.bhmlibrary:BHMLibrary:1.2.7'
 }

@@ -3,6 +3,11 @@ package com.netease.nim.uikit.business.session.activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.FrameLayout;
+import android.widget.TextView;
+
+import com.bhm.sdk.bhmlibrary.views.TitleBar;
 import com.netease.nim.uikit.common.ToastHelper;
 
 import com.alibaba.fastjson.JSON;
@@ -33,12 +38,11 @@ import java.util.Set;
 /**
  * 点对点聊天界面
  * <p/>
- * Created by huangjun on 2015/2/1.
  */
 public class P2PMessageActivity extends BaseMessageActivity {
 
     private boolean isResume = false;
-
+//    private TextView tv_center_title;
     public static void start(Context context, String contactId, SessionCustomization customization, IMMessage anchor) {
         Intent intent = new Intent();
         intent.putExtra(Extras.EXTRA_ACCOUNT, contactId);
@@ -55,11 +59,21 @@ public class P2PMessageActivity extends BaseMessageActivity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+//        tv_center_title=findViewById(R.id.tv_center_title);
         // 单聊特例话数据，包括个人信息，
         requestBuddyInfo();
         displayOnlineState();
         registerObservers(true);
+
     }
+
+//    /**
+//     * 标题
+//     */
+//    private void initTitleBar() {
+//
+//        tv_center_title.setText(UserInfoHelper.getUserTitleName(sessionId, SessionTypeEnum.P2P));
+//    }
 
     @Override
     protected void onDestroy() {
@@ -81,6 +95,7 @@ public class P2PMessageActivity extends BaseMessageActivity {
 
     private void requestBuddyInfo() {
         setTitle(UserInfoHelper.getUserTitleName(sessionId, SessionTypeEnum.P2P));
+//        initTitleBar();
     }
 
     private void displayOnlineState() {
@@ -126,21 +141,25 @@ public class P2PMessageActivity extends BaseMessageActivity {
         @Override
         public void onAddedOrUpdatedFriends(List<String> accounts) {
             setTitle(UserInfoHelper.getUserTitleName(sessionId, SessionTypeEnum.P2P));
+//            initTitleBar();
         }
 
         @Override
         public void onDeletedFriends(List<String> accounts) {
             setTitle(UserInfoHelper.getUserTitleName(sessionId, SessionTypeEnum.P2P));
+//            initTitleBar();
         }
 
         @Override
         public void onAddUserToBlackList(List<String> account) {
             setTitle(UserInfoHelper.getUserTitleName(sessionId, SessionTypeEnum.P2P));
+//            initTitleBar();
         }
 
         @Override
         public void onRemoveUserFromBlackList(List<String> account) {
             setTitle(UserInfoHelper.getUserTitleName(sessionId, SessionTypeEnum.P2P));
+//            initTitleBar();
         }
     };
 

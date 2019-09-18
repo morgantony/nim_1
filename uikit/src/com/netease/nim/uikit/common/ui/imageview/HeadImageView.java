@@ -21,7 +21,6 @@ import com.netease.nimlib.sdk.team.model.Team;
 import com.netease.nimlib.sdk.uinfo.model.UserInfo;
 
 /**
- * Created by huangjun on 2015/11/13.
  */
 public class HeadImageView extends CircleImageView {
 

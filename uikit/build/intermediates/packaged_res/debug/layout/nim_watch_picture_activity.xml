@@ -21,9 +21,9 @@
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            android:background="?attr/colorPrimary"
-            app:subtitleTextAppearance="@style/Toolbar.SubTitleText"
-            app:titleTextAppearance="@style/Toolbar.TitleText">
+            android:background="@color/color_main"
+            app:subtitleTextColor="@color/white"
+            app:titleTextColor="@color/white">
 
             <TextView
                 android:id="@+id/actionbar_menu"

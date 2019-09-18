@@ -56,13 +56,12 @@ import java.util.List;
 
 /**
  * 用户资料页面
- * Created by huangjun on 2015/8/11.
  */
 public class UserProfileActivity extends UI {
 
     private static final String TAG = UserProfileActivity.class.getSimpleName();
 
-    private final boolean FLAG_ADD_FRIEND_DIRECTLY = true; // 是否直接加为好友开关，false为需要好友申请
+    private final boolean FLAG_ADD_FRIEND_DIRECTLY = false; // 是否直接加为好友开关，false为需要好友申请
     private final String KEY_BLACK_LIST = "black_list";
     private final String KEY_MSG_NOTICE = "msg_notice";
     private final String KEY_RECENT_STICKY = "recent_contacts_sticky";
@@ -296,12 +295,14 @@ public class UserProfileActivity extends UI {
     }
 
     private void updateUserOperatorView() {
-        chatBtn.setVisibility(View.VISIBLE);
+//        chatBtn.setVisibility(View.VISIBLE);
         if (NIMClient.getService(FriendService.class).isMyFriend(account)) {
+            chatBtn.setVisibility(View.VISIBLE);
             removeFriendBtn.setVisibility(View.VISIBLE);
             addFriendBtn.setVisibility(View.GONE);
             updateAlias(true);
         } else {
+            chatBtn.setVisibility(View.GONE);   //不是好友隐藏聊天按钮
             addFriendBtn.setVisibility(View.VISIBLE);
             removeFriendBtn.setVisibility(View.GONE);
             updateAlias(false);

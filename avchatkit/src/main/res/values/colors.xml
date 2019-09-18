@@ -23,4 +23,5 @@
     <color name="white">#ffffff</color>
 
     <color name="color_activity_blue_bg">#f7389fff</color>
+    <color name="color_main">#f7389fff</color>
 </resources>

@@ -14,7 +14,7 @@
         app:titleTextColor="@color/white"
         app:rightTextColor="@color/white"
         app:titleText="头像"
-        app:rightText="•••"
+        app:rightText="• • •"
         app:leftViewBackgroundResource="@drawable/img_close_source"
         app:leftViewMarginLeft="15dp"
         app:isLeftViewShow="true"

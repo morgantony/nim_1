@@ -20,6 +20,7 @@ import com.netease.nimlib.sdk.mixpush.MixPushService;
 import java.util.ArrayList;
 import java.util.List;
 
+//SettingActivity
 public class CommonUtils {
 
     public static String readAppKey() {

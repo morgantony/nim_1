@@ -14,7 +14,6 @@ import java.util.List;
 
 /**
  * 登录
- * Created by huangjun on 2015/10/9.
  */
 public class LoginSyncDataStatusObserver {
 

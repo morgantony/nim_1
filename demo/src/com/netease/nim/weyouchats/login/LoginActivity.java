@@ -49,7 +49,6 @@ import com.sahooz.library.PickActivity;
 /**
  * 登录/注册界面
  * <p/>
- * Created by huangjun on 2015/2/1.
  */
 public class LoginActivity extends UI implements OnKeyListener {
 
@@ -150,7 +149,7 @@ public class LoginActivity extends UI implements OnKeyListener {
 
     @OnMPermissionGranted(BASIC_PERMISSION_REQUEST_CODE)
     public void onBasicPermissionSuccess() {
-        ToastHelper.showToast(this, "授权成功");
+//        ToastHelper.showToast(this, "授权成功");
     }
 
     @OnMPermissionDenied(BASIC_PERMISSION_REQUEST_CODE)
@@ -302,7 +301,7 @@ public class LoginActivity extends UI implements OnKeyListener {
             DialogMaker.showProgressDialog(this, getString(R.string.passwording), false);
 
             // 找回密码流程
-            final String account =tv_country_picker.getText()+"-"+ edit_phone_account.getText().toString();
+            final String account =tv_country_picker.getText().toString().replace("+","%2B")+"-"+ edit_phone_account.getText().toString();
             final String nickName = edit_yanzhengma.getText().toString();   //验证码
             final String password = edit_mima_account.getText().toString();
 
@@ -349,7 +348,7 @@ public class LoginActivity extends UI implements OnKeyListener {
             }
         }).setCanceledOnTouchOutside(false);
 
-        final String mobile = tv_country_picker.getText()+"-"+edit_phone_account.getEditableText().toString().toLowerCase();
+        final String mobile = tv_country_picker.getText().toString().replace("+","%2B")+"-"+edit_phone_account.getEditableText().toString().toLowerCase();
           //0 --注册 1--修改密码
 
         ContactHttpClient.getInstance().sendCode(mobile,password, new ContactHttpClient.ContactHttpCallback<User>() {
@@ -430,7 +429,7 @@ public class LoginActivity extends UI implements OnKeyListener {
             }
         }).setCanceledOnTouchOutside(false);
 
-        final String mobile = tv_country_picker.getText()+"-"+edit_phone_account.getEditableText().toString().toLowerCase();
+        final String mobile = tv_country_picker.getText().toString().replace("+","%2B")+"-"+edit_phone_account.getEditableText().toString().toLowerCase();
         final String password = edit_mima_account.getEditableText().toString().toLowerCase();
 //        final String token = tokenFromPassword(edit_mima_account.getEditableText().toString());
 
@@ -441,6 +440,7 @@ public class LoginActivity extends UI implements OnKeyListener {
                     @Override
                     public void onSuccess(LoginInfo param) {
                         LogUtil.i(TAG, "login success");
+                        LogUtil.i(TAG, user.toString());
                         onLoginDone();
                         DemoCache.setAccount(user.getAccid());
                         saveLoginInfo(user);
@@ -554,7 +554,7 @@ public class LoginActivity extends UI implements OnKeyListener {
         DialogMaker.showProgressDialog(this, getString(R.string.registering), false);
 
         // 注册流程            String nick = registerNickNameEdit.getText().toString().trim();
-        final String account =tv_country_picker.getText()+"-"+ edit_phone_account.getText().toString();
+        final String account =tv_country_picker.getText().toString().replace("+","%2B")+"-"+ edit_phone_account.getText().toString();
         final String nickName = edit_yanzhengma.getText().toString();   //验证码
         final String password = edit_mima_account.getText().toString();
 

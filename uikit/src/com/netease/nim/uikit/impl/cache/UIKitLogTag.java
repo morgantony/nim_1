@@ -1,7 +1,6 @@
 package com.netease.nim.uikit.impl.cache;
 
 /**
- * Created by huangjun on 2015/10/13.
  */
 public class UIKitLogTag {
     public static final String CONTACT = "CONTACT";

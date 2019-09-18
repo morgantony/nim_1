@@ -5,7 +5,6 @@ import com.netease.nim.weyouchats.DemoCache;
 import com.netease.nim.weyouchats.R;
 
 /**
- * Created by huangjun on 2015/7/28.
  */
 public class RTSAttachment extends CustomAttachment {
 

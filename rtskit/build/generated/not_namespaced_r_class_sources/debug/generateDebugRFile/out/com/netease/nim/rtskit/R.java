@@ -636,29 +636,30 @@ public final class R {
         public static int g_red_long_btn_selector = 0x7f090056;
         public static int icon_audio_close = 0x7f090057;
         public static int icon_audio_open = 0x7f090058;
-        public static int nim_actionbar_dark_back_icon = 0x7f090059;
-        public static int nim_actionbar_dark_logo_icon = 0x7f09005a;
-        public static int nim_actionbar_nest_dark_logo = 0x7f09005b;
-        public static int nim_avatar_default = 0x7f09005c;
-        public static int nim_avatar_group = 0x7f09005d;
-        public static int nim_list_item_selector = 0x7f09005e;
-        public static int nim_message_button_bottom_send_selector = 0x7f09005f;
-        public static int nim_message_input_send_normal = 0x7f090060;
-        public static int nim_message_input_send_pressed = 0x7f090061;
-        public static int notification_action_background = 0x7f090062;
-        public static int notification_bg = 0x7f090063;
-        public static int notification_bg_low = 0x7f090064;
-        public static int notification_bg_low_normal = 0x7f090065;
-        public static int notification_bg_low_pressed = 0x7f090066;
-        public static int notification_bg_normal = 0x7f090067;
-        public static int notification_bg_normal_pressed = 0x7f090068;
-        public static int notification_icon_background = 0x7f090069;
-        public static int notification_template_icon_bg = 0x7f09006a;
-        public static int notification_template_icon_low_bg = 0x7f09006b;
-        public static int notification_tile_bg = 0x7f09006c;
-        public static int notify_panel_notification_icon_bg = 0x7f09006d;
-        public static int tooltip_frame_dark = 0x7f09006e;
-        public static int tooltip_frame_light = 0x7f09006f;
+        public static int img_close_source = 0x7f090059;
+        public static int nim_actionbar_dark_back_icon = 0x7f09005a;
+        public static int nim_actionbar_dark_logo_icon = 0x7f09005b;
+        public static int nim_actionbar_nest_dark_logo = 0x7f09005c;
+        public static int nim_avatar_default = 0x7f09005d;
+        public static int nim_avatar_group = 0x7f09005e;
+        public static int nim_list_item_selector = 0x7f09005f;
+        public static int nim_message_button_bottom_send_selector = 0x7f090060;
+        public static int nim_message_input_send_normal = 0x7f090061;
+        public static int nim_message_input_send_pressed = 0x7f090062;
+        public static int notification_action_background = 0x7f090063;
+        public static int notification_bg = 0x7f090064;
+        public static int notification_bg_low = 0x7f090065;
+        public static int notification_bg_low_normal = 0x7f090066;
+        public static int notification_bg_low_pressed = 0x7f090067;
+        public static int notification_bg_normal = 0x7f090068;
+        public static int notification_bg_normal_pressed = 0x7f090069;
+        public static int notification_icon_background = 0x7f09006a;
+        public static int notification_template_icon_bg = 0x7f09006b;
+        public static int notification_template_icon_low_bg = 0x7f09006c;
+        public static int notification_tile_bg = 0x7f09006d;
+        public static int notify_panel_notification_icon_bg = 0x7f09006e;
+        public static int tooltip_frame_dark = 0x7f09006f;
+        public static int tooltip_frame_light = 0x7f090070;
     }
     public static final class id {
         private id() {}
@@ -848,12 +849,13 @@ public final class R {
         public static int notification_template_media_custom = 0x7f0f002c;
         public static int notification_template_part_chronometer = 0x7f0f002d;
         public static int notification_template_part_time = 0x7f0f002e;
-        public static int rts_activity = 0x7f0f002f;
-        public static int select_dialog_item_material = 0x7f0f0030;
-        public static int select_dialog_multichoice_material = 0x7f0f0031;
-        public static int select_dialog_singlechoice_material = 0x7f0f0032;
-        public static int support_simple_spinner_dropdown_item = 0x7f0f0033;
-        public static int tooltip = 0x7f0f0034;
+        public static int right_clickable_tv = 0x7f0f002f;
+        public static int rts_activity = 0x7f0f0030;
+        public static int select_dialog_item_material = 0x7f0f0031;
+        public static int select_dialog_multichoice_material = 0x7f0f0032;
+        public static int select_dialog_singlechoice_material = 0x7f0f0033;
+        public static int support_simple_spinner_dropdown_item = 0x7f0f0034;
+        public static int tooltip = 0x7f0f0035;
     }
     public static final class string {
         private string() {}

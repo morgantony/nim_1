@@ -16,14 +16,39 @@
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            android:background="?attr/colorPrimary"
-            app:titleTextAppearance="@style/Toolbar.TitleText"></android.support.v7.widget.Toolbar>
+            android:background="@color/color_main"
+            app:titleTextColor="@color/white"></android.support.v7.widget.Toolbar>
     </android.support.design.widget.AppBarLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_img"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:src="@drawable/found_null_pic" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="100dp"
+            android:gravity="center"
+            android:textColor="#9B9999"
+            android:textSize="14dp"
+            android:text="暂无讨论组或群\n(づ｡◕‿‿◕｡)づ"/>
+    </LinearLayout>
 
     <ListView
         android:id="@+id/group_list"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
+        android:visibility="gone"
         android:layout_below="@id/app_bar_layout"
         android:background="@color/white"
         android:cacheColorHint="@color/transparent"

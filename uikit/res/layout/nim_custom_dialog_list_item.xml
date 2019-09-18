@@ -3,4 +3,6 @@
     android:id="@+id/custom_dialog_text_view"
     style="@style/custom_dialog_message_text_style"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content" />
+    android:layout_height="wrap_content"
+    android:background="@drawable/dialog_bg_pic_select"
+    />

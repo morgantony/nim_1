@@ -25,7 +25,6 @@ import com.netease.nrtc.video.render.IVideoRender;
 import static android.view.View.GONE;
 
 /**
- * Created by huangjun on 2017/5/4.
  */
 
 public class TeamAVChatItemViewHolder extends TeamAVChatItemViewHolderBase {

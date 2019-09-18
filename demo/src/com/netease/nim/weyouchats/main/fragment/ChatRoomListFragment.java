@@ -4,7 +4,6 @@ import com.netease.nim.weyouchats.R;
 
 /**
  * 聊天室主TAB页
- * Created by huangjun on 2015/12/11.
  */
 public class ChatRoomListFragment extends MainTabFragment {
     private com.netease.nim.weyouchats.chatroom.fragment.ChatRoomListFragment fragment;

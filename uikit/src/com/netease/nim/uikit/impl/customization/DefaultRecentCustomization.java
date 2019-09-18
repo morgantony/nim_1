@@ -12,7 +12,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by huangjun on 2017/9/29.
  */
 
 public class DefaultRecentCustomization extends RecentCustomization {

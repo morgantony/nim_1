@@ -10,7 +10,6 @@ import java.util.Map;
 /**
  * 字母导航，点击字母，列表滑动到指定字母集合上。
  *
- * @author huangjun
  */
 public class LivIndex {
 

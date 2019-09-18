@@ -74,4 +74,6 @@
 
     <color name="color_f0f6fa">#f0f6fa</color>
     <color name="color_FF2195D3">#FF2195D3</color>
+
+    <color name="colorPrimaryDarkTrans">#CCf57257</color>
 </resources>

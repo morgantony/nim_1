@@ -10,7 +10,6 @@ import java.util.Map;
 import java.util.Set;
 
 /**
- * Created by huangjun on 2017/5/9.
  */
 
 public class SimpleAVChatStateObserver implements AVChatStateObserver {

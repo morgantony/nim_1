@@ -1,7 +1,9 @@
 package com.netease.nim.weyouchats.common;
 
 import com.netease.nim.weyouchats.common.entity.ChangePassWordEntity;
+import com.netease.nim.weyouchats.common.entity.CommenEntity;
 import com.netease.nim.weyouchats.common.entity.UpLoadUserInfoEntity;
+import com.netease.nim.weyouchats.common.entity.UpdatePositionEntity;
 import com.netease.nim.weyouchats.config.DemoServers;
 
 import io.reactivex.Observable;
@@ -25,6 +27,13 @@ public interface HttpApi {
             @Part("accid") String accid,
             @Part MultipartBody.Part file);
 
+    /*上传建议*/
+    @FormUrlEncoded
+    @POST("user/kefu")
+    Observable<UpLoadUserInfoEntity> kefu(
+            @Field("token") String token,
+            @Field("message") String message);//建议内容
+
     /*上传文件*/
     @FormUrlEncoded
     @POST("user/updateUserInfo")
@@ -38,12 +47,26 @@ public interface HttpApi {
             @Field("gender") String gender);
 
     /*修改密码*/
-
-    @GET("user/modifyPassword")
+    @FormUrlEncoded
+    @POST("user/modifyPassword")
     Observable<ChangePassWordEntity> changePassWord(
+            @Field("token") String token,
+            @Field("password") String password,
+            @Field("newPassword") String newPassword);
+
+    /*更新位置*/
+
+    @GET("near/updatePosition")
+    Observable<UpdatePositionEntity> updatePosition(
             @Query("token") String token,
-            @Query("password") String password,
-            @Query("newPassword") String newPassword);
+            @Query("latitude") String password,
+            @Query("longitude") String newPassword);
+
+    /*附近的人*/
+
+    @GET("near/nearPersonList")
+    Observable<CommenEntity> nearPersonList(
+            @Query("token") String token);
 
     /*找回密码中的获取验证码*/
     @FormUrlEncoded

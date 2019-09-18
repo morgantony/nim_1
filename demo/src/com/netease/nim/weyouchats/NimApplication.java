@@ -5,6 +5,8 @@ import android.content.Context;
 import android.support.multidex.MultiDex;
 import android.text.TextUtils;
 
+import com.baidu.mapapi.CoordType;
+import com.baidu.mapapi.SDKInitializer;
 import com.crashlytics.android.Crashlytics;
 import com.crashlytics.android.core.CrashlyticsCore;
 import com.netease.nim.avchatkit.AVChatKit;
@@ -103,6 +105,13 @@ public class NimApplication extends Application {
 
         // Initialize Fabric with the debug-disabled crashlytics.
         Fabric.with(this, crashlyticsKit);
+
+        //在使用SDK各组件之前初始化context信息，传入ApplicationContext
+        SDKInitializer.initialize(this);
+        //自4.3.0起，百度地图SDK所有接口均支持百度坐标和国测局坐标，用此方法设置您使用的坐标类型.
+        //包括BD09LL和GCJ02两种坐标，默认是BD09LL坐标。
+        SDKInitializer.setCoordType(CoordType.BD09LL);
+
     }
 
     private LoginInfo getLoginInfo() {
@@ -155,6 +164,7 @@ public class NimApplication extends Application {
         };
         avChatOptions.entranceActivity = WelcomeActivity.class;
         avChatOptions.notificationIconRes = R.drawable.ic_stat_notify_msg;
+//        avChatOptions.notificationIconRes = R.drawable.img_edit;
         AVChatKit.init(avChatOptions);
 
         // 初始化日志系统

@@ -59,7 +59,7 @@ public class AckMsgInfoActivity extends UI implements ViewPager.OnPageChangeList
 
         ToolBarOptions options = new NimToolBarOptions();
         options.titleId = R.string.ack_msg_info;
-        options.navigateId = R.drawable.actionbar_dark_back_icon;
+        options.navigateId = R.drawable.img_close_source;
         setToolBar(R.id.toolbar, options);
 
         findViews();

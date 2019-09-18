@@ -79,9 +79,11 @@ public abstract class UI extends AppCompatActivity {
         toolbar = (Toolbar) findViewById(toolBarId);
         if (options.titleId != 0) {
             toolbar.setTitle(options.titleId);
+//            toolbar.setTitle("");
         }
         if (!TextUtils.isEmpty(options.titleString)) {
             toolbar.setTitle(options.titleString);
+//            toolbar.setTitle("");
         }
         if (options.logoId != 0) {
             toolbar.setLogo(options.logoId);
@@ -103,6 +105,7 @@ public abstract class UI extends AppCompatActivity {
     public void setToolBar(int toolbarId, int titleId, int logoId) {
         toolbar = (Toolbar) findViewById(toolbarId);
         toolbar.setTitle(titleId);
+//        toolbar.setTitle("");
         toolbar.setLogo(logoId);
         setSupportActionBar(toolbar);
     }
@@ -128,6 +131,7 @@ public abstract class UI extends AppCompatActivity {
         super.setTitle(title);
         if (toolbar != null) {
             toolbar.setTitle(title);
+//            toolbar.setTitle("");
         }
     }
 

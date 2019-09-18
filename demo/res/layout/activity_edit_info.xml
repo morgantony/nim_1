@@ -370,7 +370,7 @@
                     android:lineSpacingExtra="2dp"
                     android:gravity="start"
                     android:padding="6dp"
-                    android:textSize="12sp"
+                    android:textSize="14dp"
                     android:minLines="3"
                     android:maxLines="3"
                     android:background="@drawable/round_layout_white_color_3dp" />

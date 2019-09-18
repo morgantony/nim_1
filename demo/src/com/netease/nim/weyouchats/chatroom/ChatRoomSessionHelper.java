@@ -12,7 +12,6 @@ import java.util.ArrayList;
 /**
  * UIKit自定义聊天室消息界面用法展示类
  * <p>
- * Created by huangjun on 2017/9/18.
  */
 
 public class ChatRoomSessionHelper {
@@ -28,7 +27,7 @@ public class ChatRoomSessionHelper {
 
     private static ChatRoomSessionCustomization getChatRoomSessionCustomization() {
         ArrayList<BaseAction> actions = new ArrayList<>();
-        actions.add(new GuessAction());
+//        actions.add(new GuessAction());
         ChatRoomSessionCustomization customization = new ChatRoomSessionCustomization();
         customization.actions = actions;
         return customization;

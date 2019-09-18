@@ -15,7 +15,6 @@ import com.netease.nimlib.sdk.msg.model.RecentContact;
 import java.util.List;
 
 /**
- * Created by huangjun on 2016/12/11.
  */
 
 public class RecentContactAdapter extends BaseMultiItemQuickAdapter<RecentContact, BaseViewHolder> {

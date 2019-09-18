@@ -196,9 +196,12 @@ public class SessionHelper {
                 actions.add(new AVChatAction(AVChatType.VIDEO));
             }
 //            actions.add(new RTSAction());
-            actions.add(new SnapChatAction());
-            actions.add(new GuessAction());
-            actions.add(new FileAction());
+
+            //暂且去掉阅后即焚 猜拳 发送文件
+//            actions.add(new SnapChatAction());
+//            actions.add(new GuessAction());
+//            actions.add(new FileAction());
+
 //            actions.add(new TipAction());
             if (NIMRedPacketClient.isEnable()) {
                 actions.add(new RedPacketAction());
@@ -219,7 +222,7 @@ public class SessionHelper {
 
                 @Override
                 public void onClick(Context context, View view, String sessionId) {
-                    MessageInfoActivity.startActivity(context, sessionId); //打开聊天信息
+                    MessageInfoActivity.Companion.startActivity(context, sessionId); //打开聊天信息
                 }
             };
             infoButton.iconId = R.drawable.nim_ic_message_actionbar_p2p_add;
@@ -230,6 +233,7 @@ public class SessionHelper {
         return p2pCustomization;
     }
 
+    //单聊
     private static SessionCustomization getMyP2pCustomization() {
         if (myP2pCustomization == null) {
             myP2pCustomization = new SessionCustomization() {
@@ -265,9 +269,12 @@ public class SessionHelper {
             };
             // 定制加号点开后可以包含的操作， 默认已经有图片，视频等消息了
             ArrayList<BaseAction> actions = new ArrayList<>();
-            actions.add(new SnapChatAction());
-            actions.add(new GuessAction());
-            actions.add(new FileAction());
+
+            //暂且去掉阅后即焚 猜拳 发送文件
+//            actions.add(new SnapChatAction());
+//            actions.add(new GuessAction());
+//            actions.add(new FileAction());
+
             myP2pCustomization.actions = actions;
             myP2pCustomization.withSticker = true;
             // 定制ActionBar右边的按钮，可以加多个
@@ -394,6 +401,7 @@ public class SessionHelper {
         return recentCustomization;
     }
 
+    //群聊
     private static SessionCustomization getTeamCustomization(String tid) {
         if (normalTeamCustomization == null) {
             // 定制加号点开后可以包含的操作， 默认已经有图片，视频等消息了
@@ -401,8 +409,11 @@ public class SessionHelper {
             TeamAVChatProfile.sharedInstance().registerObserver(true);
             ArrayList<BaseAction> actions = new ArrayList<>();
             actions.add(avChatAction);
-            actions.add(new GuessAction());
-            actions.add(new FileAction());
+
+            //暂时去掉猜拳  文件发送 已读回执
+//            actions.add(new GuessAction());
+//            actions.add(new FileAction());
+
             if (NIMRedPacketClient.isEnable()) {
                 actions.add(new RedPacketAction());
             }
@@ -440,9 +451,12 @@ public class SessionHelper {
             TeamAVChatProfile.sharedInstance().registerObserver(true);
             ArrayList<BaseAction> actions = new ArrayList<>();
             actions.add(avChatAction);
-            actions.add(new GuessAction());
-            actions.add(new FileAction());
-            actions.add(new AckMessageAction());
+
+            //暂时去掉猜拳  文件发送 已读回执
+//            actions.add(new GuessAction());
+//            actions.add(new FileAction());
+//            actions.add(new AckMessageAction());
+
             if (NIMRedPacketClient.isEnable()) {
                 actions.add(new RedPacketAction());
             }
@@ -671,16 +685,16 @@ public class SessionHelper {
     private static List<PopupMenuItem> getMoreMenuItems(Context context, String sessionId,
                                                         SessionTypeEnum sessionTypeEnum) {
         List<PopupMenuItem> moreMenuItems = new ArrayList<PopupMenuItem>();
-        moreMenuItems.add(new PopupMenuItem(context, ACTION_HISTORY_QUERY, sessionId, sessionTypeEnum,
-                                            DemoCache.getContext().getString(R.string.message_history_query)));
+//        moreMenuItems.add(new PopupMenuItem(context, ACTION_HISTORY_QUERY, sessionId, sessionTypeEnum,
+//                                            DemoCache.getContext().getString(R.string.message_history_query)));
         moreMenuItems.add(new PopupMenuItem(context, ACTION_SEARCH_MESSAGE, sessionId, sessionTypeEnum,
                                             DemoCache.getContext().getString(R.string.message_search_title)));
-        moreMenuItems.add(new PopupMenuItem(context, ACTION_CLEAR_MESSAGE, sessionId, sessionTypeEnum,
-                                            DemoCache.getContext().getString(R.string.message_clear)));
-        if (sessionTypeEnum == SessionTypeEnum.P2P) {
-            moreMenuItems.add(new PopupMenuItem(context, ACTION_CLEAR_P2P_MESSAGE, sessionId, sessionTypeEnum,
-                                                DemoCache.getContext().getString(R.string.message_p2p_clear)));
-        }
+//        moreMenuItems.add(new PopupMenuItem(context, ACTION_CLEAR_MESSAGE, sessionId, sessionTypeEnum,
+//                                            DemoCache.getContext().getString(R.string.message_clear)));
+//        if (sessionTypeEnum == SessionTypeEnum.P2P) {
+//            moreMenuItems.add(new PopupMenuItem(context, ACTION_CLEAR_P2P_MESSAGE, sessionId, sessionTypeEnum,
+//                                                DemoCache.getContext().getString(R.string.message_p2p_clear)));
+//        }
         return moreMenuItems;
     }
 }

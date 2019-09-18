@@ -21,8 +21,8 @@
                 android:id="@+id/toolbar"
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
-                android:background="?attr/colorPrimary"
-                app:titleTextAppearance="@style/Toolbar.TitleText" />
+                android:background="@color/color_main"
+                app:titleTextColor="@color/white" />
         </android.support.design.widget.AppBarLayout>
 
         <com.netease.nim.weyouchats.common.ui.viewpager.PagerSlidingTabStrip
@@ -37,6 +37,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/tabs" />-->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
         <com.bhm.sdk.bhmlibrary.views.TitleBar
             android:id="@+id/main_titleBar"
             android:layout_width="match_parent"
@@ -47,14 +51,33 @@
             app:leftViewBackgroundResource="@drawable/img_close_source"
             app:rightViewBackgroundResource="@drawable/img_edit"
             app:leftViewMarginLeft="15dp"
-            app:rightText=""
+            app:rightText="• • •"
             app:rightTextColor="@color/white"
             app:rightTextSize="16sp"
             app:rightViewMarginRight="12dp"
             app:titleBarHeight="50dp"
-            app:titleText="消息"
+            app:titleText="会话"
             app:titleTextColor="@color/white" />
-
+            <FrameLayout
+                android:id="@+id/fl_tianjia"
+                android:layout_alignParentRight="true"
+                android:layout_centerInParent="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingRight="20dp"
+                android:paddingLeft="10dp"
+                android:visibility="gone">
+                <TextView
+                    android:id="@+id/tv_right_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:background="@drawable/img_edit"
+                    android:textSize="16sp"
+                    android:textColor="@color/white"
+                    android:layout_gravity="center"/>
+            </FrameLayout>
+        </RelativeLayout>
         <android.support.v4.view.ViewPager
             android:id="@+id/main_tab_pager"
             android:layout_width="match_parent"

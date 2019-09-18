@@ -41,7 +41,8 @@
 
     <!-- 8.0 系统上需要-->
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
-
+    <!--读取手机通讯录权限-->
+    <uses-permission android:name="android.permission.READ_CONTACTS"/>
     <!-- SDK权限申明, 第三方APP接入时，请将com.netease.nim.demo替换为自己的包名 -->
     <!-- 和下面的uses-permission一起加入到你的AndroidManifest文件中。 -->
     <permission
@@ -573,6 +574,7 @@
         </service>
 
         <!--设置收到 fcm 通知展示的图标和颜色-->
+        <!--android:resource="@drawable/ic_stat_notify_msg"-->
         <meta-data
             android:name="com.google.firebase.messaging.default_notification_icon"
             android:resource="@drawable/ic_stat_notify_msg" />
@@ -610,6 +612,12 @@
             android:exported="false"
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <activity android:name=".main.activity.BdMapActivity" />
+        <activity android:name=".main.activity.ScanActivity" />
+        <activity android:name=".main.activity.BlankActivity"
+            android:launchMode="singleInstance"/>
+        <activity android:name=".main.activity.TongXunLuActivity" />
+
         <meta-data
             android:name="com.vivo.push.api_key"
             android:value="18374205-eb53-428c-bad2-7a75712f6487"/>
@@ -623,6 +631,13 @@
                 <action android:name="com.vivo.pushclient.action.RECEIVE"/>
             </intent-filter>
         </receiver>
+        <meta-data
+            android:name="com.baidu.lbsapi.API_KEY"
+            android:value="KU3wSzTlGNCcdFT9555kG8zVyY5HtvwD" />
+        <service android:name="com.baidu.location.f"
+            android:enabled="true"
+            android:process=":remote"/>
+
     </application>
 
 </manifest>

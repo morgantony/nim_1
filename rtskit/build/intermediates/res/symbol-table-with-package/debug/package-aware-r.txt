@@ -603,6 +603,7 @@ drawable g_red_long_btn_pressed
 drawable g_red_long_btn_selector
 drawable icon_audio_close
 drawable icon_audio_open
+drawable img_close_source
 drawable nim_actionbar_dark_back_icon
 drawable nim_actionbar_dark_logo_icon
 drawable nim_actionbar_nest_dark_logo
@@ -803,6 +804,7 @@ layout notification_template_media
 layout notification_template_media_custom
 layout notification_template_part_chronometer
 layout notification_template_part_time
+layout right_clickable_tv
 layout rts_activity
 layout select_dialog_item_material
 layout select_dialog_multichoice_material

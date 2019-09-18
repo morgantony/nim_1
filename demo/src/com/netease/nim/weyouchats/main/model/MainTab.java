@@ -11,8 +11,9 @@ import com.netease.nim.weyouchats.main.reminder.ReminderId;
 public enum MainTab {
     RECENT_CONTACTS(0, ReminderId.SESSION, SessionListFragment.class, R.string.main_tab_session, R.layout.session_list),
     CONTACT(1, ReminderId.CONTACT, ContactListFragment.class, R.string.main_tab_contact, R.layout.contacts_list),
-    PYQ(2, ReminderId.PYQ, PYQFragment.class, R.string.main_pyq, R.layout.activity_pyq),
-    MY(3, ReminderId.MY, MyFragment.class, R.string.main_my, R.layout.activity_my);
+    //后续开发
+//    PYQ(2, ReminderId.PYQ, PYQFragment.class, R.string.main_pyq, R.layout.activity_pyq),
+    MY(2, ReminderId.MY, MyFragment.class, R.string.main_my, R.layout.activity_my);
     /*CHAT_ROOM(2, ReminderId.INVALID, ChatRoomListFragment.class, R.string.chat_room, R.layout.chat_room_tab);*/
 
     public final int tabIndex;

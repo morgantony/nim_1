@@ -23,7 +23,6 @@ import java.util.concurrent.ConcurrentHashMap;
 /**
  * 群信息/群成员数据监听&缓存
  * <p/>
- * Created by huangjun on 2015/3/1.
  */
 public class TeamDataCache {
     private static TeamDataCache instance;

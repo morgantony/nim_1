@@ -1,7 +1,6 @@
 package com.netease.nim.uikit.common.ui.recyclerview.adapter;
 
 /**
- * Created by huangjun on 2016/12/8.
  */
 
 public interface IRecyclerView {

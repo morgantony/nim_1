@@ -20,7 +20,6 @@ import java.util.Map;
 import java.util.Set;
 
 /**
- * Created by huangjun on 2016/12/21.
  */
 public class ChatRoomMsgAdapter extends BaseMultiItemFetchLoadAdapter<ChatRoomMessage, BaseViewHolder> {
 

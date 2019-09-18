@@ -14,7 +14,6 @@ import com.netease.nim.avchatkit.constant.AVChatExtras;
 
 /**
  * 音视频聊天通知栏
- * Created by huangjun on 2015/5/14.
  */
 public class AVChatNotification {
 

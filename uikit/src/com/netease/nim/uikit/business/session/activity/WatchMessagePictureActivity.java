@@ -56,7 +56,6 @@ import java.util.List;
 
 /**
  * 查看聊天消息原图
- * Created by huangjun on 2015/3/6.
  */
 public class WatchMessagePictureActivity extends UI {
 
@@ -106,7 +105,7 @@ public class WatchMessagePictureActivity extends UI {
 
         ToolBarOptions options = new NimToolBarOptions();
         options.titleString = "图片";
-        options.navigateId = R.drawable.nim_actionbar_white_back_icon;
+        options.navigateId = R.drawable.img_close_source;
         setToolBar(R.id.toolbar, options);
 
         handleIntent();

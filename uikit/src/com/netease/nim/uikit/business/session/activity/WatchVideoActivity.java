@@ -43,7 +43,6 @@ import com.netease.nimlib.sdk.msg.model.IMMessage;
 /**
  * 视频播放界面
  * <p/>
- * Created by huangjun on 2015/4/11.
  */
 public class WatchVideoActivity extends UI implements Callback {
     public static final String INTENT_EXTRA_DATA = "EXTRA_DATA";
@@ -126,7 +125,7 @@ public class WatchVideoActivity extends UI implements Callback {
         setContentView(R.layout.nim_watch_video_activity);
 
         ToolBarOptions options = new NimToolBarOptions();
-        options.navigateId = R.drawable.nim_actionbar_white_back_icon;
+        options.navigateId = R.drawable.img_close_source;
         setToolBar(R.id.toolbar, options);
 
         parseIntent();
