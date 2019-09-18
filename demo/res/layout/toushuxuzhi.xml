@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/app_bar_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay"
+        app:elevation="0dp">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/color_main"
+            app:titleTextColor="@color/white">
+
+        </android.support.v7.widget.Toolbar>
+    </android.support.design.widget.AppBarLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="30dp"
+        android:paddingBottom="20dp"
+        android:gravity="center"
+        android:text="投诉须知"
+        android:textSize="18dp"
+        android:textColor="#000000"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:lineSpacingExtra="8dp"
+        android:letterSpacing="0.2"
+        android:paddingTop="8dp"
+        android:gravity="start"
+        android:text="你应保证你的投诉行为基于善意，并代表你本人真实意思。微聊作为中立的平台服务者，收到你投诉后，会尽快按照相关法律法规的规定独立判断并进行处理。微聊将会采取合理的措施保护你的个人信息；除法律法规规定的情形外，未经用户许可微聊不会向第三方公开、透露你的个人信息。"
+        android:textSize="15dp"
+        android:textColor="#000000"/>
+</LinearLayout>

@@ -96,6 +96,9 @@
 
     <!-- 群 -->
     <string name="add_buddy">添加好友</string>
+    <string name="jubao_">投诉</string>
+    <string name="jubao_sub">提交投诉</string>
+    <string name="toushuxuzhi_">投诉须知</string>
     <string name="create_normal_team">创建讨论组</string>
     <string name="create_advance_team">创建群聊</string>
     <string name="team_apply_sending">发送中…</string>

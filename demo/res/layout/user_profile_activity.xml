@@ -164,6 +164,18 @@
                 android:visibility="gone" />
 
             <Button
+                android:id="@+id/jubao_buddy"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="15dip"
+                android:background="@drawable/nim_white_round_button_selector"
+                android:minHeight="50dp"
+                android:text="投诉"
+                android:textColor="@color/color_red_f04c62"
+                android:textSize="@dimen/text_size_17"
+                android:visibility="gone" />
+
+            <Button
                 android:id="@+id/add_buddy"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

@@ -617,6 +617,9 @@
         <activity android:name=".main.activity.BlankActivity"
             android:launchMode="singleInstance"/>
         <activity android:name=".main.activity.TongXunLuActivity" />
+        <activity android:name=".contact.activity.JuBaoActivity" />
+        <activity android:name=".contact.activity.TouShuXuZhiActivity" />
+        <activity android:name=".contact.activity.TouShuSubmitActivity" />
 
         <meta-data
             android:name="com.vivo.push.api_key"
